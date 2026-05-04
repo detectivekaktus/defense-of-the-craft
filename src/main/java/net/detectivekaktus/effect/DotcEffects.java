@@ -9,12 +9,13 @@ import net.minecraft.world.effect.MobEffect;
 
 public class DotcEffects {
     public static final Holder<MobEffect> ARMOR_REDUCTION = register(
-            "armor_reduction",
-            new ArmorReduction()
+            "armor_reduction", new ArmorReduction()
     );
     public static final Holder<MobEffect> STUN = register(
-            "stun",
-            new Stun()
+            "stun", new Stun()
+    );
+    public static final Holder<MobEffect> DISARM = register(
+            "disarm", new Disarm()
     );
 
     public static Holder<MobEffect> register(String id, MobEffect effect) {
