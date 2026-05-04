@@ -76,7 +76,6 @@ public class DotcItems {
                 DotcIngredients.BAND_OF_ELVENSKIN,
                 DotcIngredients.ROBE_OF_THE_MAGI,
 
-                DotcTools.ECHO_SABRE,
                 DotcTools.DIFFUSAL_BLADE,
                 DotcTools.DESOLATOR,
                 DotcTools.CRYSTALYS,
@@ -90,6 +89,8 @@ public class DotcItems {
                 DotcTools.SANGE,
                 DotcTools.YASHA,
                 DotcTools.KAYA,
+                DotcTools.ECHO_SABRE,
+                DotcTools.HEAVENS_HALBERD,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),

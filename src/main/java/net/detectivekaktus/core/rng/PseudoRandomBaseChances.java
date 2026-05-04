@@ -2,6 +2,7 @@ package net.detectivekaktus.core.rng;
 
 public class PseudoRandomBaseChances {
     public static final float AVG_10 = 0.016f;
+    public static final float AVG_15 = 0.0325f;
     public static final float AVG_20 = 0.06f;
     public static final float AVG_25 = 0.088f;
     public static final float AVG_33 = 0.145f;

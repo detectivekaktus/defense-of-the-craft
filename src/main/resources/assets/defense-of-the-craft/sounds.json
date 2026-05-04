@@ -85,6 +85,11 @@
       "defense-of-the-craft:item_abyssal_blade"
     ]
   },
+  "item_heavens_halberd": {
+    "sounds": [
+      "defense-of-the-craft:item_heavens_halberd"
+    ]
+  },
 
   "core_evaded": {
     "sounds": [

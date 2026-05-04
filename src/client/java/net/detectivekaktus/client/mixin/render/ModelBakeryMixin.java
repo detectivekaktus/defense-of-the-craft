@@ -46,5 +46,6 @@ public class ModelBakeryMixin {
         loadSpecialItemModelAndDependencies(DotcItemModels.BUTTERFLY_IN_HAND);
         loadSpecialItemModelAndDependencies(DotcItemModels.DIVINE_RAPIER_IN_HAND);
         loadSpecialItemModelAndDependencies(DotcItemModels.DESOLATOR_IN_HAND);
+        loadSpecialItemModelAndDependencies(DotcItemModels.HEAVENS_HALBERD_IN_HAND);
     }
 }

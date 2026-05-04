@@ -14,7 +14,7 @@ public class DotcTools {
             new Javelin(
                     DotcToolMaterial.DIRE_COMPONENT,
                     new Item.Properties()
-                            .attributes(DotcSpearItem.createAttributes(
+                            .attributes(DotcSwordItem.createAttributes(
                                     DotcToolMaterial.DIRE_COMPONENT, 2, -2.0f
                             ))
                             .component(
@@ -84,7 +84,7 @@ public class DotcTools {
             new MonkeyKingBar(
                     DotcToolMaterial.DIRE_ARTEFACT,
                     new Item.Properties()
-                            .attributes(DotcSpearItem.createAttributes(
+                            .attributes(DotcSwordItem.createAttributes(
                                     DotcToolMaterial.DIRE_ARTEFACT, 2, -1.5f
                             ))
                             .component(
@@ -274,7 +274,7 @@ public class DotcTools {
             new AbyssalBlade(
                     DotcToolMaterial.DIRE_ARTEFACT,
                     new Item.Properties()
-                            .attributes(SkullBasher.createAttributes(
+                            .attributes(AbyssalBlade.createAttributes(
                                     DotcToolMaterial.DIRE_ARTEFACT, 3, -2.5f
                             ))
                             .component(
@@ -296,6 +296,24 @@ public class DotcTools {
                             .active()
             ),
             "abyssal_blade"
+    );
+    public static final Item HEAVENS_HALBERD = DotcItems.register(
+            new HeavensHalberd(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(HeavensHalberd.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 3, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.EVASION_COMPONENT,
+                                    HeavensHalberd.BASE_PROC_CHANCE
+                            ),
+                    new TooltipBuilder("heavens_halberd")
+                            .description()
+                            .passive()
+                            .active()
+            ),
+            "heavens_halberd"
     );
 
     public static void initialize() { }

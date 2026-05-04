@@ -60,7 +60,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
 
     @Override
     public float getManaCost() {
-        return 40.0f;
+        return 50.0f;
     }
 
     @Override

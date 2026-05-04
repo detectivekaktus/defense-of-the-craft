@@ -10,4 +10,6 @@ public class DotcItemCooldowns {
 
     public static final int SKULL_BASHER_COOLDOWN = 3 * 20;
     public static final int ABYSSAL_BLADE_COOLDOWN = 25 * 20;
+
+    public static final int HEAVENS_HALBERD_COOLDOWN = 15 * 20;
 }

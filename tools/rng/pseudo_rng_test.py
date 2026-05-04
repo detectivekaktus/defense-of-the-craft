@@ -27,8 +27,8 @@ def main() -> None:
     print("=== PROC REPORT ===")
 
     # These are average proc chances after 1.000.000 attacks
-    #          10%    20%   25%    33.3%  40%   50%    80%
-    chances = [0.016, 0.06, 0.088, 0.145, 0.21, 0.311, 0.755]
+    #          10%    15%     20%   25%    33.3%  40%   50%    80%
+    chances = [0.016, 0.0325, 0.06, 0.088, 0.145, 0.21, 0.311, 0.755]
     for chance in chances:
         avg = get_average_proc_chance(chance)
         print(f"C = {chance} averages to: {round(avg * 100, 5)}%")
