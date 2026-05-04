@@ -19,7 +19,7 @@ public class AbstractSkeletonMixin {
     )
     private void cancelAttack(LivingEntity livingEntity, float f, CallbackInfo callbackInfo) {
         var mob = (AbstractSkeleton) (Object) this;
-        if (!mob.hasEffect(DotcEffects.STUN))
+        if (!mob.hasEffect(DotcEffects.STUN) && !mob.hasEffect(DotcEffects.DISARM))
             return;
 
         callbackInfo.cancel();

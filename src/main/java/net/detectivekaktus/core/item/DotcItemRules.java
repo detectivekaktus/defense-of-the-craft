@@ -11,4 +11,6 @@ public class DotcItemRules {
     public static final int DESOLATOR_ARMOR_REDUCTION_DURATION = 7 * 20;
 
     public static final int BASH_DURATION = 2 * 20;
+
+    public static final int DISARM_DURATION = 3 * 20;
 }

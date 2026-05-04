@@ -174,7 +174,7 @@ public class PlayerMixin implements CombatManagerHolder {
     )
     private void cancelAttack(Entity entity, CallbackInfo callbackInfo) {
         var player = (Player) (Object) (this);
-        if (!player.hasEffect(DotcEffects.STUN))
+        if (!player.hasEffect(DotcEffects.STUN) && !player.hasEffect(DotcEffects.DISARM))
             return;
 
         if (player.level().isClientSide)

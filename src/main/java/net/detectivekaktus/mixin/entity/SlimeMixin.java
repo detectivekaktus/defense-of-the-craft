@@ -19,7 +19,7 @@ public class SlimeMixin {
     )
     private void cancelAttack(LivingEntity livingEntity, CallbackInfo callbackInfo) {
         var slime = (Slime) (Object) this;
-        if (!slime.hasEffect(DotcEffects.STUN))
+        if (!slime.hasEffect(DotcEffects.STUN) && !slime.hasEffect(DotcEffects.DISARM))
             return;
 
         callbackInfo.cancel();

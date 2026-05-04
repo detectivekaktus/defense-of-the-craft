@@ -30,6 +30,6 @@ public class BlazeMixin {
             return true;
         }
 
-        return !blaze.hasEffect(DotcEffects.STUN);
+        return !blaze.hasEffect(DotcEffects.STUN) && !blaze.hasEffect(DotcEffects.DISARM);
     }
 }

@@ -47,4 +47,11 @@ public class DotcItemModels {
     public static final ModelResourceLocation DESOLATOR_IN_HAND = ModelResourceLocation.inventory(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "desolator_in_hand")
     );
+
+    public static final ModelResourceLocation HEAVENS_HALBERD = ModelResourceLocation.inventory(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "heavens_halberd")
+    );
+    public static final ModelResourceLocation HEAVENS_HALBERD_IN_HAND = ModelResourceLocation.inventory(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "heavens_halberd_in_hand")
+    );
 }

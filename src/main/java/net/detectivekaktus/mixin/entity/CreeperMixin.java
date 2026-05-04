@@ -18,7 +18,7 @@ public class CreeperMixin {
     )
     private void explodeIfNotStunned(CallbackInfo callbackInfo) {
         var creeper = (Creeper) (Object) this;
-        if (!creeper.hasEffect(DotcEffects.STUN))
+        if (!creeper.hasEffect(DotcEffects.STUN) && !creeper.hasEffect(DotcEffects.DISARM))
             return;
 
         callbackInfo.cancel();
