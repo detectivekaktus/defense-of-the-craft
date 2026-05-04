@@ -53,6 +53,7 @@ public class DotcItems {
                 DotcConsumables.ENCHANTED_MANGO,
 
                 DotcIngredients.VOID_STONE,
+                DotcIngredients.RING_OF_HEALTH,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
                 DotcIngredients.SACRED_RELIC,

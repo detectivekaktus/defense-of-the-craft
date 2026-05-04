@@ -200,6 +200,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.SKULL_BASHER)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.HEAVENS_HALBERD)
+                .pattern("  @")
+                .pattern(" # ")
+                .pattern("$$ ")
+                .define('@', DotcPrimitives.BLADE_OF_ALACRITY)
+                .define('#', DotcIngredients.TALISMAN_OF_EVASION)
+                .define('$', DotcIngredients.RADIANT_CRYSTAL)
+                .unlockedBy(
+                        "has_blade_of_alacrity",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.BLADE_OF_ALACRITY)
+                )
+                .save(exporter);
     }
 
     @Override

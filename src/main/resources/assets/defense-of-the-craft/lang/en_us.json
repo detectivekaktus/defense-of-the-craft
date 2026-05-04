@@ -101,6 +101,10 @@
   "description.defense-of-the-craft.void_stone": "Jewelry that was once used to channel nether realm magic, this ring pulses with energy.",
   "passive.defense-of-the-craft.void_stone": "Grants the wielder 1.75 mana regeneration.",
 
+  "item.defense-of-the-craft.ring_of_health": "Ring of Health",
+  "description.defense-of-the-craft.ring_of_health": "A shiny ring found beneath a fat halfling’s corpse.",
+  "passive.defense-of-the-craft.ring_of_health": "Grants the wielder 1.0 health regeneration.",
+
   "item.defense-of-the-craft.sacred_relic": "Sacred Relic",
   "description.defense-of-the-craft.sacred_relic": "An ancient weapon that often turns the tides of war.",
 

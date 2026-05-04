@@ -177,6 +177,18 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.RING_OF_HEALTH)
+                .pattern("#@#")
+                .pattern("@ @")
+                .pattern("#@#")
+                .define('#', Items.GOLD_INGOT)
+                .define('@', DotcIngredients.DIRE_CRYSTAL)
+                .unlockedBy(
+                        "has_dire_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

@@ -32,6 +32,7 @@ public class DotcIngredientsModelProvider extends FabricModelProvider {
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.BLADES_OF_ATTACK,
                 DotcIngredients.VOID_STONE,
+                DotcIngredients.RING_OF_HEALTH,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
                 DotcIngredients.SACRED_RELIC,

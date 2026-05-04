@@ -127,6 +127,19 @@ public class DotcIngredients {
             ),
             "robe_of_the_magi"
     );
+    public static final Item RING_OF_HEALTH = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.BONUS_HP_REGEN_COMPONENT,
+                                    1.0f
+                            ),
+                    new TooltipBuilder("ring_of_health")
+                            .description()
+                            .passive()
+            ),
+            "ring_of_health"
+    );
     public static final Item VOID_STONE = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
