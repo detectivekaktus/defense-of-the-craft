@@ -19,7 +19,7 @@ public class MobMixin {
     )
     private void cancelAttack(Entity entity, CallbackInfoReturnable<Boolean> callbackInfo) {
         var mob = (Mob) (Object) this;
-        if (!mob.hasEffect(DotcEffects.STUN))
+        if (!mob.hasEffect(DotcEffects.STUN) && !mob.hasEffect(DotcEffects.DISARM))
             return;
 
         callbackInfo.setReturnValue(false);
