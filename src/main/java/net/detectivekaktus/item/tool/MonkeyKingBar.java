@@ -12,11 +12,11 @@ import java.util.Optional;
 import net.detectivekaktus.core.item.Procable;
 import net.detectivekaktus.core.rng.PseudoRandomBaseChances;
 import net.detectivekaktus.damage.DotcDamageTypes;
-import net.detectivekaktus.sound.item.DotcItemSounds;
-import net.detectivekaktus.item.DotcSpearItem;
+import net.detectivekaktus.item.DotcSwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
+import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class MonkeyKingBar extends DotcSpearItem implements Procable {
+public class MonkeyKingBar extends DotcSwordItem implements Procable {
     public static final float BASE_PROC_CHANCE = PseudoRandomBaseChances.AVG_50;
     private static final float BONUS_DAMAGE = 4.0f;
 
