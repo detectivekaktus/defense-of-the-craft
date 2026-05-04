@@ -29,7 +29,7 @@ public class MultiPlayerGameModeMixin {
     private Minecraft minecraft;
 
     @Inject(
-            method = "startDestroyBlock",
+            method = {"startDestroyBlock", "continueDestroyBlock"},
             at = @At(value = "HEAD"),
             cancellable = true
     )
