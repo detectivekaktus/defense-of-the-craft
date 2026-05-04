@@ -56,6 +56,7 @@ public class PlayerMana {
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "mana_cost_reduction"),
             floatBuilder ->
                     floatBuilder.initializer(() -> DotcAttachmentRules.DEFAULT_MANA_COST_REDUCTION)
+                            .syncWith(ByteBufCodecs.FLOAT, AttachmentSyncPredicate.targetOnly())
                             .persistent(Codec.FLOAT)
     );
 

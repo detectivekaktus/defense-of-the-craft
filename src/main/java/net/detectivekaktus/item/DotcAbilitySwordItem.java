@@ -48,7 +48,11 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         if (target instanceof Player interactedPlayer)
             CombatManager.addStickCharge(interactedPlayer);
 
-        mana.consume(getManaCost());
+        var manaConsumed = Math.max(
+                (float) Math.ceil(getManaCost() * (1.0f - mana.getManaCostReduction())),
+                0.0f
+        );
+        mana.consume(manaConsumed);
 
         invokeInteractionAbility(player, target);
         playAbilitySound(player);

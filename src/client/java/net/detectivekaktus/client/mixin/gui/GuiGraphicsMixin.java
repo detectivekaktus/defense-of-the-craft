@@ -1,11 +1,14 @@
 package net.detectivekaktus.client.mixin.gui;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -16,11 +19,17 @@ import java.util.List;
 import net.detectivekaktus.client.core.render.ItemDecorationsRenderer;
 import net.detectivekaktus.client.core.render.WordWrapper;
 import net.detectivekaktus.client.core.render.DotcColors;
+
+import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.core.item.HasManaCost;
 
 @Mixin(GuiGraphics.class)
 public class GuiGraphicsMixin {
+    @Shadow
+    @Final
+    private Minecraft minecraft;
+
     @ModifyVariable(
             method = "renderTooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;Ljava/util/Optional;II)V",
             at = @At(value = "HEAD")
@@ -48,8 +57,18 @@ public class GuiGraphicsMixin {
         var graphics = (GuiGraphics) (Object) this;
 
         if (itemStack.getItem() instanceof HasManaCost itemWithManaCost) {
-            var manaCost = String.valueOf((int) itemWithManaCost.getManaCost());
-            ItemDecorationsRenderer.drawStringInItemIconCorner(graphics, font, manaCost, i, j, DotcColors.MANA_COST_COLOR);
+            if (minecraft.player == null)
+                return;
+
+            var mana = PlayerMana.get(minecraft.player);
+            var manaCost = Math.ceil(itemWithManaCost.getManaCost() * (1.0f - mana.getManaCostReduction()));
+            ItemDecorationsRenderer.drawStringInItemIconCorner(
+                    graphics,
+                    font,
+                    String.valueOf((int) manaCost),
+                    i, j,
+                    DotcColors.MANA_COST_COLOR
+            );
         }
         else if (itemStack.has(DotcComponents.CHARGEABLE_COMPONENT)) {
             // Technically this can overlap with the item quantity but chargeable items
@@ -57,7 +76,13 @@ public class GuiGraphicsMixin {
             // with quantity
             var component = itemStack.get(DotcComponents.CHARGEABLE_COMPONENT);
             var charges = String.valueOf(component.charges());
-            ItemDecorationsRenderer.drawStringInItemIconCorner(graphics, font, charges, i, j, DotcColors.TEXT_COLOR);
+            ItemDecorationsRenderer.drawStringInItemIconCorner(
+                    graphics,
+                    font,
+                    charges,
+                    i, j,
+                    DotcColors.TEXT_COLOR
+            );
         }
     }
 }
