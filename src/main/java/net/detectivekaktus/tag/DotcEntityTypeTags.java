@@ -11,6 +11,7 @@ public class DotcEntityTypeTags {
     public static final TagKey<EntityType<?>> DIFFUSAL_BLADE_INVULNERABLE = register("diffusal_blade_invulnerable");
     public static final TagKey<EntityType<?>> ABYSSAL_BLADE_INVULNERABLE = register("abyssal_blade_invulnerable");
     public static final TagKey<EntityType<?>> HEAVENS_HALBERD_INVULNERABLE = register("heavens_halberd_invulnerable");
+    public static final TagKey<EntityType<?>> HAND_OF_MIDAS_INVULNERABLE = register("hand_of_midas_invulnerable");
 
     public static TagKey<EntityType<?>> register(String id) {
         return TagKey.create(

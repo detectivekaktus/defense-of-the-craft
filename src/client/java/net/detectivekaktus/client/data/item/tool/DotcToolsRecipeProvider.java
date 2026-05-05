@@ -213,6 +213,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.BLADE_OF_ALACRITY)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcTools.HAND_OF_MIDAS)
+                .pattern("##$")
+                .pattern("#@$")
+                .pattern("$$$")
+                .define('@', DotcIngredients.GLOVES_OF_HASTE)
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('$', Items.GOLD_INGOT)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override
