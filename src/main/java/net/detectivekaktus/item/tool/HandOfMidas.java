@@ -15,7 +15,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
+import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerRandom;
+import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.item.DotcAbilityItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -31,6 +33,8 @@ public class HandOfMidas extends DotcAbilityItem {
     private final int DIAMOND_PITY = -1;
 
     private final int PITY_COUNTER_CAP = 12;
+    private final int PITY_INITIAL_BONUS = 4;
+
     private final float PITY_NO_INCREASE = 1.0f;
     private final float PITY_SOFT_INCREASE = 1.1f;
     private final float PITY_HARD_INCREASE = 1.2f;
@@ -52,16 +56,24 @@ public class HandOfMidas extends DotcAbilityItem {
 
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
+        if (!stack.has(DotcComponents.USE_COUNTER_COMPONENT)) {
+            DefenseOfTheCraft.LOGGER.error("Hand of Midas doesn't have use counter component. No drops will be given");
+            return;
+        }
+        var useCounter = stack.get(DotcComponents.USE_COUNTER_COMPONENT);
+        DefenseOfTheCraft.LOGGER.info("{}", stack.has(DotcComponents.USE_COUNTER_COMPONENT));
+
         var random = PlayerRandom.get(player);
         var pityCounter = random.getPityCounter();
 
-        var randomWeight = getRandomWeight(player.getRandom(), pityCounter);
+        var randomWeight = getRandomWeight(player.getRandom(), useCounter, pityCounter);
         var droppedItem = getDroppedItem(randomWeight);
 
         if (droppedItem == Items.DIAMOND || droppedItem == Items.NETHERITE_INGOT)
             random.setPityCounter(0);
         else
             random.setPityCounter(++pityCounter);
+        stack.set(DotcComponents.USE_COUNTER_COMPONENT, ++useCounter);
 
         var level = player.level();
         var itemEntity = new ItemEntity(
@@ -99,11 +111,21 @@ public class HandOfMidas extends DotcAbilityItem {
         return Items.NETHERITE_INGOT;
     }
 
-    private int getRandomWeight(RandomSource randomSource, int pityCounter) {
+    private int getRandomWeight(RandomSource randomSource, int useCounter, int pityCounter) {
+        if (useCounter <= PITY_INITIAL_BONUS)
+            return getInitialBonusWeight(randomSource, pityCounter);
+
         if (pityCounter >= PITY_COUNTER_CAP)
             return DIAMOND_PITY;
 
         var rand = randomSource.nextIntBetweenInclusive(1, TOTAL_WEIGHT);
+        var increase = getPityIncrease(pityCounter);
+        return (int) (rand * increase);
+    }
+
+    private int getInitialBonusWeight(RandomSource randomSource, int pityCounter) {
+        var skipped = (int) (WEIGHTS.get(Items.COAL) * 0.875f);
+        var rand = randomSource.nextIntBetweenInclusive(skipped, TOTAL_WEIGHT);
         var increase = getPityIncrease(pityCounter);
         return (int) (rand * increase);
     }
