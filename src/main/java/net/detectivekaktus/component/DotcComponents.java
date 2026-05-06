@@ -60,7 +60,7 @@ public class DotcComponents {
 
     public static final DataComponentType<Integer> USE_COUNT_COMPONENT = registerInt("use_count");
     // meant to store time in seconds since the UNIX epoch in UTC
-    public static final DataComponentType<Integer> LAST_TIME_USED_COMPONENT = registerInt("last_time_used");
+    public static final DataComponentType<Long> LAST_TIME_USED_COMPONENT = registerLong("last_time_used");
 
     public static <T> DataComponentType<T> register(String id, Codec<T> codec) {
         return Registry.register(
@@ -75,6 +75,14 @@ public class DotcComponents {
                 BuiltInRegistries.DATA_COMPONENT_TYPE,
                 ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, id),
                 DataComponentType.<Integer>builder().persistent(Codec.INT).build()
+        );
+    }
+
+    public static DataComponentType<Long> registerLong(String id) {
+        return Registry.register(
+                BuiltInRegistries.DATA_COMPONENT_TYPE,
+                ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, id),
+                DataComponentType.<Long>builder().persistent(Codec.LONG).build()
         );
     }
 

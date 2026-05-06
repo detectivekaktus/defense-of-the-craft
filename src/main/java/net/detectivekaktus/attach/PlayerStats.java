@@ -14,7 +14,7 @@ import net.detectivekaktus.DefenseOfTheCraft;
 
 import java.util.function.UnaryOperator;
 
-@SuppressWarnings({"ApiStatus.Experimental", "UnstableApiUsage"})
+@SuppressWarnings("UnstableApiUsage")
 public class PlayerStats {
     public static final AttachmentType<Integer> STRENGTH = AttachmentRegistry.create(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "strength"),
