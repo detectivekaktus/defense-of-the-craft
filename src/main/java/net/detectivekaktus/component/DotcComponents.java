@@ -58,11 +58,21 @@ public class DotcComponents {
     public static final DataComponentType<Float> BONUS_MANA_REGEN_COMPONENT = registerFloat("bonus_mana_regen");
     public static final DataComponentType<Float> MANA_COST_REDUCTION_COMPONENT = registerFloat("mana_cost_reduction");
 
+    public static final DataComponentType<Integer> USE_COUNT_COMPONENT = registerInt("use_count");
+
     public static <T> DataComponentType<T> register(String id, Codec<T> codec) {
         return Registry.register(
                 BuiltInRegistries.DATA_COMPONENT_TYPE,
                 ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, id),
                 DataComponentType.<T>builder().persistent(codec).build()
+        );
+    }
+
+    public static DataComponentType<Integer> registerInt(String id) {
+        return Registry.register(
+                BuiltInRegistries.DATA_COMPONENT_TYPE,
+                ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, id),
+                DataComponentType.<Integer>builder().persistent(Codec.INT).build()
         );
     }
 

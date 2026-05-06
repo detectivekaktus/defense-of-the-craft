@@ -317,7 +317,11 @@ public class DotcTools {
     );
     public static final Item HAND_OF_MIDAS = DotcItems.register(
             new HandOfMidas(
-                    new Item.Properties(),
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.USE_COUNT_COMPONENT,
+                                    0
+                            ),
                     new TooltipBuilder("hand_of_midas")
                             .description()
                             .active()
