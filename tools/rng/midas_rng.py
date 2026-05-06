@@ -97,9 +97,9 @@ class Player:
                     self.pity_counter = 0
                 return item
 
-        # should be unreachable. it's needed to shut the
-        # static analysis fuck up
-        return "COAL"
+        # means rand went higher than the WEIGHTS_SUM
+        # and so netherite is the item player should get
+        return "NETHERITE"
 
 
 def fill_standard_report(tries: int) -> None:

@@ -32,6 +32,7 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
                 .add(EntityType.WITHER);
 
         getOrCreateTagBuilder(DotcEntityTypeTags.HAND_OF_MIDAS_INVULNERABLE)
+                .add(EntityType.PLAYER)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER)
                 .add(EntityType.WARDEN)
