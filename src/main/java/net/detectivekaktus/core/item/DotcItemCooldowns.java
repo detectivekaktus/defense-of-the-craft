@@ -12,4 +12,6 @@ public class DotcItemCooldowns {
     public static final int ABYSSAL_BLADE_COOLDOWN = 25 * 20;
 
     public static final int HEAVENS_HALBERD_COOLDOWN = 15 * 20;
+
+    public static final int HAND_OF_MIDAS_COOLDOWN = (60 * 5) * 20;
 }

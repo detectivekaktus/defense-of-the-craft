@@ -14,6 +14,7 @@ public class DotcItemSounds {
     public static final SoundEvent SKULL_BASHER = DotcSounds.register("item_skull_basher");
     public static final SoundEvent ABYSSAL_BLADE = DotcSounds.register("item_abyssal_blade");
     public static final SoundEvent HEAVENS_HALBERD = DotcSounds.register("item_heavens_halberd");
+    public static final SoundEvent HAND_OF_MIDAS = DotcSounds.register("item_hand_of_midas");
 
     public static void initialize() {}
 }

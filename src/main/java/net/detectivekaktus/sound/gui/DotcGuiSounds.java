@@ -13,6 +13,7 @@ public class DotcGuiSounds {
     public static final SoundEvent UI_COOLDOWN = DotcSounds.register("ui_cooldown");
     public static final SoundEvent UI_GENERAL_DENY = DotcSounds.register("ui_general_deny");
     public static final SoundEvent UI_DEBUFF = DotcSounds.register("ui_debuff");
+    public static final SoundEvent UI_IMMUNE = DotcSounds.register("ui_immune");
 
     public static void initialize() { }
 }
