@@ -319,7 +319,7 @@ public class DotcTools {
             new HandOfMidas(
                     new Item.Properties()
                             .component(
-                                    DotcComponents.USE_COUNT_COMPONENT,
+                                    DotcComponents.USE_COUNTER_COMPONENT,
                                     0
                             ),
                     new TooltipBuilder("hand_of_midas")

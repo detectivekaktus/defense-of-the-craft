@@ -1,5 +1,6 @@
 package net.detectivekaktus.event.player;
 
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 
 public class DotcPlayerEvents {
@@ -11,5 +12,6 @@ public class DotcPlayerEvents {
                 HpRegenEvent.tick(player);
             }
         });
+        ServerPlayerEvents.LEAVE.register(LeaveServerEvent::execute);
     }
 }

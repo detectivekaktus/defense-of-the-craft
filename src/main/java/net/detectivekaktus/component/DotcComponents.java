@@ -58,7 +58,7 @@ public class DotcComponents {
     public static final DataComponentType<Float> BONUS_MANA_REGEN_COMPONENT = registerFloat("bonus_mana_regen");
     public static final DataComponentType<Float> MANA_COST_REDUCTION_COMPONENT = registerFloat("mana_cost_reduction");
 
-    public static final DataComponentType<Integer> USE_COUNT_COMPONENT = registerInt("use_count");
+    public static final DataComponentType<Integer> USE_COUNTER_COMPONENT = registerInt("use_count");
     // meant to store time in seconds since the UNIX epoch in UTC
     public static final DataComponentType<Long> LAST_TIME_USED_COMPONENT = registerLong("last_time_used");
 

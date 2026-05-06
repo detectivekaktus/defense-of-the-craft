@@ -30,6 +30,10 @@ public class PlayerRandom {
 
     public static void initialize() { }
 
+    public static PlayerRandom.RandomData get(AttachmentTarget target) {
+        return new PlayerRandom.RandomData(target);
+    }
+
     public record RandomData(AttachmentTarget target) {
         public int getPityCounter() {
             return target.getAttachedOrCreate(PITY_COUNTER);
