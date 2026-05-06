@@ -59,6 +59,8 @@ public class DotcComponents {
     public static final DataComponentType<Float> MANA_COST_REDUCTION_COMPONENT = registerFloat("mana_cost_reduction");
 
     public static final DataComponentType<Integer> USE_COUNT_COMPONENT = registerInt("use_count");
+    // meant to store time in seconds since the UNIX epoch in UTC
+    public static final DataComponentType<Integer> LAST_TIME_USED_COMPONENT = registerInt("last_time_used");
 
     public static <T> DataComponentType<T> register(String id, Codec<T> codec) {
         return Registry.register(
