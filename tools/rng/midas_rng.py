@@ -11,15 +11,10 @@ WEIGHTS = {
 }
 WEIGHTS_SUM = sum([val for _, val in WEIGHTS.items()])
 
-PITY_NO_INCREASE = 1
-PITY_SOFT_INCREASE = 1.1
-PITY_MEDIUM_INCREASE = 1.2
-PITY_HIGH_INCREASE = 1.25
-
 PITY_COUNTER_CAP = 16
 PITY_TIMESTAMP_CAP = 4 * 60 * 60
 
-PITY_DIAMOND_HARD = 2 << 5
+PITY_DIAMOND_HARD = -1
 
 COMEBACK_BOOST_USES = 4
 
@@ -30,8 +25,8 @@ class Player:
         self.pity_counter: int = 0
         self.last_roll_timestamp: datetime | None = None
         self.last_login: datetime | None = None
-        self.comeback_boost_counter = 0
-        self.total_uses = 0
+        self.comeback_boost_counter: int = 0
+        self.total_uses: int = 0
 
     def login(self) -> None:
         self.last_login = datetime.now()
@@ -47,18 +42,10 @@ class Player:
         self.total_uses += 1
         skipped = WEIGHTS["COAL"] * 0.875
         return randint(int(skipped), WEIGHTS_SUM)
-    
-    def get_pity_soft_increase(self) -> float:
-        if self.pity_counter < 4:
-            return PITY_NO_INCREASE
-        elif self.pity_counter >= 4 and self.pity_counter < 8:
-            return PITY_SOFT_INCREASE
-        elif self.pity_counter >= 10 and self.pity_counter < 13:
-            return PITY_MEDIUM_INCREASE
-        else:
-            return PITY_HIGH_INCREASE
 
     def get_drop_chance(self) -> int:
+        # meaning I get the old value. It's pseudocode and I know
+        # it doesn't work that way
         self.last_roll_timestamp = datetime.now()
 
         if self.total_uses <= INITIAL_BOOSTED_USES:
@@ -80,8 +67,7 @@ class Player:
         self.pity_counter += 1
         self.total_uses += 1
         rand = randint(1, WEIGHTS_SUM)
-        increase = self.get_pity_soft_increase()
-        return int(rand * increase) if self.pity_counter > 0 else rand
+        return rand
 
     def use_hand_of_midas(self) -> str:
         rand = self.get_drop_chance()

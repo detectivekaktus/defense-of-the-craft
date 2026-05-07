@@ -24,23 +24,22 @@ import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 import net.detectivekaktus.tag.DotcEntityTypeTags;
 
+import java.time.Instant;
 import java.util.LinkedHashMap;
 
 public class HandOfMidas extends DotcAbilityItem {
-    private final LinkedHashMap<Item, Integer> WEIGHTS = new LinkedHashMap<>();
+    private final LinkedHashMap<Item, Integer> WEIGHTS;
     private final int TOTAL_WEIGHT;
 
     private final int DIAMOND_PITY = -1;
 
     private final int PITY_COUNTER_CAP = 12;
+    private final int PITY_TIMESTAMP_CAP = 60 * 60 * 4;
     private final int PITY_INITIAL_BONUS = 4;
-
-    private final float PITY_NO_INCREASE = 1.0f;
-    private final float PITY_SOFT_INCREASE = 1.1f;
-    private final float PITY_HARD_INCREASE = 1.2f;
 
     public HandOfMidas(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
+        WEIGHTS = new LinkedHashMap<>();
         WEIGHTS.put(Items.COAL, 800);
         WEIGHTS.put(Items.IRON_INGOT, 600);
         WEIGHTS.put(Items.GOLD_INGOT, 600);
@@ -61,18 +60,28 @@ public class HandOfMidas extends DotcAbilityItem {
             return;
         }
         var useCounter = stack.get(DotcComponents.USE_COUNTER_COMPONENT);
-        DefenseOfTheCraft.LOGGER.info("{}", stack.has(DotcComponents.USE_COUNTER_COMPONENT));
+
+        var now = Instant.now().getEpochSecond();
+        var lastRollTimestamp = stack.set(DotcComponents.LAST_TIME_USED_COMPONENT, now);
+        if (lastRollTimestamp == null)
+            lastRollTimestamp = now;
 
         var random = PlayerRandom.get(player);
         var pityCounter = random.getPityCounter();
 
-        var randomWeight = getRandomWeight(player.getRandom(), useCounter, pityCounter);
+        var randomWeight = getRandomWeight(
+                player.getRandom(),
+                useCounter,
+                pityCounter,
+                lastRollTimestamp
+        );
         var droppedItem = getDroppedItem(randomWeight);
 
-        if (droppedItem == Items.DIAMOND || droppedItem == Items.NETHERITE_INGOT)
-            random.setPityCounter(0);
-        else
-            random.setPityCounter(++pityCounter);
+        random.setPityCounter(
+                droppedItem == Items.DIAMOND || droppedItem == Items.NETHERITE_INGOT
+                        ? 0
+                        : ++pityCounter
+        );
         stack.set(DotcComponents.USE_COUNTER_COMPONENT, ++useCounter);
 
         var level = player.level();
@@ -111,32 +120,22 @@ public class HandOfMidas extends DotcAbilityItem {
         return Items.NETHERITE_INGOT;
     }
 
-    private int getRandomWeight(RandomSource randomSource, int useCounter, int pityCounter) {
+    private int getRandomWeight(RandomSource randomSource, int useCounter, int pityCounter, long lastRollTimestamp) {
         if (useCounter <= PITY_INITIAL_BONUS)
-            return getInitialBonusWeight(randomSource, pityCounter);
+            return getInitialBonusWeight(randomSource);
 
         if (pityCounter >= PITY_COUNTER_CAP)
             return DIAMOND_PITY;
 
-        var rand = randomSource.nextIntBetweenInclusive(1, TOTAL_WEIGHT);
-        var increase = getPityIncrease(pityCounter);
-        return (int) (rand * increase);
+        if (Instant.now().getEpochSecond() - lastRollTimestamp >= PITY_TIMESTAMP_CAP)
+            return DIAMOND_PITY;
+
+        return randomSource.nextIntBetweenInclusive(1, TOTAL_WEIGHT);
     }
 
-    private int getInitialBonusWeight(RandomSource randomSource, int pityCounter) {
+    private int getInitialBonusWeight(RandomSource randomSource) {
         var skipped = (int) (WEIGHTS.get(Items.COAL) * 0.875f);
-        var rand = randomSource.nextIntBetweenInclusive(skipped, TOTAL_WEIGHT);
-        var increase = getPityIncrease(pityCounter);
-        return (int) (rand * increase);
-    }
-
-    private float getPityIncrease(int pityCounter) {
-        if (pityCounter <= 4)
-            return PITY_NO_INCREASE;
-        else if (pityCounter <= 8)
-            return PITY_SOFT_INCREASE;
-        else
-            return PITY_HARD_INCREASE;
+        return randomSource.nextIntBetweenInclusive(skipped, TOTAL_WEIGHT);
     }
 
     @Override
