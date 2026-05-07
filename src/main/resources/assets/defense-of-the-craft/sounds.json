@@ -39,6 +39,11 @@
       "defense-of-the-craft:ui_debuff"
     ]
   },
+  "ui_immune": {
+    "sounds": [
+      "defense-of-the-craft:ui_immune"
+    ]
+  },
 
   "item_mkb_pierce": {
     "sounds": [
@@ -88,6 +93,11 @@
   "item_heavens_halberd": {
     "sounds": [
       "defense-of-the-craft:item_heavens_halberd"
+    ]
+  },
+  "item_hand_of_midas": {
+    "sounds": [
+      "defense-of-the-craft:item_hand_of_midas"
     ]
   },
 

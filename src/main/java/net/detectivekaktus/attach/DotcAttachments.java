@@ -4,5 +4,6 @@ public class DotcAttachments {
     public static void initialize() {
         PlayerStats.initialize();
         PlayerMana.initialize();
+        PlayerRandom.initialize();
     }
 }

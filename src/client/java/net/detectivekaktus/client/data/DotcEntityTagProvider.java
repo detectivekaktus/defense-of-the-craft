@@ -30,5 +30,24 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
         getOrCreateTagBuilder(DotcEntityTypeTags.HEAVENS_HALBERD_INVULNERABLE)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER);
+
+        getOrCreateTagBuilder(DotcEntityTypeTags.HAND_OF_MIDAS_INVULNERABLE)
+                .add(EntityType.PLAYER)
+                .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.WITHER)
+                .add(EntityType.WARDEN)
+                .add(EntityType.BREEZE)
+                .add(EntityType.VILLAGER)
+                .add(EntityType.WITCH)
+                .add(EntityType.PILLAGER)
+                .add(EntityType.EVOKER)
+                .add(EntityType.VINDICATOR)
+                .add(EntityType.RAVAGER)
+                .add(EntityType.PIGLIN)
+                .add(EntityType.PIGLIN_BRUTE)
+                .add(EntityType.GHAST)
+                .add(EntityType.SHULKER)
+                .add(EntityType.IRON_GOLEM)
+                .add(EntityType.SNIFFER);
     }
 }

@@ -315,6 +315,19 @@ public class DotcTools {
             ),
             "heavens_halberd"
     );
+    public static final Item HAND_OF_MIDAS = DotcItems.register(
+            new HandOfMidas(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.USE_COUNTER_COMPONENT,
+                                    0
+                            ),
+                    new TooltipBuilder("hand_of_midas")
+                            .description()
+                            .active()
+            ),
+            "hand_of_midas"
+    );
 
     public static void initialize() { }
 }

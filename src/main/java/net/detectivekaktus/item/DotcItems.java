@@ -61,6 +61,7 @@ public class DotcItems {
 
                 DotcTools.MAGIC_STICK,
                 DotcTools.MAGIC_WAND,
+                DotcTools.HAND_OF_MIDAS,
 
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,

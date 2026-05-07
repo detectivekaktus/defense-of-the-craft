@@ -11,7 +11,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -152,8 +151,6 @@ public class PlayerMixin implements CombatManagerHolder {
     )
     private void cancelInteractWithEntityIfOnCooldown(Entity entity, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
         var player = (Player) (Object) this;
-        if (isNotMixinTarget(player))
-            return;
 
         var stack = player.getItemInHand(interactionHand);
         if (player.getCooldowns().isOnCooldown(stack.getItem())) {

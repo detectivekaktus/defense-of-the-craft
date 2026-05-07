@@ -8,18 +8,17 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.attach.PlayerMana;
-import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.core.item.HasManaCost;
+import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.detectivekaktus.core.player.CombatManager;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 
-public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasManaCost, HasUseCooldown {
-    public DotcAbilitySwordItem(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
-        super(tier, properties, tooltipBuilder);
+public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, HasUseCooldown {
+    public DotcAbilityItem(Properties properties, TooltipBuilder tooltipBuilder) {
+        super(properties, tooltipBuilder);
     }
 
     protected InteractionResultHolder<ItemStack> interactWithItem(Player player, LivingEntity target, ItemStack stack) {
@@ -67,7 +66,7 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
             mana.consume(manaConsumed);
         }
 
-        invokeInteractionAbility(player, target);
+        invokeInteractionAbility(player, target, stack);
         playAbilitySound(player);
 
         var cooldowns = player.getCooldowns();
@@ -94,6 +93,8 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
     }
 
     protected abstract TagKey<EntityType<?>> getInvulnerableTag();
-    protected abstract void invokeInteractionAbility(Player player, LivingEntity target);
+
+    protected abstract void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack);
+
     protected abstract SoundEvent getAbilitySound();
 }

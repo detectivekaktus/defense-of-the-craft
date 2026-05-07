@@ -51,6 +51,10 @@
   "description.defense-of-the-craft.magic_wand": "A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.",
   "active.defense-of-the-craft.magic_wand": "Uses up all charges to instantly heal and replenish the caster's health and mana based on the number of charges.",
 
+  "item.defense-of-the-craft.hand_of_midas": "Hand of Midas",
+  "description.defense-of-the-craft.hand_of_midas": "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets.",
+  "active.defense-of-the-craft.hand_of_midas": "Instantly kills the target entity, transmuting it into random valuable resources. The transmutation can generate coal, iron ingot, gold ingot, diamond, and a netherite ingot.",
+
 
 
   "item.defense-of-the-craft.blight_stone": "Blight Stone",
