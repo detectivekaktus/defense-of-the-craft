@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import net.detectivekaktus.DefenseOfTheCraft;
 
+import java.time.Instant;
 import java.util.function.UnaryOperator;
 
 @SuppressWarnings("UnstableApiUsage")
@@ -54,7 +55,10 @@ public class PlayerRandom {
         }
 
         public long getLastLogoutTimestamp() {
-            return target.getAttachedOrCreate(LOGOUT_TIMESTAMP);
+            return target.getAttachedOrSet(
+                    LOGOUT_TIMESTAMP,
+                    Instant.now().getEpochSecond()
+            );
         }
 
         public long setLastLogoutTimestamp(long val) {

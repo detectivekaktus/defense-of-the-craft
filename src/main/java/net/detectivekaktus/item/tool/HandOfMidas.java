@@ -35,7 +35,10 @@ public class HandOfMidas extends DotcAbilityItem {
 
     private final int PITY_COUNTER_CAP = 12;
     private final int PITY_TIMESTAMP_CAP = 60 * 60 * 4;
-    private final int PITY_INITIAL_BONUS = 4;
+    private final int COMEBACK_BONUS_INTERVAL = 60 * 60 * 24 * 2;
+    // maybe you'll hit the pity counter cap when your bonus expires
+    private final int PITY_INITIAL_BONUS = 11;
+    private final int PITY_COMEBACK_BONUS = 4;
 
     public HandOfMidas(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
@@ -67,21 +70,23 @@ public class HandOfMidas extends DotcAbilityItem {
             lastRollTimestamp = now;
 
         var random = PlayerRandom.get(player);
+        var lastLogoutTimestamp = random.getLastLogoutTimestamp();
+        if (now - lastLogoutTimestamp >= COMEBACK_BONUS_INTERVAL)
+            random.setComebackBoosterCounter(PITY_COMEBACK_BONUS);
+        var comebackBonus = random.getComebackBoosterCounter();
         var pityCounter = random.getPityCounter();
 
         var randomWeight = getRandomWeight(
                 player.getRandom(),
                 useCounter,
                 pityCounter,
-                lastRollTimestamp
+                lastRollTimestamp,
+                comebackBonus
         );
         var droppedItem = getDroppedItem(randomWeight);
 
-        random.setPityCounter(
-                droppedItem == Items.DIAMOND || droppedItem == Items.NETHERITE_INGOT
-                        ? 0
-                        : ++pityCounter
-        );
+        random.setPityCounter(droppedItem == Items.DIAMOND || droppedItem == Items.NETHERITE_INGOT ? 0 : ++pityCounter);
+        random.setComebackBoosterCounter(comebackBonus == 0 ? 0 : --comebackBonus);
         stack.set(DotcComponents.USE_COUNTER_COMPONENT, ++useCounter);
 
         var level = player.level();
@@ -120,7 +125,16 @@ public class HandOfMidas extends DotcAbilityItem {
         return Items.NETHERITE_INGOT;
     }
 
-    private int getRandomWeight(RandomSource randomSource, int useCounter, int pityCounter, long lastRollTimestamp) {
+    private int getRandomWeight(
+            RandomSource randomSource,
+            int useCounter,
+            int pityCounter,
+            long lastRollTimestamp,
+            int comebackBonus
+    ) {
+        if (comebackBonus != 0)
+            return getComebackBonusWeight(randomSource);
+
         if (useCounter <= PITY_INITIAL_BONUS)
             return getInitialBonusWeight(randomSource);
 
@@ -131,6 +145,11 @@ public class HandOfMidas extends DotcAbilityItem {
             return DIAMOND_PITY;
 
         return randomSource.nextIntBetweenInclusive(1, TOTAL_WEIGHT);
+    }
+
+    private int getComebackBonusWeight(RandomSource randomSource) {
+        var skipped = WEIGHTS.get(Items.COAL) + WEIGHTS.get(Items.IRON_INGOT) + 1;
+        return randomSource.nextIntBetweenInclusive(skipped, TOTAL_WEIGHT);
     }
 
     private int getInitialBonusWeight(RandomSource randomSource) {

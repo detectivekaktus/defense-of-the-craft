@@ -11,14 +11,13 @@ WEIGHTS = {
 }
 WEIGHTS_SUM = sum([val for _, val in WEIGHTS.items()])
 
-PITY_COUNTER_CAP = 16
+PITY_COUNTER_CAP = 12
 PITY_TIMESTAMP_CAP = 4 * 60 * 60
 
 PITY_DIAMOND_HARD = -1
 
 COMEBACK_BOOST_USES = 4
-
-INITIAL_BOOSTED_USES = 15
+INITIAL_BOOSTED_USES = 11
 
 class Player:
     def __init__(self) -> None:
