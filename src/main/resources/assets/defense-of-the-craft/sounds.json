@@ -19,6 +19,11 @@
       "defense-of-the-craft:ui_change_tab"
     ]
   },
+  "ui_evaded": {
+    "sounds": [
+      "defense-of-the-craft:ui_evaded"
+    ]
+  },
   "ui_not_enough_mana": {
     "sounds": [
       "defense-of-the-craft:ui_not_enough_mana"
@@ -100,10 +105,9 @@
       "defense-of-the-craft:item_hand_of_midas"
     ]
   },
-
-  "core_evaded": {
+  "item_dust_of_appearance": {
     "sounds": [
-      "defense-of-the-craft:core_evaded"
+      "defense-of-the-craft:item_dust_of_appearance"
     ]
   }
 }

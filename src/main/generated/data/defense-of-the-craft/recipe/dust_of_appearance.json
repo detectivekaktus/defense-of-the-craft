@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "defense-of-the-craft:crystal_dusts"
+    },
+    "@": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    "   "
+  ],
+  "result": {
+    "count": 3,
+    "id": "defense-of-the-craft:dust_of_appearance"
+  }
+}

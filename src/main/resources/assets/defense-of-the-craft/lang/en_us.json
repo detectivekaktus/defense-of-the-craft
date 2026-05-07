@@ -12,6 +12,10 @@
   "passive.defense-of-the-craft.enchanted_mango": "Passively provides 0.2 health regeneration.",
   "active.defense-of-the-craft.enchanted_mango": "Consumes the mango and instantly restores 40 mana.",
 
+  "item.defense-of-the-craft.dust_of_appearance": "Dust of Appearance",
+  "description.defense-of-the-craft.dust_of_appearance": "One may hide visage, but never volume.",
+  "active.defense-of-the-craft.dust_of_appearance": "Creates an area centered around the wielder that reveals invisible units.",
+
 
 
   "item.defense-of-the-craft.radiant_crystal_shards": "Radiant Crystal Shards",
@@ -192,6 +196,8 @@
   "effect.defense-of-the-craft.armor_reduction": "Armor Reduction",
   "effect.defense-of-the-craft.stun": "Stun",
   "effect.defense-of-the-craft.disarm": "Disarm",
+
+  "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
 
 
 

@@ -1,5 +1,6 @@
 package net.detectivekaktus.client.data;
 
+import net.detectivekaktus.tag.DotcItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 
@@ -47,6 +48,10 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
 
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(DotcTools.DESOLATOR);
+
+        getOrCreateTagBuilder(DotcItemTags.CRYSTAL_DUSTS)
+                .add(DotcIngredients.RADIANT_CRYSTAL_DUST)
+                .add(DotcIngredients.DIRE_CRYSTAL_DUST);
     }
 
     @Override

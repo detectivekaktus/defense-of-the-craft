@@ -29,6 +29,15 @@ public class DotcConsumables {
             ),
             "enchanted_mango"
     );
+    public static final Item DUST_OF_APPEARANCE = DotcItems.register(
+            new DustOfAppearance(
+                    new Item.Properties().stacksTo(16),
+                    new TooltipBuilder("dust_of_appearance")
+                            .description()
+                            .active()
+            ),
+            "dust_of_appearance"
+    );
 
     public static void initialize() { }
 }

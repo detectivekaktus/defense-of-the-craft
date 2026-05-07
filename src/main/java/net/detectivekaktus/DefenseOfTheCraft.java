@@ -14,7 +14,7 @@ import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.event.DotcEvents;
 import net.detectivekaktus.item.DotcItems;
 import net.detectivekaktus.sound.DotcSounds;
-import net.detectivekaktus.tag.DotcEntityTypeTags;
+import net.detectivekaktus.tag.DotcTags;
 import net.detectivekaktus.worldgen.DotcWorldgen;
 
 public class DefenseOfTheCraft implements ModInitializer {
@@ -29,7 +29,7 @@ public class DefenseOfTheCraft implements ModInitializer {
 		DotcComponents.initialize();
 		DotcDamageTypes.initialize();
 		DotcEffects.initialize();
-		DotcEntityTypeTags.initialize();
+		DotcTags.initialize();
 		DotcEvents.initialize();
 		DotcItems.initialize();
 		DotcSounds.initialize();

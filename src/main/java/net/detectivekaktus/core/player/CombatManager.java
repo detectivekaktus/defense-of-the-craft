@@ -1,6 +1,8 @@
 package net.detectivekaktus.core.player;
 
+import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +21,6 @@ import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.tool.*;
-import net.detectivekaktus.sound.DotcSounds;
 
 public class CombatManager {
     private final Player player;
@@ -172,11 +173,11 @@ public class CombatManager {
     }
 
     private void playEvasionSound() {
-        player.level().playSound(
-                null,
-                player.getX(), player.getY(), player.getZ(),
-                DotcSounds.EVADED,
-                player.getSoundSource(),
+        var level = player.level();
+        level.playLocalSound(
+                player,
+                DotcGuiSounds.UI_EVADED,
+                SoundSource.PLAYERS,
                 1.0f, 1.0f
         );
     }

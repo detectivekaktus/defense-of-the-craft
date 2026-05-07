@@ -1,5 +1,6 @@
 package net.detectivekaktus.client.data.item.consumable;
 
+import net.detectivekaktus.tag.DotcItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 
@@ -43,6 +44,18 @@ public class DotcConsumablesRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(
                         "has_radiant_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcConsumables.DUST_OF_APPEARANCE, 3)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern("   ")
+                .define('@', Items.LEATHER)
+                .define('#', DotcItemTags.CRYSTAL_DUSTS)
+                .unlockedBy(
+                        "has_radiant_crystal_dust",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL_DUST)
                 )
                 .save(exporter);
     }

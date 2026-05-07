@@ -51,6 +51,7 @@ public class DotcItems {
 
                 DotcConsumables.TANGO,
                 DotcConsumables.ENCHANTED_MANGO,
+                DotcConsumables.DUST_OF_APPEARANCE,
 
                 DotcIngredients.VOID_STONE,
                 DotcIngredients.RING_OF_HEALTH,
