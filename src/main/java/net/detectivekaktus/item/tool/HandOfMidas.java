@@ -174,7 +174,6 @@ public class HandOfMidas extends DotcAbilityItem {
 
     @Override
     public int getCooldownInTicks() {
-//        return DotcItemCooldowns.HAND_OF_MIDAS_COOLDOWN;
-        return 0;
+        return DotcItemCooldowns.HAND_OF_MIDAS_COOLDOWN;
     }
 }

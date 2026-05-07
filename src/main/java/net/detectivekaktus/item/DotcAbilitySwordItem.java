@@ -27,22 +27,32 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
 
         var mana = PlayerMana.get(player);
         var notEnoughMana = getManaCost() > mana.getCurrentMana();
+        var invulnerable = target.getType().is(getInvulnerableTag());
 
-        if (notEnoughMana) {
-            if (level.isClientSide)
+        if (level.isClientSide) {
+            if (notEnoughMana)
                 level.playLocalSound(
                         player,
                         DotcGuiSounds.UI_NOT_ENOUGH_MANA,
                         SoundSource.PLAYERS,
                         1.0f, 1.0f
                 );
-            return InteractionResultHolder.fail(stack);
+
+            if (invulnerable)
+                level.playLocalSound(
+                        player,
+                        DotcGuiSounds.UI_IMMUNE,
+                        SoundSource.PLAYERS,
+                        1.0f, 1.0f
+                );
+
+            if (notEnoughMana || invulnerable)
+                return InteractionResultHolder.fail(stack);
+
+            return InteractionResultHolder.pass(stack);
         }
 
-        if (level.isClientSide)
-            return InteractionResultHolder.pass(stack);
-
-        if (target.getType().is(getInvulnerableTag()))
+        if (notEnoughMana || invulnerable)
             return InteractionResultHolder.fail(stack);
 
         if (target instanceof Player interactedPlayer)
