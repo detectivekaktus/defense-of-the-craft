@@ -12,7 +12,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -29,7 +28,6 @@ import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 
-@Debug(export = true)
 @Mixin(Player.class)
 public class PlayerMixin implements CombatManagerHolder {
     @Unique
