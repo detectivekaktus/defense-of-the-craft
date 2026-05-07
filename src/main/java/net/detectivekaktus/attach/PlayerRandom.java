@@ -62,7 +62,7 @@ public class PlayerRandom {
         }
 
         public long setLastLogoutTimestamp(long val) {
-            var current = getComebackBoosterCounter();
+            var current = getLastLogoutTimestamp();
             return setOrFallback(LOGOUT_TIMESTAMP, val, current);
         }
 

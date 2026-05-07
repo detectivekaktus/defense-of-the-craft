@@ -50,7 +50,7 @@ class Player:
         if self.total_uses <= INITIAL_BOOSTED_USES:
             return self.get_initial_drop_chance()
 
-        if self.last_login is not None and (datetime.now() - self.last_login).days >= 3:
+        if self.last_login is not None and (datetime.now() - self.last_login).days >= 2:
             self.comeback_boost_counter = COMEBACK_BOOST_USES
 
         if self.comeback_boost_counter != 0:
