@@ -25,7 +25,8 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
         var level = player.level();
 
         var mana = PlayerMana.get(player);
-        var notEnoughMana = getManaCost() > mana.getCurrentMana();
+        var hasInfiniteMaterials = player.hasInfiniteMaterials();
+        var notEnoughMana = !hasInfiniteMaterials && getManaCost() > mana.getCurrentMana();
         var invulnerable = target.getType().is(getInvulnerableTag());
 
         if (level.isClientSide) {
@@ -57,11 +58,13 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
         if (target instanceof Player interactedPlayer)
             CombatManager.addStickCharge(interactedPlayer);
 
-        var manaConsumed = Math.max(
-                (float) Math.ceil(getManaCost() * (1.0f - mana.getManaCostReduction())),
-                0.0f
-        );
-        mana.consume(manaConsumed);
+        if (!hasInfiniteMaterials) {
+            var manaConsumed = Math.max(
+                    (float) Math.ceil(getManaCost() * (1.0f - mana.getManaCostReduction())),
+                    0.0f
+            );
+            mana.consume(manaConsumed);
+        }
 
         invokeInteractionAbility(player, target, stack);
         playAbilitySound(player);
@@ -90,6 +93,8 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
     }
 
     protected abstract TagKey<EntityType<?>> getInvulnerableTag();
+
     protected abstract void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack);
+
     protected abstract SoundEvent getAbilitySound();
 }

@@ -26,7 +26,8 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         var level = player.level();
 
         var mana = PlayerMana.get(player);
-        var notEnoughMana = getManaCost() > mana.getCurrentMana();
+        var hasInfiniteMaterials = player.hasInfiniteMaterials();
+        var notEnoughMana = !hasInfiniteMaterials && getManaCost() > mana.getCurrentMana();
         var invulnerable = target.getType().is(getInvulnerableTag());
 
         if (level.isClientSide) {
@@ -58,11 +59,13 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         if (target instanceof Player interactedPlayer)
             CombatManager.addStickCharge(interactedPlayer);
 
-        var manaConsumed = Math.max(
-                (float) Math.ceil(getManaCost() * (1.0f - mana.getManaCostReduction())),
-                0.0f
-        );
-        mana.consume(manaConsumed);
+        if (!hasInfiniteMaterials) {
+            var manaConsumed = Math.max(
+                    (float) Math.ceil(getManaCost() * (1.0f - mana.getManaCostReduction())),
+                    0.0f
+            );
+            mana.consume(manaConsumed);
+        }
 
         invokeInteractionAbility(player, target);
         playAbilitySound(player);
