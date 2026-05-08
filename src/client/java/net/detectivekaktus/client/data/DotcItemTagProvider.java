@@ -52,6 +52,10 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(DotcItemTags.CRYSTAL_DUSTS)
                 .add(DotcIngredients.RADIANT_CRYSTAL_DUST)
                 .add(DotcIngredients.DIRE_CRYSTAL_DUST);
+
+        getOrCreateTagBuilder(DotcItemTags.CRYSTALS)
+                .add(DotcIngredients.RADIANT_CRYSTAL)
+                .add(DotcIngredients.DIRE_CRYSTAL);
     }
 
     @Override

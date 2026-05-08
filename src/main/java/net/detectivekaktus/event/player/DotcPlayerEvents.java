@@ -10,6 +10,7 @@ public class DotcPlayerEvents {
             for (var player : players) {
                 ManaRegenEvent.tick(player);
                 HpRegenEvent.tick(player);
+                GemOfTrueSightEvent.tick(player);
             }
         });
         ServerPlayerEvents.LEAVE.register(LeaveServerEvent::execute);

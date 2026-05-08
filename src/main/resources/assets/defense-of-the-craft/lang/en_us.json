@@ -16,6 +16,10 @@
   "description.defense-of-the-craft.dust_of_appearance": "One may hide visage, but never volume.",
   "active.defense-of-the-craft.dust_of_appearance": "Creates a 12x12x12 area centered around the wielder that reveals invisible units.",
 
+  "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
+  "description.defense-of-the-craft.gem_of_true_sight": "Not one thrall creature of the depths, nor spirit bound in drowning's keep, nor Maelrawn the Tentacular, shall rest till seas, gem comes to sleep.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 7x7x7 area, rendering them visible.",
+
 
 
   "item.defense-of-the-craft.radiant_crystal_shards": "Radiant Crystal Shards",

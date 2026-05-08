@@ -58,6 +58,19 @@ public class DotcConsumablesRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL_DUST)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcConsumables.GEM_OF_TRUE_SIGHT)
+                .pattern("$#$")
+                .pattern("#@#")
+                .pattern("$#$")
+                .define('@', Items.ENDER_EYE)
+                .define('#', DotcItemTags.CRYSTALS)
+                .define('$', Items.STONE)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override
