@@ -11,14 +11,16 @@ import net.minecraft.world.level.Level;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
-import net.detectivekaktus.core.item.DotcItemCooldowns;
+import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.item.DotcItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class MagicStick extends DotcItem {
+public class MagicStick extends DotcItem implements HasUseCooldown {
     private final float HEALTH_PER_STICK_CHARGE = 0.4f;
     private final float MANA_PER_STICK_CHARGE = 2.0f;
+
+    private final int CHARGE_INTERVAL = 30 * 20;
 
     public MagicStick(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
@@ -43,8 +45,8 @@ public class MagicStick extends DotcItem {
         player.heal(hpRegen);
         mana.increment(manaRegen);
 
-        player.getCooldowns().addCooldown(DotcTools.MAGIC_STICK, DotcItemCooldowns.MAGIC_STICK_COOLDOWN);
-        player.getCooldowns().addCooldown(DotcTools.MAGIC_WAND, DotcItemCooldowns.MAGIC_STICK_COOLDOWN);
+        player.getCooldowns().addCooldown(DotcTools.MAGIC_STICK, getCooldownInTicks());
+        player.getCooldowns().addCooldown(DotcTools.MAGIC_WAND, getCooldownInTicks());
         level.playSound(
                 null,
                 player.getX(), player.getY(), player.getZ(),
@@ -70,12 +72,16 @@ public class MagicStick extends DotcItem {
 
         var component = itemStack.get(DotcComponents.CHARGEABLE_COMPONENT);
 
-        if (component.charges() < component.maxCharges()
-                && level.getGameTime() - component.lastTickSync() >= DotcItemCooldowns.MAGIC_STICK_CHARGE_INTERVAL) {
+        if (component.charges() < component.maxCharges() && level.getGameTime() - component.lastTickSync() >= CHARGE_INTERVAL) {
             itemStack.set(
                     DotcComponents.CHARGEABLE_COMPONENT,
                     ChargeableComponent.addCharge(component, level)
             );
         }
+    }
+
+    @Override
+    public int getCooldownInTicks() {
+        return 15 * 20;
     }
 }

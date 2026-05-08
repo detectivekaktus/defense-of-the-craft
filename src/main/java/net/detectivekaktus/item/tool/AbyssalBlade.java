@@ -15,7 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.core.item.Procable;
 import net.detectivekaktus.core.item.SharesProcCooldown;
 import net.detectivekaktus.core.rng.PseudoRandomBaseChances;
@@ -64,7 +63,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
 
     @Override
     public int getCooldownInTicks() {
-        return DotcItemCooldowns.ABYSSAL_BLADE_COOLDOWN;
+        return 25 * 20;
     }
 
     @Override
@@ -89,7 +88,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
 
     @Override
     public int getProcCooldownInTicks() {
-        return DotcItemCooldowns.SKULL_BASHER_COOLDOWN;
+        return 3 * 20;
     }
 
     @Override

@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -55,6 +54,6 @@ public class HeavensHalberd extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-        return DotcItemCooldowns.HEAVENS_HALBERD_COOLDOWN;
+        return 15 * 20;
     }
 }

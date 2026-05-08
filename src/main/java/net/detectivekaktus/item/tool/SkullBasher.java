@@ -1,6 +1,5 @@
 package net.detectivekaktus.item.tool;
 
-import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.core.item.SharesProcCooldown;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
@@ -11,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.core.item.Procable;
-import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.detectivekaktus.core.rng.PseudoRandomBaseChances;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.effect.DotcEffects;
@@ -56,7 +54,7 @@ public class SkullBasher extends DotcPickaxeItem implements Procable, SharesProc
 
     @Override
     public int getProcCooldownInTicks() {
-        return DotcItemCooldowns.SKULL_BASHER_COOLDOWN;
+        return 3 * 20;
     }
 
     @Override

@@ -147,7 +147,7 @@ public class CombatManager {
             // like in dota the echo sabre attack doesn't crit if the first one did,
             // so there's no f *= 1.5 in case of a crit
 
-            player.getCooldowns().addCooldown(item, DotcItemCooldowns.ECHO_SABRE_COOLDOWN);
+            player.getCooldowns().addCooldown(item, CombatRules.ECHO_SABRE_COOLDOWN);
             entity.hurt(damageSource, damage);
         }
 

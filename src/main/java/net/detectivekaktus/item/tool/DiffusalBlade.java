@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
@@ -52,6 +51,6 @@ public class DiffusalBlade extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-        return DotcItemCooldowns.DIFFUSAL_BLADE_COOLDOWN;
+        return 15 * 20;
     }
 }
