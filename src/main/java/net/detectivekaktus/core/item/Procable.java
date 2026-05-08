@@ -11,5 +11,6 @@ public interface Procable extends HasProcSound {
     float getProcDamage();
     DamageSource getProcDamageSource(Player player);
     Optional<Holder<MobEffect>> getProcEffect();
+    int getProcEffectDuration();
     int getProcCooldownInTicks();
 }

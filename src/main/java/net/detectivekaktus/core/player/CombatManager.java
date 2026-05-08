@@ -1,6 +1,5 @@
 package net.detectivekaktus.core.player;
 
-import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -21,6 +20,7 @@ import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.tool.*;
+import net.detectivekaktus.sound.gui.DotcGuiSounds;
 
 public class CombatManager {
     private final Player player;
@@ -68,10 +68,10 @@ public class CombatManager {
             return 0.0f;
 
         var mana = PlayerMana.get(victim);
-        var manaBurn = Math.min(DotcItemRules.DIFFUSAL_MANA_BURN, mana.getCurrentMana());
+        var manaBurn = Math.min(CombatRules.DIFFUSAL_MANA_BURN, mana.getCurrentMana());
         mana.consume(manaBurn);
 
-        return manaBurn * DotcItemRules.DIFFUSAL_DAMAGE_PER_MANA;
+        return manaBurn * CombatRules.DIFFUSAL_DAMAGE_PER_MANA;
     }
 
     public void calculateProcs() {
@@ -124,7 +124,7 @@ public class CombatManager {
                     1.0f, 1.0f
             ));
             if (effect.isPresent() && entity instanceof LivingEntity livingEntity)
-                livingEntity.addEffect(new MobEffectInstance(effect.get(), DotcItemRules.BASH_DURATION));
+                livingEntity.addEffect(new MobEffectInstance(effect.get(), itemWithBonuses.getProcEffectDuration()));
 
             applyCooldown(item);
             entity.hurt(damageSource, damage);

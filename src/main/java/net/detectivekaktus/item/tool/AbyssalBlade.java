@@ -16,7 +16,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.core.item.DotcItemCooldowns;
-import net.detectivekaktus.core.item.DotcItemRules;
 import net.detectivekaktus.core.item.Procable;
 import net.detectivekaktus.core.item.SharesProcCooldown;
 import net.detectivekaktus.core.rng.PseudoRandomBaseChances;
@@ -49,7 +48,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
 
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target) {
-        target.addEffect(new MobEffectInstance(DotcEffects.STUN, DotcItemRules.BASH_DURATION));
+        target.addEffect(new MobEffectInstance(DotcEffects.STUN, getProcEffectDuration()));
         player.teleportTo(target.getX(), target.getY(), target.getZ());
     }
 
@@ -81,6 +80,11 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
     @Override
     public Optional<Holder<MobEffect>> getProcEffect() {
         return Optional.of(DotcEffects.STUN);
+    }
+
+    @Override
+    public int getProcEffectDuration() {
+        return 2 * 20;
     }
 
     @Override

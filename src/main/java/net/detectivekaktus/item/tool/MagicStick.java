@@ -12,12 +12,14 @@ import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.core.item.DotcItemCooldowns;
-import net.detectivekaktus.core.item.DotcItemRules;
 import net.detectivekaktus.item.DotcItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class MagicStick extends DotcItem {
+    private final float HEALTH_PER_STICK_CHARGE = 0.4f;
+    private final float MANA_PER_STICK_CHARGE = 2.0f;
+
     public MagicStick(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
     }
@@ -34,8 +36,8 @@ public class MagicStick extends DotcItem {
         if (component.charges() == 0)
             return InteractionResultHolder.pass(stack);
 
-        var hpRegen = DotcItemRules.HEALTH_PER_STICK_CHARGE * component.charges();
-        var manaRegen = DotcItemRules.MANA_PER_STICK_CHARGE * component.charges();
+        var hpRegen = HEALTH_PER_STICK_CHARGE * component.charges();
+        var manaRegen = MANA_PER_STICK_CHARGE * component.charges();
 
         var mana = PlayerMana.get(player);
         player.heal(hpRegen);

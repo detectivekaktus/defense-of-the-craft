@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.core.item.DotcItemCooldowns;
-import net.detectivekaktus.core.item.DotcItemRules;
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -21,6 +20,8 @@ import net.detectivekaktus.sound.item.DotcItemSounds;
 import net.detectivekaktus.tag.DotcEntityTypeTags;
 
 public class HeavensHalberd extends DotcAbilitySwordItem {
+    private final int DISARM_DURATION = 3 * 20;
+
     public static final float BASE_PROC_CHANCE = PseudoRandomBaseChances.AVG_15;
 
     public HeavensHalberd(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
@@ -39,7 +40,7 @@ public class HeavensHalberd extends DotcAbilitySwordItem {
 
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target) {
-        target.addEffect(new MobEffectInstance(DotcEffects.DISARM, DotcItemRules.DISARM_DURATION));
+        target.addEffect(new MobEffectInstance(DotcEffects.DISARM, DISARM_DURATION));
     }
 
     @Override

@@ -50,6 +50,11 @@ public class SkullBasher extends DotcPickaxeItem implements Procable, SharesProc
     }
 
     @Override
+    public int getProcEffectDuration() {
+        return 2 * 20;
+    }
+
+    @Override
     public int getProcCooldownInTicks() {
         return DotcItemCooldowns.SKULL_BASHER_COOLDOWN;
     }

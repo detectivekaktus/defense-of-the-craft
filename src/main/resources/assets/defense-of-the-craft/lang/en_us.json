@@ -14,7 +14,7 @@
 
   "item.defense-of-the-craft.dust_of_appearance": "Dust of Appearance",
   "description.defense-of-the-craft.dust_of_appearance": "One may hide visage, but never volume.",
-  "active.defense-of-the-craft.dust_of_appearance": "Creates an area centered around the wielder that reveals invisible units.",
+  "active.defense-of-the-craft.dust_of_appearance": "Creates a 12x12x12 area centered around the wielder that reveals invisible units.",
 
 
 
