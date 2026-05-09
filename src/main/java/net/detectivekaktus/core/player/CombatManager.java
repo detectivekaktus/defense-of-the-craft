@@ -66,16 +66,24 @@ public class CombatManager {
         return damage * item.getCritPercent();
     }
 
-    public float addShadowWalkingDamage() {
+    public ShadowWalkingSource revealInvisibility() {
         var flags = PlayerFlags.get(player);
         if (!flags.isShadowWalking())
-            return 0.0f;
+            return ShadowWalkingSource.NONE;
 
         player.removeEffect(MobEffects.INVISIBILITY);
         player.removeEffect(MobEffects.MOVEMENT_SPEED);
 
         flags.setShadowWalking(false);
-        var oldSource = flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+        return flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+    }
+
+    public float addShadowWalkingDamage() {
+        var flags = PlayerFlags.get(player);
+        if (!flags.isShadowWalking())
+            return 0.0f;
+
+        var oldSource = revealInvisibility();
         if (oldSource == ShadowWalkingSource.SILVER_EDGE) {
             player.level().playSound(
                     null,
@@ -84,7 +92,8 @@ public class CombatManager {
                     SoundSource.PLAYERS
             );
         }
-        return oldSource != ShadowWalkingSource.SHADOW_AMULET ? 4.0f : 0.0f;
+        return oldSource != ShadowWalkingSource.NONE
+                && oldSource != ShadowWalkingSource.SHADOW_AMULET ? 4.0f : 0.0f;
     }
 
     public float manaBurn(Player attacker, Player victim) {

@@ -152,7 +152,7 @@ public class PlayerMixin implements CombatManagerHolder {
             ),
             cancellable = true
     )
-    private void cancelInteractWithEntityIfOnCooldown(Entity entity, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
+    private void preInteractLivingEntityHook(Entity entity, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
         var player = (Player) (Object) this;
 
         var stack = player.getItemInHand(interactionHand);
@@ -165,6 +165,11 @@ public class PlayerMixin implements CombatManagerHolder {
             );
             callbackInfo.setReturnValue(InteractionResult.FAIL);
         }
+
+        if (isNotMixinTarget(player))
+            return;
+
+        dotc$combatManager.revealInvisibility();
     }
 
     @Inject(
