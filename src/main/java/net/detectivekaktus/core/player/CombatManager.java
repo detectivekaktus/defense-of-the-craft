@@ -226,8 +226,8 @@ public class CombatManager {
     }
 
     public static void addStickCharge(Player player) {
-        var hotbarItems = player.getInventory().items.subList(0, 9);
-        for (var item : hotbarItems) {
+        var slots = InventoryManager.getModInterestedSlots(player);
+        for (var item : slots) {
             boolean isTarget = (item.is(DotcTools.MAGIC_STICK) || item.is(DotcTools.MAGIC_WAND))
                     && item.has(DotcComponents.CHARGEABLE_COMPONENT);
             if (isTarget) {

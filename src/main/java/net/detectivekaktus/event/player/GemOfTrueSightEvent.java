@@ -1,5 +1,6 @@
 package net.detectivekaktus.event.player;
 
+import net.detectivekaktus.core.player.InventoryManager;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,8 +12,8 @@ import net.detectivekaktus.item.consumable.DotcConsumables;
 public class GemOfTrueSightEvent {
     public static void tick(Player player) {
         var hasGem = false;
-        var hotbarItems = player.getInventory().items.subList(0, 9);
-        for (var item : hotbarItems) {
+        var slots = InventoryManager.getModInterestedSlots(player);
+        for (var item : slots) {
             if (item.is(DotcConsumables.GEM_OF_TRUE_SIGHT)) {
                 hasGem = true;
                 break;

@@ -20,9 +20,9 @@ public class StatManager {
 
     public void updateStats() {
         var config = new StatManager.Config();
-        var hotbarItems = player.getInventory().items.subList(0, 9);
+        var slots = InventoryManager.getModInterestedSlots(player);
 
-        for (var item : hotbarItems) {
+        for (var item : slots) {
             if (item.has(DotcComponents.ITEM_STATS_COMPONENT)) {
                 var stats = item.get(DotcComponents.ITEM_STATS_COMPONENT);
                 config.addStats(stats);
