@@ -38,7 +38,7 @@ public class HeavensHalberd extends DotcAbilitySwordItem {
     }
 
     @Override
-    protected void invokeInteractionAbility(Player player, LivingEntity target) {
+    protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         target.addEffect(new MobEffectInstance(DotcEffects.DISARM, DISARM_DURATION));
     }
 

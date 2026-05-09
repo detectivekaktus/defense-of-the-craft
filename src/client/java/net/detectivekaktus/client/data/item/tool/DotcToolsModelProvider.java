@@ -35,7 +35,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.DESOLATOR,
                 DotcTools.SKULL_BASHER,
                 DotcTools.ABYSSAL_BLADE,
-                DotcTools.HEAVENS_HALBERD
+                DotcTools.HEAVENS_HALBERD,
+                DotcTools.SHADOW_BLADE
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

@@ -328,6 +328,19 @@ public class DotcTools {
             ),
             "hand_of_midas"
     );
+    public static final Item SHADOW_BLADE = DotcItems.register(
+            new ShadowBlade(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(ShadowBlade.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 3, -2.25f
+                            )),
+                    new TooltipBuilder("shadow_blade")
+                            .description()
+                            .active()
+            ),
+            "shadow_blade"
+    );
 
     public static void initialize() { }
 }

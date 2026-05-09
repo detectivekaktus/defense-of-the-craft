@@ -46,7 +46,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
     }
 
     @Override
-    protected void invokeInteractionAbility(Player player, LivingEntity target) {
+    protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         target.addEffect(new MobEffectInstance(DotcEffects.STUN, getProcEffectDuration()));
         player.teleportTo(target.getX(), target.getY(), target.getZ());
     }

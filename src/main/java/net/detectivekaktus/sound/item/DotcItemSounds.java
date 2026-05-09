@@ -17,6 +17,7 @@ public class DotcItemSounds {
     public static final SoundEvent HAND_OF_MIDAS = DotcSounds.register("item_hand_of_midas");
     public static final SoundEvent DUST_OF_APPEARANCE = DotcSounds.register("item_dust_of_appearance");
     public static final SoundEvent SHADOW_AMULET = DotcSounds.register("item_shadow_amulet");
+    public static final SoundEvent SHADOW_BLADE = DotcSounds.register("item_shadow_blade");
 
     public static void initialize() {}
 }

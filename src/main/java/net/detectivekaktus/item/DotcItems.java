@@ -88,6 +88,7 @@ public class DotcItems {
                 DotcTools.BUTTERFLY,
                 DotcTools.SKULL_BASHER,
                 DotcTools.ABYSSAL_BLADE,
+                DotcTools.SHADOW_BLADE,
                 DotcTools.MONKEY_KING_BAR,
                 DotcPrimitives.DIVINE_RAPIER,
 

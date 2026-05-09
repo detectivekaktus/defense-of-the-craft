@@ -35,7 +35,7 @@ public class DiffusalBlade extends DotcAbilitySwordItem {
     }
 
     @Override
-    protected void invokeInteractionAbility(Player player, LivingEntity target) {
+    protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, 1));
     }
 

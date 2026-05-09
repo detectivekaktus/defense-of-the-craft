@@ -114,5 +114,10 @@
     "sounds": [
       "defense-of-the-craft:item_shadow_amulet"
     ]
+  },
+  "item_shadow_blade": {
+    "sounds": [
+      "defense-of-the-craft:item_shadow_blade"
+    ]
   }
 }

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "$": {
+      "item": "defense-of-the-craft:shadow_amulet"
+    },
+    "@": {
+      "item": "defense-of-the-craft:claymore"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    " $ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:shadow_blade"
+  }
+}

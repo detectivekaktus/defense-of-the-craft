@@ -173,6 +173,10 @@
   "passive.defense-of-the-craft.abyssal_blade": "Grants the wielder's attacks a 25% chance to stun the target and deal bonus physical damage.",
   "active.defense-of-the-craft.abyssal_blade": "Instantly stuns the target enemy unit and teleports the wielder to it. Pierces debuff immunity.",
 
+  "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
+  "description.defense-of-the-craft.shadow_blade": "The blade of a fallen king, it allows you to move unseen and strike from the shadows.",
+  "active.defense-of-the-craft.shadow_blade": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus.",
+
 
 
   "item.defense-of-the-craft.sange": "Sange",

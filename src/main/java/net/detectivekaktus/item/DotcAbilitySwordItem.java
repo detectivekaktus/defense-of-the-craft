@@ -28,7 +28,7 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         var mana = PlayerMana.get(player);
         var hasInfiniteMaterials = player.hasInfiniteMaterials();
         var notEnoughMana = !hasInfiniteMaterials && getManaCost() > mana.getCurrentMana();
-        var invulnerable = target.getType().is(getInvulnerableTag());
+        var invulnerable = target != null && target.getType().is(getInvulnerableTag());
 
         if (level.isClientSide) {
             if (notEnoughMana)
@@ -67,7 +67,7 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
             mana.consume(manaConsumed);
         }
 
-        invokeInteractionAbility(player, target);
+        invokeInteractionAbility(player, target, stack);
         playAbilitySound(player);
 
         var cooldowns = player.getCooldowns();
@@ -94,6 +94,6 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
     }
 
     protected abstract TagKey<EntityType<?>> getInvulnerableTag();
-    protected abstract void invokeInteractionAbility(Player player, LivingEntity target);
+    protected abstract void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack);
     protected abstract SoundEvent getAbilitySound();
 }
