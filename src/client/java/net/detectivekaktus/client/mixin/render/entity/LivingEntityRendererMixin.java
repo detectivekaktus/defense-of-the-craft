@@ -37,9 +37,8 @@ public class LivingEntityRendererMixin {
             float k,
             float l
     ) {
-        var target = (LivingEntity) entity;
-        if (!(target instanceof Player))
+        if (!(entity instanceof Player player))
             return true;
-        return !target.hasEffect(MobEffects.INVISIBILITY);
+        return !player.isInvisible();
     }
 }
