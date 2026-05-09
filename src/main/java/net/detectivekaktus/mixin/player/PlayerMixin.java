@@ -165,11 +165,6 @@ public class PlayerMixin implements CombatManagerHolder {
             );
             callbackInfo.setReturnValue(InteractionResult.FAIL);
         }
-
-        if (isNotMixinTarget(player))
-            return;
-
-        dotc$combatManager.revealInvisibility();
     }
 
     @Inject(
