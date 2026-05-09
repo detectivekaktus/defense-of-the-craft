@@ -50,12 +50,12 @@
     ]
   },
 
-  "item_mkb_pierce": {
+  "item_mkb": {
     "sounds": [
       "defense-of-the-craft:item_mkb"
     ]
   },
-  "item_daedalus_crit": {
+  "item_daedalus": {
     "sounds": [
       "defense-of-the-craft:item_daedalus"
     ]

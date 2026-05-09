@@ -21,6 +21,7 @@ import net.detectivekaktus.core.item.*;
 import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.damage.DotcDamageTypes;
+import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.tool.*;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
@@ -29,6 +30,7 @@ public class CombatManager {
     private final Player player;
     private boolean hitThroughEvasion = false;
     private boolean evaded = false;
+    private boolean broke = false;
 
     public CombatManager(Player player) {
         this.player = player;
@@ -79,6 +81,8 @@ public class CombatManager {
     }
 
     public float addShadowWalkingDamage() {
+        setBroke(false);
+
         var flags = PlayerFlags.get(player);
         if (!flags.isShadowWalking())
             return 0.0f;
@@ -91,6 +95,7 @@ public class CombatManager {
                     DotcItemSounds.SILVER_EDGE,
                     SoundSource.PLAYERS
             );
+            setBroke(true);
         }
         return oldSource != ShadowWalkingSource.NONE
                 && oldSource != ShadowWalkingSource.SHADOW_AMULET ? 4.0f : 0.0f;
@@ -112,6 +117,11 @@ public class CombatManager {
 
         var stack = player.getMainHandItem();
         var item = stack.getItem();
+        if (broke && stack.is(DotcTools.SILVER_EDGE)) {
+            setHitThroughEvasion(true);
+            return;
+        }
+
         if (!stack.has(DotcComponents.PROCABLE_COMPONENT) || !(stack.getItem() instanceof Procable))
             return;
 
@@ -207,8 +217,9 @@ public class CombatManager {
 
     private void playEvasionSound() {
         var level = player.level();
-        level.playLocalSound(
-                player,
+        level.playSound(
+                null,
+                player.getX(), player.getY(), player.getZ(),
                 DotcGuiSounds.UI_EVADED,
                 SoundSource.PLAYERS,
                 1.0f, 1.0f
@@ -216,24 +227,30 @@ public class CombatManager {
     }
 
     public boolean evade(DamageSource damageSource) {
+        setEvaded(false);
+
         if (damageSource.is(DotcDamageTypes.MAGICAL))
             return false;
+        else if (player.hasEffect(DotcEffects.BREAK))
+            return false;
 
-        setEvaded(false);
+        var attacker = damageSource.getEntity();
+        if (attacker == null)
+            return evaded;
+        var manager = ((CombatManagerHolder) attacker).getCombatManager();
 
         var stats = PlayerStats.get(player);
         var evasion = stats.getEvasion();
         var evasionChance = PseudoRandom.getProcChance(evasion, stats.getEvasionScale());
         if (player.getRandom().nextFloat() > evasionChance) {
+            if (manager.hasBroken())
+                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
+
             stats.addEvasionScale(1);
             return evaded;
         }
 
         stats.setEvasionScale(0);
-
-        var attacker = damageSource.getEntity();
-        if (attacker == null)
-            return evaded;
 
         if (!(attacker instanceof ServerPlayer)) {
             setEvaded(true);
@@ -241,9 +258,12 @@ public class CombatManager {
             return evaded;
         }
 
-        var hitThrough = ((CombatManagerHolder) attacker).getCombatManager().hitThroughEvasion();
-        if (hitThrough)
+        var hitThrough = manager.hitThroughEvasion();
+        if (hitThrough) {
+            if (manager.hasBroken())
+                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
             return false;
+        }
 
         setEvaded(true);
         playEvasionSound();
@@ -290,5 +310,13 @@ public class CombatManager {
 
     public void setEvaded(boolean evaded) {
         this.evaded = evaded;
+    }
+
+    public boolean hasBroken() {
+        return broke;
+    }
+
+    public void setBroke(boolean broke) {
+        this.broke = broke;
     }
 }

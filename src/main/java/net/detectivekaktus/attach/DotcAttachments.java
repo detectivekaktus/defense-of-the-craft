@@ -5,5 +5,6 @@ public class DotcAttachments {
         PlayerStats.initialize();
         PlayerMana.initialize();
         PlayerRandom.initialize();
+        PlayerFlags.initialize();
     }
 }

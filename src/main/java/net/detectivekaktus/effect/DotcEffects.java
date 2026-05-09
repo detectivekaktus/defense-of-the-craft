@@ -17,6 +17,9 @@ public class DotcEffects {
     public static final Holder<MobEffect> DISARM = register(
             "disarm", new Disarm()
     );
+    public static final Holder<MobEffect> BREAK = register(
+            "break", new Break()
+    );
 
     public static Holder<MobEffect> register(String id, MobEffect effect) {
         return Registry.registerForHolder(
