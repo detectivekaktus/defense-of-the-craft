@@ -63,6 +63,10 @@
   "description.defense-of-the-craft.hand_of_midas": "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets.",
   "active.defense-of-the-craft.hand_of_midas": "Instantly kills the target entity, transmuting it into random valuable resources. The transmutation can generate coal, iron ingot, gold ingot, diamond, and a netherite ingot.",
 
+  "item.defense-of-the-craft.shadow_amulet": "Shadow Amulet",
+  "description.defense-of-the-craft.shadow_amulet": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
+  "active.defense-of-the-craft.shadow_amulet": "Turns the target invisible. The invisibility is broken upon using item, or upon attacking.",
+
 
 
   "item.defense-of-the-craft.blight_stone": "Blight Stone",
@@ -202,6 +206,7 @@
   "effect.defense-of-the-craft.disarm": "Disarm",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
+  "tag.item.defense-of-the-craft.crystals": "Crystals",
 
 
 

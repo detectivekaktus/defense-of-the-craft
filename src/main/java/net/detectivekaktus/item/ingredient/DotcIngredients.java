@@ -186,6 +186,15 @@ public class DotcIngredients {
             ),
             "sacred_relic"
     );
+    public static final Item SHADOW_AMULET = DotcItems.register(
+            new ShadowAmulet(
+                    new Item.Properties().stacksTo(1),
+                    new TooltipBuilder("shadow_amulet")
+                            .description()
+                            .active()
+            ),
+            "shadow_amulet"
+    );
 
 
     public static void initialize() {

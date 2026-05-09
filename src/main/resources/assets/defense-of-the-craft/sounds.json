@@ -52,12 +52,12 @@
 
   "item_mkb_pierce": {
     "sounds": [
-      "defense-of-the-craft:item_mkb_pierce"
+      "defense-of-the-craft:item_mkb"
     ]
   },
   "item_daedalus_crit": {
     "sounds": [
-      "defense-of-the-craft:item_daedalus_crit"
+      "defense-of-the-craft:item_daedalus"
     ]
   },
   "item_tango": {
@@ -108,6 +108,11 @@
   "item_dust_of_appearance": {
     "sounds": [
       "defense-of-the-craft:item_dust_of_appearance"
+    ]
+  },
+  "item_shadow_amulet": {
+    "sounds": [
+      "defense-of-the-craft:item_shadow_amulet"
     ]
   }
 }
