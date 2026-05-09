@@ -341,6 +341,19 @@ public class DotcTools {
             ),
             "shadow_blade"
     );
+    public static final Item SILVER_EDGE = DotcItems.register(
+            new SilverEdge(
+                    DotcToolMaterial.DIRE_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(SilverEdge.createAttributes(
+                                    DotcToolMaterial.DIRE_ARTEFACT, 2, -2.0f
+                            )),
+                    new TooltipBuilder("silver_edge")
+                            .description()
+                            .active()
+            ),
+            "silver_edge"
+    );
 
     public static void initialize() { }
 }

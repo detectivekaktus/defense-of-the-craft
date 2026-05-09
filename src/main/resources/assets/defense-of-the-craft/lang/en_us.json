@@ -175,7 +175,11 @@
 
   "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
   "description.defense-of-the-craft.shadow_blade": "The blade of a fallen king, it allows you to move unseen and strike from the shadows.",
-  "active.defense-of-the-craft.shadow_blade": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus.",
+  "active.defense-of-the-craft.shadow_blade": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus. When the wielder hits an enemy from invisibility, they deal 4 bonus damage.",
+
+  "item.defense-of-the-craft.silver_edge": "Silver Edge",
+  "description.defense-of-the-craft.silver_edge": "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
+  "active.defense-of-the-craft.silver_edge": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus. When the wielder hits an enemy from invisibility, they deal 4 bonus damage and apply break effect.",
 
 
 

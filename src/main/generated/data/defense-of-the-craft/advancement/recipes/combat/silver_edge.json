@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shadow_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:shadow_blade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "defense-of-the-craft:silver_edge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shadow_blade"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "defense-of-the-craft:silver_edge"
+    ]
+  }
+}

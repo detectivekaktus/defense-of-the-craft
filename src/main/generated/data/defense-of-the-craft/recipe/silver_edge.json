@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_sword"
+    },
+    "$": {
+      "item": "defense-of-the-craft:demon_edge"
+    },
+    "@": {
+      "item": "defense-of-the-craft:shadow_blade"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    " $ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:silver_edge"
+  }
+}
