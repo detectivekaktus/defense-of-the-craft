@@ -119,5 +119,10 @@
     "sounds": [
       "defense-of-the-craft:item_shadow_blade"
     ]
+  },
+  "item_silver_edge": {
+    "sounds": [
+      "defense-of-the-craft:item_silver_edge"
+    ]
   }
 }

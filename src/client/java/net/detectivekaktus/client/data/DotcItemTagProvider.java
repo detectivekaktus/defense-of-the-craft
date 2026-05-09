@@ -56,6 +56,11 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(DotcItemTags.CRYSTALS)
                 .add(DotcIngredients.RADIANT_CRYSTAL)
                 .add(DotcIngredients.DIRE_CRYSTAL);
+
+        getOrCreateTagBuilder(DotcItemTags.SHADOW_WALKABLE)
+                .add(DotcIngredients.SHADOW_AMULET)
+                .add(DotcTools.SHADOW_BLADE)
+                .add(DotcTools.SILVER_EDGE);
     }
 
     @Override

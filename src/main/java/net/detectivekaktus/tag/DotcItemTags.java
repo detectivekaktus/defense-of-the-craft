@@ -10,6 +10,7 @@ import net.detectivekaktus.DefenseOfTheCraft;
 public class DotcItemTags {
     public static final TagKey<Item> CRYSTAL_DUSTS = register("crystal_dusts");
     public static final TagKey<Item> CRYSTALS = register("crystals");
+    public static final TagKey<Item> SHADOW_WALKABLE = register("shadow_walkable");
 
     public static TagKey<Item> register(String id) {
         return TagKey.create(

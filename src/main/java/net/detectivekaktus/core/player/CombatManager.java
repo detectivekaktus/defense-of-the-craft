@@ -4,12 +4,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 
+import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
 import net.detectivekaktus.component.DotcComponents;
@@ -21,6 +23,7 @@ import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.tool.*;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
+import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class CombatManager {
     private final Player player;
@@ -61,6 +64,27 @@ public class CombatManager {
         ));
 
         return damage * item.getCritPercent();
+    }
+
+    public float addShadowWalkingDamage() {
+        var flags = PlayerFlags.get(player);
+        if (!flags.isShadowWalking())
+            return 0.0f;
+
+        player.removeEffect(MobEffects.INVISIBILITY);
+        player.removeEffect(MobEffects.MOVEMENT_SPEED);
+
+        flags.setShadowWalking(false);
+        var oldSource = flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+        if (oldSource == ShadowWalkingSource.SILVER_EDGE) {
+            player.level().playSound(
+                    null,
+                    player.getX(), player.getY(), player.getZ(),
+                    DotcItemSounds.SILVER_EDGE,
+                    SoundSource.PLAYERS
+            );
+        }
+        return oldSource != ShadowWalkingSource.SHADOW_AMULET ? 4.0f : 0.0f;
     }
 
     public float manaBurn(Player attacker, Player victim) {
