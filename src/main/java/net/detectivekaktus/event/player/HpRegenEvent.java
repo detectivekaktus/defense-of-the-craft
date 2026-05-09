@@ -3,6 +3,7 @@ package net.detectivekaktus.event.player;
 import net.minecraft.world.entity.player.Player;
 
 import net.detectivekaktus.attach.PlayerStats;
+import net.detectivekaktus.effect.DotcEffects;
 
 public class HpRegenEvent {
     public static void tick(Player player) {
@@ -12,9 +13,11 @@ public class HpRegenEvent {
         if (hpTick >= 20) {
             stats.setHpTick(0);
             var regen = stats.getHpRegen() + stats.getBonusHpRegen();
-            var regenAmplification = stats.getHpRegenAmplification();
+            var regenAmplification = player.hasEffect(DotcEffects.BREAK)
+                    ? 0.0f
+                    : stats.getHpRegenAmplification();
             if (regen > 0) {
-                regen = regenAmplification == 0.0f ? regen : regen * (1.0f + regenAmplification);
+                regen *= (1.0f + regenAmplification);
                 player.heal(regen);
             }
             return;
