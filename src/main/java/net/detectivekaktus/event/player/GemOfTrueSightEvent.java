@@ -1,28 +1,26 @@
 package net.detectivekaktus.event.player;
 
-import net.detectivekaktus.core.player.InventoryManager;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
+import net.detectivekaktus.core.player.InventoryManager;
 import net.detectivekaktus.item.consumable.DotcConsumables;
+
+import java.util.function.Predicate;
 
 public class GemOfTrueSightEvent {
     public static void tick(Player player) {
         if (player.level().getGameTime() % 10 != 0)
             return;
 
-        var hasGem = false;
-        var slots = InventoryManager.getModInterestedSlots(player);
-        for (var item : slots) {
-            if (item.is(DotcConsumables.GEM_OF_TRUE_SIGHT)) {
-                hasGem = true;
-                break;
-            }
-        }
-
+        var hasGem = InventoryManager.foreachModInterestedSlot(
+                player,
+                (Predicate<ItemStack>) stack -> stack.is(DotcConsumables.GEM_OF_TRUE_SIGHT)
+        );
         if (!hasGem)
             return;
 

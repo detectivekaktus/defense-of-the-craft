@@ -19,46 +19,47 @@ public class StatManager {
     }
 
     public void updateStats() {
-        var config = new StatManager.Config();
-        var slots = InventoryManager.getModInterestedSlots(player);
+        var config = new Config();
+        InventoryManager.foreachModInterestedSlot(
+                player,
+                stack -> {
+                    if (stack.has(DotcComponents.ITEM_STATS_COMPONENT)) {
+                        var stats = stack.get(DotcComponents.ITEM_STATS_COMPONENT);
+                        config.addStats(stats);
+                    }
 
-        for (var item : slots) {
-            if (item.has(DotcComponents.ITEM_STATS_COMPONENT)) {
-                var stats = item.get(DotcComponents.ITEM_STATS_COMPONENT);
-                config.addStats(stats);
-            }
+                    if (stack.has(DotcComponents.EVASION_COMPONENT)) {
+                        var evasion = stack.get(DotcComponents.EVASION_COMPONENT);
+                        config.addEvasion(evasion);
+                    }
 
-            if (item.has(DotcComponents.EVASION_COMPONENT)) {
-                var evasion = item.get(DotcComponents.EVASION_COMPONENT);
-                config.addEvasion(evasion);
-            }
+                    if (stack.has(DotcComponents.BONUS_HP_REGEN_COMPONENT)) {
+                        var regen = stack.get(DotcComponents.BONUS_HP_REGEN_COMPONENT);
+                        config.addBonusHpRegen(regen * stack.getCount());
+                    }
 
-            if (item.has(DotcComponents.BONUS_HP_REGEN_COMPONENT)) {
-                var regen = item.get(DotcComponents.BONUS_HP_REGEN_COMPONENT);
-                config.addBonusHpRegen(regen * item.getCount());
-            }
+                    if (stack.has(DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT)) {
+                        var amplification = stack.get(DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT);
+                        config.addHpRegenAmplification(amplification);
+                    }
 
-            if (item.has(DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT)) {
-                var amplification = item.get(DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT);
-                config.addHpRegenAmplification(amplification);
-            }
+                    if (stack.has(DotcComponents.MOVE_SPEED_COMPONENT)) {
+                        var moveSpeed = stack.get(DotcComponents.MOVE_SPEED_COMPONENT);
+                        config.addMoveSpeed(moveSpeed);
+                    }
 
-            if (item.has(DotcComponents.MOVE_SPEED_COMPONENT)) {
-                var moveSpeed = item.get(DotcComponents.MOVE_SPEED_COMPONENT);
-                config.addMoveSpeed(moveSpeed);
-            }
+                    if (stack.has(DotcComponents.BONUS_MANA_REGEN_COMPONENT)) {
+                        var manaRegen = stack.get(DotcComponents.BONUS_MANA_REGEN_COMPONENT);
+                        config.addBonusManaRegen(manaRegen);
+                    }
 
-            if (item.has(DotcComponents.BONUS_MANA_REGEN_COMPONENT)) {
-                var manaRegen = item.get(DotcComponents.BONUS_MANA_REGEN_COMPONENT);
-                config.addBonusManaRegen(manaRegen);
-            }
-
-            if (item.has(DotcComponents.MANA_COST_REDUCTION_COMPONENT)) {
-                var reduction = item.get(DotcComponents.MANA_COST_REDUCTION_COMPONENT);
-                config.addManaCostReduction(reduction);
-            }
-        }
-
+                    if (stack.has(DotcComponents.MANA_COST_REDUCTION_COMPONENT)) {
+                        var reduction = stack.get(DotcComponents.MANA_COST_REDUCTION_COMPONENT);
+                        config.addManaCostReduction(reduction);
+                    }
+                }
+        );
+        
         applyStats(config);
     }
 

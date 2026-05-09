@@ -237,13 +237,16 @@ public class CombatManager {
         var attacker = damageSource.getEntity();
         if (attacker == null)
             return evaded;
-        var manager = ((CombatManagerHolder) attacker).getCombatManager();
+
+        CombatManager manager = null;
+        if (attacker instanceof CombatManagerHolder combatManagerHolder)
+            manager = combatManagerHolder.getCombatManager();
 
         var stats = PlayerStats.get(player);
         var evasion = stats.getEvasion();
         var evasionChance = PseudoRandom.getProcChance(evasion, stats.getEvasionScale());
         if (player.getRandom().nextFloat() > evasionChance) {
-            if (manager.hasBroken())
+            if (manager != null && manager.hasBroken())
                 player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
 
             stats.addEvasionScale(1);
