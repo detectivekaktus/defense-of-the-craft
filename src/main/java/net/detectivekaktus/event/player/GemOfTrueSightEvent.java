@@ -11,6 +11,9 @@ import net.detectivekaktus.item.consumable.DotcConsumables;
 
 public class GemOfTrueSightEvent {
     public static void tick(Player player) {
+        if (player.level().getGameTime() % 10 != 0)
+            return;
+
         var hasGem = false;
         var slots = InventoryManager.getModInterestedSlots(player);
         for (var item : slots) {
@@ -23,12 +26,12 @@ public class GemOfTrueSightEvent {
         if (!hasGem)
             return;
 
-        var aabb = new AABB(player.getOnPos()).inflate(7);
+        var aabb = new AABB(player.getOnPos()).inflate(3);
         var entities = player.level().getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
                 entity -> entity != player && entity.hasEffect(MobEffects.INVISIBILITY)
         );
-        entities.forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 10)));
+        entities.forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20)));
     }
 }

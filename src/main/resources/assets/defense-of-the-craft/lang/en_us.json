@@ -18,7 +18,7 @@
 
   "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
   "description.defense-of-the-craft.gem_of_true_sight": "Not one thrall creature of the depths, nor spirit bound in drowning's keep, nor Maelrawn the Tentacular, shall rest till seas, gem comes to sleep.",
-  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 7x7x7 area, rendering them visible.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 6x6x6 area, rendering them visible.",
 
 
 
