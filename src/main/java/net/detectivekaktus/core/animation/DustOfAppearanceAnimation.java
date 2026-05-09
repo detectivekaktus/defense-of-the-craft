@@ -8,7 +8,7 @@ public class DustOfAppearanceAnimation extends ParticleAnimation {
     private static final double DUST_PARTICLE_MAX_HORIZONTAL_SPREAD = 5;
     private static final double DUST_PARTICLE_MAX_VERTICAL_SPREAD = 1.5;
     private static final int PARTICLES_PER_BLOCK = 50;
-    private static final int PARTICLES_PER_INVOCATION = 5;
+    private static final int PARTICLES_PER_INVOCATION = 2;
 
     private final int distanceFromPlayer;
     private final boolean xAxis;

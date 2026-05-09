@@ -67,6 +67,7 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown {
         );
 
         player.getCooldowns().addCooldown(this, getCooldownInTicks());
+        stack.consume(1, player);
 
         return InteractionResultHolder.success(stack);
     }
