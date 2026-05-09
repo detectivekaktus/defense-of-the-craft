@@ -51,6 +51,8 @@ public class DotcItems {
 
                 DotcConsumables.TANGO,
                 DotcConsumables.ENCHANTED_MANGO,
+                DotcConsumables.DUST_OF_APPEARANCE,
+                DotcConsumables.GEM_OF_TRUE_SIGHT,
 
                 DotcIngredients.VOID_STONE,
                 DotcIngredients.RING_OF_HEALTH,
@@ -62,6 +64,7 @@ public class DotcItems {
                 DotcTools.MAGIC_STICK,
                 DotcTools.MAGIC_WAND,
                 DotcTools.HAND_OF_MIDAS,
+                DotcIngredients.SHADOW_AMULET,
 
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
@@ -85,6 +88,8 @@ public class DotcItems {
                 DotcTools.BUTTERFLY,
                 DotcTools.SKULL_BASHER,
                 DotcTools.ABYSSAL_BLADE,
+                DotcTools.SHADOW_BLADE,
+                DotcTools.SILVER_EDGE,
                 DotcTools.MONKEY_KING_BAR,
                 DotcPrimitives.DIVINE_RAPIER,
 

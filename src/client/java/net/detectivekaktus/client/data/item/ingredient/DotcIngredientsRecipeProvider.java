@@ -189,6 +189,19 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.SHADOW_AMULET)
+                .pattern("$ $")
+                .pattern("#@#")
+                .pattern(" # ")
+                .define('@', DotcIngredients.RADIANT_CRYSTAL)
+                .define('#', Items.AMETHYST_SHARD)
+                .define('$', Items.CHAIN)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

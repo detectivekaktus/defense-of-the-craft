@@ -19,6 +19,11 @@
       "defense-of-the-craft:ui_change_tab"
     ]
   },
+  "ui_evaded": {
+    "sounds": [
+      "defense-of-the-craft:ui_evaded"
+    ]
+  },
   "ui_not_enough_mana": {
     "sounds": [
       "defense-of-the-craft:ui_not_enough_mana"
@@ -45,14 +50,14 @@
     ]
   },
 
-  "item_mkb_pierce": {
+  "item_mkb": {
     "sounds": [
-      "defense-of-the-craft:item_mkb_pierce"
+      "defense-of-the-craft:item_mkb"
     ]
   },
-  "item_daedalus_crit": {
+  "item_daedalus": {
     "sounds": [
-      "defense-of-the-craft:item_daedalus_crit"
+      "defense-of-the-craft:item_daedalus"
     ]
   },
   "item_tango": {
@@ -100,10 +105,24 @@
       "defense-of-the-craft:item_hand_of_midas"
     ]
   },
-
-  "core_evaded": {
+  "item_dust_of_appearance": {
     "sounds": [
-      "defense-of-the-craft:core_evaded"
+      "defense-of-the-craft:item_dust_of_appearance"
+    ]
+  },
+  "item_shadow_amulet": {
+    "sounds": [
+      "defense-of-the-craft:item_shadow_amulet"
+    ]
+  },
+  "item_shadow_blade": {
+    "sounds": [
+      "defense-of-the-craft:item_shadow_blade"
+    ]
+  },
+  "item_silver_edge": {
+    "sounds": [
+      "defense-of-the-craft:item_silver_edge"
     ]
   }
 }

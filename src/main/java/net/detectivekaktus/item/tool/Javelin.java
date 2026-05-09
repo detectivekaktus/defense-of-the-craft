@@ -48,6 +48,11 @@ public class Javelin extends DotcSwordItem implements Procable {
     }
 
     @Override
+    public int getProcEffectDuration() {
+        return 0;
+    }
+
+    @Override
     public int getProcCooldownInTicks() {
         return 0;
     }

@@ -7,13 +7,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-import net.detectivekaktus.core.item.DotcItemRules;
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.DotcHoeItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class Desolator extends DotcHoeItem {
+    private final int ARMOR_REDUCTION_DURATION = 7 * 20;
+
     public Desolator(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
     }
@@ -23,7 +24,7 @@ public class Desolator extends DotcHoeItem {
         if (attacker.level().isClientSide || !(attacker instanceof Player))
             return true;
 
-        victim.addEffect(new MobEffectInstance(DotcEffects.ARMOR_REDUCTION, DotcItemRules.DESOLATOR_ARMOR_REDUCTION_DURATION));
+        victim.addEffect(new MobEffectInstance(DotcEffects.ARMOR_REDUCTION, ARMOR_REDUCTION_DURATION));
 
         attacker.level().playSound(
                 null,

@@ -12,6 +12,14 @@
   "passive.defense-of-the-craft.enchanted_mango": "Passively provides 0.2 health regeneration.",
   "active.defense-of-the-craft.enchanted_mango": "Consumes the mango and instantly restores 40 mana.",
 
+  "item.defense-of-the-craft.dust_of_appearance": "Dust of Appearance",
+  "description.defense-of-the-craft.dust_of_appearance": "One may hide visage, but never volume.",
+  "active.defense-of-the-craft.dust_of_appearance": "Creates a 12x12x12 area centered around the wielder that reveals invisible units.",
+
+  "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
+  "description.defense-of-the-craft.gem_of_true_sight": "Not one thrall creature of the depths, nor spirit bound in drowning's keep, nor Maelrawn the Tentacular, shall rest till seas, gem comes to sleep.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 6x6x6 area, rendering them visible.",
+
 
 
   "item.defense-of-the-craft.radiant_crystal_shards": "Radiant Crystal Shards",
@@ -54,6 +62,10 @@
   "item.defense-of-the-craft.hand_of_midas": "Hand of Midas",
   "description.defense-of-the-craft.hand_of_midas": "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets.",
   "active.defense-of-the-craft.hand_of_midas": "Instantly kills the target entity, transmuting it into random valuable resources. The transmutation can generate coal, iron ingot, gold ingot, diamond, and a netherite ingot.",
+
+  "item.defense-of-the-craft.shadow_amulet": "Shadow Amulet",
+  "description.defense-of-the-craft.shadow_amulet": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
+  "active.defense-of-the-craft.shadow_amulet": "Turns the target invisible. The invisibility is broken upon using item, or upon attacking.",
 
 
 
@@ -161,6 +173,14 @@
   "passive.defense-of-the-craft.abyssal_blade": "Grants the wielder's attacks a 25% chance to stun the target and deal bonus physical damage.",
   "active.defense-of-the-craft.abyssal_blade": "Instantly stuns the target enemy unit and teleports the wielder to it. Pierces debuff immunity.",
 
+  "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
+  "description.defense-of-the-craft.shadow_blade": "The blade of a fallen king, it allows you to move unseen and strike from the shadows.",
+  "active.defense-of-the-craft.shadow_blade": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus. When the wielder hits an enemy from invisibility, they deal 4 bonus damage.",
+
+  "item.defense-of-the-craft.silver_edge": "Silver Edge",
+  "description.defense-of-the-craft.silver_edge": "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
+  "active.defense-of-the-craft.silver_edge": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus. When the wielder hits an enemy from invisibility, they deal 4 bonus damage and apply break effect.",
+
 
 
   "item.defense-of-the-craft.sange": "Sange",
@@ -192,6 +212,11 @@
   "effect.defense-of-the-craft.armor_reduction": "Armor Reduction",
   "effect.defense-of-the-craft.stun": "Stun",
   "effect.defense-of-the-craft.disarm": "Disarm",
+  "effect.defense-of-the-craft.break": "Break",
+
+  "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
+  "tag.item.defense-of-the-craft.crystals": "Crystals",
+  "tag.item.defense-of-the-craft.shadow_walkable": "Shadow Walkable",
 
 
 

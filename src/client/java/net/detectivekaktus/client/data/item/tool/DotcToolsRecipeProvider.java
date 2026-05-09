@@ -226,6 +226,32 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SHADOW_BLADE)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern(" $ ")
+                .define('#', Items.DIAMOND_SWORD)
+                .define('@', DotcPrimitives.CLAYMORE)
+                .define('$', DotcIngredients.SHADOW_AMULET)
+                .unlockedBy(
+                        "has_shadow_amulet",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SHADOW_AMULET)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SILVER_EDGE)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern(" $ ")
+                .define('#', Items.NETHERITE_SWORD)
+                .define('@', DotcTools.SHADOW_BLADE)
+                .define('$', DotcPrimitives.DEMON_EDGE)
+                .unlockedBy(
+                        "has_shadow_blade",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.SHADOW_BLADE)
+                )
+                .save(exporter);
     }
 
     @Override

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "$": {
+      "item": "minecraft:chain"
+    },
+    "@": {
+      "item": "defense-of-the-craft:radiant_crystal"
+    }
+  },
+  "pattern": [
+    "$ $",
+    "#@#",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:shadow_amulet"
+  }
+}

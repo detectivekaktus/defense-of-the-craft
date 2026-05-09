@@ -69,7 +69,9 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return original;
 
-        return dotc$combatManager.crit(original);
+        var damage = dotc$combatManager.crit(original);
+        damage += dotc$combatManager.addShadowWalkingDamage();
+        return damage;
     }
 
     @Inject(
@@ -121,6 +123,7 @@ public class PlayerMixin implements CombatManagerHolder {
 
         var damage = original + dotc$combatManager.manaBurn(attacker, player);
         damage = dotc$combatManager.reduceDamage(damage, damageSource);
+
         return damage;
     }
 
@@ -149,7 +152,7 @@ public class PlayerMixin implements CombatManagerHolder {
             ),
             cancellable = true
     )
-    private void cancelInteractWithEntityIfOnCooldown(Entity entity, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
+    private void preInteractLivingEntityHook(Entity entity, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
         var player = (Player) (Object) this;
 
         var stack = player.getItemInHand(interactionHand);

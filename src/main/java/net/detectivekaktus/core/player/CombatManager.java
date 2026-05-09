@@ -1,14 +1,17 @@
 package net.detectivekaktus.core.player;
 
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 
+import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
 import net.detectivekaktus.component.DotcComponents;
@@ -18,13 +21,16 @@ import net.detectivekaktus.core.item.*;
 import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
 import net.detectivekaktus.damage.DotcDamageTypes;
+import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.tool.*;
-import net.detectivekaktus.sound.DotcSounds;
+import net.detectivekaktus.sound.gui.DotcGuiSounds;
+import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class CombatManager {
     private final Player player;
     private boolean hitThroughEvasion = false;
     private boolean evaded = false;
+    private boolean broke = false;
 
     public CombatManager(Player player) {
         this.player = player;
@@ -62,15 +68,48 @@ public class CombatManager {
         return damage * item.getCritPercent();
     }
 
+    public ShadowWalkingSource revealInvisibility() {
+        var flags = PlayerFlags.get(player);
+        if (!flags.isShadowWalking())
+            return ShadowWalkingSource.NONE;
+
+        player.removeEffect(MobEffects.INVISIBILITY);
+        player.removeEffect(MobEffects.MOVEMENT_SPEED);
+
+        flags.setShadowWalking(false);
+        return flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+    }
+
+    public float addShadowWalkingDamage() {
+        setBroke(false);
+
+        var flags = PlayerFlags.get(player);
+        if (!flags.isShadowWalking())
+            return 0.0f;
+
+        var oldSource = revealInvisibility();
+        if (oldSource == ShadowWalkingSource.SILVER_EDGE) {
+            player.level().playSound(
+                    null,
+                    player.getX(), player.getY(), player.getZ(),
+                    DotcItemSounds.SILVER_EDGE,
+                    SoundSource.PLAYERS
+            );
+            setBroke(true);
+        }
+        return oldSource != ShadowWalkingSource.NONE
+                && oldSource != ShadowWalkingSource.SHADOW_AMULET ? 4.0f : 0.0f;
+    }
+
     public float manaBurn(Player attacker, Player victim) {
         if (!attacker.getWeaponItem().is(DotcTools.DIFFUSAL_BLADE))
             return 0.0f;
 
         var mana = PlayerMana.get(victim);
-        var manaBurn = Math.min(DotcItemRules.DIFFUSAL_MANA_BURN, mana.getCurrentMana());
+        var manaBurn = Math.min(CombatRules.DIFFUSAL_MANA_BURN, mana.getCurrentMana());
         mana.consume(manaBurn);
 
-        return manaBurn * DotcItemRules.DIFFUSAL_DAMAGE_PER_MANA;
+        return manaBurn * CombatRules.DIFFUSAL_DAMAGE_PER_MANA;
     }
 
     public void calculateProcs() {
@@ -78,6 +117,11 @@ public class CombatManager {
 
         var stack = player.getMainHandItem();
         var item = stack.getItem();
+        if (broke && stack.is(DotcTools.SILVER_EDGE)) {
+            setHitThroughEvasion(true);
+            return;
+        }
+
         if (!stack.has(DotcComponents.PROCABLE_COMPONENT) || !(stack.getItem() instanceof Procable))
             return;
 
@@ -123,7 +167,7 @@ public class CombatManager {
                     1.0f, 1.0f
             ));
             if (effect.isPresent() && entity instanceof LivingEntity livingEntity)
-                livingEntity.addEffect(new MobEffectInstance(effect.get(), DotcItemRules.BASH_DURATION));
+                livingEntity.addEffect(new MobEffectInstance(effect.get(), itemWithBonuses.getProcEffectDuration()));
 
             applyCooldown(item);
             entity.hurt(damageSource, damage);
@@ -146,7 +190,7 @@ public class CombatManager {
             // like in dota the echo sabre attack doesn't crit if the first one did,
             // so there's no f *= 1.5 in case of a crit
 
-            player.getCooldowns().addCooldown(item, DotcItemCooldowns.ECHO_SABRE_COOLDOWN);
+            player.getCooldowns().addCooldown(item, CombatRules.ECHO_SABRE_COOLDOWN);
             entity.hurt(damageSource, damage);
         }
 
@@ -172,34 +216,44 @@ public class CombatManager {
     }
 
     private void playEvasionSound() {
-        player.level().playSound(
+        var level = player.level();
+        level.playSound(
                 null,
                 player.getX(), player.getY(), player.getZ(),
-                DotcSounds.EVADED,
-                player.getSoundSource(),
+                DotcGuiSounds.UI_EVADED,
+                SoundSource.PLAYERS,
                 1.0f, 1.0f
         );
     }
 
     public boolean evade(DamageSource damageSource) {
+        setEvaded(false);
+
         if (damageSource.is(DotcDamageTypes.MAGICAL))
             return false;
+        else if (player.hasEffect(DotcEffects.BREAK))
+            return false;
 
-        setEvaded(false);
+        var attacker = damageSource.getEntity();
+        if (attacker == null)
+            return evaded;
+
+        CombatManager manager = null;
+        if (attacker instanceof CombatManagerHolder combatManagerHolder)
+            manager = combatManagerHolder.getCombatManager();
 
         var stats = PlayerStats.get(player);
         var evasion = stats.getEvasion();
         var evasionChance = PseudoRandom.getProcChance(evasion, stats.getEvasionScale());
         if (player.getRandom().nextFloat() > evasionChance) {
+            if (manager != null && manager.hasBroken())
+                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
+
             stats.addEvasionScale(1);
             return evaded;
         }
 
         stats.setEvasionScale(0);
-
-        var attacker = damageSource.getEntity();
-        if (attacker == null)
-            return evaded;
 
         if (!(attacker instanceof ServerPlayer)) {
             setEvaded(true);
@@ -207,9 +261,12 @@ public class CombatManager {
             return evaded;
         }
 
-        var hitThrough = ((CombatManagerHolder) attacker).getCombatManager().hitThroughEvasion();
-        if (hitThrough)
+        var hitThrough = manager.hitThroughEvasion();
+        if (hitThrough) {
+            if (manager.hasBroken())
+                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
             return false;
+        }
 
         setEvaded(true);
         playEvasionSound();
@@ -225,8 +282,8 @@ public class CombatManager {
     }
 
     public static void addStickCharge(Player player) {
-        var hotbarItems = player.getInventory().items.subList(0, 9);
-        for (var item : hotbarItems) {
+        var slots = InventoryManager.getModInterestedSlots(player);
+        for (var item : slots) {
             boolean isTarget = (item.is(DotcTools.MAGIC_STICK) || item.is(DotcTools.MAGIC_WAND))
                     && item.has(DotcComponents.CHARGEABLE_COMPONENT);
             if (isTarget) {
@@ -256,5 +313,13 @@ public class CombatManager {
 
     public void setEvaded(boolean evaded) {
         this.evaded = evaded;
+    }
+
+    public boolean hasBroken() {
+        return broke;
+    }
+
+    public void setBroke(boolean broke) {
+        this.broke = broke;
     }
 }

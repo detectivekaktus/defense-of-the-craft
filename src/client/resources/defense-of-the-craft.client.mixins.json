@@ -19,6 +19,8 @@
     "render.ModelBakeryMixin",
     "render.GameRendererMixin",
 
+    "render.entity.LivingEntityRendererMixin",
+
     "multiplayer.MultiPlayerGameModeMixin"
   ],
   "injectors": {

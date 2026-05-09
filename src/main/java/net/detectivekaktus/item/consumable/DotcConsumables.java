@@ -1,5 +1,6 @@
 package net.detectivekaktus.item.consumable;
 
+import net.detectivekaktus.item.DotcItem;
 import net.minecraft.world.item.Item;
 
 import net.detectivekaktus.component.DotcComponents;
@@ -28,6 +29,26 @@ public class DotcConsumables {
                             .active()
             ),
             "enchanted_mango"
+    );
+    public static final Item DUST_OF_APPEARANCE = DotcItems.register(
+            new DustOfAppearance(
+                    new Item.Properties()
+                            .stacksTo(16),
+                    new TooltipBuilder("dust_of_appearance")
+                            .description()
+                            .active()
+            ),
+            "dust_of_appearance"
+    );
+    public static final Item GEM_OF_TRUE_SIGHT = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties()
+                            .stacksTo(1),
+                    new TooltipBuilder("gem_of_true_sight")
+                            .description()
+                            .passive()
+            ),
+            "gem_of_true_sight"
     );
 
     public static void initialize() { }

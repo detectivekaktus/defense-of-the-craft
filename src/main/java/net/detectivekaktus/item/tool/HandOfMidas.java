@@ -18,7 +18,6 @@ import net.minecraft.world.item.Items;
 import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerRandom;
 import net.detectivekaktus.component.DotcComponents;
-import net.detectivekaktus.core.item.DotcItemCooldowns;
 import net.detectivekaktus.item.DotcAbilityItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
@@ -174,6 +173,6 @@ public class HandOfMidas extends DotcAbilityItem {
 
     @Override
     public int getCooldownInTicks() {
-        return DotcItemCooldowns.HAND_OF_MIDAS_COOLDOWN;
+        return (60 * 5) * 20;
     }
 }

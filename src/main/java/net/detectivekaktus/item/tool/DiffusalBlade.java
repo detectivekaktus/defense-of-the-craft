@@ -12,14 +12,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-import net.detectivekaktus.core.item.DotcItemCooldowns;
-import net.detectivekaktus.core.item.DotcItemRules;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 import net.detectivekaktus.tag.DotcEntityTypeTags;
 
 public class DiffusalBlade extends DotcAbilitySwordItem {
+    private final int SLOW_DURATION = 5 * 20;
+
     public DiffusalBlade(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
     }
@@ -35,8 +35,8 @@ public class DiffusalBlade extends DotcAbilitySwordItem {
     }
 
     @Override
-    protected void invokeInteractionAbility(Player player, LivingEntity target) {
-        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, DotcItemRules.DIFFUSAL_SLOW_DURATION, 1));
+    protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
+        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, 1));
     }
 
     @Override
@@ -51,6 +51,6 @@ public class DiffusalBlade extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-        return DotcItemCooldowns.DIFFUSAL_BLADE_COOLDOWN;
+        return 15 * 20;
     }
 }
