@@ -15,9 +15,11 @@ import net.minecraft.world.phys.AABB;
 
 import org.joml.Vector3f;
 
+import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.core.animation.DustOfAppearanceAnimation;
 import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.HasUseCooldown;
+import net.detectivekaktus.core.player.ShadowWalkingSource;
 import net.detectivekaktus.item.DotcItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
@@ -45,7 +47,14 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown {
                 entity -> entity != player && entity.hasEffect(MobEffects.INVISIBILITY)
         );
         entities.forEach(entity -> {
+            if (entity instanceof Player invisiblePlayer) {
+                var flags = PlayerFlags.get(invisiblePlayer);
+                flags.setShadowWalking(false);
+                flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+            }
+
             entity.removeEffect(MobEffects.INVISIBILITY);
+            entity.removeEffect(MobEffects.MOVEMENT_SPEED);
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SLOW_DURATION, 1));
         });
 
