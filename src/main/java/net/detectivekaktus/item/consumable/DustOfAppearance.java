@@ -25,7 +25,7 @@ import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class DustOfAppearance extends DotcItem implements HasUseCooldown {
-    private final int DUST_RANGE = 12;
+    private final int DUST_RANGE = 6;
     private final int DUST_SPREAD_SPEED = 5;
 
     private final int SLOW_DURATION = 10 * 20;
@@ -91,7 +91,8 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown {
                     true,
                     distance * DUST_SPREAD_SPEED,
                     particle
-            ));ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
+            ));
+            ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
                     x, y, z,
                     distance,
