@@ -12,11 +12,11 @@ public enum ShadowWalkingSource {
         this.id = id;
     }
 
-    public static ShadowWalkingSource fromId(int id) throws IllegalArgumentException {
+    public static ShadowWalkingSource fromId(int id) {
         for (var val : ShadowWalkingSource.values()) {
             if (val.id == id)
                 return val;
         }
-        throw new IllegalArgumentException("Unknown id " + id);
+        return NONE;
     }
 }
