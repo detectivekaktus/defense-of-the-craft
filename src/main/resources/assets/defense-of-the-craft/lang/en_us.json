@@ -222,5 +222,20 @@
 
   "strength.defense-of-the-craft": "%s strength",
   "agility.defense-of-the-craft": "%s agility",
-  "intelligence.defense-of-the-craft": "%s intelligence"
+  "intelligence.defense-of-the-craft": "%s intelligence",
+
+
+
+  "config.defense-of-the-craft.title": "Defense of the Craft",
+  "category.defense-of-the-craft.ui.title": "User Interface",
+  "group.defense-of-the-craft.sound.title": "Sound",
+
+  "option.defense-of-the-craft.change_button_sounds": "Use Dota 2 button sounds",
+  "option.defense-of-the-craft.change_button_sounds.description": "By enabling this option, most of widgets, will use UI sounds from Dota 2",
+
+  "option.defense-of-the-craft.add_screenshot_sound": "Add screenshot sound",
+  "option.defense-of-the-craft.add_screenshot_sound.description": "By enabling this option, taking a screenshot will play Steam screenshot sound",
+
+  "option.defense-of-the-craft.add_whispering_sound": "Add whispering sound",
+  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound"
 }

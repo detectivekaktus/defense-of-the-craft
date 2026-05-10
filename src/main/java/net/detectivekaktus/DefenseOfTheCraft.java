@@ -23,6 +23,10 @@ public class DefenseOfTheCraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Loading Defense of the Craft configuration file");
+		DotcConfig.HANDLER.load();
+		LOGGER.info("Successfully loaded Defense of the Craft configuration file");
+
 		DotcAttachments.initialize();
 		DotcAttributeModifiers.initialize();
 		DotcBlocks.initialize();

@@ -49,6 +49,11 @@
       "defense-of-the-craft:ui_immune"
     ]
   },
+  "ui_received_message": {
+    "sounds": [
+      "defense-of-the-craft:ui_received_message"
+    ]
+  },
 
   "item_mkb": {
     "sounds": [

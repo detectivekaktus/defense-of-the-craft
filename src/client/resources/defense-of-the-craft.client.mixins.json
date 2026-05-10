@@ -6,13 +6,10 @@
     "minVersion": "0.5.3"
   },
   "client": [
-    "DotcScreenshotMixin",
+    "KeyboardHandlerMixin",
     "MouseHandlerMixin",
 
-    "gui.DotcAbstractWidgetMixin",
-    "gui.DotcWorldSelectionListMixin",
-    "gui.DotcWorldListEntryMixin",
-    "gui.DotcTabManagerMixin",
+    "gui.SoundManagerMixin",
     "gui.GuiGraphicsMixin",
 
     "render.ItemRendererMixin",
@@ -21,7 +18,8 @@
 
     "render.entity.LivingEntityRendererMixin",
 
-    "multiplayer.MultiPlayerGameModeMixin"
+    "multiplayer.MultiPlayerGameModeMixin",
+    "multiplayer.chat.ChatListenerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

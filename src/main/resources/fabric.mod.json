@@ -14,6 +14,13 @@
 	"license": "MIT",
 	"icon": "assets/defense-of-the-craft/icon.png",
 	"environment": "*",
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/bw8B38uUBR"
+			}
+		}
+	},
 	"entrypoints": {
 		"main": [
 			"net.detectivekaktus.DefenseOfTheCraft"
@@ -23,6 +30,9 @@
 		],
 		"fabric-datagen": [
 			"net.detectivekaktus.client.DefenseOfTheCraftDataGenerator"
+		],
+		"modmenu": [
+			"net.detectivekaktus.client.ModMenuIntegration"
 		]
 	},
 	"mixins": [
@@ -36,7 +46,9 @@
 		"fabricloader": ">=0.18.6",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": ">=3.6.1+1.21-fabric",
+		"modmenu": ">=11.0.4"
 	},
 	"suggests": {
 		"damagenumbers": ">=1.4.1"
