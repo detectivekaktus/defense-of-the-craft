@@ -237,5 +237,5 @@
   "option.defense-of-the-craft.add_screenshot_sound.description": "By enabling this option, taking a screenshot will play Steam screenshot sound",
 
   "option.defense-of-the-craft.add_whispering_sound": "Add whispering sound",
-  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming whisper messages will play Steam chat sound"
+  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound"
 }
