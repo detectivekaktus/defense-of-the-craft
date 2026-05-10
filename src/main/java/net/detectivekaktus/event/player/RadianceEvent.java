@@ -5,6 +5,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.phys.AABB;
 
+import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.core.player.InventoryManager;
@@ -14,7 +15,9 @@ import net.detectivekaktus.item.tool.Radiance;
 
 public class RadianceEvent {
     public static void tick(ServerPlayer player) {
-        if (player.level().getGameTime() % 20 != 0)
+        var flags = PlayerFlags.get(player);
+        var utilTick = flags.getUtilTick();
+        if (utilTick % 20 != 0 || utilTick == 0)
             return;
 
         // You can't have non-final values inside lambdas, so I came up
@@ -51,7 +54,7 @@ public class RadianceEvent {
                 : level.getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
-                entity -> (entity instanceof ServerPlayer && server.isPvpAllowed()) || entity instanceof Enemy
+                entity -> entity != player && (server.isPvpAllowed() || entity instanceof Enemy)
         );
         entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.MAGICAL), 2.0f));
     }

@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
+import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.core.player.InventoryManager;
 import net.detectivekaktus.item.consumable.DotcConsumables;
 
@@ -14,7 +15,9 @@ import java.util.function.Predicate;
 
 public class GemOfTrueSightEvent {
     public static void tick(Player player) {
-        if (player.level().getGameTime() % 10 != 0)
+        var flags = PlayerFlags.get(player);
+        var utilTick = flags.getUtilTick();
+        if (utilTick % 10 != 0 || utilTick == 0)
             return;
 
         var hasGem = InventoryManager.foreachModInterestedSlot(
