@@ -36,7 +36,8 @@
 		"fabricloader": ">=0.18.6",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": ">=3.6.1+1.21-fabric"
 	},
 	"suggests": {
 		"damagenumbers": ">=1.4.1"
