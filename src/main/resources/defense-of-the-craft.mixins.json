@@ -14,9 +14,7 @@
     "entity.SlimeMixin",
     "entity.BlazeMixin",
 
-    "item.ItemStackMixin",
-
-    "command.MsgCommandMixin"
+    "item.ItemStackMixin"
   ],
   "injectors": {
     "defaultRequire": 1

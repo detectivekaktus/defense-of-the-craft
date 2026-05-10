@@ -18,7 +18,8 @@
 
     "render.entity.LivingEntityRendererMixin",
 
-    "multiplayer.MultiPlayerGameModeMixin"
+    "multiplayer.MultiPlayerGameModeMixin",
+    "multiplayer.chat.ChatListenerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
