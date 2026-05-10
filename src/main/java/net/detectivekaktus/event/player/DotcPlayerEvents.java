@@ -10,7 +10,15 @@ public class DotcPlayerEvents {
             for (var player : players) {
                 ManaRegenEvent.tick(player);
                 HpRegenEvent.tick(player);
+
+                // Util tick is a tick value in range [0; 100].
+                // It's used in the subsequent events to determine per-player
+                // tick events, such as radiance damage, to prevent them being
+                // invoked for all players at the same time
+                UtilTickEvent.tick(player);
+
                 GemOfTrueSightEvent.tick(player);
+                RadianceEvent.tick(player);
             }
         });
         ServerPlayerEvents.LEAVE.register(LeaveServerEvent::execute);

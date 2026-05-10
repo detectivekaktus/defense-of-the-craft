@@ -23,6 +23,28 @@ import java.util.Map;
 public class ModelBakeryMixin {
     @Shadow
     private void loadSpecialItemModelAndDependencies(ModelResourceLocation modelResourceLocation) {}
+    @Shadow
+    private void loadItemModelAndDependencies(ResourceLocation resourceLocation) {}
+
+    @Inject(
+            method = "<init>",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V",
+                    shift = At.Shift.AFTER,
+                    ordinal = 0
+            )
+    )
+    private void loadDotc2dModels(
+            BlockColors blockColors,
+            ProfilerFiller profilerFiller,
+            Map<ResourceLocation, BlockModel> map,
+            Map<ResourceLocation, List<BlockStateModelLoader.LoadedJson>> map2,
+            CallbackInfo callbackInfo
+    ) {
+        loadItemModelAndDependencies(DotcItemModels.RADIANCE_PVE.id());
+        loadItemModelAndDependencies(DotcItemModels.RADIANCE_PVP.id());
+    }
 
     @Inject(
             method = "<init>",

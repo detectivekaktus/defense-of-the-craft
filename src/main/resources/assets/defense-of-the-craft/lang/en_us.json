@@ -18,7 +18,7 @@
 
   "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
   "description.defense-of-the-craft.gem_of_true_sight": "Not one thrall creature of the depths, nor spirit bound in drowning's keep, nor Maelrawn the Tentacular, shall rest till seas, gem comes to sleep.",
-  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 6x6x6 area, rendering them visible.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Reveals nearby invisible enemies in 8x8x8 area, rendering them visible.",
 
 
 
@@ -180,6 +180,11 @@
   "item.defense-of-the-craft.silver_edge": "Silver Edge",
   "description.defense-of-the-craft.silver_edge": "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
   "active.defense-of-the-craft.silver_edge": "The wielder becomes invisible for 15 seconds and gains a movement speed bonus. When the wielder hits an enemy from invisibility, they deal 4 bonus damage and apply break effect.",
+
+  "item.defense-of-the-craft.radiance": "Radiance",
+  "description.defense-of-the-craft.radiance": "A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies.",
+  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing magical damage over time. Enemies are determined by the current item mode.",
+  "active.defense-of-the-craft.radiance": "Changes the item mode between disabled, PvE, and PvP.",
 
 
 

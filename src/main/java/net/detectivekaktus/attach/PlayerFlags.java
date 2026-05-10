@@ -22,6 +22,11 @@ public class PlayerFlags {
             integerBuilder -> integerBuilder.initializer(() -> ShadowWalkingSource.NONE.id).persistent(Codec.INT)
     );
 
+    public static final AttachmentType<Integer> UTIL_TICK = AttachmentRegistry.create(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "util_tick"),
+            integerBuilder -> integerBuilder.initializer(() -> 0).persistent(Codec.INT)
+    );
+
     public static void initialize() { }
 
     public static PlayerFlags.FlagsData get(AttachmentTarget target) {
@@ -49,7 +54,21 @@ public class PlayerFlags {
             return old == null ? current : ShadowWalkingSource.fromId(old);
         }
 
+        public int getUtilTick() {
+            return target.getAttachedOrCreate(UTIL_TICK);
+        }
+
+        public int setUtilTick(int val) {
+            var current = getUtilTick();
+            return setOrFallback(UTIL_TICK, Math.max(val, 0), current);
+        }
+
         private boolean setOrFallback(AttachmentType<Boolean> key, boolean value, boolean fallback) {
+            var res = target.setAttached(key, value);
+            return res == null ? fallback : res;
+        }
+
+        private int setOrFallback(AttachmentType<Integer> key, int value, int fallback) {
             var res = target.setAttached(key, value);
             return res == null ? fallback : res;
         }
