@@ -8,8 +8,8 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name 'Xander Maven'
-		url 'https://maven.isxander.dev/releases'
+		name = 'Xander Maven'
+		url = 'https://maven.isxander.dev/releases'
 	}
 	maven {
 		name = "Terraformers"
