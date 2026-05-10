@@ -62,6 +62,8 @@ public class DotcComponents {
     // meant to store time in seconds since the UNIX epoch in UTC
     public static final DataComponentType<Long> LAST_TIME_USED_COMPONENT = registerLong("last_time_used");
 
+    public static final DataComponentType<Integer> USE_MODE_COMPONENT = registerInt("mode");
+
     public static <T> DataComponentType<T> register(String id, Codec<T> codec) {
         return Registry.register(
                 BuiltInRegistries.DATA_COMPONENT_TYPE,

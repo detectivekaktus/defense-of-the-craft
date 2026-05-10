@@ -360,7 +360,11 @@ public class DotcTools {
                     new Item.Properties()
                             .attributes(Radiance.createAttributes(
                                     DotcToolMaterial.DIRE_ARTEFACT, 3, -2.75f
-                            )),
+                            ))
+                            .component(
+                                    DotcComponents.USE_MODE_COMPONENT,
+                                    Radiance.Mode.DISABLED.id
+                            ),
                     new TooltipBuilder("radiance")
                             .description()
                             .passive()

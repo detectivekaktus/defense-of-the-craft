@@ -7,6 +7,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 
+import net.detectivekaktus.DefenseOfTheCraft;
+import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.item.DotcSwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 
@@ -21,6 +23,14 @@ public class Radiance extends DotcSwordItem {
 
         if (player.level().isClientSide)
             return InteractionResultHolder.pass(stack);
+
+        if (!stack.has(DotcComponents.USE_MODE_COMPONENT)) {
+            DefenseOfTheCraft.LOGGER.error("Radiance item doesn't have use mode component. Cannot change item use mode.");
+            return InteractionResultHolder.fail(stack);
+        }
+        var currentModeId = stack.get(DotcComponents.USE_MODE_COMPONENT);
+        var modeId = currentModeId == Mode.PVP.id ? Mode.DISABLED.id : currentModeId + 1;
+        stack.set(DotcComponents.USE_MODE_COMPONENT, modeId);
 
         return InteractionResultHolder.success(stack);
     }
