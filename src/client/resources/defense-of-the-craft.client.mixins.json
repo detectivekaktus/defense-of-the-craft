@@ -9,10 +9,7 @@
     "DotcScreenshotMixin",
     "MouseHandlerMixin",
 
-    "gui.DotcAbstractWidgetMixin",
-    "gui.DotcWorldSelectionListMixin",
-    "gui.DotcWorldListEntryMixin",
-    "gui.DotcTabManagerMixin",
+    "gui.SoundManagerMixin",
     "gui.GuiGraphicsMixin",
 
     "render.ItemRendererMixin",
