@@ -21,7 +21,7 @@ public class DotcScreenshotMixin {
             at = @At("HEAD")
     )
     private static void takeScreenshot(CallbackInfoReturnable<NativeImage> callbackInfo) {
-        if (!DotcConfig.HANDLER.instance().useValveUiSounds)
+        if (!DotcConfig.HANDLER.instance().addScreenshotSound)
             return;
 
         var client = Minecraft.getInstance();

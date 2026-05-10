@@ -23,5 +23,9 @@ public class DotcConfig {
             .build();
 
     @SerialEntry
-    public boolean useValveUiSounds = false;
+    public boolean changeButtonSounds = false;
+    @SerialEntry
+    public boolean addScreenshotSound = false;
+    @SerialEntry
+    public boolean addWhisperingSound = false;
 }

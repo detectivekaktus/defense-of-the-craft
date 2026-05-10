@@ -19,7 +19,7 @@ public class SoundManagerMixin {
             at = @At(value = "HEAD")
     )
     private SoundInstance changeUiButtonClick(SoundInstance original) {
-        if (!DotcConfig.HANDLER.instance().useValveUiSounds)
+        if (!DotcConfig.HANDLER.instance().changeButtonSounds)
             return original;
 
         var originalLocation = original.getLocation();
