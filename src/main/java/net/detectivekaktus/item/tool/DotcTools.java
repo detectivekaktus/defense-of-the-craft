@@ -354,6 +354,20 @@ public class DotcTools {
             ),
             "silver_edge"
     );
+    public static final Item RADIANCE = DotcItems.register(
+            new Radiance(
+                    DotcToolMaterial.DIRE_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(Radiance.createAttributes(
+                                    DotcToolMaterial.DIRE_ARTEFACT, 3, -2.75f
+                            )),
+                    new TooltipBuilder("radiance")
+                            .description()
+                            .passive()
+                            .active()
+            ),
+            "radiance"
+    );
 
     public static void initialize() { }
 }

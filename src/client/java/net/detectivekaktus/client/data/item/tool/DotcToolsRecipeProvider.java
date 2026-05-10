@@ -252,6 +252,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.SHADOW_BLADE)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.RADIANCE)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern(" $ ")
+                .define('#', Items.NETHERITE_SWORD)
+                .define('@', DotcIngredients.TALISMAN_OF_EVASION)
+                .define('$', DotcIngredients.SACRED_RELIC)
+                .unlockedBy(
+                        "has_sacred_relic",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SACRED_RELIC)
+                )
+                .save(exporter);
     }
 
     @Override

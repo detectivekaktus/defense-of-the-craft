@@ -92,6 +92,7 @@ public class DotcItems {
                 DotcTools.SILVER_EDGE,
                 DotcTools.MONKEY_KING_BAR,
                 DotcPrimitives.DIVINE_RAPIER,
+                DotcTools.RADIANCE,
 
                 DotcTools.SANGE,
                 DotcTools.YASHA,
