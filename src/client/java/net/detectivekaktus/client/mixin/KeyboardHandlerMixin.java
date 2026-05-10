@@ -1,26 +1,27 @@
 package net.detectivekaktus.client.mixin;
 
-import com.mojang.blaze3d.platform.NativeImage;
-
+import net.minecraft.client.KeyboardHandler;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Screenshot;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.detectivekaktus.DotcConfig;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 
-@Mixin(Screenshot.class)
-public class DotcScreenshotMixin {
+@Mixin(KeyboardHandler.class)
+public class KeyboardHandlerMixin {
     @Inject(
-            method = "takeScreenshot",
-            at = @At("HEAD")
+            method = "keyPress",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/Screenshot;grab(Ljava/io/File;Lcom/mojang/blaze3d/pipeline/RenderTarget;Ljava/util/function/Consumer;)V"
+            )
     )
-    private static void takeScreenshot(CallbackInfoReturnable<NativeImage> callbackInfo) {
+    private void playScreenshotSound(CallbackInfo callbackInfo) {
         if (!DotcConfig.HANDLER.instance().addScreenshotSound)
             return;
 
