@@ -23,5 +23,5 @@ public class DotcConfig {
             .build();
 
     @SerialEntry
-    public boolean changeInterfaceSounds = false;
+    public boolean useValveUiSounds = false;
 }
