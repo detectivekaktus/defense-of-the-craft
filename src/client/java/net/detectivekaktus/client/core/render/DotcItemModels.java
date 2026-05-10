@@ -54,4 +54,14 @@ public class DotcItemModels {
     public static final ModelResourceLocation HEAVENS_HALBERD_IN_HAND = ModelResourceLocation.inventory(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "heavens_halberd_in_hand")
     );
+
+    public static final ModelResourceLocation RADIANCE = ModelResourceLocation.inventory(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "radiance")
+    );
+    public static final ModelResourceLocation RADIANCE_PVE = ModelResourceLocation.inventory(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "radiance_pve")
+    );
+    public static final ModelResourceLocation RADIANCE_PVP = ModelResourceLocation.inventory(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "radiance_pvp")
+    );
 }

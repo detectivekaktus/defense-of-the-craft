@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,9 +19,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import net.detectivekaktus.client.core.render.DotcItemModels;
+import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.item.primitive.DotcPrimitives;
 import net.detectivekaktus.item.tool.DotcTools;
+import net.detectivekaktus.item.tool.Radiance;
 
+@Debug(export = true)
 @Mixin(ItemRenderer.class)
 public class ItemRendererMixin {
     @Shadow
@@ -34,25 +38,36 @@ public class ItemRendererMixin {
     )
     private BakedModel addDotcItemModelsInGetModel(
             BakedModel original,
-            ItemStack itemStack,
+            ItemStack stack,
             Level level,
             LivingEntity livingEntity,
             int i
     ) {
-        if (itemStack.is(DotcTools.MONKEY_KING_BAR))
+        if (stack.is(DotcTools.MONKEY_KING_BAR))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.MONKEY_KING_BAR_IN_HAND);
-        else if (itemStack.is(DotcTools.CRYSTALYS))
+        else if (stack.is(DotcTools.CRYSTALYS))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.CRYSTALYS_IN_HAND);
-        else if (itemStack.is(DotcTools.DAEDALUS))
+        else if (stack.is(DotcTools.DAEDALUS))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.DAEDALUS_IN_HAND);
-        else if (itemStack.is(DotcTools.BUTTERFLY))
+        else if (stack.is(DotcTools.BUTTERFLY))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.BUTTERFLY_IN_HAND);
-        else if (itemStack.is(DotcPrimitives.DIVINE_RAPIER))
+        else if (stack.is(DotcPrimitives.DIVINE_RAPIER))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.DIVINE_RAPIER_IN_HAND);
-        else if (itemStack.is(DotcTools.DESOLATOR))
+        else if (stack.is(DotcTools.DESOLATOR))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.DESOLATOR_IN_HAND);
-        else if (itemStack.is(DotcTools.HEAVENS_HALBERD))
+        else if (stack.is(DotcTools.HEAVENS_HALBERD))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.HEAVENS_HALBERD_IN_HAND);
+        else if (stack.is(DotcTools.RADIANCE)) {
+            if (!stack.has(DotcComponents.USE_MODE_COMPONENT))
+                return original;
+            var mode = stack.get(DotcComponents.USE_MODE_COMPONENT);
+            if (mode == Radiance.Mode.DISABLED.id)
+                return itemModelShaper.getModelManager().getModel(DotcItemModels.RADIANCE);
+            else if (mode == Radiance.Mode.PVE.id)
+                return itemModelShaper.getModelManager().getModel(DotcItemModels.RADIANCE_PVE);
+            else
+                return itemModelShaper.getModelManager().getModel(DotcItemModels.RADIANCE_PVP);
+        }
         return original;
     }
 
@@ -67,7 +82,7 @@ public class ItemRendererMixin {
     )
     private BakedModel addDotcItemModelsInRender(
             BakedModel original,
-            ItemStack itemStack,
+            ItemStack stack,
             ItemDisplayContext context,
             boolean bl,
             PoseStack poseStack,
@@ -76,19 +91,19 @@ public class ItemRendererMixin {
             int j
     ) {
         if (context == ItemDisplayContext.GUI || context == ItemDisplayContext.FIXED) {
-            if (itemStack.is(DotcTools.MONKEY_KING_BAR))
+            if (stack.is(DotcTools.MONKEY_KING_BAR))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.MONKEY_KING_BAR);
-            else if (itemStack.is(DotcTools.CRYSTALYS))
+            else if (stack.is(DotcTools.CRYSTALYS))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.CRYSTALYS);
-            else if (itemStack.is(DotcTools.DAEDALUS))
+            else if (stack.is(DotcTools.DAEDALUS))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.DAEDALUS);
-            else if (itemStack.is(DotcTools.BUTTERFLY))
+            else if (stack.is(DotcTools.BUTTERFLY))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.BUTTERFLY);
-            else if (itemStack.is(DotcPrimitives.DIVINE_RAPIER))
+            else if (stack.is(DotcPrimitives.DIVINE_RAPIER))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.DIVINE_RAPIER);
-            else if (itemStack.is(DotcTools.DESOLATOR))
+            else if (stack.is(DotcTools.DESOLATOR))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.DESOLATOR);
-            else if (itemStack.is(DotcTools.HEAVENS_HALBERD))
+            else if (stack.is(DotcTools.HEAVENS_HALBERD))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.HEAVENS_HALBERD);
         }
         return original;
