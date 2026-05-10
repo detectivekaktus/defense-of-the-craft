@@ -24,7 +24,7 @@ public class GemOfTrueSightEvent {
         if (!hasGem)
             return;
 
-        var aabb = new AABB(player.getOnPos()).inflate(3);
+        var aabb = new AABB(player.getOnPos()).inflate(4);
         var entities = player.level().getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
