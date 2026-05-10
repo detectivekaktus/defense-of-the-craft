@@ -39,11 +39,6 @@ public class RadianceEvent {
 
         var aabb = new AABB(player.getOnPos()).inflate(4);
         var level = player.level();
-        var server = level.getServer();
-        if (server == null) {
-            DefenseOfTheCraft.LOGGER.error("No server instance was found during Radiance event. No damage will be applies in these 20 ticks.");
-            return;
-        }
 
         var entities = modeWrapper.mode == Radiance.Mode.PVE
                 ? level.getEntitiesOfClass(
@@ -54,7 +49,7 @@ public class RadianceEvent {
                 : level.getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
-                entity -> entity != player && (server.isPvpAllowed() || entity instanceof Enemy)
+                entity -> entity != player && (player.server.isPvpAllowed() || entity instanceof Enemy)
         );
         entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.MAGICAL), 2.0f));
     }

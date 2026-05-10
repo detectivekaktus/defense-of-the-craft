@@ -29,7 +29,7 @@ public class Radiance extends DotcSwordItem {
             return InteractionResultHolder.fail(stack);
         }
         var currentModeId = stack.get(DotcComponents.USE_MODE_COMPONENT);
-        var modeId = currentModeId == Mode.PVP.id ? Mode.DISABLED.id : currentModeId + 1;
+        var modeId = Mode.values()[(Mode.fromId(currentModeId).ordinal() + 1) % Mode.values().length].id;
         stack.set(DotcComponents.USE_MODE_COMPONENT, modeId);
 
         return InteractionResultHolder.success(stack);

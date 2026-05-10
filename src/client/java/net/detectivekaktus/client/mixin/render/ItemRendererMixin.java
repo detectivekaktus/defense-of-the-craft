@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,7 +23,6 @@ import net.detectivekaktus.item.primitive.DotcPrimitives;
 import net.detectivekaktus.item.tool.DotcTools;
 import net.detectivekaktus.item.tool.Radiance;
 
-@Debug(export = true)
 @Mixin(ItemRenderer.class)
 public class ItemRendererMixin {
     @Shadow
