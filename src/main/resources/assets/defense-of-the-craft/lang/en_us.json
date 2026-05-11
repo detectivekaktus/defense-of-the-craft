@@ -67,6 +67,10 @@
   "description.defense-of-the-craft.shadow_amulet": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
   "active.defense-of-the-craft.shadow_amulet": "Turns the target invisible. The invisibility is broken upon using item, or upon attacking.",
 
+  "item.defense-of-the-craft.blink_dagger": "Blink Dagger",
+  "description.defense-of-the-craft.blink_dagger": "The fabled dagger used by the fastest assassin ever to walk the lands.",
+  "active.defense-of-the-craft.blink_dagger": "Instantly teleports the wielder towards the targeted point. Taking any damage resets the cooldown of this item to 3 seconds.",
+
 
 
   "item.defense-of-the-craft.blight_stone": "Blight Stone",
@@ -183,7 +187,7 @@
 
   "item.defense-of-the-craft.radiance": "Radiance",
   "description.defense-of-the-craft.radiance": "A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies.",
-  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing magical damage over time. Enemies are determined by the current item mode.",
+  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing 2 magical damage over time. Enemies are determined by the current item mode.",
   "active.defense-of-the-craft.radiance": "Changes the item mode between disabled, PvE, and PvP.",
 
 

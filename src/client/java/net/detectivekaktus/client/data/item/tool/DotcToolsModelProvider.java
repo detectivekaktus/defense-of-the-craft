@@ -38,7 +38,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.HEAVENS_HALBERD,
                 DotcTools.SHADOW_BLADE,
                 DotcTools.SILVER_EDGE,
-                DotcTools.RADIANCE
+                DotcTools.RADIANCE,
+                DotcTools.BLINK_DAGGER
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

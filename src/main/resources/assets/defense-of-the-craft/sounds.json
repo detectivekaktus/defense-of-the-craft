@@ -129,5 +129,15 @@
     "sounds": [
       "defense-of-the-craft:item_silver_edge"
     ]
+  },
+  "item_blink_dagger_source": {
+    "sounds": [
+      "defense-of-the-craft:item_blink_dagger_source"
+    ]
+  },
+  "item_blink_dagger_target": {
+    "sounds": [
+      "defense-of-the-craft:item_blink_dagger_target"
+    ]
   }
 }

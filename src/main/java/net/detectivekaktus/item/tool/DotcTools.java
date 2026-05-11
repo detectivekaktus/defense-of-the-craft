@@ -372,6 +372,19 @@ public class DotcTools {
             ),
             "radiance"
     );
+    public static final Item BLINK_DAGGER = DotcItems.register(
+            new BlinkDagger(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(Radiance.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 1, -2.0f
+                            )),
+                    new TooltipBuilder("blink_dagger")
+                            .description()
+                            .active()
+            ),
+            "blink_dagger"
+    );
 
     public static void initialize() { }
 }

@@ -65,6 +65,7 @@ public class DotcItems {
                 DotcTools.MAGIC_WAND,
                 DotcTools.HAND_OF_MIDAS,
                 DotcIngredients.SHADOW_AMULET,
+                DotcTools.BLINK_DAGGER,
 
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
