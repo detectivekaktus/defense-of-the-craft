@@ -1,6 +1,7 @@
 package net.detectivekaktus.item.tool;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
@@ -13,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -48,48 +48,83 @@ public class BlinkDagger extends DotcAbilitySwordItem {
         var level = player.level();
         var vector = player.getViewVector(1.0f).scale(BLINK_RADIUS);
         var pos = new BlockPos((int) (player.getX() + vector.x), (int) (player.getY() + vector.y), (int) (player.getZ() + vector.z));
-        var block = level.getBlockState(pos);
-        pos = ensureOnGround(player, block, pos, level);
-
+        pos = ensureNotStuck(player, pos, level);
+        pos = ensureOnGround(player, pos, level);
         return pos;
     }
 
-    private BlockPos ensureOnGround(Player player, BlockState block, BlockPos pos, Level level) {
-        if (block.is(Blocks.AIR) && pos.getY() > level.getMinBuildHeight()) {
-            while (block.is(Blocks.AIR)) {
-                pos = pos.below(1);
-                block = level.getBlockState(pos);
+    private BlockPos ensureOnGround(Player player, BlockPos pos, Level level) {
+        var currentBlock = level.getBlockState(pos);
+        var currentPos = pos;
+
+        if (currentBlock.is(Blocks.AIR) && pos.getY() > level.getMinBuildHeight()) {
+            while (currentBlock.is(Blocks.AIR)) {
+                currentPos = currentPos.below(1);
+                currentBlock = level.getBlockState(currentPos);
             }
 
-            if (!block.is(Blocks.AIR))
-                pos = pos.above(1);
+            if (!currentBlock.is(Blocks.AIR))
+                currentPos = currentPos.above(1);
         } else if (pos.getY() <= level.getMinBuildHeight()) {
             // By doing this you should hopefully skip all the void air blocks and
             // get to the bedrock level. Also, if someone actually breaks bedrock it
             // still goes up
-            while (block.is(Blocks.AIR)) {
-                pos = pos.above(1);
-                block = level.getBlockState(pos);
+            while (currentBlock.is(Blocks.AIR)) {
+                currentPos = currentPos.above(1);
+                currentBlock = level.getBlockState(currentPos);
             }
 
             // By doing this you skip all blocks above the void. I didn't want to
             // specify concrete blocks because players can place whatever they need
             // and break bedrock, so it just looks for non-air blocks.
-            while (!block.is(Blocks.AIR)) {
-                pos = pos.above(1);
-                block = level.getBlockState(pos);
+            while (!currentBlock.is(Blocks.AIR)) {
+                currentPos = currentPos.above(1);
+                currentBlock = level.getBlockState(currentPos);
             }
         }
 
         var playerPos = player.blockPosition();
         if (
-                Math.abs(playerPos.getX() - pos.getX()) > BLINK_RADIUS
-                        || Math.abs(playerPos.getY() - pos.getY()) > BLINK_RADIUS
-                        || Math.abs(playerPos.getZ() - pos.getZ()) > BLINK_RADIUS
+                Math.abs(playerPos.getX() - currentPos.getX()) > BLINK_RADIUS
+                        || Math.abs(playerPos.getY() - currentPos.getY()) > BLINK_RADIUS
+                        || Math.abs(playerPos.getZ() - currentPos.getZ()) > BLINK_RADIUS
         )
             return playerPos;
 
-        return pos;
+        return currentPos;
+    }
+
+    private BlockPos ensureNotStuck(Player player, BlockPos pos, Level level) {
+        var block = level.getBlockState(pos);
+
+        if (block.is(Blocks.AIR))
+            return pos;
+
+        BlockPos bestPos = null;
+        var bestDistance = Double.MAX_VALUE;
+        int[][] directions = {
+                { 1, 0 },
+                { -1, 0 },
+                { 0, 1 },
+                { 0, -1 }
+        };
+
+        for (var direction : directions) {
+            for (var i = 0; i < BLINK_RADIUS; i++) {
+                var currentPos = pos.offset(direction[0] * i, 0, direction[1] * i);
+                block = level.getBlockState(currentPos);
+                if (block.is(Blocks.AIR)) {
+                    var distance = player.blockPosition().distSqr(new Vec3i(currentPos.getX(), currentPos.getY(), currentPos.getZ()));
+                    if (distance < bestDistance) {
+                        bestDistance = distance;
+                        bestPos = currentPos;
+                    }
+                    break;
+                }
+            }
+        }
+
+        return bestPos == null ? pos : bestPos;
     }
 
     @Override
