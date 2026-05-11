@@ -45,8 +45,51 @@ public class BlinkDagger extends DotcAbilitySwordItem {
     }
 
     private BlockPos getTeleportPosition(Player player) {
-        var vector = player.getViewVector(1.0f);
-        return new BlockPos((int) (player.getX() + vector.x), (int) (player.getY() + vector.y), (int) (player.getZ() + vector.z));
+        var level = player.level();
+        var vector = player.getViewVector(1.0f).scale(BLINK_RADIUS);
+        var pos = new BlockPos((int) (player.getX() + vector.x), (int) (player.getY() + vector.y), (int) (player.getZ() + vector.z));
+        var block = level.getBlockState(pos);
+        pos = ensureOnGround(player, block, pos, level);
+
+        return pos;
+    }
+
+    private BlockPos ensureOnGround(Player player, BlockState block, BlockPos pos, Level level) {
+        if (block.is(Blocks.AIR) && pos.getY() > level.getMinBuildHeight()) {
+            while (block.is(Blocks.AIR)) {
+                pos = pos.below(1);
+                block = level.getBlockState(pos);
+            }
+
+            if (!block.is(Blocks.AIR))
+                pos = pos.above(1);
+        } else if (pos.getY() <= level.getMinBuildHeight()) {
+            // By doing this you should hopefully skip all the void air blocks and
+            // get to the bedrock level. Also, if someone actually breaks bedrock it
+            // still goes up
+            while (block.is(Blocks.AIR)) {
+                pos = pos.above(1);
+                block = level.getBlockState(pos);
+            }
+
+            // By doing this you skip all blocks above the void. I didn't want to
+            // specify concrete blocks because players can place whatever they need
+            // and break bedrock, so it just looks for non-air blocks.
+            while (!block.is(Blocks.AIR)) {
+                pos = pos.above(1);
+                block = level.getBlockState(pos);
+            }
+        }
+
+        var playerPos = player.blockPosition();
+        if (
+                Math.abs(playerPos.getX() - pos.getX()) > BLINK_RADIUS
+                        || Math.abs(playerPos.getY() - pos.getY()) > BLINK_RADIUS
+                        || Math.abs(playerPos.getZ() - pos.getZ()) > BLINK_RADIUS
+        )
+            return playerPos;
+
+        return pos;
     }
 
     @Override
