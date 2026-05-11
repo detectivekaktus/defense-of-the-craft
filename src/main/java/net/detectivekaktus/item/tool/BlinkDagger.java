@@ -37,7 +37,7 @@ public class BlinkDagger extends DotcAbilitySwordItem {
         player.level().playSound(
                 null,
                 player.getX(), player.getY(), player.getZ(),
-                DotcItemSounds.BLINK_DAGGER_SOURCE,
+                getSoundBeforeBlink(),
                 SoundSource.PLAYERS
         );
         var pos = getTeleportPosition(player);
@@ -137,6 +137,10 @@ public class BlinkDagger extends DotcAbilitySwordItem {
         return DotcItemSounds.BLINK_DAGGER_TARGET;
     }
 
+    protected SoundEvent getSoundBeforeBlink() {
+        return DotcItemSounds.BLINK_DAGGER_SOURCE;
+    }
+
     @Override
     public float getManaCost() {
         return 30.0f;
@@ -144,7 +148,6 @@ public class BlinkDagger extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-        return 0;
-//        return 15 * 20;
+        return 15 * 20;
     }
 }
