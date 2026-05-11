@@ -109,19 +109,18 @@ public class PlayerMixin implements CombatManagerHolder {
 
     @ModifyVariable(
             method = "actuallyHurt",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/entity/player/Player;getDamageAfterArmorAbsorb(Lnet/minecraft/world/damagesource/DamageSource;F)F"
-            ),
+            at = @At(value = "HEAD"),
             ordinal = 0
     )
     private float applyDamageModifiers(float original, DamageSource damageSource) {
         var player = (Player) (Object) this;
         var entity = damageSource.getEntity();
-        if (isNotMixinTarget(player) || !(entity instanceof Player attacker))
+        if (isNotMixinTarget(player))
             return original;
 
-        var damage = original + dotc$combatManager.manaBurn(attacker, player);
+        var damage = original;
+        if (entity instanceof Player attacker)
+            damage += dotc$combatManager.manaBurn(attacker, player);
         damage = dotc$combatManager.reduceDamage(damage, damageSource);
 
         return damage;
