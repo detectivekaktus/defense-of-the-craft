@@ -1,9 +1,11 @@
 package net.detectivekaktus.item.tool;
 
-import net.detectivekaktus.damage.DotcDamageTypes;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +17,7 @@ import net.minecraft.world.phys.AABB;
 import org.joml.Vector3f;
 
 import net.detectivekaktus.attach.PlayerStats;
+import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
@@ -22,6 +25,7 @@ import java.util.List;
 
 public class OverwhelmingBlink extends BlinkDagger {
     private final float STRENGTH_TO_DAMAGE_PERCENT = 0.05f;
+    private final int EFFECTS_DURATION = 5 * 20;
 
     public OverwhelmingBlink(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
@@ -35,11 +39,14 @@ public class OverwhelmingBlink extends BlinkDagger {
         var entities = player.level().getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
-                entity -> entity instanceof Enemy
+                entity -> entity != player && (((ServerPlayer) player).server.isPvpAllowed() || entity instanceof Enemy)
         );
 
-        var damage = stats.getStrength() *  STRENGTH_TO_DAMAGE_PERCENT;
-        entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.PHYSICAL), damage));
+        var damage = stats.getStrength() * STRENGTH_TO_DAMAGE_PERCENT;
+        entities.forEach(entity -> {
+            entity.hurt(player.damageSources().source(DotcDamageTypes.PHYSICAL), damage);
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EFFECTS_DURATION, 1));
+        });
     }
 
     @Override
