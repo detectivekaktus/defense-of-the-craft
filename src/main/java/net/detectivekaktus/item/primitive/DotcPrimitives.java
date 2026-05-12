@@ -46,7 +46,7 @@ public class DotcPrimitives {
                     DotcToolMaterial.DIRE_COMPONENT,
                     new Item.Properties()
                             .attributes(DotcAxeItem.createAttributes(
-                                    DotcToolMaterial.DIRE_COMPONENT, 4, -3.0f
+                                    DotcToolMaterial.DIRE_COMPONENT, 3, -3.0f
                             ))
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
@@ -113,6 +113,40 @@ public class DotcPrimitives {
                     new TooltipBuilder("divine_rapier").description()
             ),
             "divine_rapier"
+    );
+    public static final Item MYSTIC_STAFF = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.RADIANT_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.RADIANT_COMPONENT, 2, -1.75f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 25)
+                            ),
+                    new TooltipBuilder("mystic_staff")
+                            .description()
+                            .stats(0, 0, 25)
+            ),
+            "mystic_staff"
+    );
+    public static final Item REAVER = DotcItems.register(
+            new DotcAxeItem(
+                    DotcToolMaterial.DIRE_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcAxeItem.createAttributes(
+                                    DotcToolMaterial.DIRE_COMPONENT, 4, -2.5f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(25, 0, 0)
+                            ),
+                    new TooltipBuilder("reaver")
+                            .description()
+                            .stats(25, 0, 0)
+            ),
+            "reaver"
     );
 
     public static void initialize() {

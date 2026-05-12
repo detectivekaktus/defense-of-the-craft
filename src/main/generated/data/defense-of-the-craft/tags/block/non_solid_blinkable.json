@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#minecraft:air",
+    "#minecraft:tall_flowers",
+    "#minecraft:small_flowers",
+    "#minecraft:cave_vines",
+    "#minecraft:invalid_spawn_inside",
+    "#minecraft:snow_layer_can_survive_on",
+    "#minecraft:wool_carpets"
+  ]
+}

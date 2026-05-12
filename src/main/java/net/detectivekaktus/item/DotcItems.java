@@ -58,6 +58,8 @@ public class DotcItems {
                 DotcIngredients.RING_OF_HEALTH,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
+                DotcPrimitives.MYSTIC_STAFF,
+                DotcPrimitives.REAVER,
                 DotcIngredients.SACRED_RELIC,
                 DotcPrimitives.DEMON_EDGE,
 
@@ -65,6 +67,7 @@ public class DotcItems {
                 DotcTools.MAGIC_WAND,
                 DotcTools.HAND_OF_MIDAS,
                 DotcIngredients.SHADOW_AMULET,
+                DotcTools.BLINK_DAGGER,
 
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
@@ -99,6 +102,9 @@ public class DotcItems {
                 DotcTools.KAYA,
                 DotcTools.ECHO_SABRE,
                 DotcTools.HEAVENS_HALBERD,
+                DotcTools.SWIFT_BLINK,
+                DotcTools.ARCANE_BLINK,
+                DotcTools.OVERWHELMING_BLINK,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),

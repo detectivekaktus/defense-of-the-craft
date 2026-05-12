@@ -169,7 +169,7 @@ public class CombatManager {
             if (effect.isPresent() && entity instanceof LivingEntity livingEntity)
                 livingEntity.addEffect(new MobEffectInstance(effect.get(), itemWithBonuses.getProcEffectDuration()));
 
-            applyCooldown(item);
+            addProcableCooldown(item);
             entity.hurt(damageSource, damage);
         }
         else if (stack.is(DotcTools.ECHO_SABRE)) {
@@ -197,7 +197,7 @@ public class CombatManager {
         return hurt;
     }
 
-    private void applyCooldown(Item item) {
+    private void addProcableCooldown(Item item) {
         var cooldown = ((Procable) item).getProcCooldownInTicks();
         if (cooldown == 0)
             return;
@@ -297,6 +297,24 @@ public class CombatManager {
                 return;
             }
         }
+    }
+
+    public void addCooldownOnBlinks(float damage) {
+        if (damage == 0.0f)
+            return;
+
+        addUseCooldownIfAbsent(DotcTools.BLINK_DAGGER, CombatRules.BLINK_DAGGER_COOLDOWN_AFTER_HIT);
+        var items = ((SharesUseCooldown) DotcTools.BLINK_DAGGER).getSharesCooldownWith();
+
+        for (var item : items)
+            addUseCooldownIfAbsent(item, CombatRules.BLINK_DAGGER_COOLDOWN_AFTER_HIT);
+    }
+
+    private void addUseCooldownIfAbsent(Item item, int timeInTicks) {
+        var cooldowns = player.getCooldowns();
+
+        if (!cooldowns.isOnCooldown(item))
+            cooldowns.addCooldown(item, timeInTicks);
     }
 
     public boolean hitThroughEvasion() {

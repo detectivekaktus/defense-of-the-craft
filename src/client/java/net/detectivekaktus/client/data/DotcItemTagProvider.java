@@ -14,6 +14,7 @@ import net.detectivekaktus.item.ingredient.DotcIngredients;
 import net.detectivekaktus.item.tool.DotcTools;
 
 import java.util.concurrent.CompletableFuture;
+
 public class DotcItemTagProvider extends FabricTagProvider<Item> {
     public DotcItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, Registries.ITEM, registriesFuture);
@@ -33,6 +34,7 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcPrimitives.CLAYMORE)
                 .add(DotcPrimitives.DEMON_EDGE)
                 .add(DotcPrimitives.STAFF_OF_WIZARDRY)
+                .add(DotcPrimitives.MYSTIC_STAFF)
                 .add(DotcTools.CRYSTALYS)
                 .add(DotcTools.BUTTERFLY)
                 .add(DotcTools.SANGE)
@@ -44,10 +46,15 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.ABYSSAL_BLADE)
                 .add(DotcTools.SHADOW_BLADE)
                 .add(DotcTools.SILVER_EDGE)
-                .add(DotcTools.RADIANCE);
+                .add(DotcTools.RADIANCE)
+                .add(DotcTools.BLINK_DAGGER)
+                .add(DotcTools.SWIFT_BLINK)
+                .add(DotcTools.ARCANE_BLINK)
+                .add(DotcTools.OVERWHELMING_BLINK);
 
         getOrCreateTagBuilder(ItemTags.AXES)
-                .add(DotcPrimitives.OGRE_AXE);
+                .add(DotcPrimitives.OGRE_AXE)
+                .add(DotcPrimitives.REAVER);
 
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(DotcTools.DESOLATOR);

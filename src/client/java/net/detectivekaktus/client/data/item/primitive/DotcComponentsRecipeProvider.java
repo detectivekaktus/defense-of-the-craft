@@ -132,6 +132,31 @@ public class DotcComponentsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SACRED_RELIC)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcPrimitives.MYSTIC_STAFF)
+                .pattern("$#$")
+                .pattern("$@$")
+                .pattern(" @ ")
+                .define('#', Items.EMERALD)
+                .define('@', Items.STICK)
+                .define('$', DotcIngredients.RADIANT_CRYSTAL)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcPrimitives.REAVER)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("###")
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
+                .define('@', DotcPrimitives.OGRE_AXE)
+                .unlockedBy(
+                        "has_dire_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

@@ -67,6 +67,10 @@
   "description.defense-of-the-craft.shadow_amulet": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
   "active.defense-of-the-craft.shadow_amulet": "Turns the target invisible. The invisibility is broken upon using item, or upon attacking.",
 
+  "item.defense-of-the-craft.blink_dagger": "Blink Dagger",
+  "description.defense-of-the-craft.blink_dagger": "The fabled dagger used by the fastest assassin ever to walk the lands.",
+  "active.defense-of-the-craft.blink_dagger": "Instantly teleports the wielder towards the targeted point. Taking any damage resets the cooldown of this item to 3 seconds.",
+
 
 
   "item.defense-of-the-craft.blight_stone": "Blight Stone",
@@ -131,6 +135,12 @@
   "item.defense-of-the-craft.eaglesong": "Eaglesong",
   "description.defense-of-the-craft.eaglesong": "Capturing the majestic call of an eagle, this mystical horn brings limitless dexterity to those who hear it.",
 
+  "item.defense-of-the-craft.mystic_staff": "Mystic Staff",
+  "description.defense-of-the-craft.mystic_staff": "Enigmatic staff made of only the most expensive crystals.",
+
+  "item.defense-of-the-craft.reaver": "Reaver",
+  "description.defense-of-the-craft.reaver": "A massive axe capable of tearing whole mountains down.",
+
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "One of the oldest weapons forged by the Demon-Smith Abzidian, it killed its maker when he tested its edge.",
 
@@ -183,7 +193,7 @@
 
   "item.defense-of-the-craft.radiance": "Radiance",
   "description.defense-of-the-craft.radiance": "A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies.",
-  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing magical damage over time. Enemies are determined by the current item mode.",
+  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing 2 magical damage over time. Enemies are determined by the current item mode.",
   "active.defense-of-the-craft.radiance": "Changes the item mode between disabled, PvE, and PvP.",
 
 
@@ -208,6 +218,18 @@
   "description.defense-of-the-craft.heavens_halberd": "This halberd moves with the speed of a smaller weapon, allowing the bearer to win duels that a heavy edge would not.",
   "passive.defense-of-the-craft.heavens_halberd": "Grants the wielder a 15% chance to evade any hostile mob or player attack.",
   "active.defense-of-the-craft.heavens_halberd": "Disarms the targeted enemy unit for 3 seconds, preventing them from attacking.",
+
+  "item.defense-of-the-craft.swift_blink": "Swift Blink",
+  "description.defense-of-the-craft.swift_blink": "A cunning blade able to anticipate and enable its bearer's movements.",
+  "active.defense-of-the-craft.swift_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's attack and movement speed are increased. Taking any damage resets the cooldown of this item to 3 seconds.",
+
+  "item.defense-of-the-craft.arcane_blink": "Arcane Blink",
+  "description.defense-of-the-craft.arcane_blink": "A revitalizing tool to help bear the weight of arcane expenditure.",
+  "active.defense-of-the-craft.arcane_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's health and mana are restored. Taking any damage resets the cooldown of this item to 3 seconds.",
+
+  "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
+  "description.defense-of-the-craft.overwhelming_blink": "A horrifying dagger forged in the chaos maw and nigh untouchable by mortal hands.",
+  "active.defense-of-the-craft.overwhelming_blink": "Instantly teleports the wielder towards the targeted point. After teleport a huge shockwave is created at the target location, dealing 5% of wielder's strength as damage to all nearby creatures and slowing them down. Taking any damage resets the cooldown of this item to 3 seconds.",
 
 
 

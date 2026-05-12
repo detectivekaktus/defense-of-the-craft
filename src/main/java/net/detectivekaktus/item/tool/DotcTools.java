@@ -372,6 +372,73 @@ public class DotcTools {
             ),
             "radiance"
     );
+    public static final Item BLINK_DAGGER = DotcItems.register(
+            new BlinkDagger(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(BlinkDagger.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 1, -2.0f
+                            )),
+                    new TooltipBuilder("blink_dagger")
+                            .description()
+                            .active()
+            ),
+            "blink_dagger"
+    );
+    public static final Item SWIFT_BLINK = DotcItems.register(
+            new SwiftBlink(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(SwiftBlink.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 25, 0)
+                            ),
+                    new TooltipBuilder("swift_blink")
+                            .description()
+                            .stats(0, 25, 0)
+                            .active()
+            ),
+            "swift_blink"
+    );
+    public static final Item ARCANE_BLINK = DotcItems.register(
+            new ArcaneBlink(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(ArcaneBlink.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 25)
+                            ),
+                    new TooltipBuilder("arcane_blink")
+                            .description()
+                            .stats(0, 0, 25)
+                            .active()
+            ),
+            "arcane_blink"
+    );
+    public static final Item OVERWHELMING_BLINK = DotcItems.register(
+            new OverwhelmingBlink(
+                    DotcToolMaterial.DIRE_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(ArcaneBlink.createAttributes(
+                                    DotcToolMaterial.DIRE_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(25, 0, 0)
+                            ),
+                    new TooltipBuilder("overwhelming_blink")
+                            .description()
+                            .stats(25, 0, 0)
+                            .active()
+            ),
+            "overwhelming_blink"
+    );
 
     public static void initialize() { }
 }

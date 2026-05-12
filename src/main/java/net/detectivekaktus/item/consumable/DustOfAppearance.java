@@ -1,6 +1,7 @@
 package net.detectivekaktus.item.consumable;
 
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -19,12 +20,13 @@ import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.core.animation.DustOfAppearanceAnimation;
 import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.HasUseCooldown;
+import net.detectivekaktus.core.item.ParticleAnimated;
 import net.detectivekaktus.core.player.ShadowWalkingSource;
 import net.detectivekaktus.item.DotcItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class DustOfAppearance extends DotcItem implements HasUseCooldown {
+public class DustOfAppearance extends DotcItem implements HasUseCooldown, ParticleAnimated {
     private final int DUST_RANGE = 6;
     private final int DUST_SPREAD_SPEED = 5;
 
@@ -72,10 +74,11 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown {
         return InteractionResultHolder.success(stack);
     }
 
-    private void playAnimation(ServerLevel level, double x, double y, double z) {
+    @Override
+    public void playAnimation(ServerLevel level, double x, double y, double z) {
         y += 0.5;
 
-        var particle = new DustParticleOptions(new Vector3f(0.705f, 0.733f, 0.909f), 1.0f);
+        var particle = getAnimationParticle();
         for (var distance = 0; distance != DUST_RANGE; distance++) {
             ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
@@ -110,6 +113,11 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown {
                     particle
             ));
         }
+    }
+
+    @Override
+    public ParticleOptions getAnimationParticle() {
+        return new DustParticleOptions(new Vector3f(0.705f, 0.733f, 0.909f), 1.0f);
     }
 
     @Override

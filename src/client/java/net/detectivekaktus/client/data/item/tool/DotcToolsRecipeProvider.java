@@ -265,6 +265,58 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SACRED_RELIC)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.BLINK_DAGGER)
+                .pattern(" ##")
+                .pattern(" @#")
+                .pattern("$  ")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', Items.NETHER_STAR)
+                .define('$', Items.DIAMOND_SWORD)
+                .unlockedBy(
+                        "has_nether_star",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHER_STAR)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SWIFT_BLINK)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("#$#")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcTools.BLINK_DAGGER)
+                .define('$', DotcIngredients.EAGLESONG)
+                .unlockedBy(
+                        "has_blink_dagger",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.ARCANE_BLINK)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("#$#")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcTools.BLINK_DAGGER)
+                .define('$', DotcPrimitives.MYSTIC_STAFF)
+                .unlockedBy(
+                        "has_blink_dagger",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.OVERWHELMING_BLINK)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("#$#")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcTools.BLINK_DAGGER)
+                .define('$', DotcPrimitives.REAVER)
+                .unlockedBy(
+                        "has_blink_dagger",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
+                )
+                .save(exporter);
     }
 
     @Override
