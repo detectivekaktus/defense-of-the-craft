@@ -12,6 +12,7 @@ import java.util.concurrent.CompletableFuture;
 
 import net.detectivekaktus.block.building.DotcBuildingBlocks;
 import net.detectivekaktus.block.natural.DotcNaturalBlocks;
+import net.detectivekaktus.tag.DotcBlockTags;
 
 // Unfortunately Fabric can't handle two providers writing into the same file,
 // so I had to combine two providers into one which actually sucks
@@ -28,11 +29,22 @@ public class DotcBlockTagProvider extends FabricTagProvider<Block> {
                 .add(DotcNaturalBlocks.DIRE_ORE)
                 .add(DotcBuildingBlocks.RADIANT_CRYSTAL_BLOCK)
                 .add(DotcBuildingBlocks.DIRE_CRYSTAL_BLOCK);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(DotcNaturalBlocks.RADIANT_ORE)
                 .add(DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(DotcNaturalBlocks.DIRE_ORE);
+
+        getOrCreateTagBuilder(DotcBlockTags.NON_SOLID_BLINKABLE)
+                .forceAddTag(BlockTags.AIR)
+                .forceAddTag(BlockTags.TALL_FLOWERS)
+                .forceAddTag(BlockTags.SMALL_FLOWERS)
+                .forceAddTag(BlockTags.CAVE_VINES)
+                .forceAddTag(BlockTags.INVALID_SPAWN_INSIDE)
+                .forceAddTag(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON)
+                .forceAddTag(BlockTags.WOOL_CARPETS);
     }
 
     @Override

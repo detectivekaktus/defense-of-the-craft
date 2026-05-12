@@ -1,6 +1,5 @@
 package net.detectivekaktus.item.tool;
 
-import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -8,7 +7,6 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -25,9 +23,11 @@ import org.joml.Vector3f;
 import net.detectivekaktus.core.animation.BlinkDaggerAnimation;
 import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.ParticleAnimated;
+import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
+import net.detectivekaktus.tag.DotcBlockTags;
 
 import java.util.List;
 
@@ -75,13 +75,13 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
         var currentBlock = level.getBlockState(pos);
         var currentPos = pos;
 
-        if (currentBlock.is(BlockTags.AIR) && currentPos.getY() > level.getMinBuildHeight()) {
+        if (currentBlock.is(DotcBlockTags.NON_SOLID_BLINKABLE) && currentPos.getY() > level.getMinBuildHeight()) {
             var prevPos = currentPos;
             for (int i = 0; i < BLINK_RADIUS; i++) {
                 currentPos = currentPos.below(1);
                 currentBlock = level.getBlockState(currentPos);
 
-                if (!currentBlock.is(BlockTags.AIR))
+                if (!currentBlock.is(DotcBlockTags.NON_SOLID_BLINKABLE))
                     return prevPos;
 
                 prevPos = currentPos;
@@ -96,10 +96,10 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
 
                 if (hasEncounteredSolidBlock
                         // This would mean that there's sufficient space for player to stay
-                        && (currentBlock.is(BlockTags.AIR) && blockAbove.is(BlockTags.AIR)))
+                        && (currentBlock.is(DotcBlockTags.NON_SOLID_BLINKABLE) && blockAbove.is(DotcBlockTags.NON_SOLID_BLINKABLE)))
                     return currentPos;
 
-                if (!currentBlock.is(BlockTags.AIR))
+                if (!currentBlock.is(DotcBlockTags.NON_SOLID_BLINKABLE))
                     hasEncounteredSolidBlock = true;
             }
         }
@@ -110,7 +110,7 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
     private BlockPos ensureNotStuck(Player player, BlockPos pos, Level level) {
         var block = level.getBlockState(pos);
 
-        if (block.is(BlockTags.AIR))
+        if (block.is(DotcBlockTags.NON_SOLID_BLINKABLE))
             return pos;
 
         BlockPos bestPos = null;
@@ -126,7 +126,8 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
             for (var i = 1; i < BLINK_RADIUS + 1; i++) {
                 var currentPos = pos.offset(direction[0] * i, 0, direction[1] * i);
                 block = level.getBlockState(currentPos);
-                if (block.is(BlockTags.AIR) && level.isInWorldBounds(currentPos)) {
+                var blockAbove = level.getBlockState(currentPos.above(1));
+                if ((block.is(DotcBlockTags.NON_SOLID_BLINKABLE) && blockAbove.is(DotcBlockTags.NON_SOLID_BLINKABLE)) && level.isInWorldBounds(currentPos)) {
                     var distance = player.blockPosition().distSqr(new Vec3i(currentPos.getX(), currentPos.getY(), currentPos.getZ()));
                     if ((distance <= BLINK_RADIUS * BLINK_RADIUS) && distance > bestDistance) {
                         bestDistance = distance;

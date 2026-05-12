@@ -35,7 +35,7 @@ public class OverwhelmingBlink extends BlinkDagger {
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         super.invokeInteractionAbility(player, target, stack);
         var stats = PlayerStats.get(player);
-        var aabb = new AABB(player.getOnPos()).inflate(4);
+        var aabb = new AABB(player.getOnPos()).inflate(8);
         var entities = player.level().getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
