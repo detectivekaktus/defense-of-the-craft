@@ -403,6 +403,24 @@ public class DotcTools {
             ),
             "swift_blink"
     );
+    public static final Item ARCANE_BLINK = DotcItems.register(
+            new ArcaneBlink(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(ArcaneBlink.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 25)
+                            ),
+                    new TooltipBuilder("arcane_blink")
+                            .description()
+                            .stats(0, 0, 25)
+                            .active()
+            ),
+            "arcane_blink"
+    );
 
     public static void initialize() { }
 }

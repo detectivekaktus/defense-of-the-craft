@@ -58,6 +58,7 @@ public class DotcItems {
                 DotcIngredients.RING_OF_HEALTH,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
+                DotcPrimitives.MYSTIC_STAFF,
                 DotcIngredients.SACRED_RELIC,
                 DotcPrimitives.DEMON_EDGE,
 
@@ -101,6 +102,7 @@ public class DotcItems {
                 DotcTools.ECHO_SABRE,
                 DotcTools.HEAVENS_HALBERD,
                 DotcTools.SWIFT_BLINK,
+                DotcTools.ARCANE_BLINK,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),

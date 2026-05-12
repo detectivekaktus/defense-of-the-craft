@@ -144,5 +144,10 @@
     "sounds": [
       "defense-of-the-craft:item_swift_blink_target"
     ]
+  },
+  "item_arcane_blink_target": {
+    "sounds": [
+      "defense-of-the-craft:item_arcane_blink_target"
+    ]
   }
 }

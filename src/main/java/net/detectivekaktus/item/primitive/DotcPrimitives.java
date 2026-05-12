@@ -114,6 +114,23 @@ public class DotcPrimitives {
             ),
             "divine_rapier"
     );
+    public static final Item MYSTIC_STAFF = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.RADIANT_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.RADIANT_COMPONENT, 2, -1.75f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 25)
+                            ),
+                    new TooltipBuilder("mystic_staff")
+                            .description()
+                            .stats(0, 0, 25)
+            ),
+            "mystic_staff"
+    );
 
     public static void initialize() {
     }

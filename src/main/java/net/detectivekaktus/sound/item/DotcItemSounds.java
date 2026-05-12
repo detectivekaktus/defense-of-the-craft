@@ -22,6 +22,7 @@ public class DotcItemSounds {
     public static final SoundEvent BLINK_DAGGER_SOURCE = DotcSounds.register("item_blink_dagger_source");
     public static final SoundEvent BLINK_DAGGER_TARGET = DotcSounds.register("item_blink_dagger_target");
     public static final SoundEvent SWIFT_BLINK_TARGET = DotcSounds.register("item_swift_blink_target");
+    public static final SoundEvent ARCANE_BLINK_TARGET = DotcSounds.register("item_arcane_blink_target");
 
     public static void initialize() {}
 }

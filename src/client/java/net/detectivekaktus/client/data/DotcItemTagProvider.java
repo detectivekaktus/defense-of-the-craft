@@ -34,6 +34,7 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcPrimitives.CLAYMORE)
                 .add(DotcPrimitives.DEMON_EDGE)
                 .add(DotcPrimitives.STAFF_OF_WIZARDRY)
+                .add(DotcPrimitives.MYSTIC_STAFF)
                 .add(DotcTools.CRYSTALYS)
                 .add(DotcTools.BUTTERFLY)
                 .add(DotcTools.SANGE)
@@ -47,7 +48,8 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.SILVER_EDGE)
                 .add(DotcTools.RADIANCE)
                 .add(DotcTools.BLINK_DAGGER)
-                .add(DotcTools.SWIFT_BLINK);
+                .add(DotcTools.SWIFT_BLINK)
+                .add(DotcTools.ARCANE_BLINK);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE);

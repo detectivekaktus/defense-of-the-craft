@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "$": {
+      "item": "defense-of-the-craft:radiant_crystal"
+    },
+    "@": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "$#$",
+    "$@$",
+    " @ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:mystic_staff"
+  }
+}

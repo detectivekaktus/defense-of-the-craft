@@ -135,6 +135,9 @@
   "item.defense-of-the-craft.eaglesong": "Eaglesong",
   "description.defense-of-the-craft.eaglesong": "Capturing the majestic call of an eagle, this mystical horn brings limitless dexterity to those who hear it.",
 
+  "item.defense-of-the-craft.mystic_staff": "Mystic Staff",
+  "description.defense-of-the-craft.mystic_staff": "Enigmatic staff made of only the most expensive crystals.",
+
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "One of the oldest weapons forged by the Demon-Smith Abzidian, it killed its maker when he tested its edge.",
 
@@ -216,6 +219,10 @@
   "item.defense-of-the-craft.swift_blink": "Swift Blink",
   "description.defense-of-the-craft.swift_blink": "A cunning blade able to anticipate and enable its bearer's movements.",
   "active.defense-of-the-craft.swift_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's attack and movement speed are increased. Taking any damage resets the cooldown of this item to 3 seconds.",
+
+  "item.defense-of-the-craft.arcane_blink": "Arcane Blink",
+  "description.defense-of-the-craft.arcane_blink": "A revitalizing tool to help bear the weight of arcane expenditure.",
+  "active.defense-of-the-craft.arcane_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's health and mana are restored. Taking any damage resets the cooldown of this item to 3 seconds.",
 
 
 
