@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -13,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -57,47 +57,42 @@ public class BlinkDagger extends DotcAbilitySwordItem {
         var currentBlock = level.getBlockState(pos);
         var currentPos = pos;
 
-        if (currentBlock.is(Blocks.AIR) && pos.getY() > level.getMinBuildHeight()) {
-            while (currentBlock.is(Blocks.AIR)) {
+        if (currentBlock.is(BlockTags.AIR) && currentPos.getY() > level.getMinBuildHeight()) {
+            var prevPos = currentPos;
+            for (int i = 0; i < BLINK_RADIUS; i++) {
                 currentPos = currentPos.below(1);
                 currentBlock = level.getBlockState(currentPos);
-            }
 
-            if (!currentBlock.is(Blocks.AIR))
-                currentPos = currentPos.above(1);
-        } else if (pos.getY() <= level.getMinBuildHeight()) {
-            // By doing this you should hopefully skip all the void air blocks and
-            // get to the bedrock level. Also, if someone actually breaks bedrock it
-            // still goes up
-            while (currentBlock.is(Blocks.AIR)) {
+                if (!currentBlock.is(BlockTags.AIR))
+                    return prevPos;
+
+                prevPos = currentPos;
+            }
+        }
+        else if (currentPos.getY() <= level.getMinBuildHeight()) {
+            var hasEncounteredSolidBlock = false;
+            for (var i = 0; i < BLINK_RADIUS; i++) {
                 currentPos = currentPos.above(1);
                 currentBlock = level.getBlockState(currentPos);
-            }
+                var blockAbove = level.getBlockState(currentPos.above(1));
 
-            // By doing this you skip all blocks above the void. I didn't want to
-            // specify concrete blocks because players can place whatever they need
-            // and break bedrock, so it just looks for non-air blocks.
-            while (!currentBlock.is(Blocks.AIR)) {
-                currentPos = currentPos.above(1);
-                currentBlock = level.getBlockState(currentPos);
+                if (hasEncounteredSolidBlock
+                        // This would mean that there's sufficient space for player to stay
+                        && (currentBlock.is(BlockTags.AIR) && blockAbove.is(BlockTags.AIR)))
+                    return currentPos;
+
+                if (!currentBlock.is(BlockTags.AIR))
+                    hasEncounteredSolidBlock = true;
             }
         }
 
-        var playerPos = player.blockPosition();
-        if (
-                Math.abs(playerPos.getX() - currentPos.getX()) > BLINK_RADIUS
-                        || Math.abs(playerPos.getY() - currentPos.getY()) > BLINK_RADIUS
-                        || Math.abs(playerPos.getZ() - currentPos.getZ()) > BLINK_RADIUS
-        )
-            return playerPos;
-
-        return currentPos;
+        return player.blockPosition();
     }
 
     private BlockPos ensureNotStuck(Player player, BlockPos pos, Level level) {
         var block = level.getBlockState(pos);
 
-        if (block.is(Blocks.AIR))
+        if (block.is(BlockTags.AIR))
             return pos;
 
         BlockPos bestPos = null;
@@ -113,9 +108,9 @@ public class BlinkDagger extends DotcAbilitySwordItem {
             for (var i = 1; i < BLINK_RADIUS + 1; i++) {
                 var currentPos = pos.offset(direction[0] * i, 0, direction[1] * i);
                 block = level.getBlockState(currentPos);
-                if (block.is(Blocks.AIR) && level.isInWorldBounds(currentPos)) {
+                if (block.is(BlockTags.AIR) && level.isInWorldBounds(currentPos)) {
                     var distance = player.blockPosition().distSqr(new Vec3i(currentPos.getX(), currentPos.getY(), currentPos.getZ()));
-                    if (distance > bestDistance) {
+                    if ((distance <= BLINK_RADIUS * BLINK_RADIUS) && distance > bestDistance) {
                         bestDistance = distance;
                         bestPos = currentPos;
                     }
@@ -124,7 +119,7 @@ public class BlinkDagger extends DotcAbilitySwordItem {
             }
         }
 
-        return bestPos == null ? pos : bestPos;
+        return bestPos == null ? player.blockPosition() : bestPos;
     }
 
     @Override
@@ -148,6 +143,7 @@ public class BlinkDagger extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-        return 15 * 20;
+//        return 15 * 20;
+        return 0;
     }
 }
