@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 
 public abstract class ParticleAnimation implements ServerTickEvents.EndTick {
     private long ticksUntilAnimation;
@@ -40,6 +41,10 @@ public abstract class ParticleAnimation implements ServerTickEvents.EndTick {
 
     public boolean isFinished() {
         return finished;
+    }
+
+    protected int getRandomOrientation() {
+        return level.getRandom().nextDouble() < 0.5 ? 1 : -1;
     }
 
     public abstract void playAnimation();

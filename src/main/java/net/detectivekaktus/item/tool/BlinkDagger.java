@@ -2,6 +2,9 @@ package net.detectivekaktus.item.tool;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -15,11 +18,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 
+import org.joml.Vector3f;
+
+import net.detectivekaktus.core.animation.BlinkDaggerAnimation;
+import net.detectivekaktus.core.animation.ParticleAnimationManager;
+import net.detectivekaktus.core.item.ParticleAnimated;
 import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class BlinkDagger extends DotcAbilitySwordItem {
+public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimated {
     private final int BLINK_RADIUS = 12;
 
     public BlinkDagger(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
@@ -34,14 +42,20 @@ public class BlinkDagger extends DotcAbilitySwordItem {
 
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
-        player.level().playSound(
+        var level = player.level();
+        level.playSound(
                 null,
                 player.getX(), player.getY(), player.getZ(),
                 getSoundBeforeBlink(),
                 SoundSource.PLAYERS
         );
+
+        playAnimation((ServerLevel) level, player.getX(), player.getY(), player.getZ());
+
         var pos = getTeleportPosition(player);
         player.teleportTo(pos.getX(), pos.getY(), pos.getZ());
+
+        playAnimation((ServerLevel) level, player.getX(), player.getY(), player.getZ());
     }
 
     private BlockPos getTeleportPosition(Player player) {
@@ -123,6 +137,24 @@ public class BlinkDagger extends DotcAbilitySwordItem {
     }
 
     @Override
+    public void playAnimation(ServerLevel level, double x, double y, double z) {
+        y += 1.25;
+
+        var particle = getAnimationParticle();
+        ParticleAnimationManager.INSTANCE.addAnimation(new BlinkDaggerAnimation(
+                level,
+                x, y, z,
+                5,
+                particle
+        ));
+    }
+
+    @Override
+    public ParticleOptions getAnimationParticle() {
+        return new DustParticleOptions(new Vector3f(0.043f, 0.282f, 0.909f), 0.521f);
+    }
+
+    @Override
     protected TagKey<EntityType<?>> getInvulnerableTag() {
         return null;
     }
@@ -143,7 +175,6 @@ public class BlinkDagger extends DotcAbilitySwordItem {
 
     @Override
     public int getCooldownInTicks() {
-//        return 15 * 20;
         return 0;
     }
 }
