@@ -304,6 +304,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.OVERWHELMING_BLINK)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("#$#")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcTools.BLINK_DAGGER)
+                .define('$', DotcPrimitives.REAVER)
+                .unlockedBy(
+                        "has_blink_dagger",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
+                )
+                .save(exporter);
     }
 
     @Override

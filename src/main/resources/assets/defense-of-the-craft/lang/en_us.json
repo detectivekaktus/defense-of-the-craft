@@ -138,6 +138,9 @@
   "item.defense-of-the-craft.mystic_staff": "Mystic Staff",
   "description.defense-of-the-craft.mystic_staff": "Enigmatic staff made of only the most expensive crystals.",
 
+  "item.defense-of-the-craft.reaver": "Reaver",
+  "description.defense-of-the-craft.reaver": "A massive axe capable of tearing whole mountains down.",
+
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "One of the oldest weapons forged by the Demon-Smith Abzidian, it killed its maker when he tested its edge.",
 
@@ -223,6 +226,10 @@
   "item.defense-of-the-craft.arcane_blink": "Arcane Blink",
   "description.defense-of-the-craft.arcane_blink": "A revitalizing tool to help bear the weight of arcane expenditure.",
   "active.defense-of-the-craft.arcane_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's health and mana are restored. Taking any damage resets the cooldown of this item to 3 seconds.",
+
+  "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
+  "description.defense-of-the-craft.overwhelming_blink": "A horrifying dagger forged in the chaos maw and nigh untouchable by mortal hands.",
+  "active.defense-of-the-craft.overwhelming_blink": "Instantly teleports the wielder towards the targeted point. After teleport a huge shockwave is created at the target location, dealing 5% of wielder's strength as damage to all nearby creatures and slowing them down. Taking any damage resets the cooldown of this item to 3 seconds.",
 
 
 

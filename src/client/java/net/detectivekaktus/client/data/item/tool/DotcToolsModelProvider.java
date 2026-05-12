@@ -41,7 +41,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.RADIANCE,
                 DotcTools.BLINK_DAGGER,
                 DotcTools.SWIFT_BLINK,
-                DotcTools.ARCANE_BLINK
+                DotcTools.ARCANE_BLINK,
+                DotcTools.OVERWHELMING_BLINK
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

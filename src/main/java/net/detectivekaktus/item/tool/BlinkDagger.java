@@ -184,6 +184,6 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
 
     @Override
     public List<Item> getSharesCooldownWith() {
-        return List.of(DotcTools.SWIFT_BLINK, DotcTools.ARCANE_BLINK);
+        return List.of(DotcTools.SWIFT_BLINK, DotcTools.ARCANE_BLINK, DotcTools.OVERWHELMING_BLINK);
     }
 }

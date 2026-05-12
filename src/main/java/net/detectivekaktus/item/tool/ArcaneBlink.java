@@ -41,7 +41,7 @@ public class ArcaneBlink extends BlinkDagger {
 
     @Override
     public List<Item> getSharesCooldownWith() {
-        return List.of(DotcTools.BLINK_DAGGER, DotcTools.SWIFT_BLINK);
+        return List.of(DotcTools.BLINK_DAGGER, DotcTools.SWIFT_BLINK, DotcTools.OVERWHELMING_BLINK);
     }
 
     @Override

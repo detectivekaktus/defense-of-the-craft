@@ -149,5 +149,10 @@
     "sounds": [
       "defense-of-the-craft:item_arcane_blink_target"
     ]
+  },
+  "item_overwhelming_blink_target": {
+    "sounds": [
+      "defense-of-the-craft:item_overwhelming_blink_target"
+    ]
   }
 }
