@@ -101,7 +101,7 @@ public class BlinkDagger extends DotcAbilitySwordItem {
             return pos;
 
         BlockPos bestPos = null;
-        var bestDistance = Double.MAX_VALUE;
+        var bestDistance = Double.MIN_VALUE;
         int[][] directions = {
                 { 1, 0 },
                 { -1, 0 },
@@ -110,12 +110,12 @@ public class BlinkDagger extends DotcAbilitySwordItem {
         };
 
         for (var direction : directions) {
-            for (var i = 0; i < BLINK_RADIUS; i++) {
+            for (var i = 1; i < BLINK_RADIUS + 1; i++) {
                 var currentPos = pos.offset(direction[0] * i, 0, direction[1] * i);
                 block = level.getBlockState(currentPos);
-                if (block.is(Blocks.AIR)) {
+                if (block.is(Blocks.AIR) && level.isInWorldBounds(currentPos)) {
                     var distance = player.blockPosition().distSqr(new Vec3i(currentPos.getX(), currentPos.getY(), currentPos.getZ()));
-                    if (distance < bestDistance) {
+                    if (distance > bestDistance) {
                         bestDistance = distance;
                         bestPos = currentPos;
                     }
