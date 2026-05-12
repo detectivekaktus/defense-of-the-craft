@@ -96,7 +96,7 @@ public class DotcTools {
             "monkey_king_bar"
     );
     public static final Item SANGE = DotcItems.register(
-            new Sange(
+            new DotcSwordItem(
                     DotcToolMaterial.DIRE_ARTEFACT,
                     new Item.Properties()
                             .attributes(DotcSwordItem.createAttributes(
@@ -108,7 +108,7 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    Sange.HP_REGEN_AMPLIFICATION
+                                    0.12f
                             ),
                     new TooltipBuilder("sange")
                             .description()
@@ -118,7 +118,7 @@ public class DotcTools {
             "sange"
     );
     public static final Item YASHA = DotcItems.register(
-            new Yasha(
+            new DotcSwordItem(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
                             .attributes(DotcSwordItem.createAttributes(
@@ -130,7 +130,7 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.MOVE_SPEED_COMPONENT,
-                                    Yasha.MOVE_SPEED_BONUS
+                                    0.125f
                             ),
                     new TooltipBuilder("yasha")
                             .description()
@@ -140,7 +140,7 @@ public class DotcTools {
             "yasha"
     );
     public static final Item KAYA = DotcItems.register(
-            new Kaya(
+            new DotcSwordItem(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
                             .attributes(DotcSwordItem.createAttributes(
@@ -152,7 +152,7 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.MANA_COST_REDUCTION_COMPONENT,
-                                    Kaya.MANA_COST_REDUCTION
+                                    0.1f
                             ),
                     new TooltipBuilder("kaya")
                             .description()
