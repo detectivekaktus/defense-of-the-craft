@@ -32,11 +32,11 @@ import net.detectivekaktus.sound.gui.DotcGuiSounds;
 public class PlayerMixin implements CombatManagerHolder {
     @Unique
     @Final
-    public CombatManager dotc$combatManager;
+    public CombatManager combatManager;
 
     @Override
     public CombatManager getCombatManager() {
-        return dotc$combatManager;
+        return combatManager;
     }
 
     @Unique
@@ -53,7 +53,7 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return;
 
-        this.dotc$combatManager = new CombatManager(player);
+        this.combatManager = new CombatManager(player);
     }
 
     @ModifyVariable(
@@ -69,8 +69,8 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return original;
 
-        var damage = dotc$combatManager.crit(original);
-        damage += dotc$combatManager.addShadowWalkingDamage();
+        var damage = combatManager.crit(original);
+        damage += combatManager.addShadowWalkingDamage();
         return damage;
     }
 
@@ -86,7 +86,7 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return;
 
-        dotc$combatManager.calculateProcs();
+        combatManager.calculateProcs();
     }
 
     @ModifyExpressionValue(
@@ -104,7 +104,7 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return hurt;
 
-        return dotc$combatManager.proc(entity, hurt);
+        return combatManager.proc(entity, hurt);
     }
 
     @ModifyVariable(
@@ -120,8 +120,8 @@ public class PlayerMixin implements CombatManagerHolder {
 
         var damage = original;
         if (entity instanceof Player attacker)
-            damage += dotc$combatManager.manaBurn(attacker, player);
-        damage = dotc$combatManager.reduceDamage(damage, damageSource);
+            damage += combatManager.manaBurn(attacker, player);
+        damage = combatManager.reduceDamage(damage, damageSource);
 
         return damage;
     }
@@ -139,8 +139,10 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return;
 
-        if (dotc$combatManager.evade(damageSource))
+        if (combatManager.evade(damageSource))
             callbackInfo.cancel();
+
+        combatManager.addCooldownOnBlinks();
     }
 
     @Inject(

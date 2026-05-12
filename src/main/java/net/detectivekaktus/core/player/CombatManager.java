@@ -299,6 +299,10 @@ public class CombatManager {
         }
     }
 
+    public void addCooldownOnBlinks() {
+        player.getCooldowns().addCooldown(DotcTools.BLINK_DAGGER, CombatRules.BLINK_DAGGER_COOLDOWN_AFTER_HIT);
+    }
+
     public boolean hitThroughEvasion() {
         return hitThroughEvasion;
     }

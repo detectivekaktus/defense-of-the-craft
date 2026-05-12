@@ -175,6 +175,6 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
 
     @Override
     public int getCooldownInTicks() {
-        return 0;
+        return 15 * 20;
     }
 }
