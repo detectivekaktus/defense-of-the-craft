@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blink_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:blink_dagger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "defense-of-the-craft:swift_blink"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blink_dagger"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "defense-of-the-craft:swift_blink"
+    ]
+  }
+}

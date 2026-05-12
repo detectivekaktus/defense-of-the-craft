@@ -1,5 +1,6 @@
 package net.detectivekaktus.item.tool;
 
+import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -14,6 +15,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
@@ -27,7 +29,9 @@ import net.detectivekaktus.item.DotcAbilitySwordItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimated {
+import java.util.List;
+
+public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimated, SharesUseCooldown {
     private final int BLINK_RADIUS = 12;
 
     public BlinkDagger(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
@@ -151,7 +155,7 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
 
     @Override
     public ParticleOptions getAnimationParticle() {
-        return new DustParticleOptions(new Vector3f(0.043f, 0.282f, 0.909f), 0.521f);
+        return new DustParticleOptions(new Vector3f(0.043f, 0.282f, 0.909f), 0.5f);
     }
 
     @Override
@@ -176,5 +180,10 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
     @Override
     public int getCooldownInTicks() {
         return 15 * 20;
+    }
+
+    @Override
+    public List<Item> getSharesCooldownWith() {
+        return List.of(DotcTools.SWIFT_BLINK);
     }
 }

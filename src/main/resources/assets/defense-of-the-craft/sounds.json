@@ -139,5 +139,10 @@
     "sounds": [
       "defense-of-the-craft:item_blink_dagger_target"
     ]
+  },
+  "item_swift_blink_target": {
+    "sounds": [
+      "defense-of-the-craft:item_swift_blink_target"
+    ]
   }
 }

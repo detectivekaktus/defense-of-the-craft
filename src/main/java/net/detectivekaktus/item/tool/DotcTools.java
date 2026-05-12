@@ -376,7 +376,7 @@ public class DotcTools {
             new BlinkDagger(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
-                            .attributes(Radiance.createAttributes(
+                            .attributes(BlinkDagger.createAttributes(
                                     DotcToolMaterial.RADIANT_ARTEFACT, 1, -2.0f
                             )),
                     new TooltipBuilder("blink_dagger")
@@ -384,6 +384,24 @@ public class DotcTools {
                             .active()
             ),
             "blink_dagger"
+    );
+    public static final Item SWIFT_BLINK = DotcItems.register(
+            new SwiftBlink(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(SwiftBlink.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 25, 0)
+                            ),
+                    new TooltipBuilder("swift_blink")
+                            .description()
+                            .stats(0, 25, 0)
+                            .active()
+            ),
+            "swift_blink"
     );
 
     public static void initialize() { }

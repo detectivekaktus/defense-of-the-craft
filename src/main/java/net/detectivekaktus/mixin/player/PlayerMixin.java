@@ -134,7 +134,7 @@ public class PlayerMixin implements CombatManagerHolder {
             ),
             cancellable = true
     )
-    private void preDamageAbsorbHook(DamageSource damageSource, float f, CallbackInfo callbackInfo) {
+    private void preDamageAbsorbHook(DamageSource damageSource, float damage, CallbackInfo callbackInfo) {
         var player = (Player) (Object) this;
         if (isNotMixinTarget(player))
             return;
@@ -142,7 +142,7 @@ public class PlayerMixin implements CombatManagerHolder {
         if (combatManager.evade(damageSource))
             callbackInfo.cancel();
 
-        combatManager.addCooldownOnBlinks();
+        combatManager.addCooldownOnBlinks(damage);
     }
 
     @Inject(

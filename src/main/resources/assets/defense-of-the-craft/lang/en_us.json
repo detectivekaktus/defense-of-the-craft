@@ -213,6 +213,10 @@
   "passive.defense-of-the-craft.heavens_halberd": "Grants the wielder a 15% chance to evade any hostile mob or player attack.",
   "active.defense-of-the-craft.heavens_halberd": "Disarms the targeted enemy unit for 3 seconds, preventing them from attacking.",
 
+  "item.defense-of-the-craft.swift_blink": "Swift Blink",
+  "description.defense-of-the-craft.swift_blink": "A cunning blade able to anticipate and enable its bearer's movements.",
+  "active.defense-of-the-craft.swift_blink": "Instantly teleports the wielder towards the targeted point. After teleport the wielder's attack and movement speed are increased. Taking any damage resets the cooldown of this item to 3 seconds.",
+
 
 
   "death.attack.defense-of-the-craft.magical": "%1$s died from Defense Of The Craft magic!",

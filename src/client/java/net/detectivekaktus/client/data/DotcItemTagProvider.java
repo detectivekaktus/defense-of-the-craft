@@ -14,6 +14,7 @@ import net.detectivekaktus.item.ingredient.DotcIngredients;
 import net.detectivekaktus.item.tool.DotcTools;
 
 import java.util.concurrent.CompletableFuture;
+
 public class DotcItemTagProvider extends FabricTagProvider<Item> {
     public DotcItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, Registries.ITEM, registriesFuture);
@@ -45,7 +46,8 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.SHADOW_BLADE)
                 .add(DotcTools.SILVER_EDGE)
                 .add(DotcTools.RADIANCE)
-                .add(DotcTools.BLINK_DAGGER);
+                .add(DotcTools.BLINK_DAGGER)
+                .add(DotcTools.SWIFT_BLINK);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE);

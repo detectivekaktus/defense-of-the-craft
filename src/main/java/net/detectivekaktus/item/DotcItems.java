@@ -100,6 +100,7 @@ public class DotcItems {
                 DotcTools.KAYA,
                 DotcTools.ECHO_SABRE,
                 DotcTools.HEAVENS_HALBERD,
+                DotcTools.SWIFT_BLINK,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),
