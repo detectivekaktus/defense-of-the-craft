@@ -21,8 +21,6 @@ import net.detectivekaktus.tag.DotcEntityTypeTags;
 public class HeavensHalberd extends DotcAbilitySwordItem {
     private final int DISARM_DURATION = 3 * 20;
 
-    public static final float BASE_PROC_CHANCE = PseudoRandomBaseChances.AVG_15;
-
     public HeavensHalberd(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
     }

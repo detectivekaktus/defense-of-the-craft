@@ -193,7 +193,7 @@
 
   "item.defense-of-the-craft.radiance": "Radiance",
   "description.defense-of-the-craft.radiance": "A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies.",
-  "passive.defense-of-the-craft.radiance": "When active, scorches enemies in 8x8x8 area, dealing 2 magical damage over time. Enemies are determined by the current item mode.",
+  "passive.defense-of-the-craft.radiance": "Grants the wielder a passive 10% chance to evade an enemy attack. When active, scorches enemies in 8x8x8 area, dealing 2 magical damage over time. Enemies are determined by the current item mode.",
   "active.defense-of-the-craft.radiance": "Changes the item mode between disabled, PvE, and PvP.",
 
 

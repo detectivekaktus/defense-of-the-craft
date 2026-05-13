@@ -6,6 +6,7 @@ import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.component.records.ProcableComponent;
 import net.detectivekaktus.component.records.ItemStatsComponent;
+import net.detectivekaktus.core.rng.PseudoRandomBaseChances;
 import net.detectivekaktus.item.*;
 import net.detectivekaktus.item.material.DotcToolMaterial;
 
@@ -58,7 +59,7 @@ public class DotcTools {
             "daedalus"
     );
     public static final Item BUTTERFLY = DotcItems.register(
-            new Butterfly(
+            new DotcSwordItem(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
                             .attributes(
@@ -72,7 +73,8 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.EVASION_COMPONENT,
-                                    Butterfly.BASE_PROC_CHANCE),
+                                    PseudoRandomBaseChances.AVG_20
+                            ),
                     new TooltipBuilder("butterfly")
                             .description()
                             .stats(0, 35, 0)
@@ -306,7 +308,7 @@ public class DotcTools {
                             ))
                             .component(
                                     DotcComponents.EVASION_COMPONENT,
-                                    HeavensHalberd.BASE_PROC_CHANCE
+                                    PseudoRandomBaseChances.AVG_15
                             ),
                     new TooltipBuilder("heavens_halberd")
                             .description()
@@ -364,6 +366,10 @@ public class DotcTools {
                             .component(
                                     DotcComponents.USE_MODE_COMPONENT,
                                     Radiance.Mode.DISABLED.id
+                            )
+                            .component(
+                                    DotcComponents.EVASION_COMPONENT,
+                                    PseudoRandomBaseChances.AVG_10
                             ),
                     new TooltipBuilder("radiance")
                             .description()
