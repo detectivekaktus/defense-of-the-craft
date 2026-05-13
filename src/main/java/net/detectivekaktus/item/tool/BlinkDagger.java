@@ -86,6 +86,8 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
 
                 prevPos = currentPos;
             }
+
+            return player.blockPosition();
         }
         else if (currentPos.getY() <= level.getMinBuildHeight()) {
             var hasEncounteredSolidBlock = false;
@@ -102,9 +104,11 @@ public class BlinkDagger extends DotcAbilitySwordItem implements ParticleAnimate
                 if (!currentBlock.is(DotcBlockTags.NON_SOLID_BLINKABLE))
                     hasEncounteredSolidBlock = true;
             }
+
+            return player.blockPosition();
         }
 
-        return player.blockPosition();
+        return pos;
     }
 
     private BlockPos ensureNotStuck(Player player, BlockPos pos, Level level) {

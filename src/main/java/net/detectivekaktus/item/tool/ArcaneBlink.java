@@ -46,6 +46,6 @@ public class ArcaneBlink extends BlinkDagger {
 
     @Override
     public float getManaCost() {
-        return 50.0f;
+        return 0.0f;
     }
 }
