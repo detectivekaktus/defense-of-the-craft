@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +16,7 @@ import net.minecraft.world.phys.AABB;
 import org.joml.Vector3f;
 
 import net.detectivekaktus.attach.PlayerStats;
+import net.detectivekaktus.core.player.CombatManager;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
@@ -39,7 +39,7 @@ public class OverwhelmingBlink extends BlinkDagger {
         var entities = player.level().getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
-                entity -> entity != player && (((ServerPlayer) player).server.isPvpAllowed() || entity instanceof Enemy)
+                entity -> CombatManager.isPlayerOrHostile((ServerPlayer) player, entity)
         );
 
         var damage = stats.getStrength() * STRENGTH_TO_DAMAGE_PERCENT;

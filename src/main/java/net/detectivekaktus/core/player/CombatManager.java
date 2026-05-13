@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 
@@ -297,6 +298,10 @@ public class CombatManager {
                 return;
             }
         }
+    }
+
+    public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {
+        return entity != player && ((entity instanceof Player && player.server.isPvpAllowed()) || entity instanceof Enemy);
     }
 
     public void addCooldownOnBlinks(float damage) {

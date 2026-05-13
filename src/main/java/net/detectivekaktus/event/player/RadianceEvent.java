@@ -6,8 +6,8 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.phys.AABB;
 
 import net.detectivekaktus.attach.PlayerFlags;
-import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.component.DotcComponents;
+import net.detectivekaktus.core.player.CombatManager;
 import net.detectivekaktus.core.player.InventoryManager;
 import net.detectivekaktus.damage.DotcDamageTypes;
 import net.detectivekaktus.item.tool.DotcTools;
@@ -49,7 +49,7 @@ public class RadianceEvent {
                 : level.getEntitiesOfClass(
                 LivingEntity.class,
                 aabb,
-                entity -> entity != player && (player.server.isPvpAllowed() || entity instanceof Enemy)
+                entity -> CombatManager.isPlayerOrHostile(player, entity)
         );
         entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.MAGICAL), 2.0f));
     }
