@@ -3,13 +3,13 @@
 	"id": "defense-of-the-craft",
 	"version": "${version}",
 	"name": "Defense of the Craft",
-	"description": "Immersive survival-oriented Dota-based Minecraft mod",
+	"description": "Survival-oriented combat enhancement Dota 2 mod for Fabric Minecraft",
 	"authors": [
 		"DetectiveKaktus"
 	],
 	"contact": {
-		"sources": "https://github.com/detectivekaktus/dotc",
-		"issues": "https://github.com/detectivekaktus/dotc/issues"
+		"sources": "https://github.com/detectivekaktus/defense-of-the-craft",
+		"issues": "https://github.com/detectivekaktus/defense-of-the-craft/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/defense-of-the-craft/icon.png",
