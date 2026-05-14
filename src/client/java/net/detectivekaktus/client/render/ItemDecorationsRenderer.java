@@ -1,4 +1,4 @@
-package net.detectivekaktus.client.core.render;
+package net.detectivekaktus.client.render;
 
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

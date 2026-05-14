@@ -1,4 +1,4 @@
-package net.detectivekaktus.client.core.render.gui;
+package net.detectivekaktus.client.render.gui;
 
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -10,7 +10,7 @@ import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
 
-import net.detectivekaktus.client.core.render.DotcColors;
+import net.detectivekaktus.client.core.DotcColors;
 
 public class DotcStatusBar {
     private static final ResourceLocation STRENGTH_ICON = ResourceLocation.fromNamespaceAndPath(

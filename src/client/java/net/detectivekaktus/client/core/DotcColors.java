@@ -1,4 +1,4 @@
-package net.detectivekaktus.client.core.render;
+package net.detectivekaktus.client.core;
 
 public class DotcColors {
     public static final int CURRENT_MANA_COLOR = 0xFF257DAE;

@@ -16,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 
-import net.detectivekaktus.client.core.render.ItemDecorationsRenderer;
-import net.detectivekaktus.client.core.render.WordWrapper;
-import net.detectivekaktus.client.core.render.DotcColors;
+import net.detectivekaktus.client.render.ItemDecorationsRenderer;
+import net.detectivekaktus.client.core.WordWrapper;
+import net.detectivekaktus.client.core.DotcColors;
 
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
