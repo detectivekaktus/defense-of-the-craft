@@ -28,6 +28,9 @@ public class ChatListenerMixin {
         if (!DotcConfig.HANDLER.instance().addWhisperingSound)
             return;
 
+        if (!bound.chatType().is(ChatType.MSG_COMMAND_INCOMING))
+            return;
+
         var client = Minecraft.getInstance();
         client.getSoundManager().play(SimpleSoundInstance.forUI(DotcGuiSounds.UI_RECEIVED_MESSAGE, 1.0f));
     }
