@@ -1,0 +1,246 @@
+{
+  "itemGroup.defense-of-the-craft": "Defense of the Craft",
+
+  "item.defense-of-the-craft.tango": "Tango",
+  "description.defense-of-the-craft.tango": "Comida natural para sobrevivir en el campo de batalla.",
+  "active.defense-of-the-craft.tango": "Consume el follaje del árbol seleccionado, restaurando salud durante un tiempo. El follaje del árbol se destruye en el proceso.",
+
+  "item.defense-of-the-craft.enchanted_mango": "Enchanted Mango",
+  "description.defense-of-the-craft.enchanted_mango": "La fruta agridulce favorita de los anfibios de la isla de Jidi.",
+  "passive.defense-of-the-craft.enchanted_mango": "Restaura pasivamente 0.2 de salud.",
+  "active.defense-of-the-craft.enchanted_mango": "Consume el mango y restaura instantáneamente 40 de maná.",
+
+  "item.defense-of-the-craft.dust_of_appearance": "Dust of Appearance",
+  "description.defense-of-the-craft.dust_of_appearance": "Por mucho que te escondas, no puedes ocultar tu carne.",
+  "active.defense-of-the-craft.dust_of_appearance": "Crea un área de 12x12x12 alrededor del portador, revelando criaturas invisibles.",
+
+  "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
+  "description.defense-of-the-craft.gem_of_true_sight": "Como el habitante del mar jamás se rinde, como las almas de los marineros ahogados, como Maelron jamás conoce el descanso, esta gema está destinada a servir eternamente.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Revela enemigos invisibles cercanos en un área de 8x8x8, haciéndolos visibles.",
+
+  "item.defense-of-the-craft.radiant_crystal_shards": "Fragmentos de Cristal Radiante",
+  "description.defense-of-the-craft.radiant_crystal_shards": "Pequeños trozos de un material brillante azulado. ¿Para qué podrían servir?",
+
+  "item.defense-of-the-craft.dire_crystal_shards": "Fragmentos de Cristal Oscuro",
+  "description.defense-of-the-craft.dire_crystal_shards": "Pequeños trozos de un material brillante rojizo. ¿Para qué podrían servir?",
+
+  "item.defense-of-the-craft.radiant_crystal": "Cristal Radiante",
+  "description.defense-of-the-craft.radiant_crystal": "Un mineral conocido por su estructura impredecible. Una sustancia brillante azulada imbuida de magia benevolente.",
+
+  "item.defense-of-the-craft.dire_crystal": "Cristal Oscuro",
+  "description.defense-of-the-craft.dire_crystal": "Un mineral conocido por su estructura siniestra e impredecible. Una sustancia brillante rojiza imbuida de magia oscura.",
+
+  "item.defense-of-the-craft.radiant_crystal_dust": "Polvo de Cristal Radiante",
+  "description.defense-of-the-craft.radiant_crystal_dust": "Polvo mágico con un tenue brillo azulado.",
+
+  "item.defense-of-the-craft.dire_crystal_dust": "Polvo de Cristal Oscuro",
+  "description.defense-of-the-craft.dire_crystal_dust": "Polvo mágico con un tenue brillo rojizo.",
+
+  "item.defense-of-the-craft.mithril_ingot": "Mithril Ingot",
+  "description.defense-of-the-craft.mithril_ingot": "Cuatro veces más resistente que el hierro y mucho más ligero. Posee una gran plasticidad, pero requiere temperaturas extremadamente altas para ser trabajado.",
+
+  "block.defense-of-the-craft.radiant_ore": "Mineral Radiante",
+  "block.defense-of-the-craft.deepslate_radiant_ore": "Mineral Radiante de Pizarra Profunda",
+  "block.defense-of-the-craft.dire_ore": "Mineral Oscuro",
+  "block.defense-of-the-craft.radiant_crystal_block": "Bloque de Cristales Radiantes",
+  "block.defense-of-the-craft.dire_crystal_block": "Bloque de Cristales Oscuros",
+
+  "item.defense-of-the-craft.magic_stick": "Magic Stick",
+  "description.defense-of-the-craft.magic_stick": "Una simple vara mágica donde tanto magos novatos como grandes hechiceros concentran energía mágica.",
+  "active.defense-of-the-craft.magic_stick": "Consume todas las cargas, restaurando instantáneamente salud y maná según la cantidad de cargas.",
+
+  "item.defense-of-the-craft.magic_wand": "Magic Wand",
+  "description.defense-of-the-craft.magic_wand": "Una simple vara mágica donde tanto magos novatos como grandes hechiceros concentran energía mágica.",
+  "active.defense-of-the-craft.magic_wand": "Consume todas las cargas, restaurando instantáneamente salud y maná según la cantidad de cargas.",
+
+  "item.defense-of-the-craft.hand_of_midas": "Hand of Midas",
+  "description.defense-of-the-craft.hand_of_midas": "Este guante, preservado por una magia desconocida, sirve a la avaricia de su portador llenando sus bolsillos de oro a cambio de vidas animales.",
+  "active.defense-of-the-craft.hand_of_midas": "Mata instantáneamente a la criatura seleccionada, transformándola en recursos valiosos aleatorios. La transmutación puede crear carbón, lingotes de hierro, lingotes de oro, diamantes o lingotes de netherita.",
+
+  "item.defense-of-the-craft.shadow_amulet": "Shadow Amulet",
+  "description.defense-of-the-craft.shadow_amulet": "Un pequeño talismán que oscurece la visión de tus enemigos, pero requiere inmovilidad absoluta.",
+  "active.defense-of-the-craft.shadow_amulet": "Vuelve invisible al portador. La invisibilidad desaparece al usar un objeto o atacar.",
+
+  "item.defense-of-the-craft.blink_dagger": "Blink Dagger",
+  "description.defense-of-the-craft.blink_dagger": "Una daga legendaria usada alguna vez por el asesino más rápido del mundo.",
+  "active.defense-of-the-craft.blink_dagger": "Teletransporta instantáneamente al portador al punto seleccionado. Recibir cualquier daño reinicia el enfriamiento del objeto a 3 segundos.",
+
+  "item.defense-of-the-craft.blight_stone": "Blight Stone",
+  "description.defense-of-the-craft.blight_stone": "Una piedra debilitante encontrada en los campos de la Masacre Eterna.",
+
+  "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
+  "description.defense-of-the-craft.gloves_of_haste": "Un par de guantes mágicos con los que las armas parecen ligeras como una pluma.",
+
+  "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
+  "description.defense-of-the-craft.blades_of_attack": "No subestimes el peligro de estas pequeñas e insignificantes hojas.",
+
+  "item.defense-of-the-craft.mithril_hammer": "Mithril Hammer",
+  "description.defense-of-the-craft.mithril_hammer": "Un martillo forjado con el mithril más puro.",
+
+  "item.defense-of-the-craft.broadsword": "Broadsword",
+  "description.defense-of-the-craft.broadsword": "Esta resistente espada, llevada por caballeros desde tiempos inmemoriales, no te fallará en una batalla cruel.",
+
+  "item.defense-of-the-craft.claymore": "Claymore",
+  "description.defense-of-the-craft.claymore": "Una espada capaz de atravesar armaduras, elección común entre caballeros principiantes.",
+
+  "item.defense-of-the-craft.javelin": "Javelin",
+  "description.defense-of-the-craft.javelin": "Una lanza bastante común que a veces puede atravesar la armadura enemiga.",
+  "passive.defense-of-the-craft.javelin": "Otorga a los ataques del portador un 25% de probabilidad de atravesar evasión e infligir daño mágico adicional.",
+
+  "item.defense-of-the-craft.blade_of_alacrity": "Blade of Alacrity",
+  "description.defense-of-the-craft.blade_of_alacrity": "Una larga hoja impregnada con magia temporal.",
+
+  "item.defense-of-the-craft.ogre_axe": "Ogre Axe",
+  "description.defense-of-the-craft.ogre_axe": "La fuerza llega simplemente con sostenerla.",
+
+  "item.defense-of-the-craft.staff_of_wizardry": "Staff of Wizardry",
+  "description.defense-of-the-craft.staff_of_wizardry": "Un bastón mágico que alguna vez perteneció a antiguos magos.",
+
+  "item.defense-of-the-craft.belt_of_strength": "Belt of Strength",
+  "description.defense-of-the-craft.belt_of_strength": "Un valioso accesorio que aumenta la resistencia.",
+
+  "item.defense-of-the-craft.band_of_elvenskin": "Band of Elvenskin",
+  "description.defense-of-the-craft.band_of_elvenskin": "Esta tela elástica se usa frecuentemente porque es ligera y no limita el movimiento.",
+
+  "item.defense-of-the-craft.robe_of_the_magi": "Robe of the Magi",
+  "description.defense-of-the-craft.robe_of_the_magi": "Esta túnica mancha el alma de su portador, pero a cambio le otorga sabiduría.",
+
+  "item.defense-of-the-craft.void_stone": "Void Stone",
+  "description.defense-of-the-craft.void_stone": "Este precioso anillo rebosante de energía se utilizaba antaño para conectar con la magia del Vacío.",
+  "passive.defense-of-the-craft.void_stone": "Otorga al portador 1.75 de regeneración de maná.",
+
+  "item.defense-of-the-craft.ring_of_health": "Ring of Health",
+  "description.defense-of-the-craft.ring_of_health": "Un brillante anillo encontrado bajo el cadáver de un halfling corpulento.",
+  "passive.defense-of-the-craft.ring_of_health": "Otorga al portador 1.0 de regeneración de salud.",
+
+  "item.defense-of-the-craft.sacred_relic": "Sacred Relic",
+  "description.defense-of-the-craft.sacred_relic": "Un arma ancestral capaz de cambiar el curso de una batalla.",
+
+  "item.defense-of-the-craft.talisman_of_evasion": "Talisman of Evasion",
+  "description.defense-of-the-craft.talisman_of_evasion": "Un collar que permite prever los golpes enemigos.",
+  "passive.defense-of-the-craft.talisman_of_evasion": "Otorga al portador un 10% de probabilidad de esquivar ataques de mobs hostiles o jugadores.",
+
+  "item.defense-of-the-craft.eaglesong": "Eaglesong",
+  "description.defense-of-the-craft.eaglesong": "Este misterioso cuerno contiene el grito de un águila: quien lo escuche obtendrá agilidad ilimitada.",
+
+  "item.defense-of-the-craft.mystic_staff": "Mystic Staff",
+  "description.defense-of-the-craft.mystic_staff": "Un misterioso bastón fabricado exclusivamente con cristales costosos.",
+
+  "item.defense-of-the-craft.reaver": "Reaver",
+  "description.defense-of-the-craft.reaver": "Una enorme hacha capaz de destrozar incluso montañas.",
+
+  "item.defense-of-the-craft.demon_edge": "Demon Edge",
+  "description.defense-of-the-craft.demon_edge": "Una de las hojas más antiguas, forjada por el herrero demoníaco Abzidian, mató a su creador cuando este comprobaba el filo de la espada.",
+
+  "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",
+  "description.defense-of-the-craft.monkey_king_bar": "Un poderoso bastón utilizado por un guerrero experto.",
+  "passive.defense-of-the-craft.monkey_king_bar": "Otorga a los ataques del portador un 50% de probabilidad de atravesar evasión e infligir daño mágico adicional.",
+
+  "item.defense-of-the-craft.crystalys": "Crystalys",
+  "description.defense-of-the-craft.crystalys": "Una hoja forjada con raros cristales que encuentra los puntos débiles de la armadura enemiga.",
+  "passive.defense-of-the-craft.crystalys": "Los ataques del portador tienen un 20% de probabilidad de infligir un golpe crítico adicional del 125%.",
+
+  "item.defense-of-the-craft.daedalus": "Daedalus",
+  "description.defense-of-the-craft.daedalus": "Un arma de poder increíble que incluso al guerrero más fuerte le cuesta controlar.",
+  "passive.defense-of-the-craft.daedalus": "Los ataques del portador tienen un 20% de probabilidad de infligir un golpe crítico adicional del 150%.",
+
+  "item.defense-of-the-craft.butterfly": "Butterfly",
+  "description.defense-of-the-craft.butterfly": "Solo los guerreros más poderosos y experimentados pueden dominar esta hoja, pero otorga una agilidad increíble en combate.",
+  "passive.defense-of-the-craft.butterfly": "Otorga al portador un 20% de probabilidad de esquivar ataques de mobs hostiles o jugadores.",
+
+  "item.defense-of-the-craft.divine_rapier": "Divine Rapier",
+  "description.defense-of-the-craft.divine_rapier": "Tan poderosa que ni siquiera puede tener un único dueño.",
+
+  "item.defense-of-the-craft.diffusal_blade": "Diffusal Blade",
+  "description.defense-of-the-craft.diffusal_blade": "Una espada encantada que permite abrirse paso hasta el alma del enemigo.",
+  "passive.defense-of-the-craft.diffusal_blade": "Los ataques del portador queman 20 de maná del objetivo e infligen daño equivalente a un porcentaje del maná quemado.",
+  "active.defense-of-the-craft.diffusal_blade": "Reduce enormemente la velocidad de movimiento del enemigo, debilitándose gradualmente con el tiempo.",
+
+  "item.defense-of-the-craft.desolator": "Desolator",
+  "description.defense-of-the-craft.desolator": "Esta arma maldita fue utilizada para torturar criminales especialmente peligrosos.",
+  "passive.defense-of-the-craft.desolator": "Un ataque exitoso aplica al enemigo afectado una reducción de armadura de 4.",
+
+  "item.defense-of-the-craft.skull_basher": "Skull Basher",
+  "description.defense-of-the-craft.skull_basher": "Un arma aterradora en manos expertas; este martillo puede destruir cualquier defensa. No debe subestimarse.",
+  "passive.defense-of-the-craft.skull_basher": "Otorga a los ataques del portador un 25% de probabilidad de aturdir al objetivo e infligir daño físico adicional.",
+
+  "item.defense-of-the-craft.abyssal_blade": "Abyssal Blade",
+  "description.defense-of-the-craft.abyssal_blade": "La punta de la hoja perdida del Señor del Abismo atraviesa directamente el alma del enemigo.",
+  "passive.defense-of-the-craft.abyssal_blade": "Otorga a los ataques del portador un 25% de probabilidad de aturdir al objetivo e infligir daño físico adicional.",
+  "active.defense-of-the-craft.abyssal_blade": "Aturde instantáneamente al enemigo seleccionado y teletransporta al portador hacia él. Atraviesa inmunidad a efectos.",
+
+  "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
+  "description.defense-of-the-craft.shadow_blade": "La espada del rey caído te permite moverte sin ser visto y golpear desde las sombras.",
+  "active.defense-of-the-craft.shadow_blade": "El portador se vuelve invisible durante 15 segundos y obtiene bonificación de velocidad de movimiento. Un ataque desde invisibilidad inflige 4 de daño adicional.",
+
+  "item.defense-of-the-craft.silver_edge": "Silver Edge",
+  "description.defense-of-the-craft.silver_edge": "Tras derrocar a un gobernante injusto, esta hoja solo desencadenó una guerra civil.",
+  "active.defense-of-the-craft.silver_edge": "El portador se vuelve invisible durante 15 segundos y obtiene bonificación de velocidad de movimiento. Un ataque desde invisibilidad inflige 4 de daño adicional y aplica agotamiento al objetivo.",
+
+  "item.defense-of-the-craft.radiance": "Radiance",
+  "description.defense-of-the-craft.radiance": "Una espada divina que rodea a su portador con un brillante resplandor que reduce a cenizas a todos los enemigos cercanos.",
+  "passive.defense-of-the-craft.radiance": "Otorga al portador una probabilidad pasiva del 10% de esquivar ataques enemigos. Cuando está activa, quema enemigos en un área de 8x8x8, infligiendo 2 de daño mágico con el tiempo. Los enemigos se determinan según el modo actual del objeto.",
+  "active.defense-of-the-craft.radiance": "Alterna el modo del objeto entre desactivado, PvE y PvP.",
+
+  "item.defense-of-the-craft.sange": "Sange",
+  "description.defense-of-the-craft.sange": "Esta espada extraordinariamente precisa encuentra por sí sola los puntos débiles de los enemigos.",
+  "passive.defense-of-the-craft.sange": "Otorga al portador un 12% de amplificación de regeneración de salud.",
+
+  "item.defense-of-the-craft.yasha": "Yasha",
+  "description.defense-of-the-craft.yasha": "Considerada el arma más veloz del mundo.",
+  "passive.defense-of-the-craft.yasha": "Otorga al portador un 12.5% de bonificación de velocidad de movimiento.",
+
+  "item.defense-of-the-craft.kaya": "Kaya",
+  "description.defense-of-the-craft.kaya": "El bastón de una célebre hechicera desaparecida hace miles de años.",
+  "passive.defense-of-the-craft.kaya": "Otorga al portador una reducción del 10% en el coste de maná.",
+
+  "item.defense-of-the-craft.echo_sabre": "Echo Sabre",
+  "description.defense-of-the-craft.echo_sabre": "Una hoja engañosamente rápida llena de magia sonora.",
+  "passive.defense-of-the-craft.echo_sabre": "El siguiente ataque aplica al portador un efecto que aumenta significativamente la velocidad de ataque para un golpe. Otorga al portador 1.75 de regeneración de maná.",
+
+  "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
+  "description.defense-of-the-craft.heavens_halberd": "Esta alabarda se mueve con la velocidad de una pequeña hoja, permitiendo al portador ganar duelos donde un arma más pesada habría fracasado.",
+  "passive.defense-of-the-craft.heavens_halberd": "Otorga al portador un 15% de probabilidad de esquivar ataques de mobs hostiles o jugadores.",
+  "active.defense-of-the-craft.heavens_halberd": "Desarma al enemigo seleccionado durante 3 segundos, impidiéndole atacar.",
+
+  "item.defense-of-the-craft.swift_blink": "Swift Blink",
+  "description.defense-of-the-craft.swift_blink": "Una hoja exquisitamente elaborada capaz de anticipar los movimientos de su portador y ayudarlo.",
+  "active.defense-of-the-craft.swift_blink": "Teletransporta instantáneamente al portador al punto seleccionado. Tras la teletransportación, aumentan la velocidad de ataque y movimiento del portador. Recibir cualquier daño reinicia el enfriamiento del objeto a 3 segundos.",
+
+  "item.defense-of-the-craft.arcane_blink": "Arcane Blink",
+  "description.defense-of-the-craft.arcane_blink": "Una herramienta revitalizante que ayuda a soportar el coste del poder mágico.",
+  "active.defense-of-the-craft.arcane_blink": "Teletransporta instantáneamente al portador al punto seleccionado. Tras la teletransportación, la salud y el maná del portador se restauran. Recibir cualquier daño reinicia el enfriamiento del objeto a 3 segundos.",
+
+  "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
+  "description.defense-of-the-craft.overwhelming_blink": "Pocos mortales pueden sostener esta aterradora daga forjada en las entrañas del caos.",
+  "active.defense-of-the-craft.overwhelming_blink": "Teletransporta instantáneamente al portador al punto seleccionado. Tras la teletransportación, se crea una poderosa onda de choque en el destino, infligiendo a las criaturas cercanas daño equivalente al 5% de la fuerza del portador y ralentizándolas. Recibir cualquier daño reinicia el enfriamiento del objeto a 3 segundos.",
+
+  "death.attack.defense-of-the-craft.magical": "¡%1$s murió por magia de Defense Of The Craft!",
+  "death.attack.defense-of-the-craft.physical": "¡%1$s murió por daño físico de Defense Of The Craft!",
+
+  "effect.defense-of-the-craft.armor_reduction": "Reducción de Armadura",
+  "effect.defense-of-the-craft.stun": "Aturdimiento",
+  "effect.defense-of-the-craft.disarm": "Desarme",
+  "effect.defense-of-the-craft.break": "Agotamiento",
+
+  "tag.item.defense-of-the-craft.crystal_dusts": "Polvo Cristalino",
+  "tag.item.defense-of-the-craft.crystals": "Cristales",
+  "tag.item.defense-of-the-craft.shadow_walkable": "Shadow Walkable",
+
+  "strength.defense-of-the-craft": "%s de fuerza",
+  "agility.defense-of-the-craft": "%s de agilidad",
+  "intelligence.defense-of-the-craft": "%s de inteligencia",
+
+  "config.defense-of-the-craft.title": "Defense of the Craft",
+  "category.defense-of-the-craft.ui.title": "Interfaz de Usuario",
+  "group.defense-of-the-craft.sound.title": "Sonido",
+
+  "option.defense-of-the-craft.change_button_sounds": "Usar sonidos de botones de Dota 2",
+  "option.defense-of-the-craft.change_button_sounds.description": "Al activar esta opción, la mayoría de widgets usarán sonidos de interfaz de Dota 2.",
+
+  "option.defense-of-the-craft.add_screenshot_sound": "Añadir sonido de captura de pantalla",
+  "option.defense-of-the-craft.add_screenshot_sound.description": "Al activar esta opción, hacer una captura reproducirá el sonido de captura de Steam.",
+
+  "option.defense-of-the-craft.add_whispering_sound": "Añadir sonido de susurro",
+  "option.defense-of-the-craft.add_whispering_sound.description": "Al activar esta opción, todos los mensajes entrantes de /msg, /w y /tell reproducirán el sonido de chat de Steam."
+}
