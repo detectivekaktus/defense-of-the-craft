@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "defense-of-the-craft:claymore"
+    },
+    "$": {
+      "item": "defense-of-the-craft:eaglesong"
+    },
+    "@": {
+      "item": "defense-of-the-craft:talisman_of_evasion"
+    }
+  },
+  "pattern": [
+    " # ",
+    " $ ",
+    " @ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:butterfly"
+  }
+}

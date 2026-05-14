@@ -73,6 +73,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 )
                 .save(exporter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.BUTTERFLY)
+                .pattern(" # ")
+                .pattern(" $ ")
+                .pattern(" @ ")
+                .define('#', DotcPrimitives.CLAYMORE)
+                .define('$', DotcIngredients.EAGLESONG)
+                .define('@', DotcIngredients.TALISMAN_OF_EVASION)
+                .unlockedBy(
+                        "has_eaglesong",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.EAGLESONG)
+                )
+                .save(exporter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SANGE)
                 .pattern(" | ")
                 .pattern(" @ ")
