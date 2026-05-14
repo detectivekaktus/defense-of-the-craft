@@ -29,8 +29,8 @@ public class DotcComponentsRecipeProvider extends FabricRecipeProvider {
                 .define('#', Items.IRON_INGOT)
                 .define('@', Items.LEATHER)
                 .unlockedBy(
-                        "has_iron_sword",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_SWORD)
+                        "has_iron_ingot",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT)
                 )
                 .save(exporter);
 
