@@ -322,7 +322,7 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern("#@#")
                 .pattern("#$#")
-                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
                 .define('@', DotcTools.BLINK_DAGGER)
                 .define('$', DotcPrimitives.REAVER)
                 .unlockedBy(
