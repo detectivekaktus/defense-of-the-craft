@@ -11,8 +11,8 @@ import java.util.stream.Stream;
 
 import net.detectivekaktus.item.primitive.DotcPrimitives;
 
-public class DotcComponentsModelProvider extends FabricModelProvider {
-    public DotcComponentsModelProvider(FabricDataOutput output) {
+public class DotcPrimitivesModelProvider extends FabricModelProvider {
+    public DotcPrimitivesModelProvider(FabricDataOutput output) {
         super(output);
     }
 

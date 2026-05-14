@@ -15,8 +15,8 @@ import java.util.concurrent.CompletableFuture;
 import net.detectivekaktus.item.ingredient.DotcIngredients;
 import net.detectivekaktus.item.primitive.DotcPrimitives;
 
-public class DotcComponentsRecipeProvider extends FabricRecipeProvider {
-    public DotcComponentsRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
+    public DotcPrimitivesRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 

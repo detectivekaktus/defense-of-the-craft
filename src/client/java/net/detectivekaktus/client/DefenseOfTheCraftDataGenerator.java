@@ -19,8 +19,8 @@ import net.detectivekaktus.client.data.item.consumable.DotcConsumablesModelProvi
 import net.detectivekaktus.client.data.item.consumable.DotcConsumablesRecipeProvider;
 import net.detectivekaktus.client.data.item.ingredient.DotcIngredientsModelProvider;
 import net.detectivekaktus.client.data.item.ingredient.DotcIngredientsRecipeProvider;
-import net.detectivekaktus.client.data.item.primitive.DotcComponentsModelProvider;
-import net.detectivekaktus.client.data.item.primitive.DotcComponentsRecipeProvider;
+import net.detectivekaktus.client.data.item.primitive.DotcPrimitivesModelProvider;
+import net.detectivekaktus.client.data.item.primitive.DotcPrimitivesRecipeProvider;
 import net.detectivekaktus.client.data.item.tool.DotcToolsModelProvider;
 import net.detectivekaktus.client.data.item.tool.DotcToolsRecipeProvider;
 import net.detectivekaktus.worldgen.features.*;
@@ -46,8 +46,8 @@ public class DefenseOfTheCraftDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(DotcIngredientsModelProvider::new);
 		pack.addProvider(DotcIngredientsRecipeProvider::new);
 
-		pack.addProvider(DotcComponentsModelProvider::new);
-		pack.addProvider(DotcComponentsRecipeProvider::new);
+		pack.addProvider(DotcPrimitivesModelProvider::new);
+		pack.addProvider(DotcPrimitivesRecipeProvider::new);
 
 		pack.addProvider(DotcToolsModelProvider::new);
 		pack.addProvider(DotcToolsRecipeProvider::new);
