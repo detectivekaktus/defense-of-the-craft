@@ -65,7 +65,7 @@
 
   "item.defense-of-the-craft.shadow_amulet": "Shadow Amulet",
   "description.defense-of-the-craft.shadow_amulet": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
-  "active.defense-of-the-craft.shadow_amulet": "Turns the target invisible. The invisibility is broken upon using item, or upon attacking.",
+  "active.defense-of-the-craft.shadow_amulet": "Turns the wielder invisible. The invisibility is broken upon using item, or upon attacking.",
 
   "item.defense-of-the-craft.blink_dagger": "Blink Dagger",
   "description.defense-of-the-craft.blink_dagger": "The fabled dagger used by the fastest assassin ever to walk the lands.",
@@ -258,11 +258,11 @@
   "group.defense-of-the-craft.sound.title": "Sound",
 
   "option.defense-of-the-craft.change_button_sounds": "Use Dota 2 button sounds",
-  "option.defense-of-the-craft.change_button_sounds.description": "By enabling this option, most of widgets, will use UI sounds from Dota 2",
+  "option.defense-of-the-craft.change_button_sounds.description": "By enabling this option, most of widgets, will use UI sounds from Dota 2.",
 
   "option.defense-of-the-craft.add_screenshot_sound": "Add screenshot sound",
-  "option.defense-of-the-craft.add_screenshot_sound.description": "By enabling this option, taking a screenshot will play Steam screenshot sound",
+  "option.defense-of-the-craft.add_screenshot_sound.description": "By enabling this option, taking a screenshot will play Steam screenshot sound.",
 
   "option.defense-of-the-craft.add_whispering_sound": "Add whispering sound",
-  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound"
+  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound."
 }

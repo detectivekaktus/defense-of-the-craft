@@ -1,0 +1,268 @@
+{
+  "itemGroup.defense-of-the-craft": "Defense of the Craft",
+
+
+
+  "item.defense-of-the-craft.tango": "Tango",
+  "description.defense-of-the-craft.tango": "Натуральная пища для выживания на поле боя.",
+  "active.defense-of-the-craft.tango": "Поглощает листву выбранного дерева, восстанавливая здоровье в течение некоторого времени. Листва дерева при этом уничтожается.",
+
+  "item.defense-of-the-craft.enchanted_mango": "Enchanted Mango",
+  "description.defense-of-the-craft.enchanted_mango": "Любимый амфибиями горько-сладкий плод с острова Джиди.",
+  "passive.defense-of-the-craft.enchanted_mango": "Пассивно восстанавливает 0.2 здоровья.",
+  "active.defense-of-the-craft.enchanted_mango": "Поглощает манго и мгновенно восстанавливает 40 маны.",
+
+  "item.defense-of-the-craft.dust_of_appearance": "Dust of Appearance",
+  "description.defense-of-the-craft.dust_of_appearance": "Как ни прячься, а своей плоти не скрыть.",
+  "active.defense-of-the-craft.dust_of_appearance": "Создаёт область 12x12x12 вокруг владельца, раскрывая невидимых существ.",
+
+  "item.defense-of-the-craft.gem_of_true_sight": "Gem of True Sight",
+  "description.defense-of-the-craft.gem_of_true_sight": "Как не сдаётся житель моря, как души утонувших моряков, как Маэльрон не ведает покоя, сей камень вечно прослужить готов.",
+  "passive.defense-of-the-craft.gem_of_true_sight": "Раскрывает ближайших невидимых врагов в области 8x8x8, делая их видимыми.",
+
+
+
+  "item.defense-of-the-craft.radiant_crystal_shards": "Осколки Кристалла Света",
+  "description.defense-of-the-craft.radiant_crystal_shards": "Маленькие кусочки голубоватого светящегося материала. Для чего они могут использоваться?",
+
+  "item.defense-of-the-craft.dire_crystal_shards": "Осколки Кристалла Тьмы",
+  "description.defense-of-the-craft.dire_crystal_shards": "Маленькие кусочки красноватого светящегося материала. Для чего они могут использоваться?",
+
+  "item.defense-of-the-craft.radiant_crystal": "Кристалл Света",
+  "description.defense-of-the-craft.radiant_crystal": "Минерал, известный своей непредсказуемой структурой. Голубоватое светящееся вещество, наделённое доброжелательной магией.",
+
+  "item.defense-of-the-craft.dire_crystal": "Кристалл Тьмы",
+  "description.defense-of-the-craft.dire_crystal": "Минерал, известный своей непредсказуемой зловещей структурой. Красноватое светящееся вещество, наделённое недоброй магией.",
+
+  "item.defense-of-the-craft.radiant_crystal_dust": "Пыль Кристалла Света",
+  "description.defense-of-the-craft.radiant_crystal_dust": "Магическая пыль с лёгким голубым свечением.",
+
+  "item.defense-of-the-craft.dire_crystal_dust": "Пыль Кристалла Тьмы",
+  "description.defense-of-the-craft.dire_crystal_dust": "Магическая пыль с лёгким красным свечением.",
+
+  "item.defense-of-the-craft.mithril_ingot": "Mithril Ingot",
+  "description.defense-of-the-craft.mithril_ingot": "В четыре раза прочнее железа и при этом намного легче. Обладает высокой пластичностью, но требует чрезвычайно высоких температур для обработки.",
+
+  "block.defense-of-the-craft.radiant_ore": "Руда Света",
+  "block.defense-of-the-craft.deepslate_radiant_ore": "Глубинная Руда Света",
+  "block.defense-of-the-craft.dire_ore": "Руда Тьмы",
+  "block.defense-of-the-craft.radiant_crystal_block": "Блок Кристаллов Света",
+  "block.defense-of-the-craft.dire_crystal_block": "Блок Кристаллов Тьмы",
+
+
+
+  "item.defense-of-the-craft.magic_stick": "Magic Stick",
+  "description.defense-of-the-craft.magic_stick": "Простая волшебная палочка, в которой концентрируют магическую энергию начинающие волшебники и великие колдуны.",
+  "active.defense-of-the-craft.magic_stick": "Расходует все заряды, мгновенно восстанавливая здоровье и ману владельца в зависимости от количества зарядов.",
+
+  "item.defense-of-the-craft.magic_wand": "Magic Wand",
+  "description.defense-of-the-craft.magic_wand": "Простая волшебная палочка, в которой концентрируют магическую энергию начинающие волшебники и великие колдуны.",
+  "active.defense-of-the-craft.magic_wand": "Расходует все заряды, мгновенно восстанавливая здоровье и ману владельца в зависимости от количества зарядов.",
+
+  "item.defense-of-the-craft.hand_of_midas": "Hand of Midas",
+  "description.defense-of-the-craft.hand_of_midas": "Эта перчатка, сохранившаяся благодаря неведомой магии, служит жадности владельца, наполняя его карманы золотом в обмен на жизни животных.",
+  "active.defense-of-the-craft.hand_of_midas": "Мгновенно убивает выбранное существо, превращая его в случайные ценные ресурсы. Трансмутация может создать уголь, железный слиток, золотой слиток, алмаз или незеритовый слиток.",
+
+  "item.defense-of-the-craft.shadow_amulet": "Shadow Amulet",
+  "description.defense-of-the-craft.shadow_amulet": "Маленький талисман, затеняющий взор ваших врагов, но требующий абсолютной неподвижности.",
+  "active.defense-of-the-craft.shadow_amulet": "Делает носителя невидимым. Невидимость пропадает при использовании предмета или атаке.",
+
+  "item.defense-of-the-craft.blink_dagger": "Blink Dagger",
+  "description.defense-of-the-craft.blink_dagger": "Легендарный кинжал, которым когда-то пользовался самый быстрый убийца на свете.",
+  "active.defense-of-the-craft.blink_dagger": "Мгновенно телепортирует владельца к выбранной точке. Получение любого урона сбрасывает перезарядку предмета до 3 секунд.",
+
+
+
+  "item.defense-of-the-craft.blight_stone": "Blight Stone",
+  "description.defense-of-the-craft.blight_stone": "Лишающий стойкости камень, обнаруженный на полях Вечной бойни.",
+
+  "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
+  "description.defense-of-the-craft.gloves_of_haste": "Пара магических перчаток, в которых оружие кажется лёгким как пёрышко.",
+
+  "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
+  "description.defense-of-the-craft.blades_of_attack": "Не стоит недооценивать опасность этих маленьких незаметных клинков.",
+
+  "item.defense-of-the-craft.mithril_hammer": "Mithril Hammer",
+  "description.defense-of-the-craft.mithril_hammer": "Молот, выкованный из чистейшего мифрила.",
+
+  "item.defense-of-the-craft.broadsword": "Broadsword",
+  "description.defense-of-the-craft.broadsword": "Этот прочный клинок, что испокон веков носили рыцари, не подведёт в жестоком бою.",
+
+  "item.defense-of-the-craft.claymore": "Claymore",
+  "description.defense-of-the-craft.claymore": "Меч, способный пробить броню, — обычный выбор начинающих рыцарей.",
+
+  "item.defense-of-the-craft.javelin": "Javelin",
+  "description.defense-of-the-craft.javelin": "Довольно обычное копьё, которым иногда можно пробить вражескую броню.",
+  "passive.defense-of-the-craft.javelin": "Даёт атакам владельца 25% шанс пробить уклонение и нанести дополнительный магический урон.",
+
+
+
+  "item.defense-of-the-craft.blade_of_alacrity": "Blade of Alacrity",
+  "description.defense-of-the-craft.blade_of_alacrity": "Длинный клинок, насыщенный магией времени.",
+
+  "item.defense-of-the-craft.ogre_axe": "Ogre Axe",
+  "description.defense-of-the-craft.ogre_axe": "Сила приходит, если просто подержать его в руках.",
+
+  "item.defense-of-the-craft.staff_of_wizardry": "Staff of Wizardry",
+  "description.defense-of-the-craft.staff_of_wizardry": "Магический посох, которым когда-то владели древние маги.",
+
+  "item.defense-of-the-craft.belt_of_strength": "Belt of Strength",
+  "description.defense-of-the-craft.belt_of_strength": "Ценный аксессуар, повышающий живучесть.",
+
+  "item.defense-of-the-craft.band_of_elvenskin": "Band of Elvenskin",
+  "description.defense-of-the-craft.band_of_elvenskin": "Эту эластичную ткань часто используют, так как она легка и не сковывает движения.",
+
+  "item.defense-of-the-craft.robe_of_the_magi": "Robe of the Magi",
+  "description.defense-of-the-craft.robe_of_the_magi": "Эта роба пятнает душу владельца, но в обмен дарует мудрость.",
+
+
+
+  "item.defense-of-the-craft.void_stone": "Void Stone",
+  "description.defense-of-the-craft.void_stone": "Это драгоценное кольцо, источающее энергию, раньше использовали для связи с магией Бездны.",
+  "passive.defense-of-the-craft.void_stone": "Даёт владельцу 1.75 восстановления маны.",
+
+  "item.defense-of-the-craft.ring_of_health": "Ring of Health",
+  "description.defense-of-the-craft.ring_of_health": "Блестящее кольцо, найденное под трупом толстого полурослика.",
+  "passive.defense-of-the-craft.ring_of_health": "Даёт владельцу 1.0 восстановления здоровья.",
+
+  "item.defense-of-the-craft.sacred_relic": "Sacred Relic",
+  "description.defense-of-the-craft.sacred_relic": "Древнее оружие, способное изменить ход битвы.",
+
+  "item.defense-of-the-craft.talisman_of_evasion": "Talisman of Evasion",
+  "description.defense-of-the-craft.talisman_of_evasion": "Ожерелье, позволяющее предвидеть вражеские удары.",
+  "passive.defense-of-the-craft.talisman_of_evasion": "Даёт владельцу 10% шанс уклониться от атаки враждебного моба или игрока.",
+
+  "item.defense-of-the-craft.eaglesong": "Eaglesong",
+  "description.defense-of-the-craft.eaglesong": "Этот загадочный рог удерживает в себе клич орла: кто услышит его, получит безграничную ловкость.",
+
+  "item.defense-of-the-craft.mystic_staff": "Mystic Staff",
+  "description.defense-of-the-craft.mystic_staff": "Загадочный посох, сделанный исключительно из дорогих кристаллов.",
+
+  "item.defense-of-the-craft.reaver": "Reaver",
+  "description.defense-of-the-craft.reaver": "Массивный топор, способный сокрушать даже горы.",
+
+  "item.defense-of-the-craft.demon_edge": "Demon Edge",
+  "description.defense-of-the-craft.demon_edge": "Один из древнейших клинков, скованных демоном-кузнецом Абзидианом, убил своего создателя, когда тот проверял остроту лезвия.",
+
+
+
+  "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",
+  "description.defense-of-the-craft.monkey_king_bar": "Могущественный посох, которым пользовался искусный воин.",
+  "passive.defense-of-the-craft.monkey_king_bar": "Даёт атакам владельца 50% шанс пробить уклонение и нанести дополнительный магический урон.",
+
+  "item.defense-of-the-craft.crystalys": "Crystalys",
+  "description.defense-of-the-craft.crystalys": "Клинок, скованный из редких кристаллов, находит слабые места в броне врага.",
+  "passive.defense-of-the-craft.crystalys": "Атаки владельца имеют 20% шанс нанести дополнительный критический урон в размере 125%.",
+
+  "item.defense-of-the-craft.daedalus": "Daedalus",
+  "description.defense-of-the-craft.daedalus": "Оружие невероятной силы, которой трудно управлять даже самому сильному воину.",
+  "passive.defense-of-the-craft.daedalus": "Атаки владельца имеют 20% шанс нанести дополнительный критический урон в размере 150%.",
+
+  "item.defense-of-the-craft.butterfly": "Butterfly",
+  "description.defense-of-the-craft.butterfly": "Этот клинок могут обуздать лишь самые могучие и опытные воины, но владельцу он даёт невероятное проворство в бою.",
+  "passive.defense-of-the-craft.butterfly": "Даёт владельцу 20% шанс уклониться от атаки враждебного моба или игрока.",
+
+  "item.defense-of-the-craft.divine_rapier": "Divine Rapier",
+  "description.defense-of-the-craft.divine_rapier": "Настолько могущественная, что у нее даже не может быть единоличного владельца.",
+
+  "item.defense-of-the-craft.diffusal_blade": "Diffusal Blade",
+  "description.defense-of-the-craft.diffusal_blade": "Зачарованный меч, позволяющий прорубиться до вражеской души.",
+  "passive.defense-of-the-craft.diffusal_blade": "Атаки владельца сжигают 20 маны цели и наносят урон, равный проценту от сожжённой маны.",
+  "active.defense-of-the-craft.diffusal_blade": "Сильно замедляет скорость передвижения врага, постепенно ослабевая со временем.",
+
+  "item.defense-of-the-craft.desolator": "Desolator",
+  "description.defense-of-the-craft.desolator": "Это проклятое оружие использовалось при пытках особо опасных преступников.",
+  "passive.defense-of-the-craft.desolator": "Успешная атака владельца накладывает на поражённого врага эффект снижения брони на 4.",
+
+  "item.defense-of-the-craft.skull_basher": "Skull Basher",
+  "description.defense-of-the-craft.skull_basher": "Устрашающее оружие в умелых руках, этот молот способен уничтожить любую защиту. Не стоит его недооценивать.",
+  "passive.defense-of-the-craft.skull_basher": "Даёт атакам владельца 25% шанс оглушить цель и нанести дополнительный физический урон.",
+
+  "item.defense-of-the-craft.abyssal_blade": "Abyssal Blade",
+  "description.defense-of-the-craft.abyssal_blade": "Острие потерянного клинка Повелителя бездны впивается врагу прямо в душу.",
+  "passive.defense-of-the-craft.abyssal_blade": "Даёт атакам владельца 25% шанс оглушить цель и нанести дополнительный физический урон.",
+  "active.defense-of-the-craft.abyssal_blade": "Мгновенно оглушает выбранного врага и телепортирует владельца к нему. Пробивает иммунитет к эффектам.",
+
+  "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
+  "description.defense-of-the-craft.shadow_blade": "Клинок павшего короля позволяет вам передвигаться незамеченным и наносить удар из тени.",
+  "active.defense-of-the-craft.shadow_blade": "Владелец становится невидимым на 15 секунд и получает бонус к скорости передвижения. Атака из невидимости наносит 4 дополнительного урона.",
+
+  "item.defense-of-the-craft.silver_edge": "Silver Edge",
+  "description.defense-of-the-craft.silver_edge": "Повергнув несправедливого правителя, этот клинок лишь развязал гражданскую войну.",
+  "active.defense-of-the-craft.silver_edge": "Владелец становится невидимым на 15 секунд и получает бонус к скорости передвижения. Атака из невидимости наносит 4 дополнительного урона и накладывает на цель эффект истощения.",
+
+  "item.defense-of-the-craft.radiance": "Radiance",
+  "description.defense-of-the-craft.radiance": "Божественный меч, окружающий владельца ярким сиянием, которое обращает в пепел всех врагов вокруг.",
+  "passive.defense-of-the-craft.radiance": "Даёт владельцу пассивный 10% шанс уклониться от атаки врага. Когда активно, обжигает врагов в области 8x8x8, нанося 2 магического урона со временем. Враги определяются текущим режимом предмета.",
+  "active.defense-of-the-craft.radiance": "Переключает режим предмета между отключённым, PvE и PvP.",
+
+
+
+  "item.defense-of-the-craft.sange": "Sange",
+  "description.defense-of-the-craft.sange": "Этот необычайно точный меч сам отыскивает слабые места врагов.",
+  "passive.defense-of-the-craft.sange": "Даёт владельцу 12% усиление восстановления здоровья.",
+
+  "item.defense-of-the-craft.yasha": "Yasha",
+  "description.defense-of-the-craft.yasha": "Считается самым стремительным оружием на свете.",
+  "passive.defense-of-the-craft.yasha": "Даёт владельцу бонус 12.5% к скорости передвижения.",
+
+  "item.defense-of-the-craft.kaya": "Kaya",
+  "description.defense-of-the-craft.kaya": "Посох прославленной волшебницы, пропавший много тысячелетий назад.",
+  "passive.defense-of-the-craft.kaya": "Даёт владельцу 10% снижение затрат маны.",
+
+  "item.defense-of-the-craft.echo_sabre": "Echo Sabre",
+  "description.defense-of-the-craft.echo_sabre": "Обманчиво быстрый клинок, полный магии звука.",
+  "passive.defense-of-the-craft.echo_sabre": "Следующая атака накладывает на владельца эффект, значительно увеличивающий скорость атаки для одного удара. Даёт владельцу 1.75 восстановления маны.",
+
+  "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
+  "description.defense-of-the-craft.heavens_halberd": "Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы.",
+  "passive.defense-of-the-craft.heavens_halberd": "Даёт владельцу 15% шанс уклониться от атаки враждебного моба или игрока.",
+  "active.defense-of-the-craft.heavens_halberd": "Обезоруживает выбранного врага на 3 секунды, не позволяя ему атаковать.",
+
+  "item.defense-of-the-craft.swift_blink": "Swift Blink",
+  "description.defense-of-the-craft.swift_blink": "Лезвие искусной работы, способное предсказывать движения владельца и помогать ему.",
+  "active.defense-of-the-craft.swift_blink": "Мгновенно телепортирует владельца к выбранной точке. После телепортации увеличиваются скорость атаки и передвижения владельца. Получение любого урона сбрасывает перезарядку предмета до 3 секунд.",
+
+  "item.defense-of-the-craft.arcane_blink": "Arcane Blink",
+  "description.defense-of-the-craft.arcane_blink": "Живительный инструмент, который поможет вытерпеть затраты магической мощи.",
+  "active.defense-of-the-craft.arcane_blink": "Мгновенно телепортирует владельца к выбранной точке. После телепортации здоровье и мана владельца восстанавливаются. Получение любого урона сбрасывает перезарядку предмета до 3 секунд.",
+
+  "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
+  "description.defense-of-the-craft.overwhelming_blink": "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса.",
+  "active.defense-of-the-craft.overwhelming_blink": "Мгновенно телепортирует владельца к выбранной точке. После телепортации в месте назначения создаётся мощная ударная волна, наносящая всем ближайшим существам урон, равный 5% силы владельца, и замедляющая их. Получение любого урона сбрасывает перезарядку предмета до 3 секунд.",
+
+
+
+  "death.attack.defense-of-the-craft.magical": "%1$s погиб от магии Defense Of The Craft!",
+  "death.attack.defense-of-the-craft.physical": "%1$s погиб от физического урона Defense Of The Craft!",
+
+  "effect.defense-of-the-craft.armor_reduction": "Снижение Брони",
+  "effect.defense-of-the-craft.stun": "Оглушение",
+  "effect.defense-of-the-craft.disarm": "Обезоруживание",
+  "effect.defense-of-the-craft.break": "Истощение",
+
+  "tag.item.defense-of-the-craft.crystal_dusts": "Кристальная Пыль",
+  "tag.item.defense-of-the-craft.crystals": "Кристаллы",
+  "tag.item.defense-of-the-craft.shadow_walkable": "Shadow Walkable",
+
+
+
+  "strength.defense-of-the-craft": "%s силы",
+  "agility.defense-of-the-craft": "%s ловкости",
+  "intelligence.defense-of-the-craft": "%s интеллекта",
+
+
+
+  "config.defense-of-the-craft.title": "Defense of the Craft",
+  "category.defense-of-the-craft.ui.title": "Пользовательский Интерфейс",
+  "group.defense-of-the-craft.sound.title": "Звук",
+
+  "option.defense-of-the-craft.change_button_sounds": "Использовать звуки кнопок из Dota 2",
+  "option.defense-of-the-craft.change_button_sounds.description": "При включении этой опции большинство виджетов будут использовать звуки интерфейса из Dota 2.",
+
+  "option.defense-of-the-craft.add_screenshot_sound": "Добавить звук скриншота",
+  "option.defense-of-the-craft.add_screenshot_sound.description": "При включении этой опции создание скриншота будет воспроизводить звук скриншота из Steam.",
+
+  "option.defense-of-the-craft.add_whispering_sound": "Добавить звук шепота",
+  "option.defense-of-the-craft.add_whispering_sound.description": "При включении этой опции все входящие сообщения /msg, /w и /tell будут воспроизводить звук чата из Steam."
+}
