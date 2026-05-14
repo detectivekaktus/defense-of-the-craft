@@ -13,6 +13,8 @@ Defense of the Craft (DOTC) is a survival-oriented combat enhancement Fabric mod
 * **New radiant and dire ores** in the overworld and nether dimensions
 * **Dota interface sounds** for screenshots, menus and commands
 
+The mod is translated to *English, Russian, Ukrainian, Chinese, and Spanish*.
+
 ## Dependencies
 * [Fabric API](https://modrinth.com/mod/fabric-api)
 * [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)
