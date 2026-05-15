@@ -35,11 +35,15 @@ public class DotcStatusBar {
     private static final int STAT_TO_STAT_MARGIN = 25;
     private static final int STATS_TO_MANA_MARGIN = 10;
 
+    private static int getStatusBarXPos(int width) {
+        return (width - HOTBAR_WIDTH) / 2;
+    }
+
     private static int getStatusBarYPos(int height) {
         return height - (int) (HOTBAR_HEIGHT * 3.25f);
     }
 
-    private static void drawMana(GuiGraphics context, int statusBarStartX, int x1, int y1) {
+    private static void drawMana(GuiGraphics graphics, int statusBarStartX, int x1, int y1) {
         var client = Minecraft.getInstance();
         var mana = PlayerMana.get(client.player);
         var current = mana.getCurrentMana();
@@ -49,33 +53,33 @@ public class DotcStatusBar {
         var x2 = statusBarStartX + HOTBAR_WIDTH;
         var manaBarWidth = x2 - x1;
         var y2 = y1 + MANA_BAR_HEIGHT;
-        context.fill(x1, y1, x2, y2, DotcColors.MANA_BAR_COLOR);
+        graphics.fill(x1, y1, x2, y2, DotcColors.MANA_BAR_COLOR);
 
         var currentManaX = x1 + (int) (manaBarWidth * manaPercent);
-        context.fill(x1, y1, currentManaX, y2, DotcColors.CURRENT_MANA_COLOR);
+        graphics.fill(x1, y1, currentManaX, y2, DotcColors.CURRENT_MANA_COLOR);
 
         var strX = (x1 + x2) / 2;
         var str = String.valueOf((int) current);
-        context.drawCenteredString(client.font, str, strX, y1, DotcColors.TEXT_COLOR);
+        graphics.drawCenteredString(client.font, str, strX, y1, DotcColors.TEXT_COLOR);
     }
 
-    private static int drawIconAndValue(GuiGraphics context, ResourceLocation icon, int value, int x, int y) {
+    private static int drawIconAndValue(GuiGraphics graphics, ResourceLocation icon, int value, int x, int y) {
         var client = Minecraft.getInstance();
-        context.blit(icon, x, y, 0, 0, 8, 8, 8, 8);
+        graphics.blit(icon, x, y, 0, 0, 8, 8, 8, 8);
 
         var strX = x + ICON_TO_TEXT_MARGIN;
         var strValue = String.valueOf(value);
-        context.drawString(client.font, strValue, strX, y, DotcColors.TEXT_COLOR);
+        graphics.drawString(client.font, strValue, strX, y, DotcColors.TEXT_COLOR);
 
         return strX + STAT_TO_STAT_MARGIN;
     }
 
-    private static int drawStats(GuiGraphics context, int x, int y) {
+    private static int drawStats(GuiGraphics graphics, int x, int y) {
         var client = Minecraft.getInstance();
         var stats = PlayerStats.get(client.player);
-        x = drawIconAndValue(context, STRENGTH_ICON, stats.getStrength(), x, y);
-        x = drawIconAndValue(context, AGILITY_ICON, stats.getAgility(), x, y);
-        x = drawIconAndValue(context, INTELLIGENCE_ICON, stats.getIntelligence(), x, y);
+        x = drawIconAndValue(graphics, STRENGTH_ICON, stats.getStrength(), x, y);
+        x = drawIconAndValue(graphics, AGILITY_ICON, stats.getAgility(), x, y);
+        x = drawIconAndValue(graphics, INTELLIGENCE_ICON, stats.getIntelligence(), x, y);
         return x;
     }
 
@@ -87,18 +91,18 @@ public class DotcStatusBar {
                 || client.gameMode.getPlayerMode() == GameType.SPECTATOR;
     }
 
-    public static void drawStatusBar(GuiGraphics context, DeltaTracker tickCounter) {
+    public static void draw(GuiGraphics graphics, DeltaTracker tickCounter) {
         var client = Minecraft.getInstance();
         if (shouldSkipDrawing(client))
             return;
 
         var width = client.getWindow().getGuiScaledWidth();
         var height = client.getWindow().getGuiScaledHeight();
-        var statusBarStartX = (width - HOTBAR_WIDTH) / 2;
+        var statusBarStartX = getStatusBarXPos(width);
         var statusBarStartY = getStatusBarYPos(height);
 
-        var statusBarAfterStatsX = drawStats(context, statusBarStartX, statusBarStartY);
+        var statusBarAfterStatsX = drawStats(graphics, statusBarStartX, statusBarStartY);
         statusBarAfterStatsX += STATS_TO_MANA_MARGIN;
-        drawMana(context, statusBarStartX, statusBarAfterStatsX, statusBarStartY);
+        drawMana(graphics, statusBarStartX, statusBarAfterStatsX, statusBarStartY);
     }
 }

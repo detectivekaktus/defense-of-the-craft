@@ -11,6 +11,7 @@
 
     "gui.SoundManagerMixin",
     "gui.GuiGraphicsMixin",
+    "gui.GuiMixin",
 
     "render.ItemRendererMixin",
     "render.ModelBakeryMixin",
