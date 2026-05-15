@@ -63,9 +63,6 @@ public class ModelBakeryMixin {
             CallbackInfo callbackInfo
     ) {
         loadSpecialItemModelAndDependencies(DotcItemModels.MONKEY_KING_BAR_IN_HAND);
-        loadSpecialItemModelAndDependencies(DotcItemModels.CRYSTALYS_IN_HAND);
-        loadSpecialItemModelAndDependencies(DotcItemModels.DAEDALUS_IN_HAND);
-        loadSpecialItemModelAndDependencies(DotcItemModels.BUTTERFLY_IN_HAND);
         loadSpecialItemModelAndDependencies(DotcItemModels.DIVINE_RAPIER_IN_HAND);
         loadSpecialItemModelAndDependencies(DotcItemModels.DESOLATOR_IN_HAND);
         loadSpecialItemModelAndDependencies(DotcItemModels.HEAVENS_HALBERD_IN_HAND);

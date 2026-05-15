@@ -43,12 +43,6 @@ public class ItemRendererMixin {
     ) {
         if (stack.is(DotcTools.MONKEY_KING_BAR))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.MONKEY_KING_BAR_IN_HAND);
-        else if (stack.is(DotcTools.CRYSTALYS))
-            return itemModelShaper.getModelManager().getModel(DotcItemModels.CRYSTALYS_IN_HAND);
-        else if (stack.is(DotcTools.DAEDALUS))
-            return itemModelShaper.getModelManager().getModel(DotcItemModels.DAEDALUS_IN_HAND);
-        else if (stack.is(DotcTools.BUTTERFLY))
-            return itemModelShaper.getModelManager().getModel(DotcItemModels.BUTTERFLY_IN_HAND);
         else if (stack.is(DotcPrimitives.DIVINE_RAPIER))
             return itemModelShaper.getModelManager().getModel(DotcItemModels.DIVINE_RAPIER_IN_HAND);
         else if (stack.is(DotcTools.DESOLATOR))
@@ -91,12 +85,6 @@ public class ItemRendererMixin {
         if (context == ItemDisplayContext.GUI || context == ItemDisplayContext.FIXED) {
             if (stack.is(DotcTools.MONKEY_KING_BAR))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.MONKEY_KING_BAR);
-            else if (stack.is(DotcTools.CRYSTALYS))
-                return itemModelShaper.getModelManager().getModel(DotcItemModels.CRYSTALYS);
-            else if (stack.is(DotcTools.DAEDALUS))
-                return itemModelShaper.getModelManager().getModel(DotcItemModels.DAEDALUS);
-            else if (stack.is(DotcTools.BUTTERFLY))
-                return itemModelShaper.getModelManager().getModel(DotcItemModels.BUTTERFLY);
             else if (stack.is(DotcPrimitives.DIVINE_RAPIER))
                 return itemModelShaper.getModelManager().getModel(DotcItemModels.DIVINE_RAPIER);
             else if (stack.is(DotcTools.DESOLATOR))
