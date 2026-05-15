@@ -118,3 +118,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Remove `Yasha` class and define Yasha item as a `DotcSwordItem` item.
 * Remove `Kaya` class and define Kaya item as a `DotcSwordItem` item.
 * Rearrange packages in `client`.
+
+### Removed
+* 3D models for Butterfly, Daedalus and Crystalys
