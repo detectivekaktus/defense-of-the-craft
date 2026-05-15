@@ -103,6 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Chinese translations.
 * 10% evasion chance to Radiance item.
 * `CHANGELOG.md` file
+* Disarm and Stun now affect Iron Golems.
 
 ### Fixed
 * Now `BlinkDagger#ensureOnGround` returns teleport position when no conditions are met.
