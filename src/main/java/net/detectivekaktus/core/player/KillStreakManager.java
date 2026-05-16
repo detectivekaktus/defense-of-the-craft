@@ -101,10 +101,10 @@ public class KillStreakManager {
             }
         }
 
-        shortStreakKillCount += 1;
+        shortStreakKillCount++;
         var thisKillTimestamp = player.level().getGameTime();
         if (thisKillTimestamp - lastKillTimestamp > TICKS_UNTIL_LOSING_SHORT_STREAK) {
-            shortStreakKillCount = 0;
+            shortStreakKillCount = 1;
             lastKillTimestamp = thisKillTimestamp;
             return;
         }
