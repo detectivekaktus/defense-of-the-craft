@@ -28,4 +28,6 @@ public class DotcConfig {
     public boolean addScreenshotSound = false;
     @SerialEntry
     public boolean addWhisperingSound = false;
+    @SerialEntry
+    public boolean enableStreakAnnouncement = true;
 }

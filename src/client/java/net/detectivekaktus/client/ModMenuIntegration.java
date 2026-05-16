@@ -57,6 +57,18 @@ public class ModMenuIntegration implements ModMenuApi {
                                                                 .controller(TickBoxControllerBuilder::create)
                                                                 .build()
                                                 )
+                                                .option(
+                                                        Option.<Boolean>createBuilder()
+                                                                .name(Component.translatable("option.defense-of-the-craft.enable_streak_announcement"))
+                                                                .description(OptionDescription.of(Component.translatable("option.defense-of-the-craft.enable_streak_announcement.description")))
+                                                                .binding(
+                                                                        DotcConfig.HANDLER.defaults().enableStreakAnnouncement,
+                                                                        () -> DotcConfig.HANDLER.instance().enableStreakAnnouncement,
+                                                                        val -> DotcConfig.HANDLER.instance().enableStreakAnnouncement = val
+                                                                )
+                                                                .controller(TickBoxControllerBuilder::create)
+                                                                .build()
+                                                )
                                                 .build()
                                 )
                                 .build()
