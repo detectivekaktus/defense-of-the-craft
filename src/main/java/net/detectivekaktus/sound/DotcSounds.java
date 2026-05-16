@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
 import net.detectivekaktus.DefenseOfTheCraft;
+import net.detectivekaktus.sound.announce.DotcAnnounceSounds;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
@@ -16,6 +17,7 @@ public class DotcSounds {
     }
 
     public static void initialize() {
+        DotcAnnounceSounds.initialize();
         DotcGuiSounds.initialize();
         DotcItemSounds.initialize();
     }
