@@ -195,8 +195,20 @@ public class DotcIngredients {
             ),
             "shadow_amulet"
     );
+    public static final Item RING_OF_TARRASQUE = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties().stacksTo(1)
+                            .component(
+                                    DotcComponents.BONUS_HP_REGEN_COMPONENT,
+                                    2.0f
+                            ),
+                    new TooltipBuilder("ring_of_tarrasque")
+                            .description()
+                            .passive()
+            ),
+            "ring_of_tarrasque"
+    );
 
 
-    public static void initialize() {
-    }
+    public static void initialize() { }
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ring_of_tarrasque": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:ring_of_tarrasque"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "defense-of-the-craft:heart_of_tarrasque"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ring_of_tarrasque"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "defense-of-the-craft:heart_of_tarrasque"
+    ]
+  }
+}

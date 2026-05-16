@@ -445,6 +445,28 @@ public class DotcTools {
             ),
             "overwhelming_blink"
     );
+    public static final Item HEART_OF_TARRASQUE = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(35, 0, 0)
+                            )
+                            .component(
+                                    DotcComponents.BONUS_HP_REGEN_COMPONENT,
+                                    4.0f
+                            )
+                            .component(
+                                    DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
+                                    0.2f
+                            ),
+                    new TooltipBuilder("heart_of_tarrasque")
+                            .description()
+                            .stats(35, 0, 0)
+                            .passive()
+            ),
+            "heart_of_tarrasque"
+    );
 
     public static void initialize() { }
 }

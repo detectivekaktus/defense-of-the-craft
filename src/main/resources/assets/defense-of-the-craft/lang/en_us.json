@@ -144,6 +144,16 @@
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "One of the oldest weapons forged by the Demon-Smith Abzidian, it killed its maker when he tested its edge.",
 
+  "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
+  "description.defense-of-the-craft.ring_of_tarrasque": "An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2 health regeneration.",
+
+
+
+  "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
+  "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",
+
 
 
   "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",

@@ -56,6 +56,7 @@ public class DotcItems {
 
                 DotcIngredients.VOID_STONE,
                 DotcIngredients.RING_OF_HEALTH,
+                DotcIngredients.RING_OF_TARRASQUE,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
                 DotcPrimitives.MYSTIC_STAFF,
@@ -83,6 +84,8 @@ public class DotcItems {
                 DotcIngredients.BELT_OF_STRENGTH,
                 DotcIngredients.BAND_OF_ELVENSKIN,
                 DotcIngredients.ROBE_OF_THE_MAGI,
+
+                DotcTools.HEART_OF_TARRASQUE,
 
                 DotcTools.DIFFUSAL_BLADE,
                 DotcTools.DESOLATOR,

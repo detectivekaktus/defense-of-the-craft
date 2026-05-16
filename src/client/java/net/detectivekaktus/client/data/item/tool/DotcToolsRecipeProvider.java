@@ -330,6 +330,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcTools.HEART_OF_TARRASQUE)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("#$#")
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
+                .define('@', DotcIngredients.RING_OF_TARRASQUE)
+                .define('$', DotcPrimitives.REAVER)
+                .unlockedBy(
+                        "has_ring_of_tarrasque",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RING_OF_TARRASQUE)
+                )
+                .save(exporter);
     }
 
     @Override
