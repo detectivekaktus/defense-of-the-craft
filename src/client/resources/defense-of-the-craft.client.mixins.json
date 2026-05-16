@@ -20,6 +20,7 @@
     "render.entity.LivingEntityRendererMixin",
 
     "multiplayer.MultiPlayerGameModeMixin",
+    "multiplayer.ClientPacketListenerMixin",
     "multiplayer.chat.ChatListenerMixin"
   ],
   "injectors": {
