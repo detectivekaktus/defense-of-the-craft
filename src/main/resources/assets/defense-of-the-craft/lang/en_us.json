@@ -264,6 +264,10 @@
 
 
   "player.defense-of-the-craft.first_blood": "%s drew first blood!",
+  "player.defense-of-the-craft.double_kill": "%s has done a double kill!",
+  "player.defense-of-the-craft.triple_kill": "%s has done a TRIPLE kill!",
+  "player.defense-of-the-craft.ultra_kill": "%s has done an ULTRA kill!",
+  "player.defense-of-the-craft.rampage_kill": "%s is on a RAMPAGE!!!",
 
   "player.defense-of-the-craft.spree":  "%s is on a killing spree!",
   "player.defense-of-the-craft.dominating": "%s is dominating!",

@@ -7,12 +7,16 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 
 import net.detectivekaktus.attach.PlayerFlags;
+import net.detectivekaktus.core.sound.ScheduledGlobalSound;
+import net.detectivekaktus.core.sound.SoundScheduler;
 import net.detectivekaktus.sound.announce.DotcAnnounceSounds;
 
 public class KillStreakManager {
     private final ServerPlayer player;
 
-    private final int TICKS_UNTIL_LOSING_STREAK = 10 * 20;
+    private final int TICKS_UNTIL_LOSING_SHORT_STREAK = 15 * 20;
+    private long lastKillTimestamp = 0L;
+    private int shortStreakKillCount = 0;
 
     public KillStreakManager(ServerPlayer player) {
         this.player = player;
@@ -21,10 +25,9 @@ public class KillStreakManager {
     public void onPlayerKilled() {
         var flags = updateFlags();
         var killCount = flags.getKillCount();
-        var killTick = flags.getKillStreakTick();
 
         var totalKills = player.getStats().getValue(Stats.CUSTOM, Stats.PLAYER_KILLS);
-        if (totalKills == 1 && killTick == 1) {
+        if (totalKills == 1 && killCount == 1) {
             announceToAllPlayers(
                     "player.defense-of-the-craft.first_blood",
                     DotcAnnounceSounds.DEFAULT_FIRST_BLOOD
@@ -97,13 +100,54 @@ public class KillStreakManager {
                 break;
             }
         }
+
+        shortStreakKillCount += 1;
+        var thisKillTimestamp = player.level().getGameTime();
+        if (thisKillTimestamp - lastKillTimestamp > TICKS_UNTIL_LOSING_SHORT_STREAK) {
+            shortStreakKillCount = 0;
+            lastKillTimestamp = thisKillTimestamp;
+            return;
+        }
+        lastKillTimestamp = thisKillTimestamp;
+
+        switch (shortStreakKillCount) {
+            case 2: {
+                announceToAllPlayersWithDelayedSound(
+                        "player.defense-of-the-craft.double_kill",
+                        DotcAnnounceSounds.DEFAULT_DOUBLE_KILL
+                );
+                break;
+            }
+            case 3: {
+                announceToAllPlayersWithDelayedSound(
+                        "player.defense-of-the-craft.triple_kill",
+                        DotcAnnounceSounds.DEFAULT_TRIPLE_KILL
+                );
+                break;
+            }
+            case 4: {
+                announceToAllPlayersWithDelayedSound(
+                        "player.defense-of-the-craft.ultra_kill",
+                        DotcAnnounceSounds.DEFAULT_ULTRA_KILL
+                );
+                break;
+            }
+            default: {
+                if (shortStreakKillCount >= 5)
+                    announceToAllPlayersWithDelayedSound(
+                            "player.defense-of-the-craft.rampage_kill",
+                            0xFFFF0000,
+                            DotcAnnounceSounds.DEFAULT_RAMPAGE
+                    );
+                break;
+            }
+        }
     }
 
     private PlayerFlags.FlagsData updateFlags() {
         var flags = PlayerFlags.get(player);
         var killCount = flags.getKillCount();
         flags.setKillCount(++killCount);
-        flags.setKillStreakTick(TICKS_UNTIL_LOSING_STREAK);
         return flags;
     }
 
@@ -117,6 +161,26 @@ public class KillStreakManager {
         playSoundToAllPlayers(sound);
     }
 
+    private void announceToAllPlayersWithDelayedSound(String key, SoundEvent sound) {
+        player.server.getPlayerList().broadcastSystemMessage(Component.translatable(key, player.getDisplayName()), false);
+        SoundScheduler.INSTANCE.addGlobalSound(new ScheduledGlobalSound(
+                player.server.getPlayerList(),
+                sound,
+                SoundSource.PLAYERS,
+                2 * 20
+        ));
+    }
+
+    private void announceToAllPlayersWithDelayedSound(String key, int color, SoundEvent sound) {
+        player.server.getPlayerList().broadcastSystemMessage(Component.translatable(key, player.getDisplayName()).withColor(color), false);
+        SoundScheduler.INSTANCE.addGlobalSound(new ScheduledGlobalSound(
+                player.server.getPlayerList(),
+                sound,
+                SoundSource.PLAYERS,
+                2 * 20
+        ));
+    }
+
     private void playSoundToAllPlayers(SoundEvent sound) {
         var players = player.server.getPlayerList().getPlayers();
         for (var serverPlayer : players)
@@ -125,15 +189,5 @@ public class KillStreakManager {
                     SoundSource.PLAYERS,
                     1.0f, 1.0f
             );
-    }
-
-    public static void tickKillStreak(ServerPlayer player) {
-        var flags = PlayerFlags.get(player);
-        var killTick = flags.getKillStreakTick();
-
-        if (killTick == 0)
-            return;
-
-        flags.setKillStreakTick(--killTick);
     }
 }
