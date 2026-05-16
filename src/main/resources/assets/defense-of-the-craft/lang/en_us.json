@@ -263,6 +263,19 @@
 
 
 
+  "player.defense-of-the-craft.first_blood": "%s drew first blood!",
+
+  "player.defense-of-the-craft.spree":  "%s is on a killing spree!",
+  "player.defense-of-the-craft.dominating": "%s is dominating!",
+  "player.defense-of-the-craft.mega_kill":  "%s is on a mega kill streak!",
+  "player.defense-of-the-craft.unstoppable": "%s is unstoppable!",
+  "player.defense-of-the-craft.wicked_sick":  "%s is wicked sick!",
+  "player.defense-of-the-craft.monster_kill": "%s is on a monster kill streak!",
+  "player.defense-of-the-craft.godlike":  "%s is GODLIKE!",
+  "player.defense-of-the-craft.holy_shit": "%s is beyond GODLIKE, someone kill them!",
+
+
+
   "config.defense-of-the-craft.title": "Defense of the Craft",
   "category.defense-of-the-craft.ui.title": "User Interface",
   "group.defense-of-the-craft.sound.title": "Sound",
