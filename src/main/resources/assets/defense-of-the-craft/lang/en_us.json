@@ -263,6 +263,23 @@
 
 
 
+  "player.defense-of-the-craft.first_blood": "%s drew first blood!",
+  "player.defense-of-the-craft.double_kill": "%s has done a double kill!",
+  "player.defense-of-the-craft.triple_kill": "%s has done a TRIPLE kill!",
+  "player.defense-of-the-craft.ultra_kill": "%s has done an ULTRA kill!",
+  "player.defense-of-the-craft.rampage_kill": "%s is on a RAMPAGE!!!",
+
+  "player.defense-of-the-craft.spree":  "%s is on a killing spree!",
+  "player.defense-of-the-craft.dominating": "%s is dominating!",
+  "player.defense-of-the-craft.mega_kill":  "%s is on a mega kill streak!",
+  "player.defense-of-the-craft.unstoppable": "%s is unstoppable!",
+  "player.defense-of-the-craft.wicked_sick":  "%s is wicked sick!",
+  "player.defense-of-the-craft.monster_kill": "%s is on a monster kill streak!",
+  "player.defense-of-the-craft.godlike":  "%s is GODLIKE!",
+  "player.defense-of-the-craft.holy_shit": "%s is beyond GODLIKE, someone kill them!",
+
+
+
   "config.defense-of-the-craft.title": "Defense of the Craft",
   "category.defense-of-the-craft.ui.title": "User Interface",
   "group.defense-of-the-craft.sound.title": "Sound",
@@ -274,5 +291,8 @@
   "option.defense-of-the-craft.add_screenshot_sound.description": "By enabling this option, taking a screenshot will play Steam screenshot sound.",
 
   "option.defense-of-the-craft.add_whispering_sound": "Add whispering sound",
-  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound."
+  "option.defense-of-the-craft.add_whispering_sound.description": "By enabling this option, all incoming /msg, /w, and /tell messages will play Steam chat sound.",
+
+  "option.defense-of-the-craft.enable_streak_announcement": "Enable streak announcements",
+  "option.defense-of-the-craft.enable_streak_announcement.description": "By enabling this option, you will hear streak announcements (e.g. double kill or mega kill streak announcements)."
 }

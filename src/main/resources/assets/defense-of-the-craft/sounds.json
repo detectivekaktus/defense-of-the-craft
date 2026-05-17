@@ -55,6 +55,8 @@
     ]
   },
 
+
+
   "item_mkb": {
     "sounds": [
       "defense-of-the-craft:item_mkb"
@@ -153,6 +155,76 @@
   "item_overwhelming_blink_target": {
     "sounds": [
       "defense-of-the-craft:item_overwhelming_blink_target"
+    ]
+  },
+
+
+
+
+  "announce_default_kill_first": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_kill_first"
+    ]
+  },
+  "announce_default_kill_double": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_kill_double"
+    ]
+  },
+  "announce_default_kill_triple": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_kill_triple"
+    ]
+  },
+  "announce_default_kill_ultra": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_kill_ultra"
+    ]
+  },
+  "announce_default_kill_rampage": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_kill_rampage"
+    ]
+  },
+
+  "announce_default_streak_spree": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_spree"
+    ]
+  },
+  "announce_default_streak_dominate": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_dominate"
+    ]
+  },
+  "announce_default_streak_mega": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_mega"
+    ]
+  },
+  "announce_default_streak_unstop": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_unstop"
+    ]
+  },
+  "announce_default_streak_wicked": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_wicked"
+    ]
+  },
+  "announce_default_streak_monster": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_monster"
+    ]
+  },
+  "announce_default_streak_godlike": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_godlike"
+    ]
+  },
+  "announce_default_streak_holy": {
+    "sounds": [
+      "defense-of-the-craft:announce_default_streak_holy"
     ]
   }
 }
