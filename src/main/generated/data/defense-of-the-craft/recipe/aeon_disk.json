@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "defense-of-the-craft:mithril_ingot"
+    },
+    "$": {
+      "item": "defense-of-the-craft:energy_booster"
+    },
+    "%": {
+      "item": "defense-of-the-craft:vitality_booster"
+    },
+    "@": {
+      "item": "defense-of-the-craft:dire_crystal"
+    }
+  },
+  "pattern": [
+    "###",
+    "$@%",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:aeon_disk"
+  }
+}

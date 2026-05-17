@@ -1,5 +1,6 @@
 package net.detectivekaktus.core.player;
 
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -11,13 +12,17 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
+import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.component.records.ProcableComponent;
+import net.detectivekaktus.core.animation.AeonDiskAnimation;
+import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.*;
 import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
@@ -26,6 +31,7 @@ import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.tool.*;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
+import org.joml.Vector3f;
 
 public class CombatManager {
     private final Player player;
@@ -298,6 +304,61 @@ public class CombatManager {
                 return;
             }
         }
+    }
+
+    public boolean popAeonDisk(float damage, DamageSource damageSource) {
+        if (player.getCooldowns().isOnCooldown(DotcTools.AEON_DISK))
+            return false;
+
+        var aeonWrapper = new Object() {
+            ItemStack aeonDisk = null;
+        };
+        InventoryManager.foreachModInterestedSlot(
+                player,
+                stack -> {
+                    if (stack.is(DotcTools.AEON_DISK))
+                        aeonWrapper.aeonDisk = stack;
+                }
+        );
+        if (aeonWrapper.aeonDisk == null)
+            return false;
+
+//        var attacker = damageSource.getEntity();
+//        if (!(attacker instanceof Player))
+//            return false;
+
+        var maxHpAttribute = player.getAttribute(Attributes.MAX_HEALTH);
+        if (maxHpAttribute == null) {
+            DefenseOfTheCraft.LOGGER.error("Couldn't get max health attribute while popping aeon disk.");
+            return false;
+        }
+        var damagePercent = damage / maxHpAttribute.getValue();
+        if (damagePercent < 0.3f && damage < player.getHealth())
+            return false;
+
+        var effectsToRemove = player.getActiveEffects()
+                .stream()
+                .map(MobEffectInstance::getEffect)
+                .filter(effect -> !effect.value().isBeneficial())
+                .toList();
+        effectsToRemove.forEach(player::removeEffect);
+        player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
+        player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
+
+        player.level().playSound(
+                null,
+                player.getX(), player.getY(), player.getZ(),
+                DotcItemSounds.AEON_DISK,
+                SoundSource.PLAYERS,
+                1.0f, 1.0f
+        );
+        ParticleAnimationManager.INSTANCE.addAnimation(new AeonDiskAnimation(
+                ((ServerPlayer) player).serverLevel(),
+                player.getX(), player.getY() + 1.25, player.getZ(),
+                5,
+                new DustParticleOptions(new Vector3f(1.0f, 0.862f, 0.670f), 1.5f)
+        ));
+        return true;
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {

@@ -157,6 +157,11 @@
       "defense-of-the-craft:item_overwhelming_blink_target"
     ]
   },
+  "item_aeon_disk": {
+    "sounds": [
+      "defense-of-the-craft:item_aeon_disk"
+    ]
+  },
 
 
 

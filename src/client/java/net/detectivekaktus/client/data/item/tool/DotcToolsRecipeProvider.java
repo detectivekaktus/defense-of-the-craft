@@ -343,6 +343,20 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RING_OF_TARRASQUE)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcTools.AEON_DISK)
+                .pattern("###")
+                .pattern("$@%")
+                .pattern("###")
+                .define('#', DotcIngredients.MITHRIL_INGOT)
+                .define('@', DotcIngredients.DIRE_CRYSTAL)
+                .define('$', DotcIngredients.ENERGY_BOOSTER)
+                .define('%', DotcIngredients.VITALITY_BOOSTER)
+                .unlockedBy(
+                        "has_mithril_ingot",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.MITHRIL_INGOT)
+                )
+                .save(exporter);
     }
 
     @Override

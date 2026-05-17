@@ -139,7 +139,13 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return;
 
+        if (player.hasEffect(DotcEffects.COMBO_BREAKER))
+            callbackInfo.cancel();
+
         if (combatManager.evade(damageSource))
+            callbackInfo.cancel();
+
+        if (combatManager.popAeonDisk(damage, damageSource))
             callbackInfo.cancel();
 
         combatManager.addCooldownOnBlinks(damage);
@@ -175,7 +181,10 @@ public class PlayerMixin implements CombatManagerHolder {
     )
     private void cancelAttack(Entity entity, CallbackInfo callbackInfo) {
         var player = (Player) (Object) (this);
-        if (!player.hasEffect(DotcEffects.STUN) && !player.hasEffect(DotcEffects.DISARM))
+        var shouldSkip = !player.hasEffect(DotcEffects.STUN)
+                && !player.hasEffect(DotcEffects.DISARM)
+                && !player.hasEffect(DotcEffects.COMBO_BREAKER);
+        if (shouldSkip)
             return;
 
         if (player.level().isClientSide)

@@ -214,6 +214,30 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.ENERGY_BOOSTER)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("###")
+                .define('@', Items.HEART_OF_THE_SEA)
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.VITALITY_BOOSTER)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("###")
+                .define('@', Items.HEART_OF_THE_SEA)
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
+                .unlockedBy(
+                        "has_dire_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

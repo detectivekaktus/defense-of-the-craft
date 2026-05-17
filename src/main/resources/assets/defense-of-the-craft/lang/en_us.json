@@ -148,11 +148,23 @@
   "description.defense-of-the-craft.ring_of_tarrasque": "An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.",
   "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2 health regeneration.",
 
+  "item.defense-of-the-craft.energy_booster": "Energy Booster",
+  "description.defense-of-the-craft.energy_booster": "This lapis gemstone is commonly added to the collection of wizards seeking to improve their presence in combat.",
+  "passive.defense-of-the-craft.energy_booster": "Grants the wielder 50 maximum mana bonus.",
+
+  "item.defense-of-the-craft.vitality_booster": "Vitality Booster",
+  "description.defense-of-the-craft.vitality_booster": "A ruby gemstone that has been passed down through generations of warrior kin.",
+  "passive.defense-of-the-craft.vitality_booster": "Grants the wielder 4 maximum health bonus.",
+
 
 
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
   "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
   "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",
+
+  "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
+  "description.defense-of-the-craft.aeon_disk": "A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
+  "passive.defense-of-the-craft.aeon_disk": "Grants the wielder 50 maximum mana bonus and 4 maximum health bonus. When the wielder takes 30% of their maximum health or more damage from a player, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active. Cooldowns 180 seconds.",
 
 
 

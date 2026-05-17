@@ -25,6 +25,13 @@ public class PlayerMana {
                             .syncWith(ByteBufCodecs.FLOAT, AttachmentSyncPredicate.targetOnly())
                             .persistent(Codec.FLOAT)
     );
+    public static final AttachmentType<Float> BONUS_MANA = AttachmentRegistry.create(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "bonus_mana"),
+            floatBuilder ->
+                    floatBuilder.initializer(() -> DotcAttachmentRules.DEFAULT_BONUS_MANA)
+                            .syncWith(ByteBufCodecs.FLOAT, AttachmentSyncPredicate.targetOnly())
+                            .persistent(Codec.FLOAT)
+    );
     public static final AttachmentType<Float> MAX_MANA = AttachmentRegistry.create(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "max_mana"),
             floatBuilder ->
@@ -116,6 +123,19 @@ public class PlayerMana {
             );
 
             return previousMax;
+        }
+
+        public float getBonusMana() {
+            return target.getAttachedOrCreate(BONUS_MANA);
+        }
+
+        public float setBonusMana(float val) {
+            var current = getBonusMana();
+            return setOrFallback(
+                    BONUS_MANA,
+                    Math.max(val, DotcAttachmentRules.DEFAULT_BONUS_MANA),
+                    current
+            );
         }
 
         public float getManaRegen() {

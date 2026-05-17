@@ -33,9 +33,14 @@ public class StatManager {
                         config.addEvasion(evasion);
                     }
 
+                    if (stack.has(DotcComponents.BONUS_HP_COMPONENT)) {
+                        var hp = stack.get(DotcComponents.BONUS_HP_COMPONENT);
+                        config.addBonusHp(hp);
+                    }
+
                     if (stack.has(DotcComponents.BONUS_HP_REGEN_COMPONENT)) {
                         var regen = stack.get(DotcComponents.BONUS_HP_REGEN_COMPONENT);
-                        config.addBonusHpRegen(regen * stack.getCount());
+                        config.addBonusHpRegen(regen);
                     }
 
                     if (stack.has(DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT)) {
@@ -46,6 +51,11 @@ public class StatManager {
                     if (stack.has(DotcComponents.MOVE_SPEED_COMPONENT)) {
                         var moveSpeed = stack.get(DotcComponents.MOVE_SPEED_COMPONENT);
                         config.addMoveSpeed(moveSpeed);
+                    }
+
+                    if (stack.has(DotcComponents.BONUS_MANA_COMPONENT)) {
+                        var mana = stack.get(DotcComponents.BONUS_MANA_COMPONENT);
+                        config.addBonusMana(mana);
                     }
 
                     if (stack.has(DotcComponents.BONUS_MANA_REGEN_COMPONENT)) {
@@ -68,9 +78,11 @@ public class StatManager {
                 || stats.getAgility() != config.agility
                 || stats.getIntelligence() != config.intelligence
                 || Math.abs(stats.getBonusHpRegen() - config.bonusHpRegen) > 1e-5f
+                || Math.abs(stats.getBonusHp() - config.bonusHp) > 1e-5f
                 || Math.abs(stats.getHpRegenAmplification() - config.hpRegenAmplification) > 1e-5f
                 || Math.abs(stats.getEvasion() - config.evasion) > 1e-5f
                 || Math.abs(stats.getMoveSpeed() - config.moveSpeed) > 1e-5f
+                || Math.abs(mana.getBonusMana() - config.bonusMana) > 1e-5f
                 || Math.abs(mana.getBonusManaRegen() - config.bonusManaRegen) > 1e-5f
                 || Math.abs(mana.getManaCostReduction() - config.manaCostReduction) > 1e-5f;
     }
@@ -82,7 +94,8 @@ public class StatManager {
             return;
 
         stats.setStrength(config.strength);
-        applyStrength(config.strength);
+        stats.setBonusHp(config.bonusHp);
+        applyStrength(config.strength, config.bonusHp);
         stats.setBonusHpRegen(config.bonusHpRegen);
         stats.setHpRegenAmplification(config.hpRegenAmplification);
 
@@ -93,21 +106,22 @@ public class StatManager {
         stats.setEvasionScale(0);
 
         stats.setIntelligence(config.intelligence);
+        mana.setBonusMana(config.bonusMana);
         mana.setBonusManaRegen(config.bonusManaRegen);
-        applyIntelligence(config.intelligence);
+        applyIntelligence(config.intelligence, config.bonusMana);
         mana.setManaCostReduction(config.manaCostReduction);
     }
 
-    private void applyStrength(int val) {
+    private void applyStrength(int val, float bonusHp) {
         var maxHpAttr = player.getAttribute(Attributes.MAX_HEALTH);
         if (maxHpAttr != null) {
             var hpPercent = (player.getHealth() / maxHpAttr.getValue());
 
-            if (val == 0) {
+            if (val == 0 && bonusHp == 0) {
                 maxHpAttr.removeModifier(DotcAttributeModifiers.MAX_HP_BONUS_MODIFIER_ID);
             }
             else {
-                var hp = val * StatConversionRules.HP_PER_STRENGTH;
+                var hp = val * StatConversionRules.HP_PER_STRENGTH + bonusHp;
                 maxHpAttr.addOrReplacePermanentModifier(
                         new AttributeModifier(
                                 DotcAttributeModifiers.MAX_HP_BONUS_MODIFIER_ID,
@@ -180,9 +194,9 @@ public class StatManager {
         stats.setMoveSpeed(val);
     }
 
-    private void applyIntelligence(int val) {
+    private void applyIntelligence(int val, float bonusMana) {
         var mana = PlayerMana.get(player);
-        var maxMana = DotcAttachmentRules.DEFAULT_MAX_MANA + (val * StatConversionRules.MANA_PER_INTELLIGENCE);
+        var maxMana = DotcAttachmentRules.DEFAULT_MAX_MANA + (val * StatConversionRules.MANA_PER_INTELLIGENCE) + bonusMana;
         mana.setMaxMana(maxMana);
 
         var manaRegen = DotcAttachmentRules.DEFAULT_MANA_REGEN + (val * StatConversionRules.MANA_REGEN_PER_INTELLIGENCE) + mana.getBonusManaRegen();
@@ -195,9 +209,9 @@ public class StatManager {
 
     public static class Config {
         int strength, agility, intelligence;
-        float bonusHpRegen, hpRegenAmplification;
+        float bonusHp, bonusHpRegen, hpRegenAmplification;
         float evasion, moveSpeed;
-        float bonusManaRegen, manaCostReduction;
+        float bonusMana, bonusManaRegen, manaCostReduction;
 
         public Config() { }
 
@@ -215,12 +229,20 @@ public class StatManager {
             this.moveSpeed += moveSpeed;
         }
 
+        public void addBonusHp(float hp) {
+            this.bonusHp += hp;
+        }
+
         public void addBonusHpRegen(float hpRegen) {
             this.bonusHpRegen += hpRegen;
         }
 
         public void addHpRegenAmplification(float amplification) {
             this.hpRegenAmplification = 1.0f - (1.0f - this.hpRegenAmplification) * (1.0f - amplification);
+        }
+
+        public void addBonusMana(float mana) {
+            this.bonusMana += mana;
         }
 
         public void addBonusManaRegen(float manaRegen) {

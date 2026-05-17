@@ -24,6 +24,7 @@ public class DotcItemSounds {
     public static final SoundEvent SWIFT_BLINK_TARGET = DotcSounds.register("item_swift_blink_target");
     public static final SoundEvent ARCANE_BLINK_TARGET = DotcSounds.register("item_arcane_blink_target");
     public static final SoundEvent OVERWHELMING_BLINK_TARGET = DotcSounds.register("item_overwhelming_blink_target");
+    public static final SoundEvent AEON_DISK = DotcSounds.register("item_aeon_disk");
 
     public static void initialize() {}
 }

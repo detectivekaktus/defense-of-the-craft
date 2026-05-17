@@ -2,6 +2,7 @@ package net.detectivekaktus.attach;
 
 public class DotcAttachmentRules {
     public static final float DEFAULT_MAX_MANA = 200.0f;
+    public static final float DEFAULT_BONUS_MANA = 0.0f;
     public static final float MIN_MANA = 0.0f;
     public static final float DEFAULT_MANA_REGEN = 1.0f;
     public static final float DEFAULT_MANA_COST_REDUCTION = 0.0f;
@@ -10,6 +11,7 @@ public class DotcAttachmentRules {
     public static final float DEFAULT_MAGIC_RESISTANCE = 0.25f;
 
     public static final int DEFAULT_STRENGTH = 0;
+    public static final float DEFAULT_BONUS_HP = 0.0f;
     public static final float DEFAULT_HP_REGEN = 0.0f;
     public static final float DEFAULT_BONUS_HP_REGEN = 0.0f;
     public static final float DEFAULT_HP_REGEN_AMPLIFICATION = 0.0f;
