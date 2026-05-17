@@ -41,7 +41,9 @@ public class DotcIngredientsModelProvider extends FabricModelProvider {
                 DotcIngredients.BAND_OF_ELVENSKIN,
                 DotcIngredients.ROBE_OF_THE_MAGI,
                 DotcIngredients.SHADOW_AMULET,
-                DotcIngredients.RING_OF_TARRASQUE
+                DotcIngredients.RING_OF_TARRASQUE,
+                DotcIngredients.ENERGY_BOOSTER,
+                DotcIngredients.VITALITY_BOOSTER
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
     }
 

@@ -208,6 +208,32 @@ public class DotcIngredients {
             ),
             "ring_of_tarrasque"
     );
+    public static final Item ENERGY_BOOSTER = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties().stacksTo(1)
+                            .component(
+                                    DotcComponents.BONUS_MANA_COMPONENT,
+                                    50.0f
+                            ),
+                    new TooltipBuilder("energy_booster")
+                            .description()
+                            .passive()
+            ),
+            "energy_booster"
+    );
+    public static final Item VITALITY_BOOSTER = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties().stacksTo(1)
+                            .component(
+                                    DotcComponents.BONUS_HP_COMPONENT,
+                                    4.0f
+                            ),
+                    new TooltipBuilder("vitality_booster")
+                            .description()
+                            .passive()
+            ),
+            "vitality_booster"
+    );
 
 
     public static void initialize() { }
