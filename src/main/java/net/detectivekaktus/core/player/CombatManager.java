@@ -323,9 +323,9 @@ public class CombatManager {
         if (aeonWrapper.aeonDisk == null)
             return false;
 
-        var attacker = damageSource.getEntity();
-        if (!(attacker instanceof Player))
-            return false;
+//        var attacker = damageSource.getEntity();
+//        if (!(attacker instanceof Player))
+//            return false;
 
         var maxHpAttribute = player.getAttribute(Attributes.MAX_HEALTH);
         if (maxHpAttribute == null) {
@@ -336,12 +336,12 @@ public class CombatManager {
         if (damagePercent < 0.3f && damage < player.getHealth())
             return false;
 
-        var instances = player.getActiveEffects();
-        for (var instance : instances) {
-            var effect = instance.getEffect();
-            if (!effect.value().isBeneficial())
-                player.removeEffect(effect);
-        }
+        var effectsToRemove = player.getActiveEffects()
+                .stream()
+                .map(MobEffectInstance::getEffect)
+                .filter(effect -> !effect.value().isBeneficial())
+                .toList();
+        effectsToRemove.forEach(player::removeEffect);
         player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
         player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
 
