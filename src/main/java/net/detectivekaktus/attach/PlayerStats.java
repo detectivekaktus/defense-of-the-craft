@@ -23,6 +23,12 @@ public class PlayerStats {
                             .syncWith(ByteBufCodecs.INT, AttachmentSyncPredicate.targetOnly())
                             .persistent(Codec.INT)
     );
+    public static final AttachmentType<Float> BONUS_HP = AttachmentRegistry.create(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "bonus_hp"),
+            floatBuilder ->
+                    floatBuilder.initializer(() -> DotcAttachmentRules.DEFAULT_BONUS_HP)
+                            .persistent(Codec.FLOAT)
+    );
     public static final AttachmentType<Float> HP_REGEN = AttachmentRegistry.create(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "hp_regen"),
             floatBuilder ->
@@ -117,6 +123,19 @@ public class PlayerStats {
             return setOrFallback(
                     HP_TICK,
                     Math.clamp(val, 0, 20),
+                    current
+            );
+        }
+
+        public float getBonusHp() {
+            return target.getAttachedOrCreate(BONUS_HP);
+        }
+
+        public float setBonusHp(float val) {
+            var current = getBonusHp();
+            return setOrFallback(
+                    BONUS_HP,
+                    Math.max(val, DotcAttachmentRules.DEFAULT_BONUS_HP),
                     current
             );
         }
