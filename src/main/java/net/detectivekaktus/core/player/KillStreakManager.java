@@ -14,7 +14,7 @@ import net.detectivekaktus.sound.announce.DotcAnnounceSounds;
 public class KillStreakManager {
     private final ServerPlayer player;
 
-    private final int TICKS_UNTIL_LOSING_SHORT_STREAK = 15 * 20;
+    private static final int TICKS_UNTIL_LOSING_SHORT_STREAK = 15 * 20;
     private long lastKillTimestamp = 0L;
     private int shortStreakKillCount = 0;
 

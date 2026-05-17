@@ -18,7 +18,7 @@ public class SoundScheduler implements ServerTickEvents.EndTick {
     @Override
     public void onEndTick(MinecraftServer server) {
         var iterator = sounds.iterator();
-        if (iterator.hasNext()) {
+        while (iterator.hasNext()) {
             var sound = iterator.next();
             sound.onEndTick(server);
             if (sound.isFinished())

@@ -28,7 +28,7 @@ public class ScheduledGlobalSound implements ServerTickEvents.EndTick {
 
     @Override
     public void onEndTick(MinecraftServer server) {
-        if (--ticksUntilSound == 0L) {
+        if (--ticksUntilSound <= 0L) {
             var players = playerList.getPlayers();
             for (var player : players)
                 player.playNotifySound(sound, source, 1.0f, 1.0f);
