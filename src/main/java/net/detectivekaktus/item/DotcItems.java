@@ -88,6 +88,7 @@ public class DotcItems {
                 DotcIngredients.ROBE_OF_THE_MAGI,
 
                 DotcTools.HEART_OF_TARRASQUE,
+                DotcTools.AEON_DISK,
 
                 DotcTools.DIFFUSAL_BLADE,
                 DotcTools.DESOLATOR,

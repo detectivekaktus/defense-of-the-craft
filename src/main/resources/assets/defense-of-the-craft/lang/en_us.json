@@ -162,6 +162,10 @@
   "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
   "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",
 
+  "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
+  "description.defense-of-the-craft.aeon_disk": "A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
+  "passive.defense-of-the-craft.aeon_disk": "When the wielder's health is below the 70% threshold and they take player-based damage, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active.",
+
 
 
   "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",

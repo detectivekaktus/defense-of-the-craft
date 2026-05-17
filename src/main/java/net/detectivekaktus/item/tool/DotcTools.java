@@ -467,6 +467,23 @@ public class DotcTools {
             ),
             "heart_of_tarrasque"
     );
+    public static final Item AEON_DISK = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.BONUS_HP_COMPONENT,
+                                    4.0f
+                            )
+                            .component(
+                                    DotcComponents.BONUS_MANA_COMPONENT,
+                                    40.0f
+                            ),
+                    new TooltipBuilder("aeon_disk")
+                            .description()
+                            .passive()
+            ),
+            "aeon_disk"
+    );
 
     public static void initialize() { }
 }
