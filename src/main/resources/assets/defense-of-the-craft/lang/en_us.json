@@ -164,7 +164,7 @@
 
   "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
   "description.defense-of-the-craft.aeon_disk": "A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
-  "passive.defense-of-the-craft.aeon_disk": "When the wielder takes 30% of their maximum health or more damage from a player, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active. Cooldowns 180 seconds.",
+  "passive.defense-of-the-craft.aeon_disk": "Grants the wielder 50 maximum mana bonus and 4 maximum health bonus. When the wielder takes 30% of their maximum health or more damage from a player, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active. Cooldowns 180 seconds.",
 
 
 

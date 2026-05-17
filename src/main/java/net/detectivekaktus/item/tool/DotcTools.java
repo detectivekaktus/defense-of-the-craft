@@ -476,7 +476,7 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.BONUS_MANA_COMPONENT,
-                                    40.0f
+                                    50.0f
                             ),
                     new TooltipBuilder("aeon_disk")
                             .description()

@@ -1,5 +1,6 @@
 package net.detectivekaktus.core.player;
 
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,6 +21,8 @@ import net.detectivekaktus.attach.PlayerStats;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.component.records.ProcableComponent;
+import net.detectivekaktus.core.animation.AeonDiskAnimation;
+import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.*;
 import net.detectivekaktus.core.rng.PseudoRandom;
 import net.detectivekaktus.core.util.CombatManagerHolder;
@@ -28,6 +31,7 @@ import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.tool.*;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
+import org.joml.Vector3f;
 
 public class CombatManager {
     private final Player player;
@@ -340,6 +344,7 @@ public class CombatManager {
         }
         player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
         player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
+
         player.level().playSound(
                 null,
                 player.getX(), player.getY(), player.getZ(),
@@ -347,6 +352,12 @@ public class CombatManager {
                 SoundSource.PLAYERS,
                 1.0f, 1.0f
         );
+        ParticleAnimationManager.INSTANCE.addAnimation(new AeonDiskAnimation(
+                ((ServerPlayer) player).serverLevel(),
+                player.getX(), player.getY() + 1.25, player.getZ(),
+                5,
+                new DustParticleOptions(new Vector3f(1.0f, 0.862f, 0.670f), 1.5f)
+        ));
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {
