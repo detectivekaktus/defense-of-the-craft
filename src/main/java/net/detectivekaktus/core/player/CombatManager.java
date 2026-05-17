@@ -323,9 +323,9 @@ public class CombatManager {
         if (aeonWrapper.aeonDisk == null)
             return false;
 
-//        var attacker = damageSource.getEntity();
-//        if (!(attacker instanceof Player))
-//            return false;
+        var attacker = damageSource.getEntity();
+        if (!(attacker instanceof Player))
+            return false;
 
         var maxHpAttribute = player.getAttribute(Attributes.MAX_HEALTH);
         if (maxHpAttribute == null) {
