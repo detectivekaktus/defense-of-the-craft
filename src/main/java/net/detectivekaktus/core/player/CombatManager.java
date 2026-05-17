@@ -306,9 +306,9 @@ public class CombatManager {
         }
     }
 
-    public void popAeonDisk(float damage, DamageSource damageSource) {
+    public boolean popAeonDisk(float damage, DamageSource damageSource) {
         if (player.getCooldowns().isOnCooldown(DotcTools.AEON_DISK))
-            return;
+            return false;
 
         var aeonWrapper = new Object() {
             ItemStack aeonDisk = null;
@@ -321,20 +321,20 @@ public class CombatManager {
                 }
         );
         if (aeonWrapper.aeonDisk == null)
-            return;
+            return false;
 
         var attacker = damageSource.getEntity();
         if (!(attacker instanceof Player))
-            return;
+            return false;
 
         var maxHpAttribute = player.getAttribute(Attributes.MAX_HEALTH);
         if (maxHpAttribute == null) {
             DefenseOfTheCraft.LOGGER.error("Couldn't get max health attribute while popping aeon disk.");
-            return;
+            return false;
         }
         var damagePercent = damage / maxHpAttribute.getValue();
         if (damagePercent < 0.3f && damage < player.getHealth())
-            return;
+            return false;
 
         var instances = player.getActiveEffects();
         for (var instance : instances) {
@@ -358,6 +358,7 @@ public class CombatManager {
                 5,
                 new DustParticleOptions(new Vector3f(1.0f, 0.862f, 0.670f), 1.5f)
         ));
+        return true;
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {

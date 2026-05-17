@@ -130,7 +130,7 @@ public class PlayerMana {
         }
 
         public float setBonusMana(float val) {
-            var current = getManaRegen();
+            var current = getBonusMana();
             return setOrFallback(
                     BONUS_MANA,
                     Math.max(val, DotcAttachmentRules.DEFAULT_BONUS_MANA),

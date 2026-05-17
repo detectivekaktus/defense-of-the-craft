@@ -145,8 +145,10 @@ public class PlayerMixin implements CombatManagerHolder {
         if (combatManager.evade(damageSource))
             callbackInfo.cancel();
 
+        if (combatManager.popAeonDisk(damage, damageSource))
+            callbackInfo.cancel();
+
         combatManager.addCooldownOnBlinks(damage);
-        combatManager.popAeonDisk(damage, damageSource);
     }
 
     @Inject(

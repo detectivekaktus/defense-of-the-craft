@@ -94,6 +94,7 @@ public class StatManager {
             return;
 
         stats.setStrength(config.strength);
+        stats.setBonusHp(config.bonusHp);
         applyStrength(config.strength, config.bonusHp);
         stats.setBonusHpRegen(config.bonusHpRegen);
         stats.setHpRegenAmplification(config.hpRegenAmplification);
@@ -105,6 +106,7 @@ public class StatManager {
         stats.setEvasionScale(0);
 
         stats.setIntelligence(config.intelligence);
+        mana.setBonusMana(config.bonusMana);
         mana.setBonusManaRegen(config.bonusManaRegen);
         applyIntelligence(config.intelligence, config.bonusMana);
         mana.setManaCostReduction(config.manaCostReduction);
