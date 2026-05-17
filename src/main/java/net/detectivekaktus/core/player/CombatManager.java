@@ -11,7 +11,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
+import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
@@ -298,6 +300,53 @@ public class CombatManager {
                 return;
             }
         }
+    }
+
+    public void popAeonDisk(float damage, DamageSource damageSource) {
+        if (player.getCooldowns().isOnCooldown(DotcTools.AEON_DISK))
+            return;
+
+        var aeonWrapper = new Object() {
+            ItemStack aeonDisk = null;
+        };
+        InventoryManager.foreachModInterestedSlot(
+                player,
+                stack -> {
+                    if (stack.is(DotcTools.AEON_DISK))
+                        aeonWrapper.aeonDisk = stack;
+                }
+        );
+        if (aeonWrapper.aeonDisk == null)
+            return;
+
+        var attacker = damageSource.getEntity();
+        if (!(attacker instanceof Player))
+            return;
+
+        var maxHpAttribute = player.getAttribute(Attributes.MAX_HEALTH);
+        if (maxHpAttribute == null) {
+            DefenseOfTheCraft.LOGGER.error("Couldn't get max health attribute while popping aeon disk.");
+            return;
+        }
+        var damagePercent = damage / maxHpAttribute.getValue();
+        if (damagePercent < 0.3f && damage < player.getHealth())
+            return;
+
+        var instances = player.getActiveEffects();
+        for (var instance : instances) {
+            var effect = instance.getEffect();
+            if (!effect.value().isBeneficial())
+                player.removeEffect(effect);
+        }
+        player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
+        player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
+        player.level().playSound(
+                null,
+                player.getX(), player.getY(), player.getZ(),
+                DotcItemSounds.AEON_DISK,
+                SoundSource.PLAYERS,
+                1.0f, 1.0f
+        );
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {

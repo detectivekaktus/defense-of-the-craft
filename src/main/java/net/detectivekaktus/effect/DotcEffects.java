@@ -8,18 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 
 public class DotcEffects {
-    public static final Holder<MobEffect> ARMOR_REDUCTION = register(
-            "armor_reduction", new ArmorReduction()
-    );
-    public static final Holder<MobEffect> STUN = register(
-            "stun", new Stun()
-    );
-    public static final Holder<MobEffect> DISARM = register(
-            "disarm", new Disarm()
-    );
-    public static final Holder<MobEffect> BREAK = register(
-            "break", new Break()
-    );
+    public static final Holder<MobEffect> ARMOR_REDUCTION = register("armor_reduction", new ArmorReduction());
+    public static final Holder<MobEffect> STUN = register("stun", new Stun());
+    public static final Holder<MobEffect> DISARM = register("disarm", new Disarm());
+    public static final Holder<MobEffect> BREAK = register("break", new Break());
+    public static final Holder<MobEffect> COMBO_BREAKER = register("combo_breaker", new ComboBreaker());
 
     public static Holder<MobEffect> register(String id, MobEffect effect) {
         return Registry.registerForHolder(
