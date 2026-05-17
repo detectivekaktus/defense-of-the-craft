@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Ring of Tarrasque item.
 * Heart of Tarrasque item.
+* Energy Booster item.
+* Vitality Booster item.
+* Aeon Disk item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 ## [0.1.0] - 2026-04-22
