@@ -9,11 +9,14 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.concurrent.CompletableFuture;
 
+import net.detectivekaktus.DefenseOfTheCraft;
+import net.detectivekaktus.block.building.DotcBuildingBlocks;
 import net.detectivekaktus.item.ingredient.DotcIngredients;
 
 public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
@@ -30,7 +33,15 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                         "has_radiant_crystal_shards",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL_SHARDS)
                 )
-                .save(exporter);
+                .save(exporter, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "radiant_crystal_from_shards"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.RADIANT_CRYSTAL, 9)
+                .requires(DotcBuildingBlocks.RADIANT_CRYSTAL_BLOCK)
+                .unlockedBy(
+                        "has_radiant_crystal_block",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcBuildingBlocks.RADIANT_CRYSTAL_BLOCK)
+                )
+                .save(exporter, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "radiant_crystal_from_block"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.DIRE_CRYSTAL)
                 .requires(DotcIngredients.DIRE_CRYSTAL_SHARDS, 2)
@@ -39,7 +50,15 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                         "has_dire_crystal_shards",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL_SHARDS)
                 )
-                .save(exporter);
+                .save(exporter, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "dire_crystal_from_shards"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.DIRE_CRYSTAL, 9)
+                .requires(DotcBuildingBlocks.DIRE_CRYSTAL_BLOCK)
+                .unlockedBy(
+                        "has_dire_crystal_block",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcBuildingBlocks.DIRE_CRYSTAL_BLOCK)
+                )
+                .save(exporter, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "dire_crystal_from_block"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.RADIANT_CRYSTAL_DUST, 2)
                 .requires(DotcIngredients.RADIANT_CRYSTAL)

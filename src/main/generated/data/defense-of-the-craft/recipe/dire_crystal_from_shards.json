@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "defense-of-the-craft:dire_crystal_shards"
+    },
+    {
+      "item": "defense-of-the-craft:dire_crystal_shards"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:dire_crystal"
+  }
+}
