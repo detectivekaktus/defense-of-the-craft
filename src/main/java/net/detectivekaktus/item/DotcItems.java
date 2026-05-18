@@ -74,10 +74,12 @@ public class DotcItems {
 
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
+                DotcIngredients.SAGES_MASK,
                 DotcIngredients.BLADES_OF_ATTACK,
                 DotcPrimitives.MITHRIL_HAMMER,
                 DotcPrimitives.BROADSWORD,
                 DotcPrimitives.CLAYMORE,
+                DotcPrimitives.OBLIVION_STAFF,
                 DotcTools.JAVELIN,
 
                 DotcPrimitives.OGRE_AXE,
@@ -86,6 +88,9 @@ public class DotcItems {
                 DotcIngredients.BELT_OF_STRENGTH,
                 DotcIngredients.BAND_OF_ELVENSKIN,
                 DotcIngredients.ROBE_OF_THE_MAGI,
+
+                DotcTools.ORCHID_MALEVOLENCE,
+                DotcTools.BLOODTHORN,
 
                 DotcTools.HEART_OF_TARRASQUE,
                 DotcTools.AEON_DISK,

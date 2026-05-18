@@ -28,7 +28,7 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         var mana = PlayerMana.get(player);
         var hasInfiniteMaterials = player.hasInfiniteMaterials();
         var notEnoughMana = !hasInfiniteMaterials && getManaCost() > mana.getCurrentMana();
-        var invulnerable = target != null && target.getType().is(getInvulnerableTag());
+        var invulnerable = target != null && getInvulnerableTag() != null && target.getType().is(getInvulnerableTag());
 
         if (level.isClientSide) {
             if (notEnoughMana)

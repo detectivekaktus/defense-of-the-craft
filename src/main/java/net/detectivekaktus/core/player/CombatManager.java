@@ -119,12 +119,17 @@ public class CombatManager {
         return manaBurn * CombatRules.DIFFUSAL_DAMAGE_PER_MANA;
     }
 
-    public void calculateProcs() {
+    public void calculateProcs(Entity victim) {
         setHitThroughEvasion(false);
 
         var stack = player.getMainHandItem();
         var item = stack.getItem();
         if (broke && stack.is(DotcTools.SILVER_EDGE)) {
+            setHitThroughEvasion(true);
+            return;
+        }
+
+        if (victim instanceof LivingEntity livingEntity && livingEntity.hasEffect(DotcEffects.SOUL_REND)) {
             setHitThroughEvasion(true);
             return;
         }
@@ -153,11 +158,11 @@ public class CombatManager {
         setHitThroughEvasion(true);
     }
 
-    public boolean proc(Entity entity, boolean hurt) {
+    public boolean proc(Entity victim, boolean hurt) {
         var stack = player.getMainHandItem();
         var item = stack.getItem();
 
-        if (stack.has(DotcComponents.PROCABLE_COMPONENT) && (item instanceof Procable itemWithBonuses)) {
+        if (item instanceof Procable itemWithBonuses) {
             if (!hitThroughEvasion())
                 return hurt;
 
@@ -173,11 +178,11 @@ public class CombatManager {
                     player.getSoundSource(),
                     1.0f, 1.0f
             ));
-            if (effect.isPresent() && entity instanceof LivingEntity livingEntity)
+            if (effect.isPresent() && victim instanceof LivingEntity livingEntity)
                 livingEntity.addEffect(new MobEffectInstance(effect.get(), itemWithBonuses.getProcEffectDuration()));
 
             addProcableCooldown(item);
-            entity.hurt(damageSource, damage);
+            victim.hurt(damageSource, damage);
         }
         else if (stack.is(DotcTools.ECHO_SABRE)) {
             if (player.getCooldowns().isOnCooldown(item))
@@ -192,13 +197,13 @@ public class CombatManager {
             var damage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
             var scale = player.getAttackStrengthScale(0.5f);
             damage *= 0.2f + scale * scale * 0.8f;
-            damage += item.getAttackDamageBonus(entity, damage, damageSource);
+            damage += item.getAttackDamageBonus(victim, damage, damageSource);
 
             // like in dota the echo sabre attack doesn't crit if the first one did,
             // so there's no f *= 1.5 in case of a crit
 
             player.getCooldowns().addCooldown(item, CombatRules.ECHO_SABRE_COOLDOWN);
-            entity.hurt(damageSource, damage);
+            victim.hurt(damageSource, damage);
         }
 
         return hurt;

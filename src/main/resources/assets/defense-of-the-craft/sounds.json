@@ -54,6 +54,11 @@
       "defense-of-the-craft:ui_received_message"
     ]
   },
+  "ui_silence": {
+    "sounds": [
+      "defense-of-the-craft:ui_silence"
+    ]
+  },
 
 
 
@@ -160,6 +165,21 @@
   "item_aeon_disk": {
     "sounds": [
       "defense-of-the-craft:item_aeon_disk"
+    ]
+  },
+  "item_orchid_malevolence": {
+    "sounds": [
+      "defense-of-the-craft:item_orchid_malevolence"
+    ]
+  },
+  "item_bloodthorn": {
+    "sounds": [
+      "defense-of-the-craft:item_bloodthorn"
+    ]
+  },
+  "item_bloodthorn_target": {
+    "sounds": [
+      "defense-of-the-craft:item_bloodthorn_target"
     ]
   },
 

@@ -79,6 +79,10 @@
   "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
   "description.defense-of-the-craft.gloves_of_haste": "A pair of magical gloves that seems to render weapons weightless.",
 
+  "item.defense-of-the-craft.sages_mask": "Sage's Mask",
+  "description.defense-of-the-craft.sages_mask": "A mask commonly used by mages and warlocks for various rituals.",
+  "passive.defense-of-the-craft.sages_mask": "Grants the wielder 1.25 mana regeneration.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "The damage of these small, concealable blades should not be underestimated.",
 
@@ -90,6 +94,10 @@
 
   "item.defense-of-the-craft.claymore": "Claymore",
   "description.defense-of-the-craft.claymore": "A sword that can cut through armor, it's a commonly chosen first weapon for budding swordsmen.",
+
+  "item.defense-of-the-craft.oblivion_staff": "Oblivion Staff",
+  "description.defense-of-the-craft.oblivion_staff": "Deceptively hidden as an ordinary quarterstaff, it is actually very powerful, much like the Eldritch who originally possessed it.",
+  "passive.defense-of-the-craft.oblivion_staff": "Grants the wielder 1.5 mana regeneration.",
 
   "item.defense-of-the-craft.javelin": "Javelin",
   "description.defense-of-the-craft.javelin": "A rather typical spear that can sometimes pierce through an enemy's armor when used to attack.",
@@ -155,6 +163,18 @@
   "item.defense-of-the-craft.vitality_booster": "Vitality Booster",
   "description.defense-of-the-craft.vitality_booster": "A ruby gemstone that has been passed down through generations of warrior kin.",
   "passive.defense-of-the-craft.vitality_booster": "Grants the wielder 4 maximum health bonus.",
+
+
+
+  "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
+  "description.defense-of-the-craft.orchid_malevolence": "A garnet rod constructed from the essence of a fire demon.",
+  "passive.defense-of-the-craft.orchid_malevolence": "Grants the wielder 2 mana regeneration.",
+  "active.defense-of-the-craft.orchid_malevolence": "Silences a target entity for 5 seconds. Cooldowns 20 seconds",
+
+  "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
+  "description.defense-of-the-craft.bloodthorn": "A reviled blade that bites deeper with each wriggle of its victim's final throes.",
+  "passive.defense-of-the-craft.bloodthorn": "Grants the wielder 3 mana regeneration.",
+  "active.defense-of-the-craft.bloodthorn": "Silences a target entity for 5 seconds. When the target is attacked, they get 3 bonus magical damage. Cooldowns 20 seconds",
 
 
 
@@ -262,6 +282,9 @@
   "effect.defense-of-the-craft.stun": "Stun",
   "effect.defense-of-the-craft.disarm": "Disarm",
   "effect.defense-of-the-craft.break": "Break",
+  "effect.defense-of-the-craft.combo_breaker": "Combo Breaker",
+  "effect.defense-of-the-craft.silence": "Silence",
+  "effect.defense-of-the-craft.soul_rend": "Soul Rend",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
   "tag.item.defense-of-the-craft.crystals": "Crystals",

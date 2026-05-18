@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "defense-of-the-craft:radiant_crystal"
+    },
+    "$": {
+      "item": "defense-of-the-craft:oblivion_staff"
+    },
+    "@": {
+      "item": "defense-of-the-craft:claymore"
+    }
+  },
+  "pattern": [
+    " # ",
+    " @ ",
+    " $ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "defense-of-the-craft:orchid_malevolence"
+  }
+}

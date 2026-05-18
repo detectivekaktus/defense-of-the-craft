@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Energy Booster item.
 * Vitality Booster item.
 * Aeon Disk item.
+* Silence effect.
+* Soul Rend effect.
+* Sage's Mask item.
+* Oblivion Staff sword item.
+* Orchid Malevolence sword item.
+* Bloodthorn sword item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 ## [0.1.0] - 2026-04-22
