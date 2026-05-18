@@ -43,7 +43,7 @@ public class ItemStackHelper {
     }
 
     private static boolean cancelInteractionIfSilenced(Player player, Level level) {
-        if (!player.hasEffect(DotcEffects.SILENCE))
+        if (!player.hasEffect(DotcEffects.SILENCE) && !player.hasEffect(DotcEffects.SOUL_REND))
             return false;
 
         if (level.isClientSide)
@@ -53,7 +53,7 @@ public class ItemStackHelper {
     }
 
     private static boolean cancelInteractionIfSilenced(Player player) {
-        if (!player.hasEffect(DotcEffects.SILENCE))
+        if (!player.hasEffect(DotcEffects.SILENCE) && !player.hasEffect(DotcEffects.SOUL_REND))
             return false;
 
         if (player.level().isClientSide)

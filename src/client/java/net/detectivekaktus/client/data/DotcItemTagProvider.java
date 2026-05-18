@@ -52,7 +52,8 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.ARCANE_BLINK)
                 .add(DotcTools.OVERWHELMING_BLINK)
                 .add(DotcPrimitives.OBLIVION_STAFF)
-                .add(DotcTools.ORCHID_MALEVOLENCE);
+                .add(DotcTools.ORCHID_MALEVOLENCE)
+                .add(DotcTools.BLOODTHORN);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE)

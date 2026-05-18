@@ -169,7 +169,12 @@
   "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
   "description.defense-of-the-craft.orchid_malevolence": "A garnet rod constructed from the essence of a fire demon.",
   "passive.defense-of-the-craft.orchid_malevolence": "Grants the wielder 2 mana regeneration.",
-  "active.defense-of-the-craft.orchid_malevolence": "Silences a target entity for 5 seconds.",
+  "active.defense-of-the-craft.orchid_malevolence": "Silences a target entity for 5 seconds. Cooldowns 20 seconds",
+
+  "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
+  "description.defense-of-the-craft.bloodthorn": "A reviled blade that bites deeper with each wriggle of its victim's final throes.",
+  "passive.defense-of-the-craft.bloodthorn": "Grants the wielder 3 mana regeneration.",
+  "active.defense-of-the-craft.bloodthorn": "Silences a target entity for 5 seconds. When the target is attacked, they get 3 bonus magical damage. Cooldowns 20 seconds",
 
 
 
@@ -279,6 +284,7 @@
   "effect.defense-of-the-craft.break": "Break",
   "effect.defense-of-the-craft.combo_breaker": "Combo Breaker",
   "effect.defense-of-the-craft.silence": "Silence",
+  "effect.defense-of-the-craft.soul_rend": "Soul Rend",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
   "tag.item.defense-of-the-craft.crystals": "Crystals",

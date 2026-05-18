@@ -172,6 +172,11 @@
       "defense-of-the-craft:item_orchid_malevolence"
     ]
   },
+  "item_bloodthorn": {
+    "sounds": [
+      "defense-of-the-craft:item_bloodthorn"
+    ]
+  },
 
 
 

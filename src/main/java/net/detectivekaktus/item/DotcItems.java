@@ -90,6 +90,7 @@ public class DotcItems {
                 DotcIngredients.ROBE_OF_THE_MAGI,
 
                 DotcTools.ORCHID_MALEVOLENCE,
+                DotcTools.BLOODTHORN,
 
                 DotcTools.HEART_OF_TARRASQUE,
                 DotcTools.AEON_DISK,

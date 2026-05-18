@@ -18,7 +18,6 @@ import net.detectivekaktus.sound.item.DotcItemSounds;
 
 public class MonkeyKingBar extends DotcSwordItem implements Procable {
     public static final float BASE_PROC_CHANCE = PseudoRandomBaseChances.AVG_50;
-    private static final float BONUS_DAMAGE = 4.0f;
 
     public MonkeyKingBar(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
@@ -26,7 +25,7 @@ public class MonkeyKingBar extends DotcSwordItem implements Procable {
 
     @Override
     public float getProcDamage() {
-        return BONUS_DAMAGE;
+        return 4.0f;
     }
 
     @Override

@@ -43,7 +43,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.SWIFT_BLINK,
                 DotcTools.ARCANE_BLINK,
                 DotcTools.OVERWHELMING_BLINK,
-                DotcTools.ORCHID_MALEVOLENCE
+                DotcTools.ORCHID_MALEVOLENCE,
+                DotcTools.BLOODTHORN
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

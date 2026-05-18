@@ -20,8 +20,8 @@ import net.detectivekaktus.sound.item.DotcItemSounds;
 
 import java.util.List;
 
-public class OrchidMalevolence extends DotcAbilitySwordItem implements SharesUseCooldown {
-    public OrchidMalevolence(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
+public class Bloodthorn extends DotcAbilitySwordItem implements SharesUseCooldown {
+    public Bloodthorn(Tier tier, Properties properties, TooltipBuilder tooltipBuilder) {
         super(tier, properties, tooltipBuilder);
     }
 
@@ -32,7 +32,7 @@ public class OrchidMalevolence extends DotcAbilitySwordItem implements SharesUse
 
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
-        target.addEffect(new MobEffectInstance(DotcEffects.SILENCE, 5 * 20));
+        target.addEffect(new MobEffectInstance(DotcEffects.SOUL_REND, 5 * 20));
     }
 
     @Override
@@ -42,12 +42,12 @@ public class OrchidMalevolence extends DotcAbilitySwordItem implements SharesUse
 
     @Override
     protected SoundEvent getAbilitySound() {
-        return DotcItemSounds.ORCHID_MALEVOLENCE;
+        return DotcItemSounds.BLOODTHORN;
     }
 
     @Override
     public float getManaCost() {
-        return 40.0f;
+        return 50.0f;
     }
 
     @Override
@@ -57,6 +57,6 @@ public class OrchidMalevolence extends DotcAbilitySwordItem implements SharesUse
 
     @Override
     public List<Item> getSharesCooldownWith() {
-        return List.of(DotcTools.BLOODTHORN);
+        return List.of(DotcTools.ORCHID_MALEVOLENCE);
     }
 }

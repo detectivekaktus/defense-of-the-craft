@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orchid_malevolence": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:orchid_malevolence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "defense-of-the-craft:bloodthorn"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orchid_malevolence"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "defense-of-the-craft:bloodthorn"
+    ]
+  }
+}
