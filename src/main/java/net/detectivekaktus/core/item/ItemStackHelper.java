@@ -10,26 +10,10 @@ import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 
 public class ItemStackHelper {
-    public static boolean cancelInteractionIfDisabled(Player player, Level level) {
-        if (cancelInteractionIfStunned(player, level))
-            return true;
-        return cancelInteractionIfSilenced(player, level);
-    }
-
     public static boolean cancelInteractionIfDisabled(Player player) {
         if (cancelInteractionIfStunned(player))
             return true;
         return cancelInteractionIfSilenced(player);
-    }
-
-    private static boolean cancelInteractionIfStunned(Player player, Level level) {
-        if (!player.hasEffect(DotcEffects.STUN))
-            return false;
-
-        if (level.isClientSide)
-            player.playSound(DotcGuiSounds.UI_GENERAL_DENY);
-
-        return true;
     }
 
     private static boolean cancelInteractionIfStunned(Player player) {
@@ -38,16 +22,6 @@ public class ItemStackHelper {
 
         if (player.level().isClientSide)
             player.playSound(DotcGuiSounds.UI_GENERAL_DENY);
-
-        return true;
-    }
-
-    private static boolean cancelInteractionIfSilenced(Player player, Level level) {
-        if (!player.hasEffect(DotcEffects.SILENCE) && !player.hasEffect(DotcEffects.SOUL_REND))
-            return false;
-
-        if (level.isClientSide)
-            player.playSound(DotcGuiSounds.UI_SILENCE);
 
         return true;
     }
