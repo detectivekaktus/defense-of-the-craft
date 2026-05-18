@@ -177,6 +177,11 @@
       "defense-of-the-craft:item_bloodthorn"
     ]
   },
+  "item_bloodthorn_target": {
+    "sounds": [
+      "defense-of-the-craft:item_bloodthorn_target"
+    ]
+  },
 
 
 

@@ -86,7 +86,7 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return;
 
-        combatManager.calculateProcs();
+        combatManager.calculateProcs(entity);
     }
 
     @ModifyExpressionValue(
