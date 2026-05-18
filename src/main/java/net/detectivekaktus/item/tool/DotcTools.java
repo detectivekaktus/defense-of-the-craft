@@ -511,7 +511,7 @@ public class DotcTools {
             new Bloodthorn(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
-                            .attributes(OrchidMalevolence.createAttributes(
+                            .attributes(Bloodthorn.createAttributes(
                                     DotcToolMaterial.RADIANT_ARTEFACT, 3, -2.0f
                             ))
                             .component(
