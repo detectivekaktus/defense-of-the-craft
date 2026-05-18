@@ -51,6 +51,6 @@ public class RadianceEvent {
                 aabb,
                 entity -> CombatManager.isPlayerOrHostile(player, entity)
         );
-        entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.MAGICAL), 2.0f));
+        entities.forEach(entity -> entity.hurt(player.damageSources().source(DotcDamageTypes.MAGICAL, player, player), 2.0f));
     }
 }

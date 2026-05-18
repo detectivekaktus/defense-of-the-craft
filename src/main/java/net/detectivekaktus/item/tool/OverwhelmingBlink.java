@@ -44,7 +44,7 @@ public class OverwhelmingBlink extends BlinkDagger {
 
         var damage = stats.getStrength() * STRENGTH_TO_DAMAGE_PERCENT;
         entities.forEach(entity -> {
-            entity.hurt(player.damageSources().source(DotcDamageTypes.PHYSICAL), damage);
+            entity.hurt(player.damageSources().source(DotcDamageTypes.PHYSICAL, player, player), damage);
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, EFFECTS_DURATION, 1));
         });
     }

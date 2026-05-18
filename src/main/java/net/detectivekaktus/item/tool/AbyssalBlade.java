@@ -73,7 +73,7 @@ public class AbyssalBlade extends DotcAbilitySwordItem implements Procable, Shar
 
     @Override
     public DamageSource getProcDamageSource(Player player) {
-        return player.damageSources().source(DotcDamageTypes.PHYSICAL);
+        return player.damageSources().source(DotcDamageTypes.PHYSICAL, player, player);
     }
 
     @Override
