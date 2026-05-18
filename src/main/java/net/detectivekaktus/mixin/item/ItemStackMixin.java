@@ -32,7 +32,7 @@ public class ItemStackMixin {
     )
     private void useHead(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> callbackInfo) {
         var stack = player.getItemInHand(hand);
-        if (ItemStackHelper.cancelInteractionIfDisabled(player, level))
+        if (ItemStackHelper.cancelInteractionIfDisabled(player))
             callbackInfo.setReturnValue(InteractionResultHolder.fail(stack));
 
         if (isNotMixinTarget(player))
