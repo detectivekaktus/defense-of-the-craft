@@ -148,6 +148,28 @@ public class DotcPrimitives {
             ),
             "reaver"
     );
+    public static final Item OBLIVION_STAFF = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.RADIANT_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.RADIANT_COMPONENT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 10)
+                            )
+                            .component(
+                                    DotcComponents.BONUS_MANA_REGEN_COMPONENT,
+                                    1.5f
+                            ),
+                    new TooltipBuilder("oblivion_staff")
+                            .description()
+                            .stats(0, 0, 10)
+                            .passive()
+            ),
+            "oblivion_staff"
+    );
 
     public static void initialize() {
     }

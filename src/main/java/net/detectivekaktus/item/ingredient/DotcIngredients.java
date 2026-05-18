@@ -234,6 +234,20 @@ public class DotcIngredients {
             ),
             "vitality_booster"
     );
+    // TODO: Make this item a wearable helmet
+    public static final Item SAGES_MASK = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties().stacksTo(1)
+                            .component(
+                                    DotcComponents.BONUS_MANA_REGEN_COMPONENT,
+                                    1.25f
+                            ),
+                    new TooltipBuilder("sages_mask")
+                            .description()
+                            .passive()
+            ),
+            "sages_mask"
+    );
 
 
     public static void initialize() { }

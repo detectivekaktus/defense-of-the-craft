@@ -79,6 +79,10 @@
   "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
   "description.defense-of-the-craft.gloves_of_haste": "A pair of magical gloves that seems to render weapons weightless.",
 
+  "item.defense-of-the-craft.sages_mask": "Sage's Mask",
+  "description.defense-of-the-craft.sages_mask": "A mask commonly used by mages and warlocks for various rituals.",
+  "passive.defense-of-the-craft.sages_mask": "Grants the wielder 1.25 mana regeneration.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "The damage of these small, concealable blades should not be underestimated.",
 
@@ -90,6 +94,10 @@
 
   "item.defense-of-the-craft.claymore": "Claymore",
   "description.defense-of-the-craft.claymore": "A sword that can cut through armor, it's a commonly chosen first weapon for budding swordsmen.",
+
+  "item.defense-of-the-craft.oblivion_staff": "Oblivion Staff",
+  "description.defense-of-the-craft.oblivion_staff": "Deceptively hidden as an ordinary quarterstaff, it is actually very powerful, much like the Eldritch who originally possessed it.",
+  "passive.defense-of-the-craft.oblivion_staff": "Grants the wielder 1.5 mana regeneration.",
 
   "item.defense-of-the-craft.javelin": "Javelin",
   "description.defense-of-the-craft.javelin": "A rather typical spear that can sometimes pierce through an enemy's armor when used to attack.",

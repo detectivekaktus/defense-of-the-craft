@@ -157,6 +157,19 @@ public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, DotcPrimitives.OBLIVION_STAFF)
+                .pattern(" $ ")
+                .pattern(" @ ")
+                .pattern(" # ")
+                .define('$', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcIngredients.ROBE_OF_THE_MAGI)
+                .define('#', DotcIngredients.SAGES_MASK)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

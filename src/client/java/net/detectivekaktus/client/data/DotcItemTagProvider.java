@@ -50,7 +50,8 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.BLINK_DAGGER)
                 .add(DotcTools.SWIFT_BLINK)
                 .add(DotcTools.ARCANE_BLINK)
-                .add(DotcTools.OVERWHELMING_BLINK);
+                .add(DotcTools.OVERWHELMING_BLINK)
+                .add(DotcPrimitives.OBLIVION_STAFF);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE)

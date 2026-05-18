@@ -31,7 +31,8 @@ public class DotcPrimitivesModelProvider extends FabricModelProvider {
                 DotcPrimitives.DEMON_EDGE,
                 DotcPrimitives.DIVINE_RAPIER,
                 DotcPrimitives.MYSTIC_STAFF,
-                DotcPrimitives.REAVER
+                DotcPrimitives.REAVER,
+                DotcPrimitives.OBLIVION_STAFF
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
     }
 
