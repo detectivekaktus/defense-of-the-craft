@@ -182,6 +182,11 @@
       "defense-of-the-craft:item_bloodthorn_target"
     ]
   },
+  "item_rod_of_atos": {
+    "sounds": [
+      "defense-of-the-craft:item_rod_of_atos"
+    ]
+  },
 
 
 

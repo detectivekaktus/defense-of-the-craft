@@ -53,7 +53,7 @@ public class LivingEntityMixin {
     )
     private void blockMovement(Vec3 vector, CallbackInfo callbackInfo) {
         var entity = (LivingEntity) (Object) this;
-        if (!entity.hasEffect(DotcEffects.STUN))
+        if (!entity.hasEffect(DotcEffects.STUN) && !entity.hasEffect(DotcEffects.ROOT))
             return;
 
         if (entity.fallDistance != 0 || !entity.onGround())

@@ -49,5 +49,9 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
                 .add(EntityType.SHULKER)
                 .add(EntityType.IRON_GOLEM)
                 .add(EntityType.SNIFFER);
+
+        getOrCreateTagBuilder(DotcEntityTypeTags.ROD_OF_ATOS_INVULNERABLE)
+                .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.WITHER);
     }
 }

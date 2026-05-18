@@ -530,6 +530,29 @@ public class DotcTools {
             ),
             "bloodthorn"
     );
+    public static final Item ROD_OF_ATOS = DotcItems.register(
+            new RodOfAtos(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(RodOfAtos.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.25f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 15)
+                            )
+                            .component(
+                                    DotcComponents.BONUS_HP_COMPONENT,
+                                    4.5f
+                            ),
+                    new TooltipBuilder("rod_of_atos")
+                            .description()
+                            .stats(0, 0, 15)
+                            .passive()
+                            .active()
+            ),
+            "rod_of_atos"
+    );
 
     public static void initialize() { }
 }

@@ -383,6 +383,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.ORCHID_MALEVOLENCE)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.ROD_OF_ATOS)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern(" $ ")
+                .define('#', DotcIngredients.VITALITY_BOOSTER)
+                .define('@', DotcIngredients.RADIANT_CRYSTAL)
+                .define('$', DotcPrimitives.STAFF_OF_WIZARDRY)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

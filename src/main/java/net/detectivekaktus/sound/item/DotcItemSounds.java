@@ -28,6 +28,7 @@ public class DotcItemSounds {
     public static final SoundEvent ORCHID_MALEVOLENCE = DotcSounds.register("item_orchid_malevolence");
     public static final SoundEvent BLOODTHORN = DotcSounds.register("item_bloodthorn");
     public static final SoundEvent BLOODTHORN_TARGET = DotcSounds.register("item_bloodthorn_target");
+    public static final SoundEvent ROD_OF_ATOS = DotcSounds.register("item_rod_of_atos");
 
     public static void initialize() {}
 }

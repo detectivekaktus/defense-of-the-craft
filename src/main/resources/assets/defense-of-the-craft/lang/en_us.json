@@ -174,7 +174,12 @@
   "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
   "description.defense-of-the-craft.bloodthorn": "A reviled blade that bites deeper with each wriggle of its victim's final throes.",
   "passive.defense-of-the-craft.bloodthorn": "Grants the wielder 3 mana regeneration.",
-  "active.defense-of-the-craft.bloodthorn": "Silences a target entity for 5 seconds. When the target is attacked, they get 3 bonus magical damage. Cooldowns 20 seconds",
+  "active.defense-of-the-craft.bloodthorn": "Silences a target entity for 5 seconds. When the target is attacked, they get 3 bonus magical damage. Cooldowns 20 seconds.",
+
+  "item.defense-of-the-craft.rod_of_atos": "Rod of Atos",
+  "description.defense-of-the-craft.rod_of_atos": "Atos, the Lord of Blight, has his essence stored in this deceptively simple wand.",
+  "passive.defense-of-the-craft.rod_of_atos": "Grants the wielder 4.5 maximum health.",
+  "active.defense-of-the-craft.rod_of_atos": "Roots a targeted entity in place, preventing it from mooving. Cooldowns 20 seconds.",
 
 
 
@@ -285,6 +290,7 @@
   "effect.defense-of-the-craft.combo_breaker": "Combo Breaker",
   "effect.defense-of-the-craft.silence": "Silence",
   "effect.defense-of-the-craft.soul_rend": "Soul Rend",
+  "effect.defense-of-the-craft.root": "Root",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
   "tag.item.defense-of-the-craft.crystals": "Crystals",
