@@ -166,6 +166,13 @@
 
 
 
+  "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
+  "description.defense-of-the-craft.orchid_malevolence": "A garnet rod constructed from the essence of a fire demon.",
+  "passive.defense-of-the-craft.orchid_malevolence": "Grants the wielder 2 mana regeneration.",
+  "active.defense-of-the-craft.orchid_malevolence": "Silences a target entity for 5 seconds.",
+
+
+
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
   "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
   "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",

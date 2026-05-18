@@ -357,6 +357,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.MITHRIL_INGOT)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.ORCHID_MALEVOLENCE)
+                .pattern(" # ")
+                .pattern(" @ ")
+                .pattern(" $ ")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcPrimitives.CLAYMORE)
+                .define('$', DotcPrimitives.OBLIVION_STAFF)
+                .unlockedBy(
+                        "has_oblivion_staff",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.OBLIVION_STAFF)
+                )
+                .save(exporter);
     }
 
     @Override

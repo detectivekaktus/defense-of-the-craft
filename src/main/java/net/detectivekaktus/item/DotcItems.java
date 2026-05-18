@@ -89,6 +89,8 @@ public class DotcItems {
                 DotcIngredients.BAND_OF_ELVENSKIN,
                 DotcIngredients.ROBE_OF_THE_MAGI,
 
+                DotcTools.ORCHID_MALEVOLENCE,
+
                 DotcTools.HEART_OF_TARRASQUE,
                 DotcTools.AEON_DISK,
 

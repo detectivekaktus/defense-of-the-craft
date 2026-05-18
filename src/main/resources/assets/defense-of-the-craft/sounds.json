@@ -167,6 +167,11 @@
       "defense-of-the-craft:item_aeon_disk"
     ]
   },
+  "item_orchid_malevolence": {
+    "sounds": [
+      "defense-of-the-craft:item_orchid_malevolence"
+    ]
+  },
 
 
 

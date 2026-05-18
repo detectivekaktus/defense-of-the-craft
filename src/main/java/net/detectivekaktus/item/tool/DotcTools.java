@@ -431,7 +431,7 @@ public class DotcTools {
             new OverwhelmingBlink(
                     DotcToolMaterial.DIRE_ARTEFACT,
                     new Item.Properties()
-                            .attributes(ArcaneBlink.createAttributes(
+                            .attributes(OverwhelmingBlink.createAttributes(
                                     DotcToolMaterial.DIRE_ARTEFACT, 2, -2.0f
                             ))
                             .component(
@@ -483,6 +483,29 @@ public class DotcTools {
                             .passive()
             ),
             "aeon_disk"
+    );
+    public static final Item ORCHID_MALEVOLENCE = DotcItems.register(
+            new OrchidMalevolence(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(OrchidMalevolence.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -1.75f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 12)
+                            )
+                            .component(
+                                    DotcComponents.BONUS_MANA_REGEN_COMPONENT,
+                                    2.0f
+                            ),
+                    new TooltipBuilder("orchid_malevolence")
+                            .description()
+                            .stats(0, 0, 12)
+                            .passive()
+                            .active()
+            ),
+            "orchid_malevolence"
     );
 
     public static void initialize() { }
