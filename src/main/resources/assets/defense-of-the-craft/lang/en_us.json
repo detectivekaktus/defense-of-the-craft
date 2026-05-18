@@ -262,6 +262,8 @@
   "effect.defense-of-the-craft.stun": "Stun",
   "effect.defense-of-the-craft.disarm": "Disarm",
   "effect.defense-of-the-craft.break": "Break",
+  "effect.defense-of-the-craft.combo_breaker": "Combo Breaker",
+  "effect.defense-of-the-craft.silence": "Silence",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Crystal Dusts",
   "tag.item.defense-of-the-craft.crystals": "Crystals",

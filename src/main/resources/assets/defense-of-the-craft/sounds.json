@@ -54,6 +54,11 @@
       "defense-of-the-craft:ui_received_message"
     ]
   },
+  "ui_silence": {
+    "sounds": [
+      "defense-of-the-craft:ui_silence"
+    ]
+  },
 
 
 

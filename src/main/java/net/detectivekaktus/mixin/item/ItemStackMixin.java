@@ -31,9 +31,9 @@ public class ItemStackMixin {
             cancellable = true
     )
     private void useHead(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> callbackInfo) {
-        var val = ItemStackHelper.cancelInteractionIfStunned(player, level, hand);
-        if (val != null)
-            callbackInfo.setReturnValue(val);
+        var stack = player.getItemInHand(hand);
+        if (ItemStackHelper.cancelInteractionIfDisabled(player, level))
+            callbackInfo.setReturnValue(InteractionResultHolder.fail(stack));
 
         if (isNotMixinTarget(player))
             return;
@@ -51,9 +51,8 @@ public class ItemStackMixin {
         if (player == null)
             return;
 
-        var val = ItemStackHelper.cancelInteractionIfStunned(player);
-        if (val != null)
-            callbackInfo.setReturnValue(val);
+        if (ItemStackHelper.cancelInteractionIfDisabled(player))
+            callbackInfo.setReturnValue(InteractionResult.FAIL);
 
         if (isNotMixinTarget(player))
             return;
@@ -67,9 +66,8 @@ public class ItemStackMixin {
             cancellable = true
     )
     private void interactLivingEntityHead(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
-        var val = ItemStackHelper.cancelInteractionIfStunned(player);
-        if (val != null)
-            callbackInfo.setReturnValue(val);
+        if (ItemStackHelper.cancelInteractionIfDisabled(player))
+            callbackInfo.setReturnValue(InteractionResult.FAIL);
 
         if (isNotMixinTarget(player))
             return;
