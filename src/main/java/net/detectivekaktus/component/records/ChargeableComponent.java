@@ -23,6 +23,14 @@ public record ChargeableComponent(int charges, int maxCharges, long lastTickSync
         );
     }
 
+    public static ChargeableComponent consumeCharge(ChargeableComponent component) {
+        return new ChargeableComponent(
+                component.charges() - 1,
+                component.maxCharges(),
+                component.lastTickSync()
+        );
+    }
+
     public static ChargeableComponent resetCharges(ChargeableComponent component) {
         return new ChargeableComponent(
                 0,

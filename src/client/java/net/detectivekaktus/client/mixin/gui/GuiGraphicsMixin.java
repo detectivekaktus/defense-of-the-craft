@@ -56,7 +56,7 @@ public class GuiGraphicsMixin {
     private void renderDotcItemDecorations(Font font, ItemStack itemStack, int i, int j, String string, CallbackInfo callbackInfo) {
         var graphics = (GuiGraphics) (Object) this;
 
-        if (itemStack.getItem() instanceof HasManaCost itemWithManaCost) {
+        if (itemStack.getItem() instanceof HasManaCost itemWithManaCost && itemWithManaCost.getManaCost() != 0) {
             if (minecraft.player == null)
                 return;
 

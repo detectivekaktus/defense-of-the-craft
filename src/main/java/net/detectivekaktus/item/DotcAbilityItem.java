@@ -1,8 +1,12 @@
 package net.detectivekaktus.item;
 
+import net.detectivekaktus.component.DotcComponents;
+import net.detectivekaktus.component.records.ChargeableComponent;
+import net.detectivekaktus.core.item.ItemStackHelper;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,7 +31,7 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
         var mana = PlayerMana.get(player);
         var hasInfiniteMaterials = player.hasInfiniteMaterials();
         var notEnoughMana = !hasInfiniteMaterials && getManaCost() > mana.getCurrentMana();
-    var invulnerable = target != null && getInvulnerableTag() != null && target.getType().is(getInvulnerableTag());
+        var invulnerable = target != null && getInvulnerableTag() != null && target.getType().is(getInvulnerableTag());
 
         if (level.isClientSide) {
             if (notEnoughMana)
@@ -53,6 +57,9 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
         }
 
         if (notEnoughMana || invulnerable)
+            return InteractionResultHolder.fail(stack);
+
+        if (!ItemStackHelper.consumeChargeOrFail(player, stack))
             return InteractionResultHolder.fail(stack);
 
         if (target instanceof Player interactedPlayer)

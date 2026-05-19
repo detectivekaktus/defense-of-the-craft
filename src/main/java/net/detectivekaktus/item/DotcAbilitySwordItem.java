@@ -1,5 +1,6 @@
 package net.detectivekaktus.item;
 
+import net.detectivekaktus.core.item.ItemStackHelper;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
@@ -11,6 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.attach.PlayerMana;
+import net.detectivekaktus.component.DotcComponents;
+import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.core.item.HasManaCost;
 import net.detectivekaktus.core.item.SharesUseCooldown;
@@ -54,6 +57,9 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         }
 
         if (notEnoughMana || invulnerable)
+            return InteractionResultHolder.fail(stack);
+
+        if (!ItemStackHelper.consumeChargeOrFail(player, stack))
             return InteractionResultHolder.fail(stack);
 
         if (target instanceof Player interactedPlayer)

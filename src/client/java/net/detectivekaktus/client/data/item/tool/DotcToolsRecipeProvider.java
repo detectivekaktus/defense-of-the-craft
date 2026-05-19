@@ -15,6 +15,7 @@ import java.util.concurrent.CompletableFuture;
 import net.detectivekaktus.item.primitive.DotcPrimitives;
 import net.detectivekaktus.item.ingredient.DotcIngredients;
 import net.detectivekaktus.item.tool.DotcTools;
+import net.minecraft.world.level.block.Blocks;
 
 public class DotcToolsRecipeProvider extends FabricRecipeProvider {
     public DotcToolsRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
@@ -394,6 +395,32 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(
                         "has_radiant_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.URN_OF_SHADOWS)
+                .pattern("###")
+                .pattern("$@$")
+                .pattern("$$$")
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
+                .define('@', Items.WITHER_SKELETON_SKULL)
+                .define('$', Blocks.NETHERRACK)
+                .unlockedBy(
+                        "has_dire_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SPIRIT_VESSEL)
+                .pattern("##$")
+                .pattern("#@$")
+                .pattern("#$$")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('$', DotcIngredients.DIRE_CRYSTAL)
+                .define('@', DotcTools.URN_OF_SHADOWS)
+                .unlockedBy(
+                        "has_urn_of_shadows",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.URN_OF_SHADOWS)
                 )
                 .save(exporter);
     }

@@ -12,7 +12,7 @@ public class DustOfAppearanceAnimation extends ParticleAnimation {
     private final int distanceFromPlayer;
     private final boolean xAxis;
 
-    public DustOfAppearanceAnimation(ServerLevel level, double x, double y, double z, int distanceFromPlayer, boolean xAxis, long ticksUntilAnimation, ParticleOptions particle) {
+    public DustOfAppearanceAnimation(ServerLevel level, double x, double y, double z, long ticksUntilAnimation, ParticleOptions particle, int distanceFromPlayer, boolean xAxis) {
         super(level, x, y, z, ticksUntilAnimation, particle);
         this.distanceFromPlayer = distanceFromPlayer;
         this.xAxis = xAxis;

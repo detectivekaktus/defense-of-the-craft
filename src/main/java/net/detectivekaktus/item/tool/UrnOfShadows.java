@@ -1,9 +1,13 @@
 package net.detectivekaktus.item.tool;
 
+import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,23 +16,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
-import net.detectivekaktus.core.item.SharesUseCooldown;
+import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.DotcAbilityItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
 import java.util.List;
 
-public class MagicStick extends DotcAbilityItem implements SharesUseCooldown {
-    private final float HEALTH_PER_STICK_CHARGE = 0.4f;
-    private final float MANA_PER_STICK_CHARGE = 2.0f;
+public class UrnOfShadows extends DotcAbilityItem implements SharesUseCooldown {
+    private final int CHARGE_INTERVAL = (2 * 60) * 20;
 
-    private final int CHARGE_INTERVAL = 30 * 20;
-
-    public MagicStick(Properties properties, TooltipBuilder tooltipBuilder) {
+    public UrnOfShadows(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
     }
 
@@ -39,26 +39,18 @@ public class MagicStick extends DotcAbilityItem implements SharesUseCooldown {
     }
 
     @Override
+    public InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity livingEntity, InteractionHand interactionHand) {
+        return interactWithItem(player, livingEntity, itemStack).getResult();
+    }
+
+    @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
-        if (!stack.has(DotcComponents.CHARGEABLE_COMPONENT))
+        if (target == null) {
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 8 * 20, 1));
             return;
+        }
 
-        var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
-        var charges = player.hasInfiniteMaterials()
-                ? component.charges()
-                : component.charges() + 1; // + 1 because DotcAbilityItem consumes one
-
-        var hpRegen = HEALTH_PER_STICK_CHARGE * charges;
-        var manaRegen = MANA_PER_STICK_CHARGE * charges;
-
-        var mana = PlayerMana.get(player);
-        player.heal(hpRegen);
-        mana.increment(manaRegen);
-
-        stack.set(
-                DotcComponents.CHARGEABLE_COMPONENT,
-                ChargeableComponent.resetCharges(component)
-        );
+        target.addEffect(new MobEffectInstance(DotcEffects.SOUL_RELEASE, 8 * 20));
     }
 
     @Override
@@ -87,21 +79,21 @@ public class MagicStick extends DotcAbilityItem implements SharesUseCooldown {
 
     @Override
     protected SoundEvent getAbilitySound() {
-        return DotcItemSounds.MAGIC_STICK;
-    }
-
-    @Override
-    public int getCooldownInTicks() {
-        return 15 * 20;
+        return DotcItemSounds.URN_OF_SHADOWS;
     }
 
     @Override
     public float getManaCost() {
-        return 0;
+        return 0.0f;
+    }
+
+    @Override
+    public int getCooldownInTicks() {
+        return 30 * 20;
     }
 
     @Override
     public List<Item> getSharesCooldownWith() {
-        return List.of(DotcTools.MAGIC_WAND, DotcTools.MAGIC_STICK);
+        return List.of(DotcTools.SPIRIT_VESSEL);
     }
 }

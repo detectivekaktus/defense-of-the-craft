@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 
 public abstract class ParticleAnimation implements ServerTickEvents.EndTick {
     private long ticksUntilAnimation;
@@ -37,6 +36,37 @@ public abstract class ParticleAnimation implements ServerTickEvents.EndTick {
             playAnimation();
             finished = true;
         }
+    }
+
+    protected void drawSemiCircle(double radius, double step, TrigConsumer consumer) {
+        drawOnTrigCircumference(radius, 0, Math.PI, step, consumer);
+    }
+
+    protected void drawSemiCircle(double radius, double step, boolean firstHalf, TrigConsumer consumer) {
+        if (firstHalf) {
+            drawOnTrigCircumference(radius, 0, Math.PI, step, consumer);
+            return;
+        }
+
+        drawOnTrigCircumference(radius, step, Math.PI, 2 * Math.PI, consumer);
+    }
+
+    protected void drawCircle(double radius, double step, TrigConsumer consumer) {
+        drawOnTrigCircumference(radius, step, 0, 2 * Math.PI, consumer);
+    }
+
+    protected void drawOnTrigCircumference(double radius, double step, double angle, double limit, TrigConsumer consumer) {
+        while (angle < limit) {
+            var cos = radius * Math.cos(angle);
+            var sin = radius * Math.sin(angle);
+            consumer.accept(cos ,sin);
+            angle += step;
+        }
+    }
+
+    @FunctionalInterface
+    protected interface TrigConsumer {
+        void accept(double cos, double sin);
     }
 
     public boolean isFinished() {
