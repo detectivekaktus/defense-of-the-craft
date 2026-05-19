@@ -1,22 +1,28 @@
 package net.detectivekaktus.item.tool;
 
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
-import net.detectivekaktus.core.item.HasUseCooldown;
-import net.detectivekaktus.item.DotcItem;
+import net.detectivekaktus.core.item.SharesUseCooldown;
+import net.detectivekaktus.item.DotcAbilityItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class MagicStick extends DotcItem implements HasUseCooldown {
+import java.util.List;
+
+public class MagicStick extends DotcAbilityItem implements SharesUseCooldown {
     private final float HEALTH_PER_STICK_CHARGE = 0.4f;
     private final float MANA_PER_STICK_CHARGE = 2.0f;
 
@@ -29,37 +35,28 @@ public class MagicStick extends DotcItem implements HasUseCooldown {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         var stack = player.getItemInHand(interactionHand);
+        return interactWithItem(player, null, stack);
+    }
 
-        if (level.isClientSide || !stack.has(DotcComponents.CHARGEABLE_COMPONENT))
-            return InteractionResultHolder.pass(stack);
+    @Override
+    protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
+        if (!stack.has(DotcComponents.CHARGEABLE_COMPONENT))
+            return;
 
         var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
+        var charges = component.charges() + 1; // + 1 because DotcAbilityItem consumes one
 
-        if (component.charges() == 0)
-            return InteractionResultHolder.pass(stack);
-
-        var hpRegen = HEALTH_PER_STICK_CHARGE * component.charges();
-        var manaRegen = MANA_PER_STICK_CHARGE * component.charges();
+        var hpRegen = HEALTH_PER_STICK_CHARGE * charges;
+        var manaRegen = MANA_PER_STICK_CHARGE * charges;
 
         var mana = PlayerMana.get(player);
         player.heal(hpRegen);
         mana.increment(manaRegen);
 
-        player.getCooldowns().addCooldown(DotcTools.MAGIC_STICK, getCooldownInTicks());
-        player.getCooldowns().addCooldown(DotcTools.MAGIC_WAND, getCooldownInTicks());
-        level.playSound(
-                null,
-                player.getX(), player.getY(), player.getZ(),
-                DotcItemSounds.MAGIC_STICK,
-                SoundSource.PLAYERS
-        );
-
         stack.set(
                 DotcComponents.CHARGEABLE_COMPONENT,
                 ChargeableComponent.resetCharges(component)
         );
-
-        return InteractionResultHolder.success(stack);
     }
 
     @Override
@@ -71,8 +68,9 @@ public class MagicStick extends DotcItem implements HasUseCooldown {
             return;
 
         var component = itemStack.get(DotcComponents.CHARGEABLE_COMPONENT);
-
-        if (component.charges() < component.maxCharges() && level.getGameTime() - component.lastTickSync() >= CHARGE_INTERVAL) {
+        var shouldAddCharge = component.charges() < component.maxCharges()
+                && level.getGameTime() - component.lastTickSync() >= CHARGE_INTERVAL;
+        if (shouldAddCharge) {
             itemStack.set(
                     DotcComponents.CHARGEABLE_COMPONENT,
                     ChargeableComponent.addCharge(component, level)
@@ -81,7 +79,27 @@ public class MagicStick extends DotcItem implements HasUseCooldown {
     }
 
     @Override
+    protected TagKey<EntityType<?>> getInvulnerableTag() {
+        return null;
+    }
+
+    @Override
+    protected SoundEvent getAbilitySound() {
+        return DotcItemSounds.MAGIC_STICK;
+    }
+
+    @Override
     public int getCooldownInTicks() {
         return 15 * 20;
+    }
+
+    @Override
+    public float getManaCost() {
+        return 0;
+    }
+
+    @Override
+    public List<Item> getSharesCooldownWith() {
+        return List.of(DotcTools.MAGIC_WAND, DotcTools.MAGIC_STICK);
     }
 }
