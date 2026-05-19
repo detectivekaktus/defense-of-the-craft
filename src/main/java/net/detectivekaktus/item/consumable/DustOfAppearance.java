@@ -83,34 +83,34 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown, Partic
             ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
                     x, y, z,
+                    distance * DUST_SPREAD_SPEED,
+                    particle,
                     distance,
-                    true,
-                    distance * DUST_SPREAD_SPEED,
-                    particle
+                    true
             ));
             ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
                     x, y, z,
+                    distance * DUST_SPREAD_SPEED,
+                    particle,
                     -distance,
-                    true,
-                    distance * DUST_SPREAD_SPEED,
-                    particle
+                    true
             ));
             ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
                     x, y, z,
+                    distance * DUST_SPREAD_SPEED,
+                    particle,
                     distance,
-                    false,
-                    distance * DUST_SPREAD_SPEED,
-                    particle
+                    false
             ));
             ParticleAnimationManager.INSTANCE.addAnimation(new DustOfAppearanceAnimation(
                     level,
                     x, y, z,
-                    -distance,
-                    false,
                     distance * DUST_SPREAD_SPEED,
-                    particle
+                    particle,
+                    -distance,
+                    false
             ));
         }
     }
