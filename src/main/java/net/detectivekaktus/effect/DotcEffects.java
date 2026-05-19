@@ -37,6 +37,9 @@ public class DotcEffects {
     public static final Holder<MobEffect> SOUL_RELEASE = register(
             "soul_release", new SoulRelease()
     );
+    public static final Holder<MobEffect> SPIRIT_SOUL_RELEASE = register(
+            "spirit_soul_release", new SpiritSoulRelease()
+    );
 
     public static Holder<MobEffect> register(String id, MobEffect effect) {
         return Registry.registerForHolder(
