@@ -2,6 +2,7 @@ package net.detectivekaktus.item;
 
 import net.detectivekaktus.component.DotcComponents;
 import net.detectivekaktus.component.records.ChargeableComponent;
+import net.detectivekaktus.core.item.ItemStackHelper;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
@@ -58,16 +59,8 @@ public abstract class DotcAbilityItem extends DotcItem implements HasManaCost, H
         if (notEnoughMana || invulnerable)
             return InteractionResultHolder.fail(stack);
 
-        if (stack.has(DotcComponents.CHARGEABLE_COMPONENT)) {
-            var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
-            if (component.charges() == 0)
-                return InteractionResultHolder.fail(stack);
-
-            stack.set(
-                    DotcComponents.CHARGEABLE_COMPONENT,
-                    ChargeableComponent.consumeCharge(component)
-            );
-        }
+        if (!ItemStackHelper.consumeChargeOrFail(player, stack))
+            return InteractionResultHolder.fail(stack);
 
         if (target instanceof Player interactedPlayer)
             CombatManager.addStickCharge(interactedPlayer);

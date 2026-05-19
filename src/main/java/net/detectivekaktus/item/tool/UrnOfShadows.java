@@ -1,5 +1,6 @@
 package net.detectivekaktus.item.tool;
 
+import net.detectivekaktus.core.item.SharesUseCooldown;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
@@ -21,7 +23,9 @@ import net.detectivekaktus.item.DotcAbilityItem;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
 
-public class UrnOfShadows extends DotcAbilityItem {
+import java.util.List;
+
+public class UrnOfShadows extends DotcAbilityItem implements SharesUseCooldown {
     private final int CHARGE_INTERVAL = (2 * 60) * 20;
 
     public UrnOfShadows(Properties properties, TooltipBuilder tooltipBuilder) {
@@ -86,5 +90,10 @@ public class UrnOfShadows extends DotcAbilityItem {
     @Override
     public int getCooldownInTicks() {
         return 30 * 20;
+    }
+
+    @Override
+    public List<Item> getSharesCooldownWith() {
+        return List.of(DotcTools.SPIRIT_VESSEL);
     }
 }

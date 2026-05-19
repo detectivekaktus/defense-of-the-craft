@@ -5,11 +5,14 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.TooltipBuilder;
 import net.detectivekaktus.sound.item.DotcItemSounds;
+
+import java.util.List;
 
 public class SpiritVessel extends UrnOfShadows {
     public SpiritVessel(Properties properties, TooltipBuilder tooltipBuilder) {
@@ -34,5 +37,10 @@ public class SpiritVessel extends UrnOfShadows {
     @Override
     public int getCooldownInTicks() {
         return 25 * 20;
+    }
+
+    @Override
+    public List<Item> getSharesCooldownWith() {
+        return List.of(DotcTools.URN_OF_SHADOWS);
     }
 }

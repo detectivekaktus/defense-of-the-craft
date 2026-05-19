@@ -44,7 +44,9 @@ public class MagicStick extends DotcAbilityItem implements SharesUseCooldown {
             return;
 
         var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
-        var charges = component.charges() + 1; // + 1 because DotcAbilityItem consumes one
+        var charges = player.hasInfiniteMaterials()
+                ? component.charges()
+                : component.charges() + 1; // + 1 because DotcAbilityItem consumes one
 
         var hpRegen = HEALTH_PER_STICK_CHARGE * charges;
         var manaRegen = MANA_PER_STICK_CHARGE * charges;

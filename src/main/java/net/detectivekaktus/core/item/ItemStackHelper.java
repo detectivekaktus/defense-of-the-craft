@@ -2,9 +2,11 @@ package net.detectivekaktus.core.item;
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 
 import net.detectivekaktus.attach.PlayerFlags;
+import net.detectivekaktus.component.DotcComponents;
+import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.core.player.ShadowWalkingSource;
 import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
@@ -46,5 +48,19 @@ public class ItemStackHelper {
 
         flags.setShadowWalking(false);
         return flags.setShadowWalkingSource(ShadowWalkingSource.NONE);
+    }
+
+    public static boolean consumeChargeOrFail(Player player, ItemStack stack) {
+        if (!player.hasInfiniteMaterials() && stack.has(DotcComponents.CHARGEABLE_COMPONENT)) {
+            var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
+            if (component.charges() == 0)
+                return false;
+
+            stack.set(
+                    DotcComponents.CHARGEABLE_COMPONENT,
+                    ChargeableComponent.consumeCharge(component)
+            );
+        }
+        return true;
     }
 }
