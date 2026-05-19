@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Rod of Atos sword item.
 * Soul Release effect.
 * Urn of Shadows item.
+* Spirit Soul Release effect.
+* Spirit Vessel item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 

@@ -575,6 +575,28 @@ public class DotcTools {
             ),
             "urn_of_shadows"
     );
+    public static final Item SPIRIT_VESSEL = DotcItems.register(
+            new SpiritVessel(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.BONUS_HP_REGEN_COMPONENT,
+                                    0.75f
+                            )
+                            .component(
+                                    DotcComponents.BONUS_MANA_REGEN_COMPONENT,
+                                    0.75f
+                            )
+                            .component(
+                                    DotcComponents.CHARGEABLE_COMPONENT,
+                                    new ChargeableComponent(0, 10, 0)
+                            ),
+                    new TooltipBuilder("spirit_vessel")
+                            .description()
+                            .passive()
+                            .active()
+            ),
+            "spirit_vessel"
+    );
 
     public static void initialize() { }
 }

@@ -93,6 +93,7 @@ public class DotcItems {
                 DotcTools.BLOODTHORN,
                 DotcTools.ROD_OF_ATOS,
                 DotcTools.URN_OF_SHADOWS,
+                DotcTools.SPIRIT_VESSEL,
 
                 DotcTools.HEART_OF_TARRASQUE,
                 DotcTools.AEON_DISK,

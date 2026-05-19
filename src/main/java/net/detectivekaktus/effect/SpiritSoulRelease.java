@@ -18,7 +18,7 @@ public class SpiritSoulRelease extends MobEffect {
         if (maxHpAttribute == null)
             return false;
 
-        var damage = (float) (0.05f * maxHpAttribute.getValue());
+        var damage = (float) (0.075f * maxHpAttribute.getValue());
         livingEntity.hurt(livingEntity.damageSources().source(DotcDamageTypes.MAGICAL), damage);
         return true;
     }

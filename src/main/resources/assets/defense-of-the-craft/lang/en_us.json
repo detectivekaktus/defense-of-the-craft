@@ -184,7 +184,12 @@
   "item.defense-of-the-craft.urn_of_shadows": "Urn of Shadows",
   "description.defense-of-the-craft.urn_of_shadows": "Contains the ashes of powerful demons.",
   "passive.defense-of-the-craft.urn_of_shadows": "Grants the wielder 0.5 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 5 maximum charges.",
-  "active.defense-of-the-craft.urn_of_shadows": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 3 magical damage every proc for 8 seconds.",
+  "active.defense-of-the-craft.urn_of_shadows": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 3 magical damage every proc for 8 seconds. Cooldowns 30 seconds.",
+
+  "item.defense-of-the-craft.spirit_vessel": "Spirit Vessel",
+  "description.defense-of-the-craft.spirit_vessel": "Forged by a god to entrap the soul of another.",
+  "passive.defense-of-the-craft.spirit_vessel": "Grants the wielder 0.75 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 10 maximum charges.",
+  "active.defense-of-the-craft.spirit_vessel": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 7.5% of the target's max health as magical damage every proc for 8 seconds. Cooldowns 25 seconds.",
 
 
 
