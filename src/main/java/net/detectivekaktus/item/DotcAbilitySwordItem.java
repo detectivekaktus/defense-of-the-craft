@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 import net.detectivekaktus.attach.PlayerMana;
+import net.detectivekaktus.component.DotcComponents;
+import net.detectivekaktus.component.records.ChargeableComponent;
 import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.core.item.HasManaCost;
 import net.detectivekaktus.core.item.SharesUseCooldown;
@@ -55,6 +57,17 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
 
         if (notEnoughMana || invulnerable)
             return InteractionResultHolder.fail(stack);
+
+        if (stack.has(DotcComponents.CHARGEABLE_COMPONENT)) {
+            var component = stack.get(DotcComponents.CHARGEABLE_COMPONENT);
+            if (component.charges() == 0)
+                return InteractionResultHolder.fail(stack);
+
+            stack.set(
+                    DotcComponents.CHARGEABLE_COMPONENT,
+                    ChargeableComponent.consumeCharge(component)
+            );
+        }
 
         if (target instanceof Player interactedPlayer)
             CombatManager.addStickCharge(interactedPlayer);
