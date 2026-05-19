@@ -553,6 +553,28 @@ public class DotcTools {
             ),
             "rod_of_atos"
     );
+    public static final Item URN_OF_SHADOWS = DotcItems.register(
+            new UrnOfShadows(
+                    new Item.Properties()
+                            .component(
+                                    DotcComponents.BONUS_HP_REGEN_COMPONENT,
+                                    0.5f
+                            )
+                            .component(
+                                    DotcComponents.BONUS_MANA_REGEN_COMPONENT,
+                                    0.5f
+                            )
+                            .component(
+                                    DotcComponents.CHARGEABLE_COMPONENT,
+                                    new ChargeableComponent(0, 5, 0)
+                            ),
+                    new TooltipBuilder("urn_of_shadows")
+                            .description()
+                            .passive()
+                            .active()
+            ),
+            "urn_of_shadows"
+    );
 
     public static void initialize() { }
 }

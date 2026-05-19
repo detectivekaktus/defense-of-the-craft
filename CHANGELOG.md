@@ -21,12 +21,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Bloodthorn sword item.
 * Root effect.
 * Rod of Atos sword item.
+* Soul Release effect.
+* Urn of Shadows item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 
 ## Fixed
 * Radiance and Overwhelming Blink damage now is bound to player, meaning that mob drops will be given as if the player killed the mobs by hand.
 * Radiant Crystal Block and Dire Crystal Block can now be reverted back to crystals.
+
+
+## Changed
+* No longer display mana cost for items with mana cost set to 0.
 
 ## [0.1.0] - 2026-04-22
 

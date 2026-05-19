@@ -53,7 +53,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.MAGIC_WAND,
                 DotcTools.HAND_OF_MIDAS,
                 DotcTools.HEART_OF_TARRASQUE,
-                DotcTools.AEON_DISK
+                DotcTools.AEON_DISK,
+                DotcTools.URN_OF_SHADOWS
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
     }
 
