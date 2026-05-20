@@ -70,6 +70,10 @@
 
   "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
   "description.defense-of-the-craft.gloves_of_haste": "Un par de guantes mágicos con los que las armas parecen ligeras como una pluma.",
+  
+  "item.defense-of-the-craft.sages_mask": "Sage's Mask",
+  "description.defense-of-the-craft.sages_mask": "Una máscara usada habitualmente por magos y hechiceros en diversos rituales.",
+  "passive.defense-of-the-craft.sages_mask": "Otorga al portador 1.25 de regeneración de maná.",
 
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "No subestimes el peligro de estas pequeñas e insignificantes hojas.",
@@ -82,6 +86,10 @@
 
   "item.defense-of-the-craft.claymore": "Claymore",
   "description.defense-of-the-craft.claymore": "Una espada capaz de atravesar armaduras, elección común entre caballeros principiantes.",
+
+  "item.defense-of-the-craft.oblivion_staff": "Oblivion Staff",
+  "description.defense-of-the-craft.oblivion_staff": "Camuflado como un simple bastón, es en realidad muy poderoso, al igual que el Eldrico que originalmente lo poseyó.",
+  "passive.defense-of-the-craft.oblivion_staff": "Otorga al portador 1.5 de regeneración de maná.",
 
   "item.defense-of-the-craft.javelin": "Javelin",
   "description.defense-of-the-craft.javelin": "Una lanza bastante común que a veces puede atravesar la armadura enemiga.",
@@ -131,6 +139,60 @@
 
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "Una de las hojas más antiguas, forjada por el herrero demoníaco Abzidian, mató a su creador cuando este comprobaba el filo de la espada.",
+
+  "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
+  "description.defense-of-the-craft.ring_of_tarrasque": "Un anillo eterno forjado con una simple magia de sangre amplificada por la presumible fuente de su componente principal.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Otorga al portador 2 de regeneración de salud.",
+
+  "item.defense-of-the-craft.energy_booster": "Energy Booster",
+  "description.defense-of-the-craft.energy_booster": "Esta gema de lapislázuli es adición habitual en la colección de magos que buscan mejorar su presencia en combate.",
+  "passive.defense-of-the-craft.energy_booster": "Otorga al portador 50 de maná máximo adicional.",
+
+  "item.defense-of-the-craft.vitality_booster": "Vitality Booster",
+  "description.defense-of-the-craft.vitality_booster": "Una gema de rubí transmitida de generación en generación entre guerreros.",
+  "passive.defense-of-the-craft.vitality_booster": "Otorga al portador 4 de salud máxima adicional.",
+
+
+
+  "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
+  "description.defense-of-the-craft.orchid_malevolence": "Una vara de granate creada a partir de la esencia de un demonio de fuego.",
+  "passive.defense-of-the-craft.orchid_malevolence": "Otorga al portador 2 de regeneración de maná.",
+  "active.defense-of-the-craft.orchid_malevolence": "Silencia a la entidad objetivo durante 5 segundos. Enfriamiento de 20 segundos.",
+
+  "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
+  "description.defense-of-the-craft.bloodthorn": "Una hoja maldita que hiere más profundo con cada último espasmo de su víctima.",
+  "passive.defense-of-the-craft.bloodthorn": "Otorga al portador 3 de regeneración de maná.",
+  "active.defense-of-the-craft.bloodthorn": "Silencia a la entidad objetivo durante 5 segundos. Cuando el objetivo es atacado, recibe 3 de daño mágico adicional. Enfriamiento de 20 segundos.",
+
+  "item.defense-of-the-craft.rod_of_atos": "Rod of Atos",
+  "description.defense-of-the-craft.rod_of_atos": "Atos, el Señor de la Plaga, tiene su esencia almacenada en esta vara engañosamente simple.",
+  "passive.defense-of-the-craft.rod_of_atos": "Otorga al portador 4.5 de salud máxima.",
+  "active.defense-of-the-craft.rod_of_atos": "Inmoviliza a la entidad objetivo en su lugar, impidiéndole moverse. Enfriamiento de 20 segundos.",
+
+  "item.defense-of-the-craft.urn_of_shadows": "Urn of Shadows",
+  "description.defense-of-the-craft.urn_of_shadows": "Contains the ashes of powerful demons.",
+  "passive.defense-of-the-craft.urn_of_shadows": "Grants the wielder 0.5 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 5 maximum charges.",
+  "active.defense-of-the-craft.urn_of_shadows": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 3 magical damage every proc for 8 seconds. Cooldowns 30 seconds.",
+
+  "item.defense-of-the-craft.spirit_vessel": "Spirit Vessel",
+  "description.defense-of-the-craft.spirit_vessel": "Forged by a god to entrap the soul of another.",
+  "passive.defense-of-the-craft.spirit_vessel": "Grants the wielder 0.75 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 10 maximum charges.",
+  "active.defense-of-the-craft.spirit_vessel": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 7.5% of the target's max health as magical damage every proc for 8 seconds. Cooldowns 25 seconds.",
+
+  "item.defense-of-the-craft.force_staff": "Force Staff",
+  "description.defense-of-the-craft.force_staff": "Allows you to manipulate others, for good or evil.",
+  "active.defense-of-the-craft.force_staff": "Pushes the target entity 5 blocks in the direction they are facing. Cooldowns 15 seconds.",
+
+
+
+  "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
+  "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",
+
+  "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
+  "description.defense-of-the-craft.aeon_disk": "A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
+  "passive.defense-of-the-craft.aeon_disk": "Grants the wielder 50 maximum mana bonus and 4 maximum health bonus. When the wielder takes 30% of their maximum health or more damage from a player, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active. Cooldowns 180 seconds.",
+
 
   "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",
   "description.defense-of-the-craft.monkey_king_bar": "Un poderoso bastón utilizado por un guerrero experto.",
@@ -198,6 +260,13 @@
   "description.defense-of-the-craft.echo_sabre": "Una hoja engañosamente rápida llena de magia sonora.",
   "passive.defense-of-the-craft.echo_sabre": "El siguiente ataque aplica al portador un efecto que aumenta significativamente la velocidad de ataque para un golpe. Otorga al portador 1.75 de regeneración de maná.",
 
+  "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
+  "description.defense-of-the-craft.dragon_lance": "The forward charge of the wyvern host grants no quarter.",
+
+  "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
+  "description.defense-of-the-craft.hurricane_pike": "A legendary pike once held as royal sigil of the ancient wyvern riders.",
+  "active.defense-of-the-craft.hurricane_pike": "When cast on the wielder, pushes them 5 blocks in the direction they are looking at. When cast on an entity, pushes the wielder and entity in opposite directions from each other. Cooldowns 20 seconds.",
+
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "Esta alabarda se mueve con la velocidad de una pequeña hoja, permitiendo al portador ganar duelos donde un arma más pesada habría fracasado.",
   "passive.defense-of-the-craft.heavens_halberd": "Otorga al portador un 15% de probabilidad de esquivar ataques de mobs hostiles o jugadores.",
@@ -222,6 +291,12 @@
   "effect.defense-of-the-craft.stun": "Aturdimiento",
   "effect.defense-of-the-craft.disarm": "Desarme",
   "effect.defense-of-the-craft.break": "Agotamiento",
+  "effect.defense-of-the-craft.combo_breaker": "Rompe Combo",
+  "effect.defense-of-the-craft.silence": "Silencio",
+  "effect.defense-of-the-craft.soul_rend": "Desgarro de Alma",
+  "effect.defense-of-the-craft.root": "Inmovilización",
+  "effect.defense-of-the-craft.soul_release": "Liberación de Alma",
+  "effect.defense-of-the-craft.spirit_soul_release": "Liberación de Alma Espiritual",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Polvo Cristalino",
   "tag.item.defense-of-the-craft.crystals": "Cristales",
@@ -230,6 +305,25 @@
   "strength.defense-of-the-craft": "%s de fuerza",
   "agility.defense-of-the-craft": "%s de agilidad",
   "intelligence.defense-of-the-craft": "%s de inteligencia",
+
+
+
+  "player.defense-of-the-craft.first_blood": "¡%s ha derramado la primera sangre!",
+  "player.defense-of-the-craft.double_kill": "¡%s ha conseguido un doble asesinato!",
+  "player.defense-of-the-craft.triple_kill": "¡%s ha conseguido un TRIPLE asesinato!",
+  "player.defense-of-the-craft.ultra_kill": "¡%s ha conseguido un asesinato ULTRA!",
+  "player.defense-of-the-craft.rampage_kill": "¡%s está en modo MASACRE!!!",
+
+  "player.defense-of-the-craft.spree": "¡%s está en racha de asesinatos!",
+  "player.defense-of-the-craft.dominating": "¡%s está dominando!",
+  "player.defense-of-the-craft.mega_kill": "¡%s está en una mega racha de asesinatos!",
+  "player.defense-of-the-craft.unstoppable": "¡%s es imparable!",
+  "player.defense-of-the-craft.wicked_sick": "¡%s está desatado!",
+  "player.defense-of-the-craft.monster_kill": "¡%s está en una racha de asesinatos monstruosa!",
+  "player.defense-of-the-craft.godlike": "¡%s es un DIOS!",
+  "player.defense-of-the-craft.holy_shit": "¡%s está más allá de los DIOSES, que alguien lo detenga!",
+
+
 
   "config.defense-of-the-craft.title": "Defense of the Craft",
   "category.defense-of-the-craft.ui.title": "Interfaz de Usuario",
@@ -242,5 +336,8 @@
   "option.defense-of-the-craft.add_screenshot_sound.description": "Al activar esta opción, hacer una captura reproducirá el sonido de captura de Steam.",
 
   "option.defense-of-the-craft.add_whispering_sound": "Añadir sonido de susurro",
-  "option.defense-of-the-craft.add_whispering_sound.description": "Al activar esta opción, todos los mensajes entrantes de /msg, /w y /tell reproducirán el sonido de chat de Steam."
+  "option.defense-of-the-craft.add_whispering_sound.description": "Al activar esta opción, todos los mensajes entrantes de /msg, /w y /tell reproducirán el sonido de chat de Steam.",
+
+  "option.defense-of-the-craft.enable_streak_announcement": "Activar anuncios de racha",
+  "option.defense-of-the-craft.enable_streak_announcement.description": "Al activar esta opción, escucharás anuncios de racha (p. ej., anuncios de doble asesinato o mega racha)."
 }
