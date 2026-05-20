@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Spirit Soul Release effect.
 * Spirit Vessel item.
 * Force Staff sword item.
+* Dragon Lance sword item.
+* Hurricane Pike sword item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 

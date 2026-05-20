@@ -275,6 +275,13 @@
   "description.defense-of-the-craft.echo_sabre": "A deceptively swift blade imbued with resonant magic.",
   "passive.defense-of-the-craft.echo_sabre": "The next attack grants the wielder a buff that greatly increases attack speed for one attack. Grants the wielder 1.75 mana regeneration.",
 
+  "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
+  "description.defense-of-the-craft.dragon_lance": "The forward charge of the wyvern host grants no quarter.",
+
+  "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
+  "description.defense-of-the-craft.hurricane_pike": "A legendary pike once held as royal sigil of the ancient wyvern riders.",
+  "active.defense-of-the-craft.hurricane_pike": "When cast on the wielder, pushes them 5 blocks in the direction they are looking at. When cast on an entity, pushes the wielder and entity in opposite directions from each other. Cooldowns 20 seconds.",
+
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "This halberd moves with the speed of a smaller weapon, allowing the bearer to win duels that a heavy edge would not.",
   "passive.defense-of-the-craft.heavens_halberd": "Grants the wielder a 15% chance to evade any hostile mob or player attack.",

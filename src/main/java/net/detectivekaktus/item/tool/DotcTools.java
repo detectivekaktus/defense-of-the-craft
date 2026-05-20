@@ -97,72 +97,6 @@ public class DotcTools {
             ),
             "monkey_king_bar"
     );
-    public static final Item SANGE = DotcItems.register(
-            new DotcSwordItem(
-                    DotcToolMaterial.DIRE_ARTEFACT,
-                    new Item.Properties()
-                            .attributes(DotcSwordItem.createAttributes(
-                                    DotcToolMaterial.DIRE_ARTEFACT, 2, -2.5f
-                            ))
-                            .component(
-                                    DotcComponents.ITEM_STATS_COMPONENT,
-                                    new ItemStatsComponent(16, 0, 0)
-                            )
-                            .component(
-                                    DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    0.12f
-                            ),
-                    new TooltipBuilder("sange")
-                            .description()
-                            .stats(16, 0, 0)
-                            .passive()
-            ),
-            "sange"
-    );
-    public static final Item YASHA = DotcItems.register(
-            new DotcSwordItem(
-                    DotcToolMaterial.RADIANT_ARTEFACT,
-                    new Item.Properties()
-                            .attributes(DotcSwordItem.createAttributes(
-                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
-                            ))
-                            .component(
-                                    DotcComponents.ITEM_STATS_COMPONENT,
-                                    new ItemStatsComponent(0, 16, 0)
-                            )
-                            .component(
-                                    DotcComponents.MOVE_SPEED_COMPONENT,
-                                    0.125f
-                            ),
-                    new TooltipBuilder("yasha")
-                            .description()
-                            .stats(0, 16, 0)
-                            .passive()
-            ),
-            "yasha"
-    );
-    public static final Item KAYA = DotcItems.register(
-            new DotcSwordItem(
-                    DotcToolMaterial.RADIANT_ARTEFACT,
-                    new Item.Properties()
-                            .attributes(DotcSwordItem.createAttributes(
-                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.5f
-                            ))
-                            .component(
-                                    DotcComponents.ITEM_STATS_COMPONENT,
-                                    new ItemStatsComponent(0, 0, 16)
-                            )
-                            .component(
-                                    DotcComponents.MANA_COST_REDUCTION_COMPONENT,
-                                    0.1f
-                            ),
-                    new TooltipBuilder("kaya")
-                            .description()
-                            .stats(0, 0, 16)
-                            .passive()
-            ),
-            "kaya"
-    );
     public static final Item ECHO_SABRE = DotcItems.register(
             new DotcSwordItem(
                     DotcToolMaterial.RADIANT_ARTEFACT,
@@ -601,7 +535,7 @@ public class DotcTools {
             new ForceStaff(
                     DotcToolMaterial.RADIANT_ARTEFACT,
                     new Item.Properties()
-                            .attributes(RodOfAtos.createAttributes(
+                            .attributes(ForceStaff.createAttributes(
                                     DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
                             ))
                             .component(
@@ -614,6 +548,24 @@ public class DotcTools {
                             .active()
             ),
             "force_staff"
+    );
+    public static final Item HURRICANE_PIKE = DotcItems.register(
+            new HurricanePike(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(HurricanePike.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 3, -2.25f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(10, 15, 12)
+                            ),
+                    new TooltipBuilder("hurricane_pike")
+                            .description()
+                            .stats(10, 15, 12)
+                            .active()
+            ),
+            "hurricane_pike"
     );
 
     public static void initialize() { }

@@ -202,6 +202,11 @@
       "defense-of-the-craft:item_force_staff"
     ]
   },
+  "item_hurricane_pike": {
+    "sounds": [
+      "defense-of-the-craft:item_hurricane_pike"
+    ]
+  },
 
 
 

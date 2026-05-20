@@ -170,6 +170,89 @@ public class DotcPrimitives {
             ),
             "oblivion_staff"
     );
+    public static final Item DRAGON_LANCE = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.DIRE_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.DIRE_COMPONENT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(10, 15, 0)
+                            ),
+                    new TooltipBuilder("dragon_lance")
+                            .description()
+                            .stats(10, 15, 0)
+            ),
+            "dragon_lance"
+    );
+    public static final Item SANGE = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.DIRE_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.DIRE_ARTEFACT, 2, -2.5f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(16, 0, 0)
+                            )
+                            .component(
+                                    DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
+                                    0.12f
+                            ),
+                    new TooltipBuilder("sange")
+                            .description()
+                            .stats(16, 0, 0)
+                            .passive()
+            ),
+            "sange"
+    );
+    public static final Item YASHA = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 16, 0)
+                            )
+                            .component(
+                                    DotcComponents.MOVE_SPEED_COMPONENT,
+                                    0.125f
+                            ),
+                    new TooltipBuilder("yasha")
+                            .description()
+                            .stats(0, 16, 0)
+                            .passive()
+            ),
+            "yasha"
+    );
+    public static final Item KAYA = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.5f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 16)
+                            )
+                            .component(
+                                    DotcComponents.MANA_COST_REDUCTION_COMPONENT,
+                                    0.1f
+                            ),
+                    new TooltipBuilder("kaya")
+                            .description()
+                            .stats(0, 0, 16)
+                            .passive()
+            ),
+            "kaya"
+    );
 
     public static void initialize() {
     }

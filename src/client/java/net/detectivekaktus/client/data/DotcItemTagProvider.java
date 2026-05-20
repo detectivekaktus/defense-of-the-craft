@@ -37,9 +37,9 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcPrimitives.MYSTIC_STAFF)
                 .add(DotcTools.CRYSTALYS)
                 .add(DotcTools.BUTTERFLY)
-                .add(DotcTools.SANGE)
-                .add(DotcTools.YASHA)
-                .add(DotcTools.KAYA)
+                .add(DotcPrimitives.SANGE)
+                .add(DotcPrimitives.YASHA)
+                .add(DotcPrimitives.KAYA)
                 .add(DotcPrimitives.DIVINE_RAPIER)
                 .add(DotcTools.ECHO_SABRE)
                 .add(DotcTools.DIFFUSAL_BLADE)
@@ -55,7 +55,9 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcTools.ORCHID_MALEVOLENCE)
                 .add(DotcTools.BLOODTHORN)
                 .add(DotcTools.ROD_OF_ATOS)
-                .add(DotcTools.FORCE_STAFF);
+                .add(DotcTools.FORCE_STAFF)
+                .add(DotcPrimitives.DRAGON_LANCE)
+                .add(DotcTools.HURRICANE_PIKE);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE)
