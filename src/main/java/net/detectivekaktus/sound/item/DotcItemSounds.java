@@ -31,6 +31,8 @@ public class DotcItemSounds {
     public static final SoundEvent ROD_OF_ATOS = DotcSounds.register("item_rod_of_atos");
     public static final SoundEvent URN_OF_SHADOWS = DotcSounds.register("item_urn_of_shadows");
     public static final SoundEvent SPIRIT_VESSEL = DotcSounds.register("item_spirit_vessel");
+    public static final SoundEvent FORCE_STAFF = DotcSounds.register("item_force_staff");
+    public static final SoundEvent HURRICANE_PIKE = DotcSounds.register("item_hurricane_pike");
 
     public static void initialize() {}
 }

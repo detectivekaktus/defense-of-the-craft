@@ -87,45 +87,6 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 )
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SANGE)
-                .pattern(" | ")
-                .pattern(" @ ")
-                .pattern(" # ")
-                .define('|', DotcIngredients.DIRE_CRYSTAL)
-                .define('@', DotcPrimitives.OGRE_AXE)
-                .define('#', DotcIngredients.BELT_OF_STRENGTH)
-                .unlockedBy(
-                        "has_ogre_axe",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.OGRE_AXE)
-                )
-                .save(exporter);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.YASHA)
-                .pattern(" | ")
-                .pattern(" @ ")
-                .pattern(" # ")
-                .define('|', DotcIngredients.RADIANT_CRYSTAL)
-                .define('@', DotcPrimitives.BLADE_OF_ALACRITY)
-                .define('#', DotcIngredients.BAND_OF_ELVENSKIN)
-                .unlockedBy(
-                        "has_blade_of_alacrity",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.BLADE_OF_ALACRITY)
-                )
-                .save(exporter);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.KAYA)
-                .pattern(" | ")
-                .pattern(" @ ")
-                .pattern(" # ")
-                .define('|', DotcIngredients.RADIANT_CRYSTAL)
-                .define('@', DotcPrimitives.STAFF_OF_WIZARDRY)
-                .define('#', DotcIngredients.ROBE_OF_THE_MAGI)
-                .unlockedBy(
-                        "has_staff_of_wizardry",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.STAFF_OF_WIZARDRY)
-                )
-                .save(exporter);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.ECHO_SABRE)
                 .pattern(" | ")
                 .pattern(" @ ")
@@ -207,7 +168,7 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 .pattern(" # ")
                 .pattern("$$ ")
                 .define('@', DotcTools.SKULL_BASHER)
-                .define('#', DotcTools.SANGE)
+                .define('#', DotcPrimitives.SANGE)
                 .define('$', DotcIngredients.DIRE_CRYSTAL)
                 .unlockedBy(
                         "has_skull_basher",
@@ -421,6 +382,31 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(
                         "has_urn_of_shadows",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.URN_OF_SHADOWS)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.FORCE_STAFF)
+                .pattern(" @ ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcPrimitives.STAFF_OF_WIZARDRY)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.HURRICANE_PIKE)
+                .pattern(" $ ")
+                .pattern(" @ ")
+                .pattern(" # ")
+                .define('$', DotcPrimitives.DRAGON_LANCE)
+                .define('@', DotcTools.FORCE_STAFF)
+                .define('#', DotcIngredients.DIRE_CRYSTAL)
+                .unlockedBy(
+                        "has_force_staff",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.FORCE_STAFF)
                 )
                 .save(exporter);
     }

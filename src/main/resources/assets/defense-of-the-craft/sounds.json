@@ -197,6 +197,16 @@
       "defense-of-the-craft:item_spirit_vessel"
     ]
   },
+  "item_force_staff": {
+    "sounds": [
+      "defense-of-the-craft:item_force_staff"
+    ]
+  },
+  "item_hurricane_pike": {
+    "sounds": [
+      "defense-of-the-craft:item_hurricane_pike"
+    ]
+  },
 
 
 

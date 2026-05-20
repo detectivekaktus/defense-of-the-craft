@@ -191,6 +191,10 @@
   "passive.defense-of-the-craft.spirit_vessel": "Grants the wielder 0.75 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 10 maximum charges.",
   "active.defense-of-the-craft.spirit_vessel": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 7.5% of the target's max health as magical damage every proc for 8 seconds. Cooldowns 25 seconds.",
 
+  "item.defense-of-the-craft.force_staff": "Force Staff",
+  "description.defense-of-the-craft.force_staff": "Allows you to manipulate others, for good or evil.",
+  "active.defense-of-the-craft.force_staff": "Pushes the target entity 5 blocks in the direction they are facing. Cooldowns 15 seconds.",
+
 
 
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
@@ -270,6 +274,13 @@
   "item.defense-of-the-craft.echo_sabre": "Echo Sabre",
   "description.defense-of-the-craft.echo_sabre": "A deceptively swift blade imbued with resonant magic.",
   "passive.defense-of-the-craft.echo_sabre": "The next attack grants the wielder a buff that greatly increases attack speed for one attack. Grants the wielder 1.75 mana regeneration.",
+
+  "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
+  "description.defense-of-the-craft.dragon_lance": "The forward charge of the wyvern host grants no quarter.",
+
+  "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
+  "description.defense-of-the-craft.hurricane_pike": "A legendary pike once held as royal sigil of the ancient wyvern riders.",
+  "active.defense-of-the-craft.hurricane_pike": "When cast on the wielder, pushes them 5 blocks in the direction they are looking at. When cast on an entity, pushes the wielder and entity in opposite directions from each other. Cooldowns 20 seconds.",
 
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "This halberd moves with the speed of a smaller weapon, allowing the bearer to win duels that a heavy edge would not.",

@@ -13,6 +13,7 @@ public class DotcEntityTypeTags {
     public static final TagKey<EntityType<?>> HEAVENS_HALBERD_INVULNERABLE = register("heavens_halberd_invulnerable");
     public static final TagKey<EntityType<?>> HAND_OF_MIDAS_INVULNERABLE = register("hand_of_midas_invulnerable");
     public static final TagKey<EntityType<?>> ROD_OF_ATOS_INVULNERABLE = register("rod_of_atos_invulnerable");
+    public static final TagKey<EntityType<?>> FORCE_MOVEMENT_INVULNERABLE = register("force_movement_invulnerable");
 
     public static TagKey<EntityType<?>> register(String id) {
         return TagKey.create(

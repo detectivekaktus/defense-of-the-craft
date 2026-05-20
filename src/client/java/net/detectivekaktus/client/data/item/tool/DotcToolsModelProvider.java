@@ -27,9 +27,6 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.DAEDALUS,
                 DotcTools.BUTTERFLY,
                 DotcTools.MONKEY_KING_BAR,
-                DotcTools.SANGE,
-                DotcTools.YASHA,
-                DotcTools.KAYA,
                 DotcTools.ECHO_SABRE,
                 DotcTools.DIFFUSAL_BLADE,
                 DotcTools.DESOLATOR,
@@ -45,7 +42,9 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.OVERWHELMING_BLINK,
                 DotcTools.ORCHID_MALEVOLENCE,
                 DotcTools.BLOODTHORN,
-                DotcTools.ROD_OF_ATOS
+                DotcTools.ROD_OF_ATOS,
+                DotcTools.FORCE_STAFF,
+                DotcTools.HURRICANE_PIKE
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(
