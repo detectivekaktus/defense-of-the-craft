@@ -202,7 +202,7 @@ public class CombatManager {
             // like in dota the echo sabre attack doesn't crit if the first one did,
             // so there's no f *= 1.5 in case of a crit
 
-            player.getCooldowns().addCooldown(item, CombatRules.ECHO_SABRE_COOLDOWN);
+            player.getCooldowns().addCooldown(item, 5 * 20);
             victim.hurt(damageSource, damage);
         }
 
@@ -374,11 +374,11 @@ public class CombatManager {
         if (damage == 0.0f)
             return;
 
-        addUseCooldownIfAbsent(DotcTools.BLINK_DAGGER, CombatRules.BLINK_DAGGER_COOLDOWN_AFTER_HIT);
+        addUseCooldownIfAbsent(DotcTools.BLINK_DAGGER, 3 * 20);
         var items = ((SharesUseCooldown) DotcTools.BLINK_DAGGER).getSharesCooldownWith();
 
         for (var item : items)
-            addUseCooldownIfAbsent(item, CombatRules.BLINK_DAGGER_COOLDOWN_AFTER_HIT);
+            addUseCooldownIfAbsent(item, 3 * 20);
     }
 
     private void addUseCooldownIfAbsent(Item item, int timeInTicks) {
