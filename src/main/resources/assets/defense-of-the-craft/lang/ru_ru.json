@@ -79,6 +79,11 @@
   "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
   "description.defense-of-the-craft.gloves_of_haste": "Пара магических перчаток, в которых оружие кажется лёгким как пёрышко.",
 
+  "item.defense-of-the-craft.sages_mask": "Sage's Mask",
+  "description.defense-of-the-craft.sages_mask": "Маска, которую зачастую используют в своих ритуалах маги и колдуны.",
+  "passive.defense-of-the-craft.sages_mask": "Даёт владельцу 1.25 восстановления маны.",
+
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "Не стоит недооценивать опасность этих маленьких незаметных клинков.",
 
@@ -89,7 +94,11 @@
   "description.defense-of-the-craft.broadsword": "Этот прочный клинок, что испокон веков носили рыцари, не подведёт в жестоком бою.",
 
   "item.defense-of-the-craft.claymore": "Claymore",
-  "description.defense-of-the-craft.claymore": "Меч, способный пробить броню, — обычный выбор начинающих рыцарей.",
+  "description.defense-of-the-craft.claymore": "A sword that can cut through armor, it's a commonly chosen first weapon for budding swordsmen.",
+
+  "item.defense-of-the-craft.oblivion_staff": "Oblivion Staff",
+  "description.defense-of-the-craft.oblivion_staff": "С первого взгляда — обычный посох, однако Oblivion Staff обладает скрытым могуществом, которым его наделил колдун Элдрич.",
+  "passive.defense-of-the-craft.oblivion_staff": "Даёт владельцу 1.5 восстановления маны.",
 
   "item.defense-of-the-craft.javelin": "Javelin",
   "description.defense-of-the-craft.javelin": "Довольно обычное копьё, которым иногда можно пробить вражескую броню.",
@@ -123,7 +132,7 @@
 
   "item.defense-of-the-craft.ring_of_health": "Ring of Health",
   "description.defense-of-the-craft.ring_of_health": "Блестящее кольцо, найденное под трупом толстого полурослика.",
-  "passive.defense-of-the-craft.ring_of_health": "Даёт владельцу 1.0 восстановления здоровья.",
+  "passive.defense-of-the-craft.ring_of_health": "Даёт владельцу 1 восстановления здоровья.",
 
   "item.defense-of-the-craft.sacred_relic": "Sacred Relic",
   "description.defense-of-the-craft.sacred_relic": "Древнее оружие, способное изменить ход битвы.",
@@ -143,6 +152,59 @@
 
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "Один из древнейших клинков, скованных демоном-кузнецом Абзидианом, убил своего создателя, когда тот проверял остроту лезвия.",
+
+  "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
+  "description.defense-of-the-craft.ring_of_tarrasque": "Нестареющее кольцо, выкованное с помощью обычной магии крови, но усиленное могуществом предполагаемого бывшего владельца.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Даёт владельцу 2 восстановления здоровья.",
+
+  "item.defense-of-the-craft.energy_booster": "Energy Booster",
+  "description.defense-of-the-craft.energy_booster": "Этот лазурит часто можно найти у волшебников, стремящихся дольше сохранять колдовские силы в бою.",
+  "passive.defense-of-the-craft.energy_booster": "Даёт владельцу бонус к максимальному запасу маны в размере 50.",
+
+  "item.defense-of-the-craft.vitality_booster": "Vitality Booster",
+  "description.defense-of-the-craft.vitality_booster": "Драгоценный рубин, переходящий из поколения в поколение в семьях воинов.",
+  "passive.defense-of-the-craft.vitality_booster": "Даёт владельцу бонус к максимальному запасу здоровья в размере 4.",
+
+
+
+  "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
+  "description.defense-of-the-craft.orchid_malevolence": "Гранатовый посох, выкованный из сущности огненного демона.",
+  "passive.defense-of-the-craft.orchid_malevolence": "Даёт владельцу 2 восстановления маны.",
+  "active.defense-of-the-craft.orchid_malevolence": "Накладывает безмолвие на выбранное существо на 5 секунд. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
+  "description.defense-of-the-craft.bloodthorn": "Этот ненавистный клинок топит врага в агонии, впиваясь в тело извивающейся жертвы всё сильнее и сильнее с каждым ее движением.",
+  "passive.defense-of-the-craft.bloodthorn": "Даёт владельцу 3 восстановления маны.",
+  "active.defense-of-the-craft.bloodthorn": "Накладывает безмолвие на выбранное существо на 5 секунд. Атаки по цели наносят дополнительные 3 единицы магического урона. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.rod_of_atos": "Rod of Atos",
+  "description.defense-of-the-craft.rod_of_atos": "В этом простом на первый взгляд жезле заключено естество владыки чумы Атоса.",
+  "passive.defense-of-the-craft.rod_of_atos": "Даёт владельцу бонус к максимальному запасу здоровья в размере 4.5.",
+  "active.defense-of-the-craft.rod_of_atos": "Обездвиживает выбранное существо, не позволяя ему передвигаться. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.urn_of_shadows": "Urn of Shadows",
+  "description.defense-of-the-craft.urn_of_shadows": "Содержит пепел могучих демонов.",
+  "passive.defense-of-the-craft.urn_of_shadows": "Даёт владельцу 0.5 дополнительного восстановления здоровья и маны. Получает 1 заряд каждые 2 минуты, максимум — 5 зарядов.",
+  "active.defense-of-the-craft.urn_of_shadows": "Расходует 1 заряд при использовании. При применении на владельца накладывает эффект регенерации на 8 секунд. При применении на существо накладывает проклятие, наносящее 3 единицы магического урона периодически в течение 8 секунд. Перезарядка: 30 секунд.",
+
+  "item.defense-of-the-craft.spirit_vessel": "Spirit Vessel",
+  "description.defense-of-the-craft.spirit_vessel": "Сотворена богом, желавшим изловить души остальных.",
+  "passive.defense-of-the-craft.spirit_vessel": "Даёт владельцу 0.75 дополнительного восстановления здоровья и маны. Получает 1 заряд каждые 2 минуты, максимум — 10 зарядов.",
+  "active.defense-of-the-craft.spirit_vessel": "Расходует 1 заряд при использовании. При применении на владельца накладывает эффект регенерации на 8 секунд. При применении на существо накладывает проклятие, наносящее периодический магический урон в размере 7.5% от максимального здоровья цели в течение 8 секунд. Перезарядка: 25 секунд.",
+
+  "item.defense-of-the-craft.force_staff": "Force Staff",
+  "description.defense-of-the-craft.force_staff": "Позволяет вам манипулировать другими ради добра или зла.",
+  "active.defense-of-the-craft.force_staff": "Толкает выбранное существо на 5 блоков в направлении его взгляда. Перезарядка: 15 секунд.",
+
+
+
+  "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
+  "description.defense-of-the-craft.heart_of_tarrasque": "Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Даёт владельцу усиление восстановления здоровья на 20%.",
+
+  "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
+  "description.defense-of-the-craft.aeon_disk": "Могущественный артефакт, давным-давно, как поговаривают, выкраденный из Белого инкубатория.",
+  "passive.defense-of-the-craft.aeon_disk": "Даёт владельцу бонус к максимальному запасу маны в размере 50 и бонус к максимальному запасу здоровья в размере 4. Когда владелец получает от игрока урон, равный или превышающий 30% от его максимального здоровья, накладывает сильное развеивание и эффект, полностью предотвращающий входящий и исходящий урон. Перезарядка: 180 секунд.",
 
 
 
@@ -214,6 +276,13 @@
   "description.defense-of-the-craft.echo_sabre": "Обманчиво быстрый клинок, полный магии звука.",
   "passive.defense-of-the-craft.echo_sabre": "Следующая атака накладывает на владельца эффект, значительно увеличивающий скорость атаки для одного удара. Даёт владельцу 1.75 восстановления маны.",
 
+  "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
+  "description.defense-of-the-craft.dragon_lance": "Боевой рывок войска виверн не щадит никого.",
+
+  "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
+  "description.defense-of-the-craft.hurricane_pike": "Легендарная пика, в далеком прошлом служившая монаршим символом наездников на вивернах.",
+  "active.defense-of-the-craft.hurricane_pike": "При использовании на владельца толкает его на 5 блоков в направлении взгляда. При использовании на существо отталкивает владельца и цель друг от друга. Перезарядка: 20 секунд.",
+
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "Эта алебарда движется со скоростью небольшого клинка, позволяя владельцу одержать победу в тех дуэлях, где более тяжёлое орудие не справилось бы.",
   "passive.defense-of-the-craft.heavens_halberd": "Даёт владельцу 15% шанс уклониться от атаки враждебного моба или игрока.",
@@ -240,6 +309,12 @@
   "effect.defense-of-the-craft.stun": "Оглушение",
   "effect.defense-of-the-craft.disarm": "Обезоруживание",
   "effect.defense-of-the-craft.break": "Истощение",
+  "effect.defense-of-the-craft.combo_breaker": "Прерывание Комбо",
+  "effect.defense-of-the-craft.silence": "Безмолвие",
+  "effect.defense-of-the-craft.soul_rend": "Раздирание Души",
+  "effect.defense-of-the-craft.root": "Оцепенение",
+  "effect.defense-of-the-craft.soul_release": "Освобождение Души",
+  "effect.defense-of-the-craft.spirit_soul_release": "Освобождение Заточенной Души",
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Кристальная Пыль",
   "tag.item.defense-of-the-craft.crystals": "Кристаллы",
@@ -250,6 +325,23 @@
   "strength.defense-of-the-craft": "%s силы",
   "agility.defense-of-the-craft": "%s ловкости",
   "intelligence.defense-of-the-craft": "%s интеллекта",
+
+
+
+  "player.defense-of-the-craft.first_blood": "%s проливает первую кровь!",
+  "player.defense-of-the-craft.double_kill": "%s совершает двойное убийство!",
+  "player.defense-of-the-craft.triple_kill": "%s убивает ТРОИХ подряд!",
+  "player.defense-of-the-craft.ultra_kill": "%s убивает ЧЕТВЕРЫХ!",
+  "player.defense-of-the-craft.rampage_kill": "%s БУЙСТВУЕТ!!!",
+
+  "player.defense-of-the-craft.spree":  "%s совершает серию убийств!",
+  "player.defense-of-the-craft.dominating": "%s набирает превосходство!",
+  "player.defense-of-the-craft.mega_kill":  "%s совершает мега-убийство!",
+  "player.defense-of-the-craft.unstoppable": "%s показывает неудержимость!",
+  "player.defense-of-the-craft.wicked_sick":  "%s свирепствует!",
+  "player.defense-of-the-craft.monster_kill": "%s зверствует!",
+  "player.defense-of-the-craft.godlike":  "%s заслуживает БОГОПОДОБИЕ!",
+  "player.defense-of-the-craft.holy_shit": "%s уже ПРЕВОСХОДИТ БОГОВ! Когда же это кончится?!",
 
 
 
@@ -264,5 +356,8 @@
   "option.defense-of-the-craft.add_screenshot_sound.description": "При включении этой опции создание скриншота будет воспроизводить звук скриншота из Steam.",
 
   "option.defense-of-the-craft.add_whispering_sound": "Добавить звук шепота",
-  "option.defense-of-the-craft.add_whispering_sound.description": "При включении этой опции все входящие сообщения /msg, /w и /tell будут воспроизводить звук чата из Steam."
+  "option.defense-of-the-craft.add_whispering_sound.description": "При включении этой опции все входящие сообщения /msg, /w и /tell будут воспроизводить звук чата из Steam.",
+
+  "option.defense-of-the-craft.enable_streak_announcement": "Включить объявления серий убийств",
+  "option.defense-of-the-craft.enable_streak_announcement.description": "Включив эту опцию, вы будете слышать объявления серий убийств (например, двойное убийство или серия убийств)."
 }
