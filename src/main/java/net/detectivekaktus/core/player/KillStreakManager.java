@@ -27,13 +27,11 @@ public class KillStreakManager {
         var killCount = flags.getKillCount();
 
         var totalKills = player.getStats().getValue(Stats.CUSTOM, Stats.PLAYER_KILLS);
-        if (totalKills == 1 && killCount == 1) {
+        if (totalKills == 1 && killCount == 1)
             announceToAllPlayers(
                     "player.defense-of-the-craft.first_blood",
                     DotcAnnounceSounds.DEFAULT_FIRST_BLOOD
             );
-            return;
-        }
 
         switch (killCount) {
             case 3: {
@@ -45,14 +43,16 @@ public class KillStreakManager {
                 break;
             }
             case 4: {
-                announceToAllPlayers("player.defense-of-the-craft.dominating",
+                announceToAllPlayers(
+                        "player.defense-of-the-craft.dominating",
                         0xFF5F00BD,
                         DotcAnnounceSounds.DEFAULT_DOMINATING
                 );
                 break;
             }
             case 5: {
-                announceToAllPlayers("player.defense-of-the-craft.mega_kill",
+                announceToAllPlayers(
+                        "player.defense-of-the-craft.mega_kill",
                         0xFFFF0081,
                         DotcAnnounceSounds.DEFAULT_MEGA_KILL
                 );
