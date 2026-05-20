@@ -5,43 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Added
-* Ring of Tarrasque item.
-* Heart of Tarrasque item.
-* Energy Booster item.
-* Vitality Booster item.
-* Aeon Disk item.
-* Silence effect.
-* Soul Rend effect.
-* Sage's Mask item.
-* Oblivion Staff sword item.
-* Orchid Malevolence sword item.
-* Bloodthorn sword item.
-* Root effect.
-* Rod of Atos sword item.
-* Soul Release effect.
-* Urn of Shadows item.
-* Spirit Soul Release effect.
-* Spirit Vessel item.
-* Force Staff sword item.
-* Dragon Lance sword item.
-* Hurricane Pike sword item.
-* Kill streak announcement which can be turned on and off in the mod configuration.
-
-
-## Fixed
-* Radiance and Overwhelming Blink damage now is bound to player, meaning that mob drops will be given as if the player killed the mobs by hand.
-* Radiant Crystal Block and Dire Crystal Block can now be reverted back to crystals.
-
-
-## Changed
-* No longer display mana cost for items with mana cost set to 0.
-
-
-## Removed
-* Chinese translations
 
 ## [0.1.0] - 2026-04-22
 
@@ -160,3 +123,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 * 3D models for Butterfly, Daedalus and Crystalys
+
+
+## [0.3.0] - 2026-05-20
+
+### Added
+* Ring of Tarrasque item.
+* Heart of Tarrasque item.
+* Energy Booster item.
+* Vitality Booster item.
+* Aeon Disk item.
+* Silence effect.
+* Soul Rend effect.
+* Sage's Mask item.
+* Oblivion Staff sword item.
+* Orchid Malevolence sword item.
+* Bloodthorn sword item.
+* Root effect.
+* Rod of Atos sword item.
+* Soul Release effect.
+* Urn of Shadows item.
+* Spirit Soul Release effect.
+* Spirit Vessel item.
+* Force Staff sword item.
+* Dragon Lance sword item.
+* Hurricane Pike sword item.
+* Kill streak announcement which can be turned on and off in the mod configuration.
+
+
+## Fixed
+* Radiance and Overwhelming Blink damage now is bound to player, meaning that mob drops will be given as if the player killed the mobs by hand.
+* Radiant Crystal Block and Dire Crystal Block can now be reverted back to crystals.
+
+
+## Changed
+* No longer display mana cost for items with mana cost set to 0.
+
+
+## Removed
+* Chinese translations
