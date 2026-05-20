@@ -39,6 +39,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Changed
 * No longer display mana cost for items with mana cost set to 0.
 
+
+## Removed
+* Chinese translations
+
 ## [0.1.0] - 2026-04-22
 
 ### Added

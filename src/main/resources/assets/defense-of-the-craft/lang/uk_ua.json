@@ -79,6 +79,10 @@
   "item.defense-of-the-craft.gloves_of_haste": "Gloves of Haste",
   "description.defense-of-the-craft.gloves_of_haste": "Пара магічних рукавичок, в яких зброя здається легкою як пір'їнка.",
 
+  "item.defense-of-the-craft.sages_mask": "Sage's Mask",
+  "description.defense-of-the-craft.sages_mask": "Маска, яку часто використовують у своїх ритуалах маги та чаклуни.",
+  "passive.defense-of-the-craft.sages_mask": "Дає власнику 1.25 відновлення мани.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "Не варто недооцінювати небезпеку цих маленьких непомітних клинків.",
 
@@ -90,6 +94,10 @@
 
   "item.defense-of-the-craft.claymore": "Claymore",
   "description.defense-of-the-craft.claymore": "Меч, здатний пробити броню, — звичайний вибір лицарів-початківців.",
+
+  "item.defense-of-the-craft.oblivion_staff": "Oblivion Staff",
+  "description.defense-of-the-craft.oblivion_staff": "З першого погляду — звичайний посох, однак Oblivion Staff має приховану могутність, якою наділив його чаклун Елдріч.",
+  "passive.defense-of-the-craft.oblivion_staff": "Дає власнику 1.5 відновлення мани.",
 
   "item.defense-of-the-craft.javelin": "Javelin",
   "description.defense-of-the-craft.javelin": "Досить звичайний спис, яким іноді можна пробити ворожу броню.",
@@ -143,6 +151,59 @@
 
   "item.defense-of-the-craft.demon_edge": "Demon Edge",
   "description.defense-of-the-craft.demon_edge": "Один з найдавніших клинків, викуваних демоном-ковалем Абзидіаном, вбив свого творця, коли той перевіряв гостроту леза.",
+
+  "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
+  "description.defense-of-the-craft.ring_of_tarrasque": "Невмируще кільце, викуване за допомогою звичайної магії крові, але посилене могутністю імовірного колишнього власника.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Дає власнику 2 відновлення здоров'я.",
+
+  "item.defense-of-the-craft.energy_booster": "Energy Booster",
+  "description.defense-of-the-craft.energy_booster": "Цей лазурит часто можна знайти у чарівників, що прагнуть довше зберігати чарівні сили у бою.",
+  "passive.defense-of-the-craft.energy_booster": "Дає власнику бонус до максимального запасу мани в розмірі 50.",
+
+  "item.defense-of-the-craft.vitality_booster": "Vitality Booster",
+  "description.defense-of-the-craft.vitality_booster": "Дорогоцінний рубін, що переходить з покоління в покоління в родинах воїнів.",
+  "passive.defense-of-the-craft.vitality_booster": "Дає власнику бонус до максимального запасу здоров'я в розмірі 4.",
+
+
+
+  "item.defense-of-the-craft.orchid_malevolence": "Orchid Malevolence",
+  "description.defense-of-the-craft.orchid_malevolence": "Гранатовий посох, викуваний із сутності вогняного демона.",
+  "passive.defense-of-the-craft.orchid_malevolence": "Дає власнику 2 відновлення мани.",
+  "active.defense-of-the-craft.orchid_malevolence": "Накладає безмовність на обрану істоту на 5 секунд. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.bloodthorn": "Bloodthorn",
+  "description.defense-of-the-craft.bloodthorn": "Цей ненависний клинок топить ворога в агонії, впиваючись у тіло жертви, що корчиться, дедалі сильніше з кожним її рухом.",
+  "passive.defense-of-the-craft.bloodthorn": "Дає власнику 3 відновлення мани.",
+  "active.defense-of-the-craft.bloodthorn": "Накладає безмовність на обрану істоту на 5 секунд. Атаки по цілі завдають додаткових 3 одиниці магічної шкоди. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.rod_of_atos": "Rod of Atos",
+  "description.defense-of-the-craft.rod_of_atos": "У цьому простому на перший погляд жезлі укладена сутність владики чуми Атоса.",
+  "passive.defense-of-the-craft.rod_of_atos": "Дає власнику бонус до максимального запасу здоров'я в розмірі 4.5.",
+  "active.defense-of-the-craft.rod_of_atos": "Знерухомлює обрану істоту, не дозволяючи їй пересуватися. Перезарядка: 20 секунд.",
+
+  "item.defense-of-the-craft.urn_of_shadows": "Urn of Shadows",
+  "description.defense-of-the-craft.urn_of_shadows": "Містить попіл могутніх демонів.",
+  "passive.defense-of-the-craft.urn_of_shadows": "Дає власнику 0.5 додаткового відновлення здоров'я та мани. Отримує 1 заряд кожні 2 хвилини, максимум — 5 зарядів.",
+  "active.defense-of-the-craft.urn_of_shadows": "Витрачає 1 заряд при використанні. При застосуванні на власника накладає ефект регенерації на 8 секунд. При застосуванні на істоту накладає прокляття, що завдає 3 одиниці магічної шкоди протягом 8 секунд. Перезарядка: 30 секунд.",
+
+  "item.defense-of-the-craft.spirit_vessel": "Spirit Vessel",
+  "description.defense-of-the-craft.spirit_vessel": "Створена богом, що бажав виловити душі інших.",
+  "passive.defense-of-the-craft.spirit_vessel": "Дає власнику 0.75 додаткового відновлення здоров'я та мани. Отримує 1 заряд кожні 2 хвилини, максимум — 10 зарядів.",
+  "active.defense-of-the-craft.spirit_vessel": "Витрачає 1 заряд при використанні. При застосуванні на власника накладає ефект регенерації на 8 секунд. При застосуванні на істоту накладає прокляття, що завдає periodичну магічну шкоду в розмірі 7.5% від максимального здоров'я цілі протягом 8 секунд. Перезарядка: 25 секунд.",
+
+  "item.defense-of-the-craft.force_staff": "Force Staff",
+  "description.defense-of-the-craft.force_staff": "Дозволяє вам маніпулювати іншими заради добра або зла.",
+  "active.defense-of-the-craft.force_staff": "Штовхає обрану істоту на 5 блоків у напрямку її погляду. Перезарядка: 15 секунд.",
+
+
+
+  "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
+  "description.defense-of-the-craft.heart_of_tarrasque": "Збережене серце вимерлого монстра, з яким його власник стає мужнішим.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Дає власнику посилення відновлення здоров'я на 20%.",
+
+  "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
+  "description.defense-of-the-craft.aeon_disk": "Могутній артефакт, що, за переказами, давним-давно був викрадений з Білого інкубаторію.",
+  "passive.defense-of-the-craft.aeon_disk": "Дає власнику бонус до максимального запасу мани в розмірі 50 та бонус до максимального запасу здоров'я в розмірі 4. Коли власник отримує від гравця шкоду, що дорівнює або перевищує 30% від його максимального здоров'я, накладає сильне розвіювання та ефект, що повністю запобігає вхідній та вихідній шкоді. Перезарядка: 180 секунд.",
 
 
 
@@ -214,6 +275,13 @@
   "description.defense-of-the-craft.echo_sabre": "Оманливо швидкий клинок, сповнений магії звуку.",
   "passive.defense-of-the-craft.echo_sabre": "Наступна атака накладає на власника ефект, що значно збільшує швидкість атаки для одного удару. Дає власнику 1.75 відновлення мани.",
 
+  "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
+  "description.defense-of-the-craft.dragon_lance": "Бойовий натиск загону віверн не щадить нікого.",
+
+  "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
+  "description.defense-of-the-craft.hurricane_pike": "Легендарна піка, що в далекому минулому слугувала монаршим символом наїзників на вівернах.",
+  "active.defense-of-the-craft.hurricane_pike": "При використанні на власника штовхає його на 5 блоків у напрямку погляду. При використанні на істоту відштовхує власника та ціль одне від одного. Перезарядка: 20 секунд.",
+
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "Ця алебарда рухається зі швидкістю невеликого клинка, дозволяючи власнику перемогти в тих двобоях, де важче знаряддя не впоралося б.",
   "passive.defense-of-the-craft.heavens_halberd": "Дає власнику 15% шанс ухилитися від атаки ворожого моба або гравця.",
@@ -240,6 +308,13 @@
   "effect.defense-of-the-craft.stun": "Приголомшення",
   "effect.defense-of-the-craft.disarm": "Роззброєння",
   "effect.defense-of-the-craft.break": "Виснаження",
+  "effect.defense-of-the-craft.combo_breaker": "Переривання Комбо",
+  "effect.defense-of-the-craft.silence": "Безмовність",
+  "effect.defense-of-the-craft.soul_rend": "Роздирання Душі",
+  "effect.defense-of-the-craft.root": "Заціпеніння",
+  "effect.defense-of-the-craft.soul_release": "Звільнення Душі",
+  "effect.defense-of-the-craft.spirit_soul_release": "Звільнення Ув'язненої Душі",
+
 
   "tag.item.defense-of-the-craft.crystal_dusts": "Кристалічний Пил",
   "tag.item.defense-of-the-craft.crystals": "Кристали",
@@ -250,6 +325,23 @@
   "strength.defense-of-the-craft": "%s сили",
   "agility.defense-of-the-craft": "%s спритності",
   "intelligence.defense-of-the-craft": "%s інтелекту",
+  
+
+
+  "player.defense-of-the-craft.first_blood": "%s проливає першу кров!",
+  "player.defense-of-the-craft.double_kill": "%s здійснює подвійне вбивство!",
+  "player.defense-of-the-craft.triple_kill": "%s вбиває ТРЬОХ поспіль!",
+  "player.defense-of-the-craft.ultra_kill": "%s вбиває ЧОТИРЬОХ!",
+  "player.defense-of-the-craft.rampage_kill": "%s ЛЮТУЄ!!!",
+
+  "player.defense-of-the-craft.spree": "%s здійснює серію вбивств!",
+  "player.defense-of-the-craft.dominating": "%s здобуває перевагу!",
+  "player.defense-of-the-craft.mega_kill": "%s здійснює мега-вбивство!",
+  "player.defense-of-the-craft.unstoppable": "%s демонструє невпинність!",
+  "player.defense-of-the-craft.wicked_sick": "%s лютує!",
+  "player.defense-of-the-craft.monster_kill": "%s звіріє!",
+  "player.defense-of-the-craft.godlike": "%s заслуговує на БОГОПОДІБНІСТЬ!",
+  "player.defense-of-the-craft.holy_shit": "%s вже ПЕРЕВЕРШУЄ БОГІВ! Коли ж це скінчиться?!",
 
 
 
@@ -264,5 +356,8 @@
   "option.defense-of-the-craft.add_screenshot_sound.description": "При увімкненні цієї опції створення скриншота відтворюватиме звук скриншота зі Steam.",
 
   "option.defense-of-the-craft.add_whispering_sound": "Додати звук шепоту",
-  "option.defense-of-the-craft.add_whispering_sound.description": "При увімкненні цієї опції всі вхідні повідомлення /msg, /w та /tell відтворюватимуть звук чату зі Steam."
+  "option.defense-of-the-craft.add_whispering_sound.description": "При увімкненні цієї опції всі вхідні повідомлення /msg, /w та /tell відтворюватимуть звук чату зі Steam.",
+
+  "option.defense-of-the-craft.enable_streak_announcement": "Увімкнути оголошення серій вбивств",
+  "option.defense-of-the-craft.enable_streak_announcement.description": "Увімкнувши цю опцію, ви будете чути оголошення серій вбивств (наприклад, подвійне вбивство або серія вбивств)."
 }

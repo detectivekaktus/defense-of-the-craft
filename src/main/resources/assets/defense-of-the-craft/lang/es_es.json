@@ -170,28 +170,29 @@
   "active.defense-of-the-craft.rod_of_atos": "Inmoviliza a la entidad objetivo en su lugar, impidiéndole moverse. Enfriamiento de 20 segundos.",
 
   "item.defense-of-the-craft.urn_of_shadows": "Urn of Shadows",
-  "description.defense-of-the-craft.urn_of_shadows": "Contains the ashes of powerful demons.",
-  "passive.defense-of-the-craft.urn_of_shadows": "Grants the wielder 0.5 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 5 maximum charges.",
-  "active.defense-of-the-craft.urn_of_shadows": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 3 magical damage every proc for 8 seconds. Cooldowns 30 seconds.",
+  "description.defense-of-the-craft.urn_of_shadows": "Contiene las cenizas de poderosos demonios.",
+  "passive.defense-of-the-craft.urn_of_shadows": "Otorga al portador 0.5 de regeneración adicional de salud y maná. Gana una carga cada 2 minutos hasta un máximo de 5 cargas.",
+  "active.defense-of-the-craft.urn_of_shadows": "Consume una carga al usarse. Al lanzarse sobre el portador, aplica un efecto de regeneración durante 8 segundos. Al lanzarse sobre una entidad, aplica una maldición que inflige 3 de daño mágico por proc durante 8 segundos. Enfriamiento de 30 segundos.",
 
   "item.defense-of-the-craft.spirit_vessel": "Spirit Vessel",
-  "description.defense-of-the-craft.spirit_vessel": "Forged by a god to entrap the soul of another.",
-  "passive.defense-of-the-craft.spirit_vessel": "Grants the wielder 0.75 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 10 maximum charges.",
-  "active.defense-of-the-craft.spirit_vessel": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 7.5% of the target's max health as magical damage every proc for 8 seconds. Cooldowns 25 seconds.",
+  "description.defense-of-the-craft.spirit_vessel": "Forjada por un dios para atrapar el alma de otro.",
+  "passive.defense-of-the-craft.spirit_vessel": "Otorga al portador 0.75 de regeneración adicional de salud y maná. Gana una carga cada 2 minutos hasta un máximo de 10 cargas.",
+  "active.defense-of-the-craft.spirit_vessel": "Consume una carga al usarse. Al lanzarse sobre el portador, aplica un efecto de regeneración durante 8 segundos. Al lanzarse sobre una entidad, aplica una maldición que inflige el 7.5% de la salud máxima del objetivo como daño mágico por proc durante 8 segundos. Enfriamiento de 25 segundos.",
 
   "item.defense-of-the-craft.force_staff": "Force Staff",
-  "description.defense-of-the-craft.force_staff": "Allows you to manipulate others, for good or evil.",
-  "active.defense-of-the-craft.force_staff": "Pushes the target entity 5 blocks in the direction they are facing. Cooldowns 15 seconds.",
+  "description.defense-of-the-craft.force_staff": "Te permite manipular a los demás, para bien o para mal.",
+  "active.defense-of-the-craft.force_staff": "Empuja a la entidad objetivo 5 bloques en la dirección en la que mira. Enfriamiento de 15 segundos.",
 
 
 
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
-  "description.defense-of-the-craft.heart_of_tarrasque": "Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
-  "passive.defense-of-the-craft.heart_of_tarrasque": "Grants the wielder 20% health regeneration amplification.",
+  "description.defense-of-the-craft.heart_of_tarrasque": "Corazón conservado de un monstruo extinto, que refuerza la fortaleza de su portador.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Otorga al portador un 20% de amplificación de regeneración de salud.",
 
   "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
-  "description.defense-of-the-craft.aeon_disk": "A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
-  "passive.defense-of-the-craft.aeon_disk": "Grants the wielder 50 maximum mana bonus and 4 maximum health bonus. When the wielder takes 30% of their maximum health or more damage from a player, applies a strong dispel and a buff on the wielder, that negates all damage the wielder takes, but also negates any damage they deal while active. Cooldowns 180 seconds.",
+  "description.defense-of-the-craft.aeon_disk": "Un poderoso artefacto sacado en secreto del Incubarium de Marfil hace mucho tiempo. Al menos eso creen muchos.",
+  "passive.defense-of-the-craft.aeon_disk": "Otorga al portador 50 de maná máximo adicional y 4 de salud máxima adicional. Cuando el portador recibe un 30% o más de su salud máxima como daño de un jugador, aplica una disipación fuerte y un efecto que niega todo el daño recibido, pero también niega cualquier daño infligido mientras está activo. Enfriamiento de 180 segundos.",
+
 
 
   "item.defense-of-the-craft.monkey_king_bar": "Monkey King Bar",
@@ -261,11 +262,11 @@
   "passive.defense-of-the-craft.echo_sabre": "El siguiente ataque aplica al portador un efecto que aumenta significativamente la velocidad de ataque para un golpe. Otorga al portador 1.75 de regeneración de maná.",
 
   "item.defense-of-the-craft.dragon_lance": "Dragon Lance",
-  "description.defense-of-the-craft.dragon_lance": "The forward charge of the wyvern host grants no quarter.",
+  "description.defense-of-the-craft.dragon_lance": "La carga frontal de la hueste de wyverns no da cuartel.",
 
   "item.defense-of-the-craft.hurricane_pike": "Hurricane Pike",
-  "description.defense-of-the-craft.hurricane_pike": "A legendary pike once held as royal sigil of the ancient wyvern riders.",
-  "active.defense-of-the-craft.hurricane_pike": "When cast on the wielder, pushes them 5 blocks in the direction they are looking at. When cast on an entity, pushes the wielder and entity in opposite directions from each other. Cooldowns 20 seconds.",
+  "description.defense-of-the-craft.hurricane_pike": "Una lanza legendaria que antaño fue el emblema real de los antiguos jinetes de wyverns.",
+  "active.defense-of-the-craft.hurricane_pike": "Al lanzarse sobre el portador, lo empuja 5 bloques en la dirección en la que mira. Al lanzarse sobre una entidad, empuja al portador y a la entidad en direcciones opuestas entre sí. Enfriamiento de 20 segundos.",
 
   "item.defense-of-the-craft.heavens_halberd": "Heaven's Halberd",
   "description.defense-of-the-craft.heavens_halberd": "Esta alabarda se mueve con la velocidad de una pequeña hoja, permitiendo al portador ganar duelos donde un arma más pesada habría fracasado.",
