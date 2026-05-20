@@ -191,6 +191,10 @@
   "passive.defense-of-the-craft.spirit_vessel": "Grants the wielder 0.75 bonus health and mana regeneration. Gains one charge every 2 minutes for up to 10 maximum charges.",
   "active.defense-of-the-craft.spirit_vessel": "Consumes a charge on use. When cast on the wielder, applies a regeneration effect for 8 seconds. When cast on an entity, applies a curse that deals 7.5% of the target's max health as magical damage every proc for 8 seconds. Cooldowns 25 seconds.",
 
+  "item.defense-of-the-craft.force_staff": "Force Staff",
+  "description.defense-of-the-craft.force_staff": "Allows you to manipulate others, for good or evil.",
+  "active.defense-of-the-craft.force_staff": "Pushes the target entity 5 blocks in the direction they are facing. Cooldowns 15 seconds.",
+
 
 
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",

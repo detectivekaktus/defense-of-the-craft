@@ -597,6 +597,24 @@ public class DotcTools {
             ),
             "spirit_vessel"
     );
+    public static final Item FORCE_STAFF = DotcItems.register(
+            new ForceStaff(
+                    DotcToolMaterial.RADIANT_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(RodOfAtos.createAttributes(
+                                    DotcToolMaterial.RADIANT_ARTEFACT, 2, -2.0f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(0, 0, 12)
+                            ),
+                    new TooltipBuilder("force_staff")
+                            .description()
+                            .stats(0, 0, 12)
+                            .active()
+            ),
+            "force_staff"
+    );
 
     public static void initialize() { }
 }

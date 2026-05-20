@@ -45,7 +45,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.OVERWHELMING_BLINK,
                 DotcTools.ORCHID_MALEVOLENCE,
                 DotcTools.BLOODTHORN,
-                DotcTools.ROD_OF_ATOS
+                DotcTools.ROD_OF_ATOS,
+                DotcTools.FORCE_STAFF
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

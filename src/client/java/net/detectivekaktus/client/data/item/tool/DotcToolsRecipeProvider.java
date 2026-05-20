@@ -423,6 +423,18 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.URN_OF_SHADOWS)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.FORCE_STAFF)
+                .pattern(" @ ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .define('#', DotcIngredients.RADIANT_CRYSTAL)
+                .define('@', DotcPrimitives.STAFF_OF_WIZARDRY)
+                .unlockedBy(
+                        "has_radiant_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

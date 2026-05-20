@@ -53,5 +53,9 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
         getOrCreateTagBuilder(DotcEntityTypeTags.ROD_OF_ATOS_INVULNERABLE)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER);
+
+        getOrCreateTagBuilder(DotcEntityTypeTags.FORCE_MOVEMENT_INVULNERABLE)
+                .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.WITHER);
     }
 }
