@@ -37,15 +37,17 @@ public class HurricanePike extends DotcAbilitySwordItem {
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         var viewVector = player.getLookAngle().scale(4);
-        var playerDeltaMovement = player.getDeltaMovement();
-        player.addDeltaMovement(new Vec3(-viewVector.x, playerDeltaMovement.y, -viewVector.z));
+
+        if (target == null) {
+            player.addDeltaMovement(new Vec3(viewVector.x, 0, viewVector.z));
+            player.hurtMarked = true;
+            return;
+        }
+
+        player.addDeltaMovement(new Vec3(-viewVector.x, 0, -viewVector.z));
         player.hurtMarked = true;
 
-        if (target == null)
-            return;
-
-        var entityDeltaMovement = target.getDeltaMovement();
-        target.addDeltaMovement(new Vec3(viewVector.x, entityDeltaMovement.y, viewVector.z));
+        target.addDeltaMovement(new Vec3(viewVector.x, 0, viewVector.z));
         target.hurtMarked = true;
     }
 

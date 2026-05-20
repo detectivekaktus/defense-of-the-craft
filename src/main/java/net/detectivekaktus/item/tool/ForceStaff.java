@@ -37,16 +37,14 @@ public class ForceStaff extends DotcAbilitySwordItem {
     @Override
     protected void invokeInteractionAbility(Player player, LivingEntity target, ItemStack stack) {
         if (target == null) {
-            var deltaMovement = player.getDeltaMovement();
             var viewVector = player.getLookAngle().scale(4);
-            player.addDeltaMovement(new Vec3(viewVector.x, deltaMovement.y, viewVector.z));
+            player.addDeltaMovement(new Vec3(viewVector.x, 0, viewVector.z));
             player.hurtMarked = true;
             return;
         }
 
-        var deltaMovement = target.getDeltaMovement();
         var viewVector = target.getLookAngle().scale(4);
-        target.addDeltaMovement(new Vec3(viewVector.x, deltaMovement.y, viewVector.z));
+        target.addDeltaMovement(new Vec3(viewVector.x, 0, viewVector.z));
         target.hurtMarked = true;
     }
 
