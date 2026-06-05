@@ -14,13 +14,6 @@
 	"license": "MIT",
 	"icon": "assets/defense-of-the-craft/icon.png",
 	"environment": "*",
-	"custom": {
-		"modmenu": {
-			"links": {
-				"modmenu.discord": "https://discord.gg/bw8B38uUBR"
-			}
-		}
-	},
 	"entrypoints": {
 		"main": [
 			"net.detectivekaktus.DefenseOfTheCraft"
