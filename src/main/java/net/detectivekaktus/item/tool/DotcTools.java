@@ -388,11 +388,11 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
-                                    4.0f
+                                    2.5f
                             )
                             .component(
                                     DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    0.2f
+                                    0.15f
                             ),
                     new TooltipBuilder("heart_of_tarrasque")
                             .description()

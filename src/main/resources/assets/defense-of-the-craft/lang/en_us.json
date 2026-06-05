@@ -158,7 +158,7 @@
 
   "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
   "description.defense-of-the-craft.ring_of_tarrasque": "An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.",
-  "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2 health regeneration.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2.5 health regeneration and 15% health regeneration amplification.",
 
   "item.defense-of-the-craft.energy_booster": "Energy Booster",
   "description.defense-of-the-craft.energy_booster": "This lapis gemstone is commonly added to the collection of wizards seeking to improve their presence in combat.",
