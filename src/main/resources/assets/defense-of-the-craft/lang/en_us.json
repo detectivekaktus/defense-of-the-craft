@@ -83,6 +83,10 @@
   "description.defense-of-the-craft.sages_mask": "A mask commonly used by mages and warlocks for various rituals.",
   "passive.defense-of-the-craft.sages_mask": "Grants the wielder 1.25 mana regeneration.",
 
+  "item.defense-of-the-craft.morbid_mask": "Morbid Mask",
+  "description.defense-of-the-craft.morbid_mask": "A mask that drains the energy of those caught in its gaze.",
+  "passive.defense-of-the-craft.morbid_mask": "Grants the wielder 15% lifesteal.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "The damage of these small, concealable blades should not be underestimated.",
 

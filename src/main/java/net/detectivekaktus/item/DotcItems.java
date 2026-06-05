@@ -75,6 +75,7 @@ public class DotcItems {
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
                 DotcIngredients.SAGES_MASK,
+                DotcIngredients.MORBID_MASK,
                 DotcIngredients.BLADES_OF_ATTACK,
                 DotcPrimitives.MITHRIL_HAMMER,
                 DotcPrimitives.BROADSWORD,
