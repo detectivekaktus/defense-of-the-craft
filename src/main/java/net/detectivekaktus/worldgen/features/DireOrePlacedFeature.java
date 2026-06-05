@@ -21,11 +21,11 @@ public class DireOrePlacedFeature {
     public static void configure(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         var modifiers = List.of(
-                CountPlacement.of(4),
+                CountPlacement.of(8),
                 BiomeFilter.biome(),
                 InSquarePlacement.spread(),
                 HeightRangePlacement.of(
-                        UniformHeight.of(VerticalAnchor.belowTop(30), VerticalAnchor.TOP)
+                        UniformHeight.of(VerticalAnchor.aboveBottom(50), VerticalAnchor.TOP)
                 )
         );
         context.register(
