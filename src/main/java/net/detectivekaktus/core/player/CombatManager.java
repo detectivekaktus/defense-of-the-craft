@@ -207,7 +207,10 @@ public class CombatManager {
         }
     }
 
-    public void lifesteal(float damage) {
+    public void lifesteal(Entity victim, float damage) {
+        if (!(victim instanceof LivingEntity))
+            return;
+
         var stats = PlayerStats.get(player);
         var lifesteal = stats.getLifesteal();
 

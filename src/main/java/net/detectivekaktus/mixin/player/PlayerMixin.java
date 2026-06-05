@@ -106,7 +106,7 @@ public class PlayerMixin implements CombatManagerHolder {
             return hurt;
 
         combatManager.proc(entity);
-        combatManager.lifesteal(damage);
+        combatManager.lifesteal(entity, damage);
         return true;
     }
 
