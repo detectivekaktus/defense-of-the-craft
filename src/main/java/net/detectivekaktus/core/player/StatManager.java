@@ -48,6 +48,11 @@ public class StatManager {
                         config.addHpRegenAmplification(amplification);
                     }
 
+                    if (stack.has(DotcComponents.LIFE_STEAL_COMPONENT)) {
+                        var lifesteal = stack.get(DotcComponents.LIFE_STEAL_COMPONENT);
+                        config.addLifesteal(lifesteal);
+                    }
+
                     if (stack.has(DotcComponents.MOVE_SPEED_COMPONENT)) {
                         var moveSpeed = stack.get(DotcComponents.MOVE_SPEED_COMPONENT);
                         config.addMoveSpeed(moveSpeed);
@@ -80,6 +85,7 @@ public class StatManager {
                 || Math.abs(stats.getBonusHpRegen() - config.bonusHpRegen) > 1e-5f
                 || Math.abs(stats.getBonusHp() - config.bonusHp) > 1e-5f
                 || Math.abs(stats.getHpRegenAmplification() - config.hpRegenAmplification) > 1e-5f
+                || Math.abs(stats.getLifesteal() - config.lifesteal) > 1e-5f
                 || Math.abs(stats.getEvasion() - config.evasion) > 1e-5f
                 || Math.abs(stats.getMoveSpeed() - config.moveSpeed) > 1e-5f
                 || Math.abs(mana.getBonusMana() - config.bonusMana) > 1e-5f
@@ -98,6 +104,7 @@ public class StatManager {
         applyStrength(config.strength, config.bonusHp);
         stats.setBonusHpRegen(config.bonusHpRegen);
         stats.setHpRegenAmplification(config.hpRegenAmplification);
+        stats.setLifesteal(config.lifesteal);
 
         stats.setAgility(config.agility);
         applyAgility(config.agility);
@@ -209,7 +216,7 @@ public class StatManager {
 
     public static class Config {
         int strength, agility, intelligence;
-        float bonusHp, bonusHpRegen, hpRegenAmplification;
+        float bonusHp, bonusHpRegen, hpRegenAmplification, lifesteal;
         float evasion, moveSpeed;
         float bonusMana, bonusManaRegen, manaCostReduction;
 
@@ -221,8 +228,12 @@ public class StatManager {
             this.intelligence += component.intelligence();
         }
 
+        private float addMultiplicative(float current, float val) {
+            return 1.0f - (1.0f - current) * (1.0f - val);
+        }
+
         public void addEvasion(float evasion) {
-            this.evasion = 1.0f - (1.0f - this.evasion) * (1.0f - evasion);
+            this.evasion = addMultiplicative(this.evasion, evasion);
         }
 
         public void addMoveSpeed(float moveSpeed) {
@@ -238,7 +249,7 @@ public class StatManager {
         }
 
         public void addHpRegenAmplification(float amplification) {
-            this.hpRegenAmplification = 1.0f - (1.0f - this.hpRegenAmplification) * (1.0f - amplification);
+            this.hpRegenAmplification = addMultiplicative(hpRegenAmplification, amplification);
         }
 
         public void addBonusMana(float mana) {
@@ -250,7 +261,11 @@ public class StatManager {
         }
 
         public void addManaCostReduction(float reduction) {
-            this.manaCostReduction = 1.0f - (1.0f - this.manaCostReduction) * (1.0f - reduction);
+            this.manaCostReduction = addMultiplicative(manaCostReduction, reduction);
+        }
+
+        public void addLifesteal(float lifesteal) {
+            this.lifesteal = addMultiplicative(this.lifesteal, lifesteal);
         }
     }
 }
