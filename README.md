@@ -21,7 +21,6 @@ The mod is translated to *English, Russian, Ukrainian, and Spanish*.
 * [ModMenu](https://modrinth.com/mod/modmenu)
 
 ## F.A.Q.
-*Q:* I want to know more about mod items! *A:* Check out the mod [wiki](https://github.com/detectivekaktus/dotc/wiki)!<br>
 *Q:* Dota sounds don't work! *A:* By default they are turned off, you can enable them via ModMenu!<br>
 *Q:* When will other version ports come out? *A:* Right now version porting is not the priority and in the observable future it will not be one.<br>
 *Q:* Will you port this mod to Forge/Neoforge? *A:* Forge/Neoforge ports will never be done.

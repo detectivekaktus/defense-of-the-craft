@@ -5,16 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Added
-* Morbid Mask item.
-* Satanic sword item.
-* Lifesteal mechanic given by two previous items.
-
-## Changed
-* Dire ore generation. Now it spawns more frequently.
-* Halve the attack speed bonus given by agility.
 
 ## [0.1.0] - 2026-04-22
 
@@ -161,14 +151,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
 
-## Fixed
+### Fixed
 * Radiance and Overwhelming Blink damage now is bound to player, meaning that mob drops will be given as if the player killed the mobs by hand.
 * Radiant Crystal Block and Dire Crystal Block can now be reverted back to crystals.
 
 
-## Changed
+### Changed
 * No longer display mana cost for items with mana cost set to 0.
 
 
-## Removed
+### Removed
 * Chinese translations
+
+
+## [0.3.1] - 2026-06-05
+
+### Added
+* Morbid Mask item.
+* Satanic sword item.
+* Lifesteal mechanic given by two previous items.
+
+
+### Changed
+* Dire ore generation. Now it spawns more frequently.
+* Halve the attack speed bonus given by agility.
