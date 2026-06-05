@@ -303,6 +303,11 @@
   "description.defense-of-the-craft.overwhelming_blink": "A horrifying dagger forged in the chaos maw and nigh untouchable by mortal hands.",
   "active.defense-of-the-craft.overwhelming_blink": "Instantly teleports the wielder towards the targeted point. After teleport a huge shockwave is created at the target location, dealing 5% of wielder's strength as damage to all nearby creatures and slowing them down. Taking any damage resets the cooldown of this item to 3 seconds.",
 
+  "item.defense-of-the-craft.satanic": "Satanic",
+  "description.defense-of-the-craft.satanic": "Immense power at the cost of your soul.",
+  "passive.defense-of-the-craft.satanic": "Grants the wielder 20% lifesteal.",
+  "active.defense-of-the-craft.satanic": "Dispels all non beneficial effects from the caster. Cooldowns 30 seconds.",
+
 
 
   "death.attack.defense-of-the-craft.magical": "%1$s died from Defense Of The Craft magic!",

@@ -350,12 +350,7 @@ public class CombatManager {
         if (damagePercent < 0.3f && damage < player.getHealth())
             return false;
 
-        var effectsToRemove = player.getActiveEffects()
-                .stream()
-                .map(MobEffectInstance::getEffect)
-                .filter(effect -> !effect.value().isBeneficial())
-                .toList();
-        effectsToRemove.forEach(player::removeEffect);
+        dispelNonBeneficialEffects(player);
         player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
         player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
 
@@ -373,6 +368,15 @@ public class CombatManager {
                 new DustParticleOptions(new Vector3f(1.0f, 0.862f, 0.670f), 1.5f)
         ));
         return true;
+    }
+
+    public static void dispelNonBeneficialEffects(Player target) {
+        var effectsToRemove = target.getActiveEffects()
+                .stream()
+                .map(MobEffectInstance::getEffect)
+                .filter(effect -> !effect.value().isBeneficial())
+                .toList();
+        effectsToRemove.forEach(target::removeEffect);
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {

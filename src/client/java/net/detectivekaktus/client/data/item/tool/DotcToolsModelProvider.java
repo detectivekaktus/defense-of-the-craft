@@ -44,7 +44,8 @@ public class DotcToolsModelProvider extends FabricModelProvider {
                 DotcTools.BLOODTHORN,
                 DotcTools.ROD_OF_ATOS,
                 DotcTools.FORCE_STAFF,
-                DotcTools.HURRICANE_PIKE
+                DotcTools.HURRICANE_PIKE,
+                DotcTools.SATANIC
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 
         Stream.of(

@@ -123,6 +123,7 @@ public class DotcItems {
                 DotcTools.SWIFT_BLINK,
                 DotcTools.ARCANE_BLINK,
                 DotcTools.OVERWHELMING_BLINK,
+                DotcTools.SATANIC,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),

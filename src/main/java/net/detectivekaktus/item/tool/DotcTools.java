@@ -567,6 +567,29 @@ public class DotcTools {
             ),
             "hurricane_pike"
     );
+    public static final Item SATANIC = DotcItems.register(
+            new Satanic(
+                    DotcToolMaterial.DIRE_ARTEFACT,
+                    new Item.Properties()
+                            .attributes(Satanic.createAttributes(
+                                    DotcToolMaterial.DIRE_ARTEFACT, 2, -2.5f
+                            ))
+                            .component(
+                                    DotcComponents.ITEM_STATS_COMPONENT,
+                                    new ItemStatsComponent(25, 0, 0)
+                            )
+                            .component(
+                                    DotcComponents.LIFE_STEAL_COMPONENT,
+                                    0.2f
+                            ),
+                    new TooltipBuilder("satanic")
+                            .description()
+                            .stats(25, 0, 0)
+                            .passive()
+                            .active()
+            ),
+            "satanic"
+    );
 
     public static void initialize() { }
 }
