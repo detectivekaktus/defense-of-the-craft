@@ -254,7 +254,7 @@ public class DotcIngredients {
                     new Item.Properties().stacksTo(1)
                             .component(
                                     DotcComponents.LIFE_STEAL_COMPONENT,
-                                    0.15f
+                                    0.1f
                             ),
                     new TooltipBuilder("morbid_mask")
                             .description()

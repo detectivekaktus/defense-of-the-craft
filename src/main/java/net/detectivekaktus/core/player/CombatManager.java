@@ -158,13 +158,13 @@ public class CombatManager {
         setHitThroughEvasion(true);
     }
 
-    public boolean proc(Entity victim, boolean hurt) {
+    public void proc(Entity victim) {
         var stack = player.getMainHandItem();
         var item = stack.getItem();
 
         if (item instanceof Procable itemWithBonuses) {
             if (!hitThroughEvasion())
-                return hurt;
+                return;
 
             var damageSource = itemWithBonuses.getProcDamageSource(player);
             var damage = itemWithBonuses.getProcDamage();
@@ -186,7 +186,7 @@ public class CombatManager {
         }
         else if (stack.is(DotcTools.ECHO_SABRE)) {
             if (player.getCooldowns().isOnCooldown(item))
-                return hurt;
+                return;
 
             var damageSource = player.level().damageSources().source(
                     DotcDamageTypes.PHYSICAL,
@@ -205,8 +205,17 @@ public class CombatManager {
             player.getCooldowns().addCooldown(item, 5 * 20);
             victim.hurt(damageSource, damage);
         }
+    }
 
-        return hurt;
+    public void lifesteal(float damage) {
+        var stats = PlayerStats.get(player);
+        var lifesteal = stats.getLifesteal();
+
+        if (damage <= 0.0f || lifesteal <= 0.0f)
+            return;
+
+        var stolen = damage * lifesteal;
+        player.heal(stolen);
     }
 
     private void addProcableCooldown(Item item) {
