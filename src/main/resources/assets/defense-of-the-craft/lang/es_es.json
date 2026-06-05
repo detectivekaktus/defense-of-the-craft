@@ -75,6 +75,10 @@
   "description.defense-of-the-craft.sages_mask": "Una máscara usada habitualmente por magos y hechiceros en diversos rituales.",
   "passive.defense-of-the-craft.sages_mask": "Otorga al portador 1.25 de regeneración de maná.",
 
+  "item.defense-of-the-craft.morbid_mask": "Morbid Mask",
+  "description.defense-of-the-craft.morbid_mask": "Una máscara que drena la energía de aquellos atrapados por su mirada.",
+  "passive.defense-of-the-craft.morbid_mask": "Otorga al portador un 10% de robo de vida.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "No subestimes el peligro de estas pequeñas e insignificantes hojas.",
 
@@ -284,6 +288,13 @@
   "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
   "description.defense-of-the-craft.overwhelming_blink": "Pocos mortales pueden sostener esta aterradora daga forjada en las entrañas del caos.",
   "active.defense-of-the-craft.overwhelming_blink": "Teletransporta instantáneamente al portador al punto seleccionado. Tras la teletransportación, se crea una poderosa onda de choque en el destino, infligiendo a las criaturas cercanas daño equivalente al 5% de la fuerza del portador y ralentizándolas. Recibir cualquier daño reinicia el enfriamiento del objeto a 3 segundos.",
+
+  "item.defense-of-the-craft.satanic": "Satanic",
+  "description.defense-of-the-craft.satanic": "Un poder inmenso a costa de tu alma.",
+  "passive.defense-of-the-craft.satanic": "Otorga al portador un 20% de robo de vida.",
+  "active.defense-of-the-craft.satanic": "Disipa todos los efectos no beneficiosos del lanzador. Tiempo de reutilización: 30 segundos.",
+
+
 
   "death.attack.defense-of-the-craft.magical": "¡%1$s murió por magia de Defense Of The Craft!",
   "death.attack.defense-of-the-craft.physical": "¡%1$s murió por daño físico de Defense Of The Craft!",

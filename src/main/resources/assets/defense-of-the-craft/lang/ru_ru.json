@@ -83,6 +83,10 @@
   "description.defense-of-the-craft.sages_mask": "Маска, которую зачастую используют в своих ритуалах маги и колдуны.",
   "passive.defense-of-the-craft.sages_mask": "Даёт владельцу 1.25 восстановления маны.",
 
+  "item.defense-of-the-craft.morbid_mask": "Morbid Mask",
+  "description.defense-of-the-craft.morbid_mask": "Маска, поглощающая энергию тех, кто попался ей на глаза.",
+  "passive.defense-of-the-craft.morbid_mask": "Даёт владельцу 10% кражи здоровья.",
+
 
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "Не стоит недооценивать опасность этих маленьких незаметных клинков.",
@@ -299,6 +303,11 @@
   "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
   "description.defense-of-the-craft.overwhelming_blink": "Редкий смертный удержит в руках этот ужасающий книжал, выкованный в чреве хаоса.",
   "active.defense-of-the-craft.overwhelming_blink": "Мгновенно телепортирует владельца к выбранной точке. После телепортации в месте назначения создаётся мощная ударная волна, наносящая всем ближайшим существам урон, равный 5% силы владельца, и замедляющая их. Получение любого урона сбрасывает перезарядку предмета до 3 секунд.",
+
+  "item.defense-of-the-craft.satanic": "Satanic",
+  "description.defense-of-the-craft.satanic": "Почти безграничная сила в обмен на вашу душу.",
+  "passive.defense-of-the-craft.satanic": "Даёт владельцу 20% кражи здоровья.",
+  "active.defense-of-the-craft.satanic": "Развеивает все негативные эффекты с владельца. Перезарядка: 30 секунд.",
 
 
 

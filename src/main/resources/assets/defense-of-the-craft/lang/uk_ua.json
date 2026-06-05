@@ -83,6 +83,10 @@
   "description.defense-of-the-craft.sages_mask": "Маска, яку часто використовують у своїх ритуалах маги та чаклуни.",
   "passive.defense-of-the-craft.sages_mask": "Дає власнику 1.25 відновлення мани.",
 
+  "item.defense-of-the-craft.morbid_mask": "Morbid Mask",
+  "description.defense-of-the-craft.morbid_mask": "Маска, що поглинає енергію тих, хто потрапив у її поле зору.",
+  "passive.defense-of-the-craft.morbid_mask": "Дає власнику 10% викрадення здоров'я.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "Не варто недооцінювати небезпеку цих маленьких непомітних клинків.",
 
@@ -298,6 +302,11 @@
   "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
   "description.defense-of-the-craft.overwhelming_blink": "Рідкісний смертний утримає в руках цей жахаючий кинджал, викуваний у надрах хаосу.",
   "active.defense-of-the-craft.overwhelming_blink": "Миттєво телепортує власника до обраної точки. Після телепортації в місці призначення створюється потужна ударна хвиля, що завдає всім найближчим істотам шкоди, рівної 5% сили власника, та сповільнює їх. Отримання будь-якої шкоди скидає перезарядку предмета до 3 секунд.",
+
+  "item.defense-of-the-craft.satanic": "Satanic",
+  "description.defense-of-the-craft.satanic": "Майже безмежна сила в обмін на вашу душу.",
+  "passive.defense-of-the-craft.satanic": "Дає власнику 20% викрадення здоров'я.",
+  "active.defense-of-the-craft.satanic": "Знімає з власника всі негативні ефекти. Перезарядка: 30 секунд.",
 
 
 
