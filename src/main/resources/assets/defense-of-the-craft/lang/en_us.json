@@ -83,6 +83,10 @@
   "description.defense-of-the-craft.sages_mask": "A mask commonly used by mages and warlocks for various rituals.",
   "passive.defense-of-the-craft.sages_mask": "Grants the wielder 1.25 mana regeneration.",
 
+  "item.defense-of-the-craft.morbid_mask": "Morbid Mask",
+  "description.defense-of-the-craft.morbid_mask": "A mask that drains the energy of those caught in its gaze.",
+  "passive.defense-of-the-craft.morbid_mask": "Grants the wielder 10% lifesteal.",
+
   "item.defense-of-the-craft.blades_of_attack": "Blades of Attack",
   "description.defense-of-the-craft.blades_of_attack": "The damage of these small, concealable blades should not be underestimated.",
 
@@ -154,7 +158,7 @@
 
   "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
   "description.defense-of-the-craft.ring_of_tarrasque": "An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.",
-  "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2 health regeneration.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Grants the wielder 2.5 health regeneration and 15% health regeneration amplification.",
 
   "item.defense-of-the-craft.energy_booster": "Energy Booster",
   "description.defense-of-the-craft.energy_booster": "This lapis gemstone is commonly added to the collection of wizards seeking to improve their presence in combat.",
@@ -298,6 +302,11 @@
   "item.defense-of-the-craft.overwhelming_blink": "Overwhelming Blink",
   "description.defense-of-the-craft.overwhelming_blink": "A horrifying dagger forged in the chaos maw and nigh untouchable by mortal hands.",
   "active.defense-of-the-craft.overwhelming_blink": "Instantly teleports the wielder towards the targeted point. After teleport a huge shockwave is created at the target location, dealing 5% of wielder's strength as damage to all nearby creatures and slowing them down. Taking any damage resets the cooldown of this item to 3 seconds.",
+
+  "item.defense-of-the-craft.satanic": "Satanic",
+  "description.defense-of-the-craft.satanic": "Immense power at the cost of your soul.",
+  "passive.defense-of-the-craft.satanic": "Grants the wielder 20% lifesteal.",
+  "active.defense-of-the-craft.satanic": "Dispels all non beneficial effects from the caster. Cooldowns 30 seconds.",
 
 
 

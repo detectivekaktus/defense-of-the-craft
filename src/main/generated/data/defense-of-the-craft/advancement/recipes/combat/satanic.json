@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_morbid_mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:morbid_mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "defense-of-the-craft:satanic"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_morbid_mask"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "defense-of-the-craft:satanic"
+    ]
+  }
+}

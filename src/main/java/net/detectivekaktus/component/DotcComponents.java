@@ -55,6 +55,7 @@ public class DotcComponents {
     public static final DataComponentType<Float> BONUS_HP_COMPONENT = registerFloat("bonus_hp");
     public static final DataComponentType<Float> BONUS_HP_REGEN_COMPONENT = registerFloat("bonus_hp_regen");
     public static final DataComponentType<Float> HP_REGEN_AMPLIFICATION_COMPONENT = registerFloat("hp_regen_amplification");
+    public static final DataComponentType<Float> LIFE_STEAL_COMPONENT = registerFloat("lifesteal");
 
     public static final DataComponentType<Float> BONUS_MANA_COMPONENT = registerFloat("bonus_mana");
     public static final DataComponentType<Float> BONUS_MANA_REGEN_COMPONENT = registerFloat("bonus_mana_regen");

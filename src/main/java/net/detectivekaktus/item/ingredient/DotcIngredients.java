@@ -248,6 +248,20 @@ public class DotcIngredients {
             ),
             "sages_mask"
     );
+    // TODO: Make this item a wearable helmet
+    public static final Item MORBID_MASK = DotcItems.register(
+            new DotcItem(
+                    new Item.Properties().stacksTo(1)
+                            .component(
+                                    DotcComponents.LIFE_STEAL_COMPONENT,
+                                    0.1f
+                            ),
+                    new TooltipBuilder("morbid_mask")
+                            .description()
+                            .passive()
+            ),
+            "morbid_mask"
+    );
 
 
     public static void initialize() { }

@@ -53,6 +53,12 @@ public class PlayerStats {
                     integerBuilder.initializer(() -> 0)
                             .persistent(Codec.INT)
     );
+    public static final AttachmentType<Float> LIFESTEAL = AttachmentRegistry.create(
+            ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "lifesteal"),
+            floatBuilder ->
+                    floatBuilder.initializer(() -> DotcAttachmentRules.DEFAULT_LIFESTEAL)
+                            .persistent(Codec.FLOAT)
+    );
 
     public static final AttachmentType<Integer> AGILITY = AttachmentRegistry.create(
             ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "agility"),
@@ -175,6 +181,19 @@ public class PlayerStats {
             return setOrFallback(
                     HP_REGEN_AMPLIFICATION,
                     Math.max(val, DotcAttachmentRules.DEFAULT_HP_REGEN_AMPLIFICATION),
+                    current
+            );
+        }
+
+        public float getLifesteal() {
+            return target.getAttachedOrCreate(LIFESTEAL);
+        }
+
+        public float setLifesteal(float val) {
+            var current = getLifesteal();
+            return setOrFallback(
+                    LIFESTEAL,
+                    Math.max(val, DotcAttachmentRules.DEFAULT_LIFESTEAL),
                     current
             );
         }

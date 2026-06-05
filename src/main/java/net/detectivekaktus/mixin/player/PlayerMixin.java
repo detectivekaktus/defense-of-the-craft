@@ -22,6 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.sugar.Local;
 
 import net.detectivekaktus.core.player.CombatManager;
 import net.detectivekaktus.core.util.CombatManagerHolder;
@@ -96,7 +97,7 @@ public class PlayerMixin implements CombatManagerHolder {
                     target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
             )
     )
-    private boolean postTargetHurtHook(boolean hurt, Entity entity) {
+    private boolean postTargetHurtHook(boolean hurt, Entity entity, @Local(ordinal = 3) float damage) {
         if (!hurt)
             return false;
 
@@ -104,7 +105,9 @@ public class PlayerMixin implements CombatManagerHolder {
         if (isNotMixinTarget(player))
             return hurt;
 
-        return combatManager.proc(entity, hurt);
+        combatManager.proc(entity);
+        combatManager.lifesteal(entity, damage);
+        return true;
     }
 
     @ModifyVariable(

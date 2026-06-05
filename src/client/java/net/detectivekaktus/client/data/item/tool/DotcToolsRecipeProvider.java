@@ -409,6 +409,19 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.FORCE_STAFF)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcTools.SATANIC)
+                .pattern(" $ ")
+                .pattern(" @ ")
+                .pattern(" # ")
+                .define('$', DotcPrimitives.CLAYMORE)
+                .define('@', DotcPrimitives.REAVER)
+                .define('#', DotcIngredients.MORBID_MASK)
+                .unlockedBy(
+                        "has_morbid_mask",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.MORBID_MASK)
+                )
+                .save(exporter);
     }
 
     @Override

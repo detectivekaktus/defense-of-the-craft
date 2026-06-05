@@ -33,6 +33,7 @@ public class DotcItemSounds {
     public static final SoundEvent SPIRIT_VESSEL = DotcSounds.register("item_spirit_vessel");
     public static final SoundEvent FORCE_STAFF = DotcSounds.register("item_force_staff");
     public static final SoundEvent HURRICANE_PIKE = DotcSounds.register("item_hurricane_pike");
+    public static final SoundEvent SATANIC = DotcSounds.register("item_satanic");
 
     public static void initialize() {}
 }

@@ -158,13 +158,13 @@ public class CombatManager {
         setHitThroughEvasion(true);
     }
 
-    public boolean proc(Entity victim, boolean hurt) {
+    public void proc(Entity victim) {
         var stack = player.getMainHandItem();
         var item = stack.getItem();
 
         if (item instanceof Procable itemWithBonuses) {
             if (!hitThroughEvasion())
-                return hurt;
+                return;
 
             var damageSource = itemWithBonuses.getProcDamageSource(player);
             var damage = itemWithBonuses.getProcDamage();
@@ -186,7 +186,7 @@ public class CombatManager {
         }
         else if (stack.is(DotcTools.ECHO_SABRE)) {
             if (player.getCooldowns().isOnCooldown(item))
-                return hurt;
+                return;
 
             var damageSource = player.level().damageSources().source(
                     DotcDamageTypes.PHYSICAL,
@@ -205,8 +205,20 @@ public class CombatManager {
             player.getCooldowns().addCooldown(item, 5 * 20);
             victim.hurt(damageSource, damage);
         }
+    }
 
-        return hurt;
+    public void lifesteal(Entity victim, float damage) {
+        if (!(victim instanceof LivingEntity))
+            return;
+
+        var stats = PlayerStats.get(player);
+        var lifesteal = stats.getLifesteal();
+
+        if (damage <= 0.0f || lifesteal <= 0.0f)
+            return;
+
+        var stolen = damage * lifesteal;
+        player.heal(stolen);
     }
 
     private void addProcableCooldown(Item item) {
@@ -341,12 +353,7 @@ public class CombatManager {
         if (damagePercent < 0.3f && damage < player.getHealth())
             return false;
 
-        var effectsToRemove = player.getActiveEffects()
-                .stream()
-                .map(MobEffectInstance::getEffect)
-                .filter(effect -> !effect.value().isBeneficial())
-                .toList();
-        effectsToRemove.forEach(player::removeEffect);
+        dispelNonBeneficialEffects(player);
         player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
         player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
 
@@ -364,6 +371,15 @@ public class CombatManager {
                 new DustParticleOptions(new Vector3f(1.0f, 0.862f, 0.670f), 1.5f)
         ));
         return true;
+    }
+
+    public static void dispelNonBeneficialEffects(Player target) {
+        var effectsToRemove = target.getActiveEffects()
+                .stream()
+                .map(MobEffectInstance::getEffect)
+                .filter(effect -> !effect.value().isBeneficial())
+                .toList();
+        effectsToRemove.forEach(target::removeEffect);
     }
 
     public static boolean isPlayerOrHostile(ServerPlayer player, LivingEntity entity) {

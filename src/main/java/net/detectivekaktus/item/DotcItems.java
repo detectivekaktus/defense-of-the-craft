@@ -75,6 +75,7 @@ public class DotcItems {
                 DotcIngredients.BLIGHT_STONE,
                 DotcIngredients.GLOVES_OF_HASTE,
                 DotcIngredients.SAGES_MASK,
+                DotcIngredients.MORBID_MASK,
                 DotcIngredients.BLADES_OF_ATTACK,
                 DotcPrimitives.MITHRIL_HAMMER,
                 DotcPrimitives.BROADSWORD,
@@ -122,6 +123,7 @@ public class DotcItems {
                 DotcTools.SWIFT_BLINK,
                 DotcTools.ARCANE_BLINK,
                 DotcTools.OVERWHELMING_BLINK,
+                DotcTools.SATANIC,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),
