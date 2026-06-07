@@ -71,6 +71,23 @@ public class ModMenuIntegration implements ModMenuApi {
                                                 )
                                                 .build()
                                 )
+                                .group(
+                                        OptionGroup.createBuilder()
+                                                .name(Component.translatable("group.defense-of-the-craft.hud.title"))
+                                                .option(
+                                                        Option.<Boolean>createBuilder()
+                                                                .name(Component.translatable("option.defense-of-the-craft.show_status_bar"))
+                                                                .description(OptionDescription.of(Component.translatable("option.defense-of-the-craft.show_status_bar.description")))
+                                                                .binding(
+                                                                        DotcConfig.HANDLER.defaults().showStatusBar,
+                                                                        () -> DotcConfig.HANDLER.instance().showStatusBar,
+                                                                        val -> DotcConfig.HANDLER.instance().showStatusBar = val
+                                                                )
+                                                                .controller(TickBoxControllerBuilder::create)
+                                                                .build()
+                                                )
+                                                .build()
+                                )
                                 .build()
                 )
                 .save(() -> DotcConfig.HANDLER.save())

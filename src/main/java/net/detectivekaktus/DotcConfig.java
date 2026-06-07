@@ -30,4 +30,6 @@ public class DotcConfig {
     public boolean addWhisperingSound = false;
     @SerialEntry
     public boolean enableStreakAnnouncement = true;
+    @SerialEntry
+    public boolean showStatusBar = true;
 }

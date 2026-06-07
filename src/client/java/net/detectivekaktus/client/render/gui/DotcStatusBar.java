@@ -6,6 +6,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.GameType;
 
+import net.detectivekaktus.DotcConfig;
 import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerMana;
 import net.detectivekaktus.attach.PlayerStats;
@@ -92,6 +93,9 @@ public class DotcStatusBar {
     }
 
     public static void draw(GuiGraphics graphics, DeltaTracker tickCounter) {
+        if (!DotcConfig.HANDLER.instance().showStatusBar)
+            return;
+
         var client = Minecraft.getInstance();
         if (shouldSkipDrawing(client))
             return;

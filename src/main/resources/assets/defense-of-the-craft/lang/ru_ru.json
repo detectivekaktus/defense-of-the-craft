@@ -357,6 +357,7 @@
   "config.defense-of-the-craft.title": "Defense of the Craft",
   "category.defense-of-the-craft.ui.title": "Пользовательский Интерфейс",
   "group.defense-of-the-craft.sound.title": "Звук",
+  "group.defense-of-the-craft.hud.title": "HUD",
 
   "option.defense-of-the-craft.change_button_sounds": "Использовать звуки кнопок из Dota 2",
   "option.defense-of-the-craft.change_button_sounds.description": "При включении этой опции большинство виджетов будут использовать звуки интерфейса из Dota 2.",
@@ -368,5 +369,8 @@
   "option.defense-of-the-craft.add_whispering_sound.description": "При включении этой опции все входящие сообщения /msg, /w и /tell будут воспроизводить звук чата из Steam.",
 
   "option.defense-of-the-craft.enable_streak_announcement": "Включить объявления серий убийств",
-  "option.defense-of-the-craft.enable_streak_announcement.description": "Включив эту опцию, вы будете слышать объявления серий убийств (например, двойное убийство или серия убийств)."
+  "option.defense-of-the-craft.enable_streak_announcement.description": "Включив эту опцию, вы будете слышать объявления серий убийств (например, двойное убийство или серия убийств).",
+
+  "option.defense-of-the-craft.show_status_bar": "Показать статус бар",
+  "option.defense-of-the-craft.show_status_bar.description": "При включении этой опции над стандартным хотбаром Minecraft будут отображаться ваши атрибуты и текущая мана."
 }
