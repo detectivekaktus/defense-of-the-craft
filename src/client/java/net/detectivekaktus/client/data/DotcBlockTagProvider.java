@@ -3,6 +3,7 @@ package net.detectivekaktus.client.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
@@ -23,6 +24,14 @@ public class DotcBlockTagProvider extends FabricTagProvider<Block> {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
+        getOrCreateTagBuilder(DotcBlockTags.ORES)
+                .add(DotcNaturalBlocks.RADIANT_ORE)
+                .add(DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE)
+                .add(DotcNaturalBlocks.DIRE_ORE);
+
+        getOrCreateTagBuilder(ConventionalBlockTags.ORES)
+                .addTag(DotcBlockTags.ORES);
+
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(DotcNaturalBlocks.RADIANT_ORE)
                 .add(DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE)
