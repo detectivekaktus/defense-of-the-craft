@@ -175,3 +175,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * Dire ore generation. Now it spawns more frequently.
 * Halve the attack speed bonus given by agility.
+
+
+## [0.3.2] - 2026-06-07
+
+### Added
+* Option to toggle on and off the Defense of the Craft status bar.
+* `#defense-of-the-craft:ores` tag which is also included in `#c:ores` tag. This change should make the mod compatible with [AntiXRay](https://modrinth.com/mod/anti-xray) mod.
