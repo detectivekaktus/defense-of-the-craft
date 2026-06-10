@@ -75,9 +75,9 @@ public class ItemStackMixin {
             cancellable = true
     )
     private void interactLivingEntityHead(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
-        var stack = player.getItemInHand(hand);
-        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem()))
-            callbackInfo.setReturnValue(InteractionResult.FAIL);
+//        var stack = player.getItemInHand(hand);
+//        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem()))
+//            callbackInfo.setReturnValue(InteractionResult.FAIL);
 
         if (ItemStackHelper.cancelInteractionIfDisabled(player))
             callbackInfo.setReturnValue(InteractionResult.FAIL);
