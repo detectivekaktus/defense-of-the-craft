@@ -3,6 +3,8 @@ package net.detectivekaktus.event.player;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 
+import net.detectivekaktus.core.player.CooldownManager;
+
 public class DotcPlayerEvents {
     public static void initialize() {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
@@ -19,6 +21,8 @@ public class DotcPlayerEvents {
 
                 GemOfTrueSightEvent.tick(player);
                 RadianceEvent.tick(player);
+
+                CooldownManager.INSTANCE.tick(server);
             }
         });
         ServerPlayerEvents.LEAVE.register(LeaveServerEvent::execute);
