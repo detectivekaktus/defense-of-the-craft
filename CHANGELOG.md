@@ -182,3 +182,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Option to toggle on and off the Defense of the Craft status bar.
 * `#defense-of-the-craft:ores` tag which is also included in `#c:ores` tag. This change should make the mod compatible with [AntiXRay](https://modrinth.com/mod/anti-xray) mod.
+
+
+## [0.3.3] - 2026-06-10
+
+### Changed
+* Hand of Midas cooldown is lowered to 2 minutes due to a cooldown resetting bug ([#46](https://github.com/detectivekaktus/defense-of-the-craft/issues/46)). The chances are lowered to:
+    * Coal - 45%
+    * Iron - 33%
+    * Gold - 15%
+    * Diamond - 6.6%
+    * Netherite - 0.14%
+* Hand of Midas no longer works for mobs defined in `#c:bosses` conventional fabric tag. Any mod that does not include their bosses in that tag will see their bosses devoured by the Hand of Midas usage.
