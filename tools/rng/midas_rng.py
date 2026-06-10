@@ -3,21 +3,21 @@ from random import randint
 
 
 WEIGHTS = {
-    "COAL": 800,
-    "IRON": 600,
-    "GOLD": 600,
-    "DIAMOND": 125,
-    "NETHERITE": 5
+    "COAL": 300,
+    "IRON": 220,
+    "GOLD": 100,
+    "DIAMOND": 30,
+    "NETHERITE": 1
 }
 WEIGHTS_SUM = sum([val for _, val in WEIGHTS.items()])
 
-PITY_COUNTER_CAP = 12
+PITY_COUNTER_CAP = 24
 PITY_TIMESTAMP_CAP = 4 * 60 * 60
 
 PITY_DIAMOND_HARD = -1
 
 COMEBACK_BOOST_USES = 4
-INITIAL_BOOSTED_USES = 11
+INITIAL_BOOSTED_USES = 23
 
 class Player:
     def __init__(self) -> None:

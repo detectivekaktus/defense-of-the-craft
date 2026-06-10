@@ -32,21 +32,21 @@ public class HandOfMidas extends DotcAbilityItem {
 
     private final int DIAMOND_PITY = -1;
 
-    private final int PITY_COUNTER_CAP = 12;
+    private final int PITY_COUNTER_CAP = 24;
     private final int PITY_TIMESTAMP_CAP = 60 * 60 * 4;
     private final int COMEBACK_BONUS_INTERVAL = 60 * 60 * 24 * 2;
     // maybe you'll hit the pity counter cap when your bonus expires
-    private final int PITY_INITIAL_BONUS = 11;
+    private final int PITY_INITIAL_BONUS = 23;
     private final int PITY_COMEBACK_BONUS = 4;
 
     public HandOfMidas(Properties properties, TooltipBuilder tooltipBuilder) {
         super(properties, tooltipBuilder);
         WEIGHTS = new LinkedHashMap<>();
-        WEIGHTS.put(Items.COAL, 800);
-        WEIGHTS.put(Items.IRON_INGOT, 600);
-        WEIGHTS.put(Items.GOLD_INGOT, 600);
-        WEIGHTS.put(Items.DIAMOND, 125);
-        WEIGHTS.put(Items.NETHERITE_INGOT, 5);
+        WEIGHTS.put(Items.COAL, 300);
+        WEIGHTS.put(Items.IRON_INGOT, 220);
+        WEIGHTS.put(Items.GOLD_INGOT, 100);
+        WEIGHTS.put(Items.DIAMOND, 30);
+        WEIGHTS.put(Items.NETHERITE_INGOT, 1);
         TOTAL_WEIGHT = WEIGHTS.values().stream().mapToInt(Integer::intValue).sum();
     }
 
@@ -173,6 +173,6 @@ public class HandOfMidas extends DotcAbilityItem {
 
     @Override
     public int getCooldownInTicks() {
-        return (60 * 5) * 20;
+        return (60 * 2) * 20;
     }
 }
