@@ -50,22 +50,27 @@ public class CooldownManager {
     }
 
     public void tick(MinecraftServer server) {
-        for (var playerCooldown : playerToCooldownsMap.entrySet()) {
-            var uuid = playerCooldown.getKey();
+        var gameTime = server.overworld().getGameTime();
+        var iterator = playerToCooldownsMap.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            var entry = iterator.next();
+            var uuid = entry.getKey();
+            var cooldowns = entry.getValue();
+
             var player = server.getPlayerList().getPlayer(uuid);
-            if (player == null)
-                continue;
+            if (player != null) {
+                List<Item> expired = new ArrayList<>();
+                for (var cooldown : cooldowns.entrySet())
+                    if (cooldown.getValue() <= gameTime)
+                        expired.add(cooldown.getKey());
 
-            var cooldowns = playerCooldown.getValue();
-            if (cooldowns.isEmpty())
-                continue;
-
-            List<Item> expired = new ArrayList<>();
-            for (var cooldown : cooldowns.entrySet()) {
-                if (cooldown.getValue() <= player.level().getGameTime())
-                    expired.add(cooldown.getKey());
+                expired.forEach(item -> removeCooldown(player, item));
             }
-            expired.forEach(item -> removeCooldown(player, item));
+            else cooldowns.values().removeIf(expiryTick -> expiryTick <= gameTime);
+
+            if (cooldowns.isEmpty())
+                iterator.remove();
         }
     }
 }
