@@ -21,6 +21,7 @@ import net.detectivekaktus.core.animation.DustOfAppearanceAnimation;
 import net.detectivekaktus.core.animation.ParticleAnimationManager;
 import net.detectivekaktus.core.item.HasUseCooldown;
 import net.detectivekaktus.core.item.ParticleAnimated;
+import net.detectivekaktus.core.player.CooldownManager;
 import net.detectivekaktus.core.player.ShadowWalkingSource;
 import net.detectivekaktus.item.DotcItem;
 import net.detectivekaktus.item.TooltipBuilder;
@@ -68,7 +69,7 @@ public class DustOfAppearance extends DotcItem implements HasUseCooldown, Partic
                 SoundSource.PLAYERS
         );
 
-        player.getCooldowns().addCooldown(this, getCooldownInTicks());
+        CooldownManager.INSTANCE.addCooldown(player, this, getCooldownInTicks());
         stack.consume(1, player);
 
         return InteractionResultHolder.success(stack);

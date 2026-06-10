@@ -21,9 +21,9 @@ public class DotcPlayerEvents {
 
                 GemOfTrueSightEvent.tick(player);
                 RadianceEvent.tick(player);
-
-                CooldownManager.INSTANCE.tick(server);
             }
+
+            CooldownManager.INSTANCE.tick(server);
         });
         ServerPlayerEvents.LEAVE.register(LeaveServerEvent::execute);
     }

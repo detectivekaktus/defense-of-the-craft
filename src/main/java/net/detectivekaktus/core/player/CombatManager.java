@@ -14,6 +14,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+import org.joml.Vector3f;
+
 import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.attach.PlayerFlags;
 import net.detectivekaktus.attach.PlayerMana;
@@ -31,7 +33,6 @@ import net.detectivekaktus.effect.DotcEffects;
 import net.detectivekaktus.item.tool.*;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
-import org.joml.Vector3f;
 
 public class CombatManager {
     private final Player player;
@@ -137,7 +138,9 @@ public class CombatManager {
         if (!stack.has(DotcComponents.PROCABLE_COMPONENT) || !(stack.getItem() instanceof Procable))
             return;
 
-        if (((Procable) item).getProcCooldownInTicks() != 0 && player.getCooldowns().isOnCooldown(item))
+        var isOnCooldown = ((Procable) item).getProcCooldownInTicks() != 0
+                && CooldownManager.INSTANCE.isOnCooldown(player, item);
+        if (isOnCooldown)
             return;
 
         var component = stack.get(DotcComponents.PROCABLE_COMPONENT);
@@ -185,7 +188,7 @@ public class CombatManager {
             victim.hurt(damageSource, damage);
         }
         else if (stack.is(DotcTools.ECHO_SABRE)) {
-            if (player.getCooldowns().isOnCooldown(item))
+            if (CooldownManager.INSTANCE.isOnCooldown(player, item))
                 return;
 
             var damageSource = player.level().damageSources().source(
@@ -202,7 +205,7 @@ public class CombatManager {
             // like in dota the echo sabre attack doesn't crit if the first one did,
             // so there's no f *= 1.5 in case of a crit
 
-            player.getCooldowns().addCooldown(item, 5 * 20);
+            CooldownManager.INSTANCE.addCooldown(player, item, 5 * 20);
             victim.hurt(damageSource, damage);
         }
     }
@@ -226,16 +229,16 @@ public class CombatManager {
         if (cooldown == 0)
             return;
 
-        var cooldowns = player.getCooldowns();
-        if (!cooldowns.isOnCooldown(item))
-            cooldowns.addCooldown(item, cooldown);
+        var cooldownManager = CooldownManager.INSTANCE;
+        if (!cooldownManager.isOnCooldown(player, item))
+            cooldownManager.addCooldown(player, item, cooldown);
 
         if (!(item instanceof SharesProcCooldown sharesCooldown))
             return;
 
         for (var sharedCooldownItem : sharesCooldown.getSharesProcCooldownWith()) {
-            if (!cooldowns.isOnCooldown(sharedCooldownItem))
-                cooldowns.addCooldown(sharedCooldownItem, cooldown);
+            if (!cooldownManager.isOnCooldown(player, sharedCooldownItem))
+                cooldownManager.addCooldown(player, sharedCooldownItem, cooldown);
         }
     }
 
@@ -324,7 +327,7 @@ public class CombatManager {
     }
 
     public boolean popAeonDisk(float damage, DamageSource damageSource) {
-        if (player.getCooldowns().isOnCooldown(DotcTools.AEON_DISK))
+        if (CooldownManager.INSTANCE.isOnCooldown(player, DotcTools.AEON_DISK))
             return false;
 
         var aeonWrapper = new Object() {
@@ -355,7 +358,7 @@ public class CombatManager {
 
         dispelNonBeneficialEffects(player);
         player.addEffect(new MobEffectInstance(DotcEffects.COMBO_BREAKER, 3 * 20));
-        player.getCooldowns().addCooldown(DotcTools.AEON_DISK, 180 * 20);
+        CooldownManager.INSTANCE.addCooldown(player, DotcTools.AEON_DISK, 180 * 20);
 
         player.level().playSound(
                 null,
@@ -398,10 +401,10 @@ public class CombatManager {
     }
 
     private void addUseCooldownIfAbsent(Item item, int timeInTicks) {
-        var cooldowns = player.getCooldowns();
+        var cooldownManager = CooldownManager.INSTANCE;
 
-        if (!cooldowns.isOnCooldown(item))
-            cooldowns.addCooldown(item, timeInTicks);
+        if (!cooldownManager.isOnCooldown(player, item))
+            cooldownManager.addCooldown(player, item, timeInTicks);
     }
 
     public boolean hitThroughEvasion() {

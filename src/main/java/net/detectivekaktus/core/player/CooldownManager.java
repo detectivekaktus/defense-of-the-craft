@@ -4,9 +4,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class CooldownManager {
     public static final CooldownManager INSTANCE = new CooldownManager();
@@ -53,17 +51,21 @@ public class CooldownManager {
 
     public void tick(MinecraftServer server) {
         for (var playerCooldown : playerToCooldownsMap.entrySet()) {
+            var uuid = playerCooldown.getKey();
+            var player = server.getPlayerList().getPlayer(uuid);
+            if (player == null)
+                continue;
+
             var cooldowns = playerCooldown.getValue();
+            if (cooldowns.isEmpty())
+                continue;
 
+            List<Item> expired = new ArrayList<>();
             for (var cooldown : cooldowns.entrySet()) {
-                var uuid = playerCooldown.getKey();
-                var player = server.getPlayerList().getPlayer(uuid);
-                if (player == null)
-                    continue;
-
                 if (cooldown.getValue() <= player.level().getGameTime())
-                    removeCooldown(player, cooldown.getKey());
+                    expired.add(cooldown.getKey());
             }
+            expired.forEach(item -> removeCooldown(player, item));
         }
     }
 }

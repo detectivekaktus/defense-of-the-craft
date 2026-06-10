@@ -2,6 +2,7 @@ package net.detectivekaktus.mixin.player;
 
 import com.mojang.authlib.GameProfile;
 
+import net.detectivekaktus.core.player.CooldownManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
@@ -166,7 +167,7 @@ public class PlayerMixin implements CombatManagerHolder {
         var player = (Player) (Object) this;
 
         var stack = player.getItemInHand(interactionHand);
-        if (player.getCooldowns().isOnCooldown(stack.getItem())) {
+        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem())) {
             player.level().playLocalSound(
                     player,
                     DotcGuiSounds.UI_COOLDOWN,

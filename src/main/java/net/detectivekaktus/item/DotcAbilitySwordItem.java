@@ -1,6 +1,7 @@
 package net.detectivekaktus.item;
 
 import net.detectivekaktus.core.item.ItemStackHelper;
+import net.detectivekaktus.core.player.CooldownManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
@@ -76,14 +77,14 @@ public abstract class DotcAbilitySwordItem extends DotcSwordItem implements HasM
         invokeInteractionAbility(player, target, stack);
         playAbilitySound(player);
 
-        var cooldowns = player.getCooldowns();
-        cooldowns.addCooldown(this, getCooldownInTicks());
+        var cooldownManager = CooldownManager.INSTANCE;
+        cooldownManager.addCooldown(player, this, getCooldownInTicks());
         if (this instanceof SharesUseCooldown itemWithSharedCooldown) {
             for (var item : itemWithSharedCooldown.getSharesCooldownWith()) {
-                if (cooldowns.isOnCooldown(item))
+                if (cooldownManager.isOnCooldown(player, item))
                     continue;
 
-                cooldowns.addCooldown(item, getCooldownInTicks());
+                cooldownManager.addCooldown(player, item, getCooldownInTicks());
             }
         }
 
