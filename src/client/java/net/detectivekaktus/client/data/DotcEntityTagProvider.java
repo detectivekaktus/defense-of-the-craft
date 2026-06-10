@@ -2,6 +2,7 @@ package net.detectivekaktus.client.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -19,9 +20,7 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
         getOrCreateTagBuilder(DotcEntityTypeTags.DIFFUSAL_BLADE_INVULNERABLE)
-                .add(EntityType.ENDER_DRAGON)
-                .add(EntityType.WITHER)
-                .add(EntityType.WARDEN);
+                .forceAddTag(ConventionalEntityTypeTags.BOSSES);
 
         getOrCreateTagBuilder(DotcEntityTypeTags.ABYSSAL_BLADE_INVULNERABLE)
                 .add(EntityType.ENDER_DRAGON)
@@ -33,9 +32,6 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
 
         getOrCreateTagBuilder(DotcEntityTypeTags.HAND_OF_MIDAS_INVULNERABLE)
                 .add(EntityType.PLAYER)
-                .add(EntityType.ENDER_DRAGON)
-                .add(EntityType.WITHER)
-                .add(EntityType.WARDEN)
                 .add(EntityType.BREEZE)
                 .add(EntityType.VILLAGER)
                 .add(EntityType.WITCH)
@@ -48,14 +44,14 @@ public class DotcEntityTagProvider extends FabricTagProvider<EntityType<?>> {
                 .add(EntityType.GHAST)
                 .add(EntityType.SHULKER)
                 .add(EntityType.IRON_GOLEM)
-                .add(EntityType.SNIFFER);
+                .add(EntityType.SNIFFER)
+                .forceAddTag(ConventionalEntityTypeTags.BOSSES);
 
         getOrCreateTagBuilder(DotcEntityTypeTags.ROD_OF_ATOS_INVULNERABLE)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER);
 
         getOrCreateTagBuilder(DotcEntityTypeTags.FORCE_MOVEMENT_INVULNERABLE)
-                .add(EntityType.ENDER_DRAGON)
-                .add(EntityType.WITHER);
+                .forceAddTag(ConventionalEntityTypeTags.BOSSES);
     }
 }
