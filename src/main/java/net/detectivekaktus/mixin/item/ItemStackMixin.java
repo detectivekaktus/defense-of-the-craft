@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.detectivekaktus.core.item.ItemStackHelper;
+import net.detectivekaktus.core.player.CooldownManager;
 
 @Mixin(ItemStack.class)
 public class ItemStackMixin {
@@ -32,6 +33,10 @@ public class ItemStackMixin {
     )
     private void useHead(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> callbackInfo) {
         var stack = player.getItemInHand(hand);
+
+        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem()))
+            callbackInfo.setReturnValue(InteractionResultHolder.fail(stack));
+
         if (ItemStackHelper.cancelInteractionIfDisabled(player))
             callbackInfo.setReturnValue(InteractionResultHolder.fail(stack));
 
@@ -51,6 +56,10 @@ public class ItemStackMixin {
         if (player == null)
             return;
 
+        var stack = useOnContext.getItemInHand();
+        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem()))
+            callbackInfo.setReturnValue(InteractionResult.FAIL);
+
         if (ItemStackHelper.cancelInteractionIfDisabled(player))
             callbackInfo.setReturnValue(InteractionResult.FAIL);
 
@@ -66,6 +75,10 @@ public class ItemStackMixin {
             cancellable = true
     )
     private void interactLivingEntityHead(Player player, LivingEntity livingEntity, InteractionHand hand, CallbackInfoReturnable<InteractionResult> callbackInfo) {
+        var stack = player.getItemInHand(hand);
+        if (CooldownManager.INSTANCE.isOnCooldown(player, stack.getItem()))
+            callbackInfo.setReturnValue(InteractionResult.FAIL);
+
         if (ItemStackHelper.cancelInteractionIfDisabled(player))
             callbackInfo.setReturnValue(InteractionResult.FAIL);
 
