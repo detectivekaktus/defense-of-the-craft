@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Unreleased]
+
+### Changed
+* Ring of Health health regeneration reduced from 1 to 0.5.
+* Ring of Tarrasque health regeneration reduced from 2 to 1.
+* Heart of Tarrasque health regeneration and regeneration amplification reduced from 2.5 to 1.5 and from 15% to 6% respectively.
+* Sange health regeneration amplification lowered from 12% to 3%.
+* Abyssal Blade health regeneration amplification lowered from 12% to 3%.
+* Health regeneration gain from strength is reduced from 0.025/s to 0.0125/s.
+
+
 ## [0.1.0] - 2026-04-22
 
 ### Added
