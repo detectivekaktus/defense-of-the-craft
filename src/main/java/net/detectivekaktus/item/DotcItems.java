@@ -61,7 +61,7 @@ public class DotcItems {
                 DotcPrimitives.REAVER,
                 DotcIngredients.EAGLESONG,
                 DotcPrimitives.MYSTIC_STAFF,
-                DotcIngredients.SACRED_RELIC,
+                DotcPrimitives.SACRED_RELIC,
                 DotcPrimitives.DEMON_EDGE,
                 DotcIngredients.VITALITY_BOOSTER,
                 DotcIngredients.ENERGY_BOOSTER,

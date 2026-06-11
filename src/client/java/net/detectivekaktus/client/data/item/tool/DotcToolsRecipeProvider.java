@@ -234,10 +234,10 @@ public class DotcToolsRecipeProvider extends FabricRecipeProvider {
                 .pattern(" $ ")
                 .define('#', Items.NETHERITE_SWORD)
                 .define('@', DotcIngredients.TALISMAN_OF_EVASION)
-                .define('$', DotcIngredients.SACRED_RELIC)
+                .define('$', DotcPrimitives.SACRED_RELIC)
                 .unlockedBy(
                         "has_sacred_relic",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SACRED_RELIC)
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.SACRED_RELIC)
                 )
                 .save(exporter);
 

@@ -101,19 +101,6 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                 )
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.SACRED_RELIC)
-                .pattern("$#$")
-                .pattern("#@#")
-                .pattern(" # ")
-                .define('@', Items.HEART_OF_THE_SEA)
-                .define('#', Items.GOLD_INGOT)
-                .define('$', DotcIngredients.DIRE_CRYSTAL)
-                .unlockedBy(
-                        "has_heart_of_the_sea",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEART_OF_THE_SEA)
-                )
-                .save(exporter);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.GLOVES_OF_HASTE)
                 .pattern("## ")
                 .pattern("## ")

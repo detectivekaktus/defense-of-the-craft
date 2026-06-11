@@ -127,10 +127,10 @@ public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
                 .pattern(" # ")
                 .define('|', Items.NETHERITE_SWORD)
                 .define('@', DotcPrimitives.DEMON_EDGE)
-                .define('#', DotcIngredients.SACRED_RELIC)
+                .define('#', DotcPrimitives.SACRED_RELIC)
                 .unlockedBy(
                         "has_sacred_relic",
-                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SACRED_RELIC)
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.SACRED_RELIC)
                 )
                 .save(exporter);
 
@@ -220,6 +220,20 @@ public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(
                         "has_dire_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcPrimitives.SACRED_RELIC)
+                .pattern("$#$")
+                .pattern("#@#")
+                .pattern(" # ")
+                .define('@', Items.HEART_OF_THE_SEA)
+                .define('#', Items.GOLD_INGOT)
+                .define('$', DotcIngredients.DIRE_CRYSTAL)
+                .unlockedBy(
+                        "has_heart_of_the_sea",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEART_OF_THE_SEA)
                 )
                 .save(exporter);
     }

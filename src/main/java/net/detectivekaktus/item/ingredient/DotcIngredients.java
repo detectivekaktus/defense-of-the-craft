@@ -179,13 +179,6 @@ public class DotcIngredients {
             ),
             "eaglesong"
     );
-    public static final Item SACRED_RELIC = DotcItems.register(
-            new DotcItem(
-                    new Item.Properties(),
-                    new TooltipBuilder("sacred_relic").description()
-            ),
-            "sacred_relic"
-    );
     public static final Item SHADOW_AMULET = DotcItems.register(
             new ShadowAmulet(
                     new Item.Properties().stacksTo(1),

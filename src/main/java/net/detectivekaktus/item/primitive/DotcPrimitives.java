@@ -253,6 +253,19 @@ public class DotcPrimitives {
             ),
             "kaya"
     );
+    public static final Item SACRED_RELIC = DotcItems.register(
+            new DotcSwordItem(
+                    DotcToolMaterial.DIRE_COMPONENT,
+                    new Item.Properties()
+                            .attributes(DotcSwordItem.createAttributes(
+                                    DotcToolMaterial.DIRE_COMPONENT, 1, -2.5f
+                            )),
+                    new TooltipBuilder("sacred_relic")
+                            .description()
+            ),
+            "sacred_relic"
+    );
+
 
     public static void initialize() {
     }
