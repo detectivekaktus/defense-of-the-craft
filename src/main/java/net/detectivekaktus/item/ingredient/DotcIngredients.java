@@ -132,7 +132,7 @@ public class DotcIngredients {
                     new Item.Properties()
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
-                                    1.0f
+                                    0.5f
                             ),
                     new TooltipBuilder("ring_of_health")
                             .description()
@@ -193,7 +193,7 @@ public class DotcIngredients {
                     new Item.Properties().stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
-                                    2.0f
+                                    1.0f
                             ),
                     new TooltipBuilder("ring_of_tarrasque")
                             .description()

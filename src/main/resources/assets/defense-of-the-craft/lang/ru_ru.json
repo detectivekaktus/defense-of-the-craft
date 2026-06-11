@@ -136,7 +136,7 @@
 
   "item.defense-of-the-craft.ring_of_health": "Ring of Health",
   "description.defense-of-the-craft.ring_of_health": "Блестящее кольцо, найденное под трупом толстого полурослика.",
-  "passive.defense-of-the-craft.ring_of_health": "Даёт владельцу 1 восстановления здоровья.",
+  "passive.defense-of-the-craft.ring_of_health": "Даёт владельцу 0.5 восстановления здоровья.",
 
   "item.defense-of-the-craft.sacred_relic": "Sacred Relic",
   "description.defense-of-the-craft.sacred_relic": "Древнее оружие, способное изменить ход битвы.",
@@ -159,7 +159,7 @@
 
   "item.defense-of-the-craft.ring_of_tarrasque": "Ring of Tarrasque",
   "description.defense-of-the-craft.ring_of_tarrasque": "Нестареющее кольцо, выкованное с помощью обычной магии крови, но усиленное могуществом предполагаемого бывшего владельца.",
-  "passive.defense-of-the-craft.ring_of_tarrasque": "Даёт владельцу 2 восстановления здоровья.",
+  "passive.defense-of-the-craft.ring_of_tarrasque": "Даёт владельцу 1 восстановления здоровья.",
 
   "item.defense-of-the-craft.energy_booster": "Energy Booster",
   "description.defense-of-the-craft.energy_booster": "Этот лазурит часто можно найти у волшебников, стремящихся дольше сохранять колдовские силы в бою.",
@@ -204,7 +204,7 @@
 
   "item.defense-of-the-craft.heart_of_tarrasque": "Heart of Tarrasque",
   "description.defense-of-the-craft.heart_of_tarrasque": "Сохранившееся сердце вымершего монстра, с которым его владелец становится мужественнее.",
-  "passive.defense-of-the-craft.heart_of_tarrasque": "Даёт владельцу усиление восстановления здоровья на 20%.",
+  "passive.defense-of-the-craft.heart_of_tarrasque": "Даёт владельцу 1.5 восстановления здоровья и усиление восстановления здоровья на 6%.",
 
   "item.defense-of-the-craft.aeon_disk": "Aeon Disk",
   "description.defense-of-the-craft.aeon_disk": "Могущественный артефакт, давным-давно, как поговаривают, выкраденный из Белого инкубатория.",
@@ -246,7 +246,7 @@
 
   "item.defense-of-the-craft.abyssal_blade": "Abyssal Blade",
   "description.defense-of-the-craft.abyssal_blade": "Острие потерянного клинка Повелителя бездны впивается врагу прямо в душу.",
-  "passive.defense-of-the-craft.abyssal_blade": "Даёт атакам владельца 25% шанс оглушить цель и нанести дополнительный физический урон.",
+  "passive.defense-of-the-craft.abyssal_blade": "Даёт атакам владельца 25% шанс оглушить цель и нанести дополнительный физический урон, а также увеличивает усиление восстановления здоровья на 3%.",
   "active.defense-of-the-craft.abyssal_blade": "Мгновенно оглушает выбранного врага и телепортирует владельца к нему. Пробивает иммунитет к эффектам.",
 
   "item.defense-of-the-craft.shadow_blade": "Shadow Blade",
@@ -266,7 +266,7 @@
 
   "item.defense-of-the-craft.sange": "Sange",
   "description.defense-of-the-craft.sange": "Этот необычайно точный меч сам отыскивает слабые места врагов.",
-  "passive.defense-of-the-craft.sange": "Даёт владельцу 12% усиление восстановления здоровья.",
+  "passive.defense-of-the-craft.sange": "Даёт владельцу 3% усиление восстановления здоровья.",
 
   "item.defense-of-the-craft.yasha": "Yasha",
   "description.defense-of-the-craft.yasha": "Считается самым стремительным оружием на свете.",

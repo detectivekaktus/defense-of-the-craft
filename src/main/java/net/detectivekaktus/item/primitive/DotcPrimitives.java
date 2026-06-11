@@ -200,7 +200,7 @@ public class DotcPrimitives {
                             )
                             .component(
                                     DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    0.12f
+                                    0.03f
                             ),
                     new TooltipBuilder("sange")
                             .description()
