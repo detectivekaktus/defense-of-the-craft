@@ -223,7 +223,7 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    0.16f
+                                    0.03f
                             ),
                     new TooltipBuilder("abyssal_blade")
                             .description()
@@ -388,11 +388,11 @@ public class DotcTools {
                             )
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
-                                    2.5f
+                                    1.5f
                             )
                             .component(
                                     DotcComponents.HP_REGEN_AMPLIFICATION_COMPONENT,
-                                    0.15f
+                                    0.06f
                             ),
                     new TooltipBuilder("heart_of_tarrasque")
                             .description()
