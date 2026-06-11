@@ -59,7 +59,8 @@ public class DotcItemTagProvider extends FabricTagProvider<Item> {
                 .add(DotcPrimitives.DRAGON_LANCE)
                 .add(DotcTools.HURRICANE_PIKE)
                 .add(DotcTools.SATANIC)
-                .add(DotcPrimitives.SACRED_RELIC);
+                .add(DotcPrimitives.SACRED_RELIC)
+                .add(DotcTools.MONKEY_KING_BAR);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(DotcPrimitives.OGRE_AXE)
