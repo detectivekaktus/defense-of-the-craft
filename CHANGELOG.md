@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 * Monkey King Bar can now be enchanted.
+* Radiance range is now identical to the description.
 
 ### Removed
 * Ukrainian and Spanish translations.

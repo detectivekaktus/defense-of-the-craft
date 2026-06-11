@@ -37,7 +37,7 @@ public class RadianceEvent {
         if (!hasRadiance || modeWrapper.mode == Radiance.Mode.DISABLED)
             return;
 
-        var aabb = new AABB(player.getOnPos()).inflate(4);
+        var aabb = new AABB(player.getOnPos()).inflate(8);
         var level = player.level();
 
         var entities = modeWrapper.mode == Radiance.Mode.PVE
