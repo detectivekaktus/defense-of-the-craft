@@ -6,25 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [Unreleased]
-
-### Changed
-* Sacred Relic is now a sword item.
-* Ring of Health health regeneration reduced from 1 to 0.5.
-* Ring of Tarrasque health regeneration reduced from 2 to 1.
-* Heart of Tarrasque health regeneration and regeneration amplification reduced from 2.5 to 1.5 and from 15% to 6% respectively.
-* Sange health regeneration amplification lowered from 12% to 3%.
-* Abyssal Blade health regeneration amplification lowered from 12% to 3%.
-* Health regeneration gain from strength is reduced from 0.025/s to 0.0125/s.
-
-### Fixed
-* Monkey King Bar can now be enchanted.
-* Radiance range is now identical to the description.
-
-### Removed
-* Ukrainian and Spanish translations.
-
-
 ## [0.1.0] - 2026-04-22
 
 ### Added
@@ -209,3 +190,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     * Diamond - 6.6%
     * Netherite - 0.14%
 * Hand of Midas no longer works for mobs defined in `#c:bosses` conventional fabric tag. Any mod that does not include their bosses in that tag will see their bosses devoured by the Hand of Midas usage.
+
+
+## [0.3.4] - 2026-06-11
+
+### Changed
+* Sacred Relic is now a sword item.
+* Ring of Health health regeneration reduced from 1 to 0.5.
+* Ring of Tarrasque health regeneration reduced from 2 to 1.
+* Heart of Tarrasque health regeneration and regeneration amplification reduced from 2.5 to 1.5 and from 15% to 6% respectively.
+* Sange health regeneration amplification lowered from 12% to 3%.
+* Abyssal Blade health regeneration amplification lowered from 12% to 3%.
+* Health regeneration gain from strength is reduced from 0.025/s to 0.0125/s.
+
+### Fixed
+* Monkey King Bar can now be enchanted.
+* Radiance range is now identical to the description.
+
+### Removed
+* Ukrainian and Spanish translations.
