@@ -35,7 +35,6 @@ public class DotcIngredientsModelProvider extends FabricModelProvider {
                 DotcIngredients.RING_OF_HEALTH,
                 DotcIngredients.TALISMAN_OF_EVASION,
                 DotcIngredients.EAGLESONG,
-                DotcIngredients.SACRED_RELIC,
                 DotcIngredients.GLOVES_OF_HASTE,
                 DotcIngredients.BELT_OF_STRENGTH,
                 DotcIngredients.BAND_OF_ELVENSKIN,

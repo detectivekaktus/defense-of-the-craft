@@ -9,12 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+* Sacred Relic is now a sword item.
 * Ring of Health health regeneration reduced from 1 to 0.5.
 * Ring of Tarrasque health regeneration reduced from 2 to 1.
 * Heart of Tarrasque health regeneration and regeneration amplification reduced from 2.5 to 1.5 and from 15% to 6% respectively.
 * Sange health regeneration amplification lowered from 12% to 3%.
 * Abyssal Blade health regeneration amplification lowered from 12% to 3%.
 * Health regeneration gain from strength is reduced from 0.025/s to 0.0125/s.
+
+### Fixed
+* Monkey King Bar can now be enchanted.
 
 ### Removed
 * Ukrainian and Spanish translations.
@@ -164,15 +168,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Hurricane Pike sword item.
 * Kill streak announcement which can be turned on and off in the mod configuration.
 
-
 ### Fixed
 * Radiance and Overwhelming Blink damage now is bound to player, meaning that mob drops will be given as if the player killed the mobs by hand.
 * Radiant Crystal Block and Dire Crystal Block can now be reverted back to crystals.
 
-
 ### Changed
 * No longer display mana cost for items with mana cost set to 0.
-
 
 ### Removed
 * Chinese translations
@@ -184,7 +185,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Morbid Mask item.
 * Satanic sword item.
 * Lifesteal mechanic given by two previous items.
-
 
 ### Changed
 * Dire ore generation. Now it spawns more frequently.
