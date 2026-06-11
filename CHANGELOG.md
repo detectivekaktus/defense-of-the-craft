@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Abyssal Blade health regeneration amplification lowered from 12% to 3%.
 * Health regeneration gain from strength is reduced from 0.025/s to 0.0125/s.
 
+### Removed
+* Ukrainian and Spanish translations.
+
 
 ## [0.1.0] - 2026-04-22
 
