@@ -184,7 +184,7 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.RING_OF_HEALTH)
                 .pattern("#@#")
-                .pattern("@ @")
+                .pattern("# #")
                 .pattern("#@#")
                 .define('#', Items.GOLD_INGOT)
                 .define('@', DotcIngredients.DIRE_CRYSTAL)
