@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_radiant_crystal",
+  "criteria": {
+    "got_blink_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:blink_dagger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.antiquated_but_effective.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:blink_dagger"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.antiquated_but_effective"
+    }
+  },
+  "requirements": [
+    [
+      "got_blink_dagger"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

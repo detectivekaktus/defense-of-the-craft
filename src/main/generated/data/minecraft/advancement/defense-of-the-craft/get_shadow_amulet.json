@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_radiant_crystal",
+  "criteria": {
+    "got_shadow_amulet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:shadow_amulet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.proper_skux.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:shadow_amulet"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.proper_skux"
+    }
+  },
+  "requirements": [
+    [
+      "got_shadow_amulet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

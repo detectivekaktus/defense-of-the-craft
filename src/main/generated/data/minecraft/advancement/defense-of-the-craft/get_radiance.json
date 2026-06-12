@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_dire_crystal",
+  "criteria": {
+    "got_radiance": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:radiance"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.all_the_sexy.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:radiance"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.all_the_sexy"
+    }
+  },
+  "requirements": [
+    [
+      "got_radiance"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_dire_crystal",
+  "criteria": {
+    "got_urn_of_shadows": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:urn_of_shadows"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.souls.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:urn_of_shadows"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.souls"
+    }
+  },
+  "requirements": [
+    [
+      "got_urn_of_shadows"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

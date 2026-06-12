@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "killed_by_something": {
+      "trigger": "minecraft:entity_killed_player"
+    },
+    "killed_something": {
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancement.defense-of-the-craft.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:dire_crystal"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.root"
+    }
+  },
+  "requirements": [
+    [
+      "killed_something",
+      "killed_by_something"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

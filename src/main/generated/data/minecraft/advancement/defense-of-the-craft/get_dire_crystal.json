@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_radiant_crystal",
+  "criteria": {
+    "got_dire_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:dire_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.i_wonder_what_this_does.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:dire_crystal"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.i_wonder_what_this_does"
+    }
+  },
+  "requirements": [
+    [
+      "got_dire_crystal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

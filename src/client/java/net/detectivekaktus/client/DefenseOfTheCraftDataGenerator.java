@@ -1,15 +1,12 @@
 package net.detectivekaktus.client;
 
+import net.detectivekaktus.client.data.*;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
-import net.detectivekaktus.client.data.DotcBlockTagProvider;
-import net.detectivekaktus.client.data.DotcDynamicRegistryProvider;
-import net.detectivekaktus.client.data.DotcEntityTagProvider;
-import net.detectivekaktus.client.data.DotcItemTagProvider;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockLootTableProvider;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockModelProvider;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockRecipeProvider;
@@ -53,6 +50,7 @@ public class DefenseOfTheCraftDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(DotcToolsRecipeProvider::new);
 
 		pack.addProvider(DotcDynamicRegistryProvider::new);
+		pack.addProvider(DotcAdvancementProvider::new);
 	}
 
 	@Override

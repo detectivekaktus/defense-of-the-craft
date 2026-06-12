@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_dire_crystal",
+  "criteria": {
+    "got_heart_of_tarrasque": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:heart_of_tarrasque"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.song_in_heart.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:heart_of_tarrasque"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.song_in_heart"
+    }
+  },
+  "requirements": [
+    [
+      "got_heart_of_tarrasque"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

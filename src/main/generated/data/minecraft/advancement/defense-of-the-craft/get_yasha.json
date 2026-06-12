@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:defense-of-the-craft/get_radiant_crystal",
+  "criteria": {
+    "got_yasha": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:yasha"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.easy_now.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:yasha"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.easy_now"
+    }
+  },
+  "requirements": [
+    [
+      "got_yasha"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
