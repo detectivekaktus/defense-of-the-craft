@@ -162,7 +162,7 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.ROBE_OF_THE_MAGI)
-                .requires(DotcIngredients.RADIANT_CRYSTAL_SHARDS)
+                .requires(DotcIngredients.RADIANT_CRYSTAL)
                 .requires(Items.LEATHER_CHESTPLATE)
                 .unlockedBy(
                         "has_radiant_crystal",
