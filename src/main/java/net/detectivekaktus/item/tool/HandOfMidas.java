@@ -1,5 +1,6 @@
 package net.detectivekaktus.item.tool;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -8,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -32,7 +34,7 @@ public class HandOfMidas extends DotcAbilityItem {
 
     private final int DIAMOND_PITY = -1;
 
-    private final int PITY_COUNTER_CAP = 24;
+    private final int PITY_COUNTER_CAP = 13;
     private final int PITY_TIMESTAMP_CAP = 60 * 60 * 4;
     private final int COMEBACK_BONUS_INTERVAL = 60 * 60 * 24 * 2;
     // maybe you'll hit the pity counter cap when your bonus expires
@@ -45,7 +47,7 @@ public class HandOfMidas extends DotcAbilityItem {
         WEIGHTS.put(Items.COAL, 300);
         WEIGHTS.put(Items.IRON_INGOT, 220);
         WEIGHTS.put(Items.GOLD_INGOT, 100);
-        WEIGHTS.put(Items.DIAMOND, 30);
+        WEIGHTS.put(Items.DIAMOND, 100);
         WEIGHTS.put(Items.NETHERITE_INGOT, 1);
         TOTAL_WEIGHT = WEIGHTS.values().stream().mapToInt(Integer::intValue).sum();
     }
@@ -88,15 +90,16 @@ public class HandOfMidas extends DotcAbilityItem {
         random.setComebackBoosterCounter(comebackBonus == 0 ? 0 : --comebackBonus);
         stack.set(DotcComponents.USE_COUNTER_COMPONENT, ++useCounter);
 
-        var level = player.level();
+        var level = (ServerLevel) player.level();
         var itemEntity = new ItemEntity(
                 level,
                 target.getX(), target.getY(), target.getZ(),
                 new ItemStack(droppedItem)
         );
-
-        target.discard();
         level.addFreshEntity(itemEntity);
+        var xp = 2 * target.getExperienceReward(level, player);
+        ExperienceOrb.award(level, target.position(), xp);
+        target.discard();
 
         if (droppedItem == Items.NETHERITE_INGOT)
             level.playSound(
