@@ -1,5 +1,6 @@
 package net.detectivekaktus.item.tool;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -8,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -88,15 +90,16 @@ public class HandOfMidas extends DotcAbilityItem {
         random.setComebackBoosterCounter(comebackBonus == 0 ? 0 : --comebackBonus);
         stack.set(DotcComponents.USE_COUNTER_COMPONENT, ++useCounter);
 
-        var level = player.level();
+        var level = (ServerLevel) player.level();
         var itemEntity = new ItemEntity(
                 level,
                 target.getX(), target.getY(), target.getZ(),
                 new ItemStack(droppedItem)
         );
-
-        target.discard();
         level.addFreshEntity(itemEntity);
+        var xp = 2 * target.getExperienceReward((ServerLevel) player.level(), player);
+        ExperienceOrb.award(level, target.position(), xp);
+        target.discard();
 
         if (droppedItem == Items.NETHERITE_INGOT)
             level.playSound(
