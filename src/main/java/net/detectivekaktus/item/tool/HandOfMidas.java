@@ -32,7 +32,7 @@ public class HandOfMidas extends DotcAbilityItem {
 
     private final int DIAMOND_PITY = -1;
 
-    private final int PITY_COUNTER_CAP = 24;
+    private final int PITY_COUNTER_CAP = 13;
     private final int PITY_TIMESTAMP_CAP = 60 * 60 * 4;
     private final int COMEBACK_BONUS_INTERVAL = 60 * 60 * 24 * 2;
     // maybe you'll hit the pity counter cap when your bonus expires
@@ -45,7 +45,7 @@ public class HandOfMidas extends DotcAbilityItem {
         WEIGHTS.put(Items.COAL, 300);
         WEIGHTS.put(Items.IRON_INGOT, 220);
         WEIGHTS.put(Items.GOLD_INGOT, 100);
-        WEIGHTS.put(Items.DIAMOND, 30);
+        WEIGHTS.put(Items.DIAMOND, 100);
         WEIGHTS.put(Items.NETHERITE_INGOT, 1);
         TOTAL_WEIGHT = WEIGHTS.values().stream().mapToInt(Integer::intValue).sum();
     }

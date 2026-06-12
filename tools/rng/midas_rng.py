@@ -6,12 +6,12 @@ WEIGHTS = {
     "COAL": 300,
     "IRON": 220,
     "GOLD": 100,
-    "DIAMOND": 30,
+    "DIAMOND": 100,
     "NETHERITE": 1
 }
 WEIGHTS_SUM = sum([val for _, val in WEIGHTS.items()])
 
-PITY_COUNTER_CAP = 24
+PITY_COUNTER_CAP = 13
 PITY_TIMESTAMP_CAP = 4 * 60 * 60
 
 PITY_DIAMOND_HARD = -1
