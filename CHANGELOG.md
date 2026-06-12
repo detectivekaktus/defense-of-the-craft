@@ -14,7 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   * Belt of Strength
   * Robe of the Magi
   * Ring of Health
-
+* Boost Hand of Midas drop chances to:
+  * Coal - 40.70%
+  * Iron - 29.78%
+  * Gold - 13.56%
+  * Diamond - 15.79%
+  * Netherite - 0.14%
+* Using Hand of Midas on an entity makes it drop double experience points.
 
 ## [0.1.0] - 2026-04-22
 
