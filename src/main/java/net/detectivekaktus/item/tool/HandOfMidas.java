@@ -97,7 +97,7 @@ public class HandOfMidas extends DotcAbilityItem {
                 new ItemStack(droppedItem)
         );
         level.addFreshEntity(itemEntity);
-        var xp = 2 * target.getExperienceReward((ServerLevel) player.level(), player);
+        var xp = 2 * target.getExperienceReward(level, player);
         ExperienceOrb.award(level, target.position(), xp);
         target.discard();
 
