@@ -138,8 +138,8 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.BELT_OF_STRENGTH)
-                .pattern("#@#")
-                .pattern("@ @")
+                .pattern("###")
+                .pattern("# #")
                 .pattern("#@#")
                 .define('#', Items.LEATHER)
                 .define('@', DotcIngredients.DIRE_CRYSTAL)
@@ -150,22 +150,20 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.BAND_OF_ELVENSKIN)
-                .pattern(" @ ")
-                .pattern("@@@")
+                .pattern(" # ")
+                .pattern("###")
                 .pattern(" @ ")
                 .define('@', DotcIngredients.RADIANT_CRYSTAL)
+                .define('#', Items.IRON_INGOT)
                 .unlockedBy(
                         "has_radiant_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
                 )
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.ROBE_OF_THE_MAGI)
-                .pattern(" @ ")
-                .pattern("@#@")
-                .pattern(" @ ")
-                .define('@', DotcIngredients.RADIANT_CRYSTAL)
-                .define('#', Items.LEATHER_CHESTPLATE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DotcIngredients.ROBE_OF_THE_MAGI)
+                .requires(DotcIngredients.RADIANT_CRYSTAL)
+                .requires(Items.LEATHER_CHESTPLATE)
                 .unlockedBy(
                         "has_radiant_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
@@ -186,7 +184,7 @@ public class DotcIngredientsRecipeProvider extends FabricRecipeProvider {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcIngredients.RING_OF_HEALTH)
                 .pattern("#@#")
-                .pattern("@ @")
+                .pattern("# #")
                 .pattern("#@#")
                 .define('#', Items.GOLD_INGOT)
                 .define('@', DotcIngredients.DIRE_CRYSTAL)

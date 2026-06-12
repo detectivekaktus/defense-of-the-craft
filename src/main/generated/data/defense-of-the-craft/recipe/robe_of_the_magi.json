@@ -1,18 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "#": {
-      "item": "minecraft:leather_chestplate"
-    },
-    "@": {
+  "ingredients": [
+    {
       "item": "defense-of-the-craft:radiant_crystal"
+    },
+    {
+      "item": "minecraft:leather_chestplate"
     }
-  },
-  "pattern": [
-    " @ ",
-    "@#@",
-    " @ "
   ],
   "result": {
     "count": 1,

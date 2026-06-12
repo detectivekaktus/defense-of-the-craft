@@ -101,7 +101,7 @@ public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
                 .pattern(" @ ")
                 .pattern(" @ ")
                 .define('#', DotcIngredients.RADIANT_CRYSTAL)
-                .define('@', Items.STICK)
+                .define('@', Items.DIAMOND)
                 .unlockedBy(
                         "has_radiant_crystal",
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
@@ -224,7 +224,7 @@ public class DotcPrimitivesRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcPrimitives.SACRED_RELIC)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, DotcPrimitives.SACRED_RELIC)
                 .pattern("$#$")
                 .pattern("#@#")
                 .pattern(" # ")
