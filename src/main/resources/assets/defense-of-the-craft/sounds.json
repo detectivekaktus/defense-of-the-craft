@@ -281,5 +281,23 @@
     "sounds": [
       "defense-of-the-craft:announce_default_streak_holy"
     ]
+  },
+
+
+  "music_radiant_theme": {
+    "sounds": [
+      {
+        "name": "defense-of-the-craft:music_radiant_theme",
+        "stream": true
+      }
+    ]
+  },
+  "music_dire_theme": {
+    "sounds": [
+      {
+        "name": "defense-of-the-craft:music_dire_theme",
+        "stream": true
+      }
+    ]
   }
 }

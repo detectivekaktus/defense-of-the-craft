@@ -9,6 +9,7 @@ import net.detectivekaktus.DefenseOfTheCraft;
 import net.detectivekaktus.sound.announce.DotcAnnounceSounds;
 import net.detectivekaktus.sound.gui.DotcGuiSounds;
 import net.detectivekaktus.sound.item.DotcItemSounds;
+import net.detectivekaktus.sound.music.DotcMusicSounds;
 
 public class DotcSounds {
     public static SoundEvent register(String soundId) {
@@ -20,5 +21,6 @@ public class DotcSounds {
         DotcAnnounceSounds.initialize();
         DotcGuiSounds.initialize();
         DotcItemSounds.initialize();
+        DotcMusicSounds.initialize();
     }
 }

@@ -1,12 +1,12 @@
 package net.detectivekaktus.client;
 
-import net.detectivekaktus.client.data.*;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
+import net.detectivekaktus.client.data.*;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockLootTableProvider;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockModelProvider;
 import net.detectivekaktus.client.data.block.building.DotcBuildingBlockRecipeProvider;
@@ -20,6 +20,8 @@ import net.detectivekaktus.client.data.item.primitive.DotcPrimitivesModelProvide
 import net.detectivekaktus.client.data.item.primitive.DotcPrimitivesRecipeProvider;
 import net.detectivekaktus.client.data.item.tool.DotcToolsModelProvider;
 import net.detectivekaktus.client.data.item.tool.DotcToolsRecipeProvider;
+import net.detectivekaktus.client.data.item.misc.DotcMiscModelProvider;
+import net.detectivekaktus.client.data.item.misc.DotcMiscRecipeProvider;
 import net.detectivekaktus.worldgen.features.*;
 
 public class DefenseOfTheCraftDataGenerator implements DataGeneratorEntrypoint {
@@ -48,6 +50,9 @@ public class DefenseOfTheCraftDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(DotcToolsModelProvider::new);
 		pack.addProvider(DotcToolsRecipeProvider::new);
+
+		pack.addProvider(DotcMiscModelProvider::new);
+		pack.addProvider(DotcMiscRecipeProvider::new);
 
 		pack.addProvider(DotcDynamicRegistryProvider::new);
 		pack.addProvider(DotcAdvancementProvider::new);

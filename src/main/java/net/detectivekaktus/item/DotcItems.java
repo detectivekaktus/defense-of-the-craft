@@ -1,5 +1,6 @@
 package net.detectivekaktus.item;
 
+import net.detectivekaktus.item.misc.DotcMiscItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -39,6 +40,7 @@ public class DotcItems {
         DotcPrimitives.initialize();
         DotcTools.initialize();
         DotcConsumables.initialize();
+        DotcMiscItems.initialize();
 
         ItemGroupEvents.modifyEntriesEvent(DOTC_ITEM_GROUP_KEY).register(group -> Stream.of(
                 DotcIngredients.RADIANT_CRYSTAL_SHARDS,
@@ -124,6 +126,9 @@ public class DotcItems {
                 DotcTools.ARCANE_BLINK,
                 DotcTools.OVERWHELMING_BLINK,
                 DotcTools.SATANIC,
+
+                DotcMiscItems.RADIANT_THEME_MUSIC_DISC,
+                DotcMiscItems.DIRE_THEME_MUSIC_DISC,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),
