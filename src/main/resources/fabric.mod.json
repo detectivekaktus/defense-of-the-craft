@@ -40,10 +40,10 @@
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"yet_another_config_lib_v3": ">=3.6.1+1.21-fabric",
-		"modmenu": ">=11.0.4"
+		"yet_another_config_lib_v3": ">=3.6.1+1.21-fabric"
 	},
 	"suggests": {
+		"modmenu": ">=11.0.4",
 		"damagenumbers": ">=1.4.1"
 	}
 }
