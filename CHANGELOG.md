@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+* Radiant Theme Music Disc
+* Dire Theme Music Disc
+
 ### Changed
 * Simplify recipes for:
   * Band of Elvenskin
