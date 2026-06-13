@@ -6,27 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [Unreleased]
-
-### Added
-* Radiant Theme Music Disc
-* Dire Theme Music Disc
-
-### Changed
-* Simplify recipes for:
-  * Band of Elvenskin
-  * Belt of Strength
-  * Robe of the Magi
-  * Ring of Health
-* Boost Hand of Midas drop chances to:
-  * Coal - 40.70%
-  * Iron - 29.78%
-  * Gold - 13.56%
-  * Diamond - 15.79%
-  * Netherite - 0.14%
-* Using Hand of Midas on an entity makes it drop double experience points.
-* Silver Edge break duration increased from 5 to 8 seconds.
-
 ## [0.1.0] - 2026-04-22
 
 ### Added
@@ -230,3 +209,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 * Ukrainian and Spanish translations.
+
+
+## [0.4.0] - 2026-06-13
+
+### Added
+* Achievements
+* Radiant Theme Music Disc
+* Dire Theme Music Disc
+
+### Changed
+* Simplify recipes for:
+  * Band of Elvenskin
+  * Belt of Strength
+  * Robe of the Magi
+  * Ring of Health
+* Boost Hand of Midas drop chances to:
+  * Coal - 40.70%
+  * Iron - 29.78%
+  * Gold - 13.56%
+  * Diamond - 15.79%
+  * Netherite - 0.14%
+* Using Hand of Midas on an entity makes it drop double experience points.
+* Silver Edge break duration increased from 5 to 8 seconds.
