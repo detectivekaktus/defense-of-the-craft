@@ -33,6 +33,18 @@ public class DotcMiscRecipeProvider extends FabricRecipeProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL)
                 )
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DotcMiscItems.DIRE_THEME_MUSIC_DISC)
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("###")
+                .define('#', Blocks.BASALT)
+                .define('@', DotcIngredients.DIRE_CRYSTAL)
+                .unlockedBy(
+                        "has_dire_crystal",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL)
+                )
+                .save(exporter);
     }
 
     @Override

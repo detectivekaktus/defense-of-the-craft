@@ -128,6 +128,7 @@ public class DotcItems {
                 DotcTools.SATANIC,
 
                 DotcMiscItems.RADIANT_THEME_MUSIC_DISC,
+                DotcMiscItems.DIRE_THEME_MUSIC_DISC,
 
                 DotcNaturalBlocks.RADIANT_ORE.asItem(),
                 DotcNaturalBlocks.DEEPSLATE_RADIANT_ORE.asItem(),

@@ -22,7 +22,8 @@ public class DotcMiscModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         Stream.of(
-                DotcMiscItems.RADIANT_THEME_MUSIC_DISC
+                DotcMiscItems.RADIANT_THEME_MUSIC_DISC,
+                DotcMiscItems.DIRE_THEME_MUSIC_DISC
         ).forEach(item -> itemModelGenerator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
     }
 

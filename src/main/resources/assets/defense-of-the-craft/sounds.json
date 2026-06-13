@@ -291,5 +291,13 @@
         "stream": true
       }
     ]
+  },
+  "music_dire_theme": {
+    "sounds": [
+      {
+        "name": "defense-of-the-craft:music_dire_theme",
+        "stream": true
+      }
+    ]
   }
 }

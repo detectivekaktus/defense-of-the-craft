@@ -15,5 +15,10 @@ public class DotcMusicSounds {
             Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "music_radiant_theme")
     );
 
+    public static SoundEvent DIRE_THEME = DotcSounds.register("music_dire_theme");
+    public static ResourceKey<JukeboxSong> DIRE_THEME_KEY = ResourceKey.create(
+            Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(DefenseOfTheCraft.MOD_ID, "music_dire_theme")
+    );
+
     public static void initialize() { }
 }

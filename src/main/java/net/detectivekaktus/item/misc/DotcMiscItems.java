@@ -14,6 +14,14 @@ public class DotcMiscItems {
             ),
             "radiant_theme_music_disc"
     );
+    public static final Item DIRE_THEME_MUSIC_DISC = DotcItems.register(
+            new Item(
+                    new Item.Properties()
+                            .jukeboxPlayable(DotcMusicSounds.DIRE_THEME_KEY)
+                            .stacksTo(1)
+            ),
+            "dire_theme_music_disc"
+    );
 
     public static void initialize() { }
 }
