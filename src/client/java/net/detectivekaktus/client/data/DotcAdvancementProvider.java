@@ -41,7 +41,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .addCriterion("killed_something", KilledTrigger.TriggerInstance.playerKilledEntity())
                 .addCriterion("killed_by_something", KilledTrigger.TriggerInstance.entityKilledPlayer())
-                .save(consumer, "defense-of-the-craft/root");
+                .save(consumer, "defense-of-the-craft:root");
 
         var radiant = Advancement.Builder.advancement()
                 .parent(root)
@@ -56,7 +56,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_radiant_crystal", InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.RADIANT_CRYSTAL))
-                .save(consumer, "defense-of-the-craft/get_radiant_crystal");
+                .save(consumer, "defense-of-the-craft:get_radiant_crystal");
 
         Advancement.Builder.advancement()
                 .parent(radiant)
@@ -71,7 +71,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_hand_of_midas", InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.HAND_OF_MIDAS))
-                .save(consumer, "defense-of-the-craft/get_hand_of_midas");
+                .save(consumer, "defense-of-the-craft:get_hand_of_midas");
 
         Advancement.Builder.advancement()
                 .parent(radiant)
@@ -86,7 +86,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_yasha", InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.YASHA))
-                .save(consumer, "defense-of-the-craft/get_yasha");
+                .save(consumer, "defense-of-the-craft:get_yasha");
 
         Advancement.Builder.advancement()
                 .parent(radiant)
@@ -101,7 +101,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_blink_dagger", InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.BLINK_DAGGER))
-                .save(consumer, "defense-of-the-craft/get_blink_dagger");
+                .save(consumer, "defense-of-the-craft:get_blink_dagger");
 
         Advancement.Builder.advancement()
                 .parent(radiant)
@@ -116,7 +116,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_shadow_amulet", InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.SHADOW_AMULET))
-                .save(consumer, "defense-of-the-craft/get_shadow_amulet");
+                .save(consumer, "defense-of-the-craft:get_shadow_amulet");
 
         var dire = Advancement.Builder.advancement()
                 .parent(radiant)
@@ -131,7 +131,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_dire_crystal", InventoryChangeTrigger.TriggerInstance.hasItems(DotcIngredients.DIRE_CRYSTAL))
-                .save(consumer, "defense-of-the-craft/get_dire_crystal");
+                .save(consumer, "defense-of-the-craft:get_dire_crystal");
 
         Advancement.Builder.advancement()
                 .parent(dire)
@@ -146,7 +146,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         true
                 )
                 .addCriterion("got_radiance", InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.RADIANCE))
-                .save(consumer, "defense-of-the-craft/get_radiance");
+                .save(consumer, "defense-of-the-craft:get_radiance");
 
         Advancement.Builder.advancement()
                 .parent(dire)
@@ -161,7 +161,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_heart_of_tarrasque", InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.HEART_OF_TARRASQUE))
-                .save(consumer, "defense-of-the-craft/get_heart_of_tarrasque");
+                .save(consumer, "defense-of-the-craft:get_heart_of_tarrasque");
 
         Advancement.Builder.advancement()
                 .parent(dire)
@@ -176,7 +176,7 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_urn_of_shadows", InventoryChangeTrigger.TriggerInstance.hasItems(DotcTools.URN_OF_SHADOWS))
-                .save(consumer, "defense-of-the-craft/get_urn_of_shadows");
+                .save(consumer, "defense-of-the-craft:get_urn_of_shadows");
 
         Advancement.Builder.advancement()
                 .parent(dire)
@@ -191,6 +191,6 @@ public class DotcAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_divine_rapier", InventoryChangeTrigger.TriggerInstance.hasItems(DotcPrimitives.DIVINE_RAPIER))
-                .save(consumer, "defense-of-the-craft/get_divine_rapier");
+                .save(consumer, "defense-of-the-craft:get_divine_rapier");
     }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:defense-of-the-craft/get_dire_crystal",
+  "parent": "defense-of-the-craft:get_dire_crystal",
   "criteria": {
     "got_heart_of_tarrasque": {
       "conditions": {
