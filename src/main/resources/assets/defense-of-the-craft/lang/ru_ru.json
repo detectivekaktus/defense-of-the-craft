@@ -331,6 +331,41 @@
 
 
 
+  "advancement.defense-of-the-craft.root": "Defense of the Craft",
+  "advancement.defense-of-the-craft.root.description": "The crucible of greatness awaits",
+
+  "advancement.defense-of-the-craft.shiny": "Shiny!",
+  "advancement.defense-of-the-craft.shiny.description": "Получи Radiant Crystal!",
+
+  "advancement.defense-of-the-craft.im_not_in_it_for_the_money": "I'm not in it for the money -- but I still take it!",
+  "advancement.defense-of-the-craft.im_not_in_it_for_the_money.description": "Создай лучший предмет для ранней игры",
+
+  "advancement.defense-of-the-craft.easy_now": "Easy now, this stuff is explosive!",
+  "advancement.defense-of-the-craft.easy_now.description": "Увеличь свою скорость передвижения с помощью Yasha",
+
+  "advancement.defense-of-the-craft.antiquated_but_effective": "Antiquated, but effective",
+  "advancement.defense-of-the-craft.antiquated_but_effective.description": "Убей Иссушителя и создай Blink Dagger",
+
+  "advancement.defense-of-the-craft.proper_skux": "Proper skux",
+  "advancement.defense-of-the-craft.proper_skux.description": "Стань руинером и создай Shadow Amulet",
+
+  "advancement.defense-of-the-craft.i_wonder_what_this_does": "I wonder what this does...",
+  "advancement.defense-of-the-craft.i_wonder_what_this_does.description": "Получи Dire Crystal!",
+
+  "advancement.defense-of-the-craft.song_in_heart": "I've always got a song in my heart",
+  "advancement.defense-of-the-craft.song_in_heart.description": "Так вспотель лишь бы получить Heart of Tarrasque",
+
+  "advancement.defense-of-the-craft.souls": "I come for souls",
+  "advancement.defense-of-the-craft.souls.description": "Заточи душу Скелета Иссушителя в Urn of Shadows",
+
+  "advancement.defense-of-the-craft.they_sell_it_to_kids": "They let you just sell these? To kids?",
+  "advancement.defense-of-the-craft.they_sell_it_to_kids.description": "Получи самое сильное оружие всея Defense of the Craft",
+
+  "advancement.defense-of-the-craft.all_the_sexy": "I NOW HAVE ALL THE SEXY",
+  "advancement.defense-of-the-craft.all_the_sexy.description": "Подожги землю под ногами с помощью Radiance",
+
+
+
   "strength.defense-of-the-craft": "%s силы",
   "agility.defense-of-the-craft": "%s ловкости",
   "intelligence.defense-of-the-craft": "%s интеллекта",

@@ -1,0 +1,33 @@
+{
+  "parent": "defense-of-the-craft:get_radiant_crystal",
+  "criteria": {
+    "got_hand_of_midas": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:hand_of_midas"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.im_not_in_it_for_the_money.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:hand_of_midas"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.im_not_in_it_for_the_money"
+    }
+  },
+  "requirements": [
+    [
+      "got_hand_of_midas"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

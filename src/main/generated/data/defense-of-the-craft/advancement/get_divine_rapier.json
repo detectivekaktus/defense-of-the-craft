@@ -1,0 +1,34 @@
+{
+  "parent": "defense-of-the-craft:get_dire_crystal",
+  "criteria": {
+    "got_divine_rapier": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:divine_rapier"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.they_sell_it_to_kids.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:divine_rapier"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.they_sell_it_to_kids"
+    }
+  },
+  "requirements": [
+    [
+      "got_divine_rapier"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

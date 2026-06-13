@@ -1,0 +1,33 @@
+{
+  "parent": "defense-of-the-craft:root",
+  "criteria": {
+    "got_radiant_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "defense-of-the-craft:radiant_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.defense-of-the-craft.shiny.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "defense-of-the-craft:radiant_crystal"
+    },
+    "title": {
+      "translate": "advancement.defense-of-the-craft.shiny"
+    }
+  },
+  "requirements": [
+    [
+      "got_radiant_crystal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

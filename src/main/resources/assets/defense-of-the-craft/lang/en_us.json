@@ -330,6 +330,41 @@
 
 
 
+  "advancement.defense-of-the-craft.root": "Defense of the Craft",
+  "advancement.defense-of-the-craft.root.description": "The crucible of greatness awaits",
+
+  "advancement.defense-of-the-craft.shiny": "Shiny!",
+  "advancement.defense-of-the-craft.shiny.description": "Obtain a Radiant Crystal!",
+
+  "advancement.defense-of-the-craft.im_not_in_it_for_the_money": "I'm not in it for the money -- but I still take it!",
+  "advancement.defense-of-the-craft.im_not_in_it_for_the_money.description": "Craft the best early game item",
+
+  "advancement.defense-of-the-craft.easy_now": "Easy now, this stuff is explosive!",
+  "advancement.defense-of-the-craft.easy_now.description": "Increase your move speed with Yasha",
+
+  "advancement.defense-of-the-craft.antiquated_but_effective": "Antiquated, but effective",
+  "advancement.defense-of-the-craft.antiquated_but_effective.description": "Defeat the Wither and craft Blink Dagger",
+
+  "advancement.defense-of-the-craft.proper_skux": "Proper skux",
+  "advancement.defense-of-the-craft.proper_skux.description": "Become a game thrower by crafting Shadow Amulet",
+
+  "advancement.defense-of-the-craft.i_wonder_what_this_does": "I wonder what this does...",
+  "advancement.defense-of-the-craft.i_wonder_what_this_does.description": "Obtain a Dire Crystal!",
+
+  "advancement.defense-of-the-craft.song_in_heart": "I've always got a song in my heart",
+  "advancement.defense-of-the-craft.song_in_heart.description": "Sweated so hard just to get Heart of Tarrasque",
+
+  "advancement.defense-of-the-craft.souls": "I come for souls",
+  "advancement.defense-of-the-craft.souls.description": "Prison the Wither Skeleton soul into the Urn of Shadows",
+
+  "advancement.defense-of-the-craft.they_sell_it_to_kids": "They let you just sell these? To kids?",
+  "advancement.defense-of-the-craft.they_sell_it_to_kids.description": "Get the mightiest weapon in all of Defense of the Craft",
+
+  "advancement.defense-of-the-craft.all_the_sexy": "I NOW HAVE ALL THE SEXY",
+  "advancement.defense-of-the-craft.all_the_sexy.description": "Get the ground beneath your feet scorching with Radiance",
+
+
+
   "strength.defense-of-the-craft": "%s strength",
   "agility.defense-of-the-craft": "%s agility",
   "intelligence.defense-of-the-craft": "%s intelligence",
