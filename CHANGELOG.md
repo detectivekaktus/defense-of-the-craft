@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   * Diamond - 15.79%
   * Netherite - 0.14%
 * Using Hand of Midas on an entity makes it drop double experience points.
+* Silver Edge break duration increased from 5 to 8 seconds.
 
 ## [0.1.0] - 2026-04-22
 

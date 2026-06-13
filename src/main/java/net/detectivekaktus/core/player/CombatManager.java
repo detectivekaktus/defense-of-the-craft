@@ -271,7 +271,7 @@ public class CombatManager {
         var evasionChance = PseudoRandom.getProcChance(evasion, stats.getEvasionScale());
         if (player.getRandom().nextFloat() > evasionChance) {
             if (manager != null && manager.hasBroken())
-                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 5 * 20));
+                player.addEffect(new MobEffectInstance(DotcEffects.BREAK, 8 * 20));
 
             stats.addEvasionScale(1);
             return evaded;
