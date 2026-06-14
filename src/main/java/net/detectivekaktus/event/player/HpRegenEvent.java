@@ -12,12 +12,12 @@ public class HpRegenEvent {
 
         if (hpTick >= 20) {
             stats.setHpTick(0);
+            if (player.hasEffect(DotcEffects.BREAK))
+                return;
+
             var regen = stats.getHpRegen() + stats.getBonusHpRegen();
-            var regenAmplification = player.hasEffect(DotcEffects.BREAK)
-                    ? 0.0f
-                    : stats.getHpRegenAmplification();
             if (regen > 0) {
-                regen *= (1.0f + regenAmplification);
+                regen *= (1.0f + stats.getHpRegenAmplification());
                 player.heal(regen);
             }
             return;
