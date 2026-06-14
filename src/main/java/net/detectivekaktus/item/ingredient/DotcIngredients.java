@@ -90,6 +90,7 @@ public class DotcIngredients {
     public static final Item BELT_OF_STRENGTH = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
                                     new ItemStatsComponent(6, 0, 0)
@@ -103,6 +104,7 @@ public class DotcIngredients {
     public static final Item BAND_OF_ELVENSKIN = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
                                     new ItemStatsComponent(0, 6, 0)
@@ -117,6 +119,7 @@ public class DotcIngredients {
     public static final Item ROBE_OF_THE_MAGI = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
                                     new ItemStatsComponent(0, 0, 6)
@@ -130,6 +133,7 @@ public class DotcIngredients {
     public static final Item RING_OF_HEALTH = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
                                     0.5f
@@ -143,6 +147,7 @@ public class DotcIngredients {
     public static final Item VOID_STONE = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_MANA_REGEN_COMPONENT,
                                     1.75f
@@ -156,6 +161,7 @@ public class DotcIngredients {
     public static final Item TALISMAN_OF_EVASION = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.EVASION_COMPONENT,
                                     PseudoRandomBaseChances.AVG_10
@@ -169,6 +175,7 @@ public class DotcIngredients {
     public static final Item EAGLESONG = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
                                     new ItemStatsComponent(0, 25, 0)
@@ -181,7 +188,8 @@ public class DotcIngredients {
     );
     public static final Item SHADOW_AMULET = DotcItems.register(
             new ShadowAmulet(
-                    new Item.Properties().stacksTo(1),
+                    new Item.Properties()
+                            .stacksTo(1),
                     new TooltipBuilder("shadow_amulet")
                             .description()
                             .active()
@@ -190,7 +198,8 @@ public class DotcIngredients {
     );
     public static final Item RING_OF_TARRASQUE = DotcItems.register(
             new DotcItem(
-                    new Item.Properties().stacksTo(1)
+                    new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
                                     1.0f
@@ -203,7 +212,8 @@ public class DotcIngredients {
     );
     public static final Item ENERGY_BOOSTER = DotcItems.register(
             new DotcItem(
-                    new Item.Properties().stacksTo(1)
+                    new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_MANA_COMPONENT,
                                     50.0f
@@ -216,7 +226,8 @@ public class DotcIngredients {
     );
     public static final Item VITALITY_BOOSTER = DotcItems.register(
             new DotcItem(
-                    new Item.Properties().stacksTo(1)
+                    new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_COMPONENT,
                                     4.0f
@@ -230,7 +241,8 @@ public class DotcIngredients {
     // TODO: Make this item a wearable helmet
     public static final Item SAGES_MASK = DotcItems.register(
             new DotcItem(
-                    new Item.Properties().stacksTo(1)
+                    new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_MANA_REGEN_COMPONENT,
                                     1.25f
@@ -244,7 +256,8 @@ public class DotcIngredients {
     // TODO: Make this item a wearable helmet
     public static final Item MORBID_MASK = DotcItems.register(
             new DotcItem(
-                    new Item.Properties().stacksTo(1)
+                    new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.LIFE_STEAL_COMPONENT,
                                     0.1f

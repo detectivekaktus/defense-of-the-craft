@@ -254,6 +254,7 @@ public class DotcTools {
     public static final Item HAND_OF_MIDAS = DotcItems.register(
             new HandOfMidas(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.USE_COUNTER_COMPONENT,
                                     0
@@ -382,6 +383,7 @@ public class DotcTools {
     public static final Item HEART_OF_TARRASQUE = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.ITEM_STATS_COMPONENT,
                                     new ItemStatsComponent(35, 0, 0)
@@ -404,6 +406,7 @@ public class DotcTools {
     public static final Item AEON_DISK = DotcItems.register(
             new DotcItem(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_COMPONENT,
                                     4.0f
@@ -490,6 +493,7 @@ public class DotcTools {
     public static final Item URN_OF_SHADOWS = DotcItems.register(
             new UrnOfShadows(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
                                     0.5f
@@ -512,6 +516,7 @@ public class DotcTools {
     public static final Item SPIRIT_VESSEL = DotcItems.register(
             new SpiritVessel(
                     new Item.Properties()
+                            .stacksTo(1)
                             .component(
                                     DotcComponents.BONUS_HP_REGEN_COMPONENT,
                                     0.75f
